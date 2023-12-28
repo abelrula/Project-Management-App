@@ -3,9 +3,9 @@
 .TodayTodo__wavingHand{
            font-size: 2rem;
     font-family: monospace;
-    font-family: auto;
+    font-family: system-ui;
     font-weight: 900;
-    color:black
+    color:black;
  }
  
 .TodayTodo{
@@ -34,7 +34,16 @@ display: flex;
 }
  
   .bargraph{
+        
         background: #ffffff;
     border-radius: 20px;
+    height: 300px;
+    display:flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .bargraph h5{
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
   }
  

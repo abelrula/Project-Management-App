@@ -1,12 +1,13 @@
  .AssignedTask{
-      background: white;
+  background: white;
     display: flex;
     flex-direction: column;
     padding: 5px;
     box-shadow: 3px 1px 1px 1px #9ca5a5;
     border-radius: 10px;
     flex: 1 1;
-    max-width: 600px;
+    max-width: 410px;
+    max-height: 300px;
   }
  .AssignedTask__situation{
     display: flex;
@@ -19,8 +20,7 @@
   display: flex;
     gap: 40px;
         align-items: center;
-    border-bottom: #e8dddd 1px solid;
- }
+  }
  .AssignedTask__situation-types > li.workProgress{
     border-bottom: 3px solid #d7a66f;
     padding: 3px 14px;
@@ -93,7 +93,7 @@ width: 40px;
  .AssignedTask__situation--description--footer > button{
 padding: 5px 15px;
     font-size: 1.rem;
-    background: #3f5376;
+    background: #e57085;
     color: white;
     font-weight: 800;
     border: none;

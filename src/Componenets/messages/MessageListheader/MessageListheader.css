@@ -1,0 +1,20 @@
+.messagepage{
+     display: flex;
+     flex-direction: column;
+     gap:100px;
+        flex:  4 ;
+        text-align:  center ;
+        place-content:  center ;
+        background: #f7d44d;
+     align-items: center;
+ }
+.messagepage  h1{
+font-family: monospace;
+    color: #004a8b;
+}
+.messagepage img{
+       object-fit: cover;
+     height: 350px;
+    width: 520px;
+}
+ 

@@ -4,19 +4,19 @@
     font-size: 1rem;
     margin-top: 10px;
     font-size: 1.1rem;
-    border-bottom: 1px solid #b9adad;
-}
+ }
 
   .TodayTodo__view--task{
-      background: #ffffffad;
+        background: #ffffffad;
     box-shadow: 3px 1px 1px 1px #9ca5a5;
     border-radius: 20px;
     padding: 20px;
     flex: 1 1;
     min-width: 440px;
-    max-width: 600px;
-  }
-  .TodayTodo__view--task > ul{
+    max-width: 400px;
+    max-height: 300px;
+}
+   .TodayTodo__view--task > ul{
 padding: 10px 0px;
    }
   .TodayTodo__view--task > ul >li{

@@ -13,31 +13,36 @@ import { HiUserGroup } from "react-icons/hi";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoHelpCircle } from "react-icons/io5";
 import { CiCircleList } from "react-icons/ci";
+import { LuCalendarDays } from "react-icons/lu";
+import { MdLocalLibrary } from "react-icons/md";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { BsActivity } from "react-icons/bs";
+import { SiCodefactor } from "react-icons/si";
 const menuLinks = [
   {
     title: "Home",
-    to: "home",
+    to: "/",
     icon: <BiHomeAlt2 className="icon" fill="#ffa909" />,
   },
   {
     title: "My Tasks",
     to: "myTasks",
-    icon: <CiCircleList className="icon" fill="#ffa909" />,
+    icon: <SiCodefactor className="icon" fill="#ffa909" />,
   },
   {
     title: "Calander Schedules",
     to: "schedule",
-    icon: <CgFormatJustify className="icon" fill="#ffa909" />,
+    icon: <FaRegCalendarAlt className="icon" fill="#ffa909" />,
   },
   {
     title: "Project Overview",
     to: "overview",
-    icon: <BiStats className="icon" fill="#ffa909" />,
+    icon: <MdLocalLibrary className="icon" fill="#ffa909" />,
   },
   {
     title: "Report",
     to: "report",
-    icon: <CgTrending className="icon" fill="#ffa909" />,
+    icon: <BsActivity className="icon" fill="#ffa909" />,
   },
   {
     title: "Team",

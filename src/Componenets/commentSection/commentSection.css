@@ -1,14 +1,15 @@
 .CommentSection{
-     background: #ffffffad;
+         background: #ffffffad;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    box-shadow:3px 1px 1px 1px #9ca5a5;
+    box-shadow: 3px 1px 1px 1px #9ca5a5;
     padding: 5px;
     gap: 25px;
-    flex: 1;
+    flex: 1 1;
     min-width: 320px;
-    max-width: 460px;
+    max-width: 370px;
+    max-height: 270px;
 }
 .TeamsComment{
 display:flex;
@@ -17,8 +18,7 @@ gap:10px
 }
 .CommentSection > h3{
      text-align: start;
-    border-bottom: 1px solid #898585;
-}
+ }
   .TeamsComment > .Usercomments{
     display: flex;
     gap: 10px;

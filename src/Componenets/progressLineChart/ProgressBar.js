@@ -9,9 +9,9 @@ const ProgressBar = ({ bgcolor, progress, height }) => {
     backgroundColor: bgcolor,
     borderRadius: 40,
     textAlign: "right",
-    display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
+    display: "flex",
   };
 
   const progresstext = {

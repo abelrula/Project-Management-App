@@ -35,7 +35,7 @@ const Sidebar = ({ filterType, setFilterType }) => {
               key={i}
             >
               {link.icon}
-              {/* <label>{link.title}</label> */}
+              <label>{link.title}</label>
             </NavLink>
           ))}
         </div>

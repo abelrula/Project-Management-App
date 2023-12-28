@@ -20,7 +20,7 @@ const Header = ({ title }) => {
 
       <div className="left">
         <div className="notification">
-          <BiBell className="icon" fill="#ffa909" fontSize={35} />
+          <BiBell className="icon" fill="#ffa909" fontSize={28} />
           <span>2</span>
         </div>
         <img

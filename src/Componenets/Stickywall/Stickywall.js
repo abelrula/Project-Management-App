@@ -47,11 +47,12 @@ const Stickywall = () => {
   const [selected, setSelected] = useState("all");
   const [page, setPage] = useState(1);
   const [pagee, setPagee] = useState("1");
-  const pages = isSuccess && Math.ceil(todo?.length / 2);
+  const pages = isSuccess && Math.ceil(todo?.length / 4);
   return (
     <div className="StickyWallWrapper">
       <h1>list of the day</h1>
-      <div className="StickyWallWrapper__FilterTypes">
+
+      {/* <div className="StickyWallWrapper__FilterTypes">
         <div
           onClick={() => {
             setAll((prev) => !prev);
@@ -92,12 +93,12 @@ const Stickywall = () => {
           Buisness
           <FcBusiness />
         </div>
-      </div>
+      </div> */}
       <h1>{isLoading && "LOADING..."}</h1>
       <ul className="StickyWallWrapper__Content">
         {isSuccess &&
           todo
-            .slice(page * 2 - 2, page * 2)
+            .slice(page * 4 - 4, page * 4)
             .map((item) => <Card key={item.id} item={item} />)}
       </ul>
       <div className="StickyWallWrapper__PageNumbers">

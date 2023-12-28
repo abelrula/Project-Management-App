@@ -5,13 +5,11 @@
     background:#000000;
     border: 3px solid beige;
     height: 100vh;
-    box-shadow: 2px 2px 12px black;
+    box-shadow: 2px 2px 4px black;
     border: 1px solid black;
-   
     position: sticky;
     top:0;
-    max-width:min-content
-}
+    max-width: 185px;}
 .side > h1{
     font-size: 1.3rem;
     text-align: start;
@@ -23,15 +21,17 @@
     gap: 10px;
     margin-top: 20px;
     text-decoration: none;
-    padding: 4px 15px;
+    padding: 4px 5px;
     display: flex;
     align-items: center;
-     border-radius: 10px
+     border-radius: 10px;
+     cursor:pointer;
 }
    .sideWord label{
-    color:white;
-    font-size:14px
-    
+    color:#979393;
+    font-size:14px;
+     cursor:pointer;
+
 }
 .side >label:hover ,link:hover{
     cursor: pointer;
@@ -47,8 +47,9 @@
     margin-top: 30px;
      align-items: center;
     justify-content: space-between;
-    padding: 10px;
+   padding: 10px 0;
     height: 100vh;
+    width: max-content;
 }
  .navigationLinks  .icon{
   font-size:larger;

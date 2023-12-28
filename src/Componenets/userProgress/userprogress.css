@@ -1,28 +1,27 @@
 .progress{
-   max-width: 364px;
+       max-width: 355px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-          background: #ffffffad;
+    background: #fffffff2;
     border-radius: 10px;
     height: 350px;
     border-radius: 10px;
     box-shadow: 3px 1px 1px 1px #9ca5a5;
     width: min-content;
-    flex: 1;
-    min-width: 400px;
+    flex: 1 1;
+    min-width: 350px;
+    max-height: 280px;
 }
 .progressbar{
 display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     padding: 5px 10px;
 }
 .progress h5{
-font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 font-size: large;
-    border-bottom: 1px solid #9b8f8f;
-}
+ }
 .userProgress{
     display: flex;
     gap: 15px;
@@ -30,12 +29,12 @@ font-size: large;
     align-items: center;
 }
 .userProgress > img{
-         height: 50px;
-    width: 50px;
+          height: 40px;
+    width: 40px;
     object-fit: cover;
     border-radius: 5;
     border-radius: 50%;
-        object-position: 75% 10%;
+    object-position: 75% 10%;
 }
 .userProgress > parent{
 

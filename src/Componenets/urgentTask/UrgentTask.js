@@ -21,9 +21,11 @@ const UrgentTask = () => {
                       <AiFillCheckCircle fontSize={22} />
                     ) : (
                       <BiCircle fontSize={24} />
-                    )}{" "}
+                    )}
                   </span>
-                  <p className="todayTodos"> {item.description} </p>
+                  <p className="todayTodos">
+                    {item.description.substring(0, 40)}...
+                  </p>
                 </span>
                 <span className="left">
                   <div className="dot"></div>

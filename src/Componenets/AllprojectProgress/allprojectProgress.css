@@ -1,0 +1,30 @@
+.projectProgress{
+    display: flex;
+    background-color: #655c50;
+    width: auto;
+    height: 300px;
+    color: white;
+        gap: 25px;
+}
+.projectProgress__side{
+    margin-top: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.projectProgress__content-top{
+    display: flex;
+    gap: 35px;
+}
+.projectProgress .side .progress{
+
+}
+.projectProgress__content{
+    
+}
+.projectProgress__content-data{
+   display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
