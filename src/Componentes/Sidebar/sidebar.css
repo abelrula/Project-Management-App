@@ -1,0 +1,81 @@
+.side{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    background:#000000;
+    border: 3px solid beige;
+    height: 100vh;
+    box-shadow: 2px 2px 4px black;
+    border: 1px solid black;
+    position: sticky;
+    top:0;
+    max-width: 185px;}
+.side > h1{
+    font-size: 1.3rem;
+    text-align: start;
+    margin-left:20px;
+    margin-top:-5px;
+}
+.sideWord{
+    display: flex;
+    gap: 10px;
+     text-decoration: none;
+    padding: 4px 5px;
+    display: flex;
+    align-items: center;
+     border-radius: 10px;
+     cursor:pointer;
+}
+   .sideWord label{
+       color: #979393;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: sans-serif;
+
+}
+.side >label:hover ,link:hover{
+    cursor: pointer;
+}
+.sideWord:last-child{
+    display: flex;
+    justify-content: center;
+}
+  
+.navigationLinks{
+    display: flex;
+    flex-direction: column;
+      align-items: center;
+    justify-content: space-between;
+   padding: 10px 0;
+    height: 100vh;
+    width: max-content;
+    margin-top: 45px;
+}
+.navigationTopLinks{
+     display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ .navigationLinks  .icon{
+  font-size:larger;
+      color: #ffa600;
+}
+.logout{
+    display:flex;
+    gap:10px;
+    margin-top:10x;
+    color: white;
+        align-items: center;
+ }
+h4{
+    color: #ffffff;
+}
+.navigationTBottomLinks{
+    display: flex;
+     gap: 15px;
+    font-size: 20px;
+}
+.icon:is(:active){
+    color:goldenrod
+}
+ 
