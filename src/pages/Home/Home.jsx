@@ -1,8 +1,14 @@
- import "./home.css"
-const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+ import Header from "../../Componentes/Header/Header";
+import TodoTask from "../../Componentes/TodoTask/TodoTask";
+import "./home.css"
+ 
 
-export default Home
+function Home() {
+  return (
+    <>
+      <Header title="Welcome, Abel ! 👋" />
+      <TodoTask />
+    </>
+  );
+}
+export default Home;

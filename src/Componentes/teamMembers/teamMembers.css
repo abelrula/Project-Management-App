@@ -1,0 +1,56 @@
+.TeamDirectory{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    box-shadow: 3px 1px 1px 1px #9ca5a5;
+     background: #ffffffad;
+    padding: 5px;
+    width: 500px;
+}
+.TeamDirectory > h5{
+       font-family: system-ui;
+    font-size: 1.3rem;
+    color: #8f9397;
+    text-align: center;
+    font-weight: 100;
+ }
+ .TeamDirectory__members{
+   display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start;
+    padding: 0 5px;
+    overflow-y: scroll;
+        width: 300px;
+    
+  }
+ .TeamDirectory__members__member{
+    background: #e5e5e5;
+    padding: 5px;
+    border-radius: 10px;
+        width: 85px;
+  }
+ 
+ .TeamDirectory__members__member > img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: cover;
+       object-position: 75% 10%;
+ }
+ .TeamDirectory__members__member--description > h3{
+color: black;
+     font-size: 0.8rem
+ }  
+ .TeamDirectory__members__member--description > p{
+  color: rgb(68, 66, 66);
+     font-size: 0.7rem
+ }
+ .TeamDirectory__members__member--description{
+     display: flex;
+    flex-direction: column;
+    gap: 10px;;
+ }
+ 

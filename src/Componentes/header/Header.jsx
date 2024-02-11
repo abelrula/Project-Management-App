@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
-import  { useState } from "react";
+import { useState } from "react";
 import "./header.css";
 import { BiBell } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
 import { IoIosSettings } from "react-icons/io";
 import {  BsArrowBarDown } from "react-icons/bs";
-const Header = ({ title }) => {
+ const Header = ({ title }) => {
   const date = new Date();
   const { pathname } = useLocation();
   const [showProfileInfo, setShowProfileInfo] = useState(false);
