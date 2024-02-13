@@ -1,0 +1,16 @@
+.rbc-calendar {
+    background: #ffffff;
+}
+.rbc-event{
+    padding: 0 !important;
+     background-color: aliceblue;
+    border: none;
+    font-size: 14px;
+
+}
+.rbc-event-label{
+    display: none !important;
+}
+.rbc-event-content{
+    border: none;
+ }

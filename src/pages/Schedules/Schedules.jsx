@@ -1,8 +1,12 @@
- import "./schedules.css"
+ import Calander from "../../Componentes/Calander/Calander"
+import "./schedules.css"
 
 const Schedules = () => {
   return (
-    <div>Schedules</div>
+    <div>
+      <Calander />
+    </div>
+    
   )
 }
 
