@@ -1,0 +1,55 @@
+.card{
+  width: 253px;
+    height: 150px;
+    background: #ffffff;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+.card .Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+}
+.card .Container .title{
+       display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+   
+}
+.card .Container .title:last-child{
+}
+.card .Container .Total{
+    display: flex;
+}
+ .card .Container .Total span{
+          margin-left: 15px;
+    font-size: 2.4rem;
+}
+ 
+ 
+.card .Container .Add button{
+    background-color: rgb(126, 121, 123) ;
+    color: white;
+    border: none;
+    padding: 5px 51px;
+    border-radius: 10px;
+    font-family: cursive;
+    font-size: 13px;
+}
+.card .Container .Add button:hover{
+    background-color: rgb(101 98 99);
+} 
+.title :nth-child(2){
+    font-size: 20px;
+     border-radius: 20px;
+     color:rgb(102 109 103) ;
+}
+.title h3{
+    color: #a3a19f;
+    font-family: math;
+    font-weight: 100;
+ }

@@ -1,0 +1,19 @@
+.Reports{
+display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 0px 15px;
+}
+.TotalProjectsMemberes{
+        display: flex;
+    gap: 10px;
+    flex-direction: column;
+        align-items: center;
+ }
+
+.TotalProjectsMemberes .totals{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
