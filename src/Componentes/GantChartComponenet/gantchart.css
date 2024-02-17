@@ -1,0 +1,74 @@
+.gantChart{
+       display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* padding: 10px; */
+    border: 1px solid black;
+}
+.gantChart h2{
+        text-transform: capitalize;
+    font-family: ui-monospace;
+    border-bottom: 1px solid #a5a1a1;
+}
+.gantChart .chartColors{
+display: flex;
+justify-content: space-between;
+}
+ .chartColors p{
+    display: flex;
+    gap: 10px;
+   
+}
+.chartColors p span{
+    width:15px;
+    height: 15px;
+    border-radius: 5px;
+    
+}
+.chartColors div {
+   display: flex;
+    gap: 20px;
+    font-weight: bold;
+     align-items: center;
+      margin-left: 20px;
+}
+
+.chartColors div .completed span{
+background-color: rgba(255, 26, 104, 1);
+}
+.chartColors div  .pending span{
+background-color: rgba(54, 162, 235, 1);
+
+}
+.chartColors div .delayed span{
+background-color: rgba(255, 206, 86, 1);
+
+}
+ 
+.gantChart input{
+    width: 200px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 2px black
+   }
+   .gantChart form{
+    display: flex;
+    gap: 10px;
+   }
+   .gantChart form input{
+
+   }
+   .gantChart select{
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+        box-shadow: 1px 1px 1px 2px black
+   }
+   .gantChart button{
+     padding: 5px;
+    border: none;
+    border-radius: 10px;
+        box-shadow: 1px 1px 1px 2px black
+   }
+    
