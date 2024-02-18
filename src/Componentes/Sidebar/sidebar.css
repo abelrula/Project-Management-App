@@ -1,7 +1,7 @@
 .side{
     display: flex;
     flex-direction: column;
-    padding: 10px 0px;
+    padding: 10px 3px;
     background:#000000;
     border: 3px solid beige;
     height: 100vh;
@@ -17,18 +17,20 @@
     margin-top:-5px;
 }
 .sideWord{
-    display: flex;
-    gap: 10px;
-     text-decoration: none;
+       display: flex;
+    gap: 5px;
+    text-decoration: none;
     padding: 4px 5px;
     display: flex;
     align-items: center;
-     border-radius: 10px;
-     cursor:pointer;
+    border-radius: 10px;
+    cursor: pointer;
+    flex-direction: column;
+    border: 1px solid #5d5252;
 }
    .sideWord label{
        color: #979393;
-    font-size: 12px;
+    font-size: 11px;
     cursor: pointer;
     font-family: sans-serif;
 
@@ -49,7 +51,7 @@
    padding: 10px 0;
     height: 100vh;
     width: max-content;
-    margin-top: 45px;
+    margin-top: 35px;
 }
 .navigationTopLinks{
      display: flex;
@@ -57,7 +59,7 @@
     gap: 10px;
 }
  .navigationLinks  .icon{
-  font-size:larger;
+  font-size:15px;
       color: #ffa600;
 }
 .logout{

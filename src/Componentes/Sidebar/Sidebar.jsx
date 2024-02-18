@@ -1,8 +1,10 @@
-  import { IoHelpCircle } from "react-icons/io5";
+import  { useState } from "react";
+// import FilterTodo from "../FilterTodo";
 import { NavLink } from "react-router-dom";
-import "./sidebar.css";
-import menuLinks from "../../data/menuLinks";
 import { IoIosSettings } from "react-icons/io";
+import { IoHelpCircle } from "react-icons/io5";
+ import "./sidebar.css";
+import menuLinks from "../../data/menuLinks";
 const Sidebar = () => {
   const selectedObj = {
     color: "black",
@@ -26,11 +28,23 @@ const Sidebar = () => {
           ))}
         </div>
         <div className="navigationTBottomLinks">
-          <NavLink>
+          <NavLink 
+           to="settings"
+            style={({ isActive }) => (isActive ? selectedObj : null)}
+              className="sideWord"
+             >
             <IoIosSettings className="icon" />
+              <label>Settings</label>
+
           </NavLink>
-          <NavLink>
+          <NavLink 
+          to="Help"
+            style={({ isActive }) => (isActive ? selectedObj : null)}
+              className="sideWord"
+              >
             <IoHelpCircle className="icon" />
+              <label>Help</label>
+
           </NavLink>
         </div>
       </div>

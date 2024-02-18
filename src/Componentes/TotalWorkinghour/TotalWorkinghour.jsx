@@ -44,7 +44,7 @@ const TotalWorkinghour = ({
       <div className="workHour__container">
         <div className="workHour__container-hours">
           {sideData.map((item, i) => (
-            <span>{item}</span>
+            <span key={i}>{item}</span>
           ))}
         </div>
         <div className="workHour__container-contnet">
