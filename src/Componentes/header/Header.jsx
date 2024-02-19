@@ -2,15 +2,17 @@ import { useState } from "react";
 import "./header.css";
 import { BiBell } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
-import { IoIosSettings } from "react-icons/io";
-import {  BsArrowBarDown } from "react-icons/bs";
- const Header = ({ title }) => {
+   import img1 from "../../assets/worker2.jpg"
+import { BsPersonFillCheck, BsPersonFillGear } from "react-icons/bs";
+import { IoCloseCircleSharp } from "react-icons/io5";
+const Header = ({ title }) => {
   const date = new Date();
   const { pathname } = useLocation();
+  const [openModal, setpenModal] = useState(false);
   const [showProfileInfo, setShowProfileInfo] = useState(false);
   console.log(pathname);
   return (
-    <div className="header">
+    <><div className="header">
       <div className="greeting">
         <p className="TodayTodo__wavingHand">{title}</p>
         {pathname === "/" ? (
@@ -19,7 +21,7 @@ import {  BsArrowBarDown } from "react-icons/bs";
             <p className="time">{date.toLocaleTimeString()}</p>
           </>
         ) : null}
-      </div>
+       </div>
 
       <div className="left">
         <div className="notification">
@@ -32,34 +34,58 @@ import {  BsArrowBarDown } from "react-icons/bs";
             alt="profile"
             onClick={() => setShowProfileInfo((prev) => !prev)}
           />
-          <BsArrowBarDown
-            className="arrowdown"
-            onClick={() => setShowProfileInfo((prev) => !prev)}
-          />
           {showProfileInfo && (
             <div className="header__profile-description">
-              <p>
-                Change profile <IoIosSettings />
+              <p  onClick={() => setpenModal(true)}>
+                Change profile <BsPersonFillGear />
               </p>
-              <p>
-                View profile <IoIosSettings />
-              </p>
-              <p>
-                Settings <IoIosSettings />
-              </p>
-              <p>
-                Help Center <IoIosSettings />
-              </p>
-              <p>
-                About us
-                <IoIosSettings />
+              <p  onClick={() => setpenModal(true)}>
+                View profile <BsPersonFillCheck />
               </p>
             </div>
           )}
         </div>
       </div>
     </div>
+      {openModal && (<div className="modal">
+        <IoCloseCircleSharp
+          onClick={ () => setpenModal( false ) }
+            className="closeIcon" />
+        <div className="profile_description">
+          <div className="profile_description_right">
+            <img src={ img1 } alt="profile" />
+              <p>Simon panda</p>
+              <span>+2519095445</span>
+          </div>
+        <div className="profile_description_left">
+            <div className="profile_description_left-bio">
+              <label>Bio :-</label>
+              <p>livng with out pain is not the fact that we are alive</p>
+         </div>
+            <div className="profile_description_left-totalFriends">
+              <label>Total friends :-</label>
+              <span>120</span>
+         </div>
+          <div className="profile_description_left-AccomplishedProject">
+              <label>Accomplished projects :- </label>
+              <span>200</span>
+            </div>
+              <div className="profile_description_left-projectsIncluded">
+              <label>Included Projects :- </label>
+                <ul>
+              <li>Operations</li>
+              <li>data managements</li>
+              <li>Networking</li>
+              </ul>
+         </div>
+         </div>
+         </div>
+      </div>)}
+    </>
   );
 };
 
 export default Header;
+
+
+ 

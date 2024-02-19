@@ -1,7 +1,6 @@
 import { useState } from "react";
   import InfoCard from "../../Componentes/InfoCard/InfoCard";
-import TeamMembers from "../../Componentes/teamMembers/TeamMembers";
-import Header from "../../Componentes/Header/Header";
+ import Header from "../../Componentes/Header/Header";
 import {
   Chart as ChartJs,
   BarElement,
@@ -12,8 +11,9 @@ import {
 } from "chart.js";
 import { week, Month, hours, Revenue } from "../../data/hour&month";
 import { Bar } from "react-chartjs-2";
-import TotalWorkinghour from "../../Componentes/TotalWorkinghour/TotalWorkinghour.";
-import "./report.css"
+ import "./report.css"
+import TeamMembers from "../../Componentes/teamMembers/TeamMembers";
+import TotalWorkinghour from "../../Componentes/TotalWorkinghour/TotalWorkinghour";
 
 ChartJs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 // import 'chart.js/auto'
