@@ -1,0 +1,90 @@
+table{
+ width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-spacing: 0px;
+    font-family: monospace;
+ }
+
+thead th span{
+     display: flex;
+    align-items: center;
+    padding: 0px 19px;
+    gap:5px;
+ }
+td{
+      padding: 5px 0px;
+}
+.status{
+    padding: 2px 5px;
+    border-radius: 20px; 
+    color: white;
+    justify-content: center;
+
+}
+tbody tr td span{
+    display: flex;
+    align-items: center;
+    padding: 0px 6px;
+    gap: 5px;
+ }
+thead tr th {
+      color: #888f8f;
+    padding: 10px;
+    background-color: #ffffff;
+}
+thead tr th select {
+    border: navajowhite;
+    outline: navajowhite;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: black;
+    background: #571d8d;
+    color: white;
+    display: flex;
+}
+thead tr th button {
+    padding: 3px 20px;
+    background: #0e90ff;
+    border: navajowhite;
+    border-radius: 10px;
+    color: white;
+    font-weight: 800;
+    font-family: auto;
+    font-size: 15px;
+}
+thead tr th select option{
+
+}
+ tr td:first-child{
+    min-width: 225px;
+}
+tr td:nth-child(6){
+    text-align: center;
+}
+ 
+tbody tr td{
+   text-align: left;
+   background-color: aliceblue;
+}
+tbody .data td{
+background-color: aliceblue;
+    border-bottom: 1px solid wheat;
+    color: black;
+    font-weight: 800;
+    padding: 10px 0px;
+    font-family: monospace;
+}
+tbody tr th{
+     font-size: larger;
+    font-weight: 800;
+    height: 40px;
+     background: #a5a5a56e;
+    padding: 5px 10px;
+    text-align: justify;
+    color: #ffffff;
+ }
+ 
+    tr td:nth-child(7){
+       color:red
+    }
