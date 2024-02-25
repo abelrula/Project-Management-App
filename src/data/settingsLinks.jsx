@@ -41,6 +41,7 @@ const settingsLinks = [
     title: "Help",
     to: "help",
     icon: <IoHelpCircleOutline  className="icon" fill="tomato" />,
-  }
+  },
+  
 ]
 export default settingsLinks

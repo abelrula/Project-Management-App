@@ -1,5 +1,5 @@
  import { BrowserRouter, Route, Routes } from "react-router-dom"
-  import { GantChart, Home, MyTask, Overview, Report, Schedules, VideoChat } from "./pages";
+  import { GantChart, Home, MyTask, Overview, Report, Schedules, VideoChat,AddTodo } from "./pages";
   import './App.css'
 import MessageLayout from "./Componentes/Layouts/MessageLayout";
 import Layout from "./Componentes/Layouts/Layout";
@@ -22,6 +22,7 @@ const App=() =>{
            <Route path="message" element={<MessageLayout />}>
            </Route>
            <Route path="videoChat" element={<VideoChat />} />
+           <Route path="assignTask" element={<AddTodo />} />
            <Route path="settings" element={ <SettingsLayout /> } >
              <Route path=":id" element={ <Setting /> } />
            </Route>

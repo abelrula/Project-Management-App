@@ -6,6 +6,7 @@ import withDragAndDrop, { withDragAndDropProps } from "react-big-calendar/lib/ad
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import { Calendar as BigCalander, momentLocalizer } from "react-big-calendar";
  import SchedulesForm from '../Schedules Form/SchedulesForm';
+
  const DndCalendar=withDragAndDrop(BigCalander)
 const Calander = (props) => {
   const localizer = momentLocalizer( moment );

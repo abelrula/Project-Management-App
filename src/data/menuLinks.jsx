@@ -61,7 +61,7 @@ const menuLinks = [
   },
   {
     title: "Assign Task",
-    to: "addTodo",
+    to: "assignTask",
     icon: <IoIosAddCircle className="icon" fill="tomato" />,
   },
 ];
