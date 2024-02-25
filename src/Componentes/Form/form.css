@@ -13,52 +13,198 @@
     grid-area: form;
     padding: 15px;
      padding: 15px;
-    width: 499px;
+    width:800px;
     overflow: hidden;
     flex: 1;
-    gap:15px
+    gap:35px;
+    margin: auto;
 }
-.Form_header{
-        display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border-bottom: #afafaf solid 1px;
-    align-items: center;
-}
- .Form h2{
-      font-family: cursive;
+ 
+.Form h2{
+     font-family: sans-serif;
     font-size: larger;
-    /* border: solid; */
-    font-weight: 500;
-   margin-left: 10px;
+    border-bottom: #afafaf solid 1px;
+     font-weight: 500;
+    margin-left: 10px;
+     width: 100%;
+    border-radius: 10px;
+    background: #ffcd4f;
+    color: #045373;
+    font-weight: bolder;
+    font-size: 25px;
 }
-.Form_header .icon:hover{
-  cursor: pointer;
-  scale: 1.1; 
-}
+ 
   .Form > input{
     border-radius: 20px;
     text-align:center;
     border: 1px solid rgb(63, 60, 60);
 
 }
-.Form > div{
+.employeContainer{
+       position: relative;
     display: flex;
+     gap: 5px;
+    align-items: start;
+    align-self: baseline;
+    border-top: 1px solid #d3cfcf;
+    width: 100%;
+    margin-top: 30px;
+}
+.employeContainer_members span{
+    background: #879971;
+    height: 23px;
+    width: 350px;
+    border-radius: 10px;
+     color: #ffffff;
+}
+.employeContainer_members{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    left: 380px;
+    z-index: 10000;
+    background: white;
+    padding: 5px;
+}
+.employeContainer_members-employe{
+  width: 350px;
+    height: 25px;
     align-items: center;
-    /* justify-content: center;
-        flex-direction: column; */
-}  
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #e1dbcf;
+    height: 100%;
+    padding: 5px;
+ }
+.employeContainer_members-employe:hover{
+   scale: 1.1;
+}
+ .employeContainer_members-employe div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+   }
+   .employeContainer_members-employe div h4{
+     color:black
+   }
+ .employeContainer_members-employe div img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: cover;
+       object-position: 75% 10%;
+ }
+    .employeContainer_members-employe p{
+        color: #bfacac;
+    font-family: monospace;
+   }
+ .project{
+       position: relative;
+       display: flex;
+     gap: 5px;
+    align-items: start;
+    align-self: baseline;
+    border-top: 1px solid #d3cfcf;
+    width: 100%;
+ }
+ .Form label{
+font-family: system-ui;
+    font-size: 20px;
+    font-weight: 200;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+ }
+ .project_types span{
+  background: #879971;
+    height: 23px;
+    width: 350px;
+    border-radius: 10px;
+     color: #ffffff;
+ }
+  
+ 
+ .project_types{
+   display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    left: 380px;
+    z-index: 9999;
+    background: white;
+    padding: 5px;
+  }
+ .project_types-type{
+    width: 350px;
+    height: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+ }
+ .project_types-type h4{
+color: black; 
+}
+ .project_types-type:hover{
+ scale: 1.1; 
+}
+ .project_types-type:hover{
+  background: rgb(0 0 0 / 67%);
+  cursor: pointer;
+ }
+ .project-type h4{
+    font-family: math;
+    font-weight: 400;
+     letter-spacing: 2px;
+ }
+ .Form__textArea {
+    display: flex;
+    align-items: baseline;
+       justify-content: space-around;
+    width: 100%;
+    border-top: 1px solid #d3cfcf;
+
+ }
+ .Form__textArea textarea{
+       margin-top: 10px;
+    border-radius: 20px;
+    width: 450px;
+    height: 100px;
+    font-size: 1.1rem;
+    padding: 15px;
+ }
 .Form__type{
  display: flex;
-    align-items: center;
-}
+    align-items: baseline;
+       justify-content: space-around;
+    width: 100%;
+    border-top: 1px solid #d3cfcf;
+   }
 .Form__date{
+      gap: 10px;
+     display: flex;
+    flex-direction: row;
+width: 100%;
+    justify-content: space-evenly;
+    border-top: 1px solid #d3cfcf;
+    padding: 10px;
+   }
+.Form__date div {
     display: flex;
-    align-items: center;
-    justify-content: center;
- flex-direction: column;
-        gap: 20px;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px
+}
+.Form__date div  input{
+       width: 220px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 5px;
+    background: aliceblue;
+    border: 1px solid #c5c5c5;
 }
    .Form > label{
     text-align: start;
@@ -67,9 +213,7 @@
     color: black;
 
    }
-   .Form_date div{
-
-   }
+   
 .Form > h1{
     margin-top: 40px;
     margin-left: 10px;
@@ -95,8 +239,7 @@
 }
  
 .Form__button{
-    margin-top:30px;
-       background: rgb(0 0 0);
+        background: rgb(0 0 0);
     color: rgb(254 231 231);
     border-radius: 7px;
     display: flex;
@@ -127,9 +270,7 @@
        background-color: #ff0000;
         color: white
 }
-span{
-    
-}
+ 
  .Form__type-all{ 
     background: #fcfcfc;
     height: 30px;
@@ -141,11 +282,7 @@ span{
     border: 1px solid;
     margin-top: 20px;
 }
-.Form__date{
-     gap:10px; 
-     margin-top:20px;
-     display:flex; 
-}
+ 
  .Form__tags{
     margin-top: 20px;
     gap: 10px;

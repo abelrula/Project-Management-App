@@ -1,191 +1,165 @@
-import React, { useState } from "react";
-import { AiFillPlusCircle } from "react-icons/ai";
- import "./calander.css";
-import { nanoid } from "@reduxjs/toolkit";
-import { IoCloseCircleSharp } from "react-icons/io5";
+import React, { useState ,useEffect} from "react";
+ import "./form.css";
 import { HiCalendar } from "react-icons/hi";
-import "./form.css";
-import Calendar from "react-calendar";
-import moment from "moment";
+   import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+import projectTypes from "../../data/projectTypes";
 const Form = ({setActive}) => {
   const date = new Date();
-  const [value, onChange] = useState(date);
-   const [title, setTitle] = useState("");
-   const [startDate, setStartDate] = useState("");
-   const [endDate, setEndate] = useState("");
+     const [startDate, setStartDate] = useState(date);
+   const [endDate, setEndate] = useState(date);
   const [description, setDescription] = useState("");
-  const [low, setLow] = useState(false);
-  const [high, setHigh] = useState(false);
-  const [medium, setMedium] = useState(false);
-  
+  const [selectedProject,setSelectedProject]=useState(null)
+  const [selectedEmployee,setSelectedEmployee]=useState(null)
+  const [openProject,  setOpenProject]=useState(false)
+  const [openEmployee,setOpenEmployee]=useState(false)
+ const [jobCatagory,setJobCatagory]=useState(null)
  const [selected, setSelected] = useState(null);
-  const [tagColor, setTagColor] = useState(""); 
-  const colors = ["#FFD801", "#F6BE00", "#B5EAAA", "#FAFAD2", "#FFDB58"];
-  //  const dateFormat = parseISO( value )
-  //  const timePeriod = formatDistanceToNow( dateFormat )
-  //  console.log(medium,low,postTodo,value,title,description);
-  // console.log(value.toString().slice(0, 16));
-  console.log(moment(startDate).toDate());
-  console.log(moment(endDate).toDate());
-  // useEffect( () =>
-  // {
-  //      async function fetchTodo (){
-  //      const response = await fetch( "http://localhost:3500/todo" )
-  //      const data = await response.json()
-  //      setTodos(data)
-  //   }
-  //   fetchTodo()
-  //   },[todo])
-
-  // function handleSubmit(e) {
-  //   e.preventDefault()
-  //   const id = todos.length ? todo[todos.length - 1].id+ 1 : 1;
-  //   fetch( "http://localhost:3500/todo", {
-  //        method: "POST",
-  //        headers:{"Content-Type": "application/json" },
-  //     body: JSON.stringify( {
-  //         id:nanoid(),
-  //         todo,
-  //         completed:false,
-  //         date: new Date().toISOString()
-  //     } ),
-  //        })
-  //   setTodo("")
-  // }
-  //     function handleSubmit(e) {
-  //     e.preventDefault()
-  //   // const id = todos.length ? todo[todos.length - 1].id+ 1 : 1;
-  //    postTodo({id:nanoid(),todo,completed:false})
-  //    setTodo("")
-  // }
+  
+   const members = "http://localhost:3500/members";
+  const [member, setMember] = useState([]);
+  useEffect(() => {
+    async function fetchMembers() {
+      const data = await fetch(members);
+      const res = await data.json();
+      setMember(res);
+    }
+    fetchMembers();
+  }, []);
+   
   function handleSubmit(e) {
     e.preventDefault();
-    // postTodo({
-    //   id: nanoid(),
-    //   title: title,
-    //   description: description,
-    //   low: low,
-    //   buisness: medium,
-    //   completed: false,
-    //   tagColor: tagColor,
-    //   date: value.toString().slice(0, 16),
-    //   createdAt: new Date(),
-    // });
-  //   const {name,value} =e.target
-  //   setForm( ( prev ) =>
-  //   (
-  //     {...prev,
-  //     [name]:value
-  //     })
-  //   )
   }
-
+ const data=[
+            {
+              status:"low",
+            classname:"Form__type-low",
+            background:"#ddd461",
+            },
+             {
+               status:"medium",
+            classname:"Form__type-medium",
+            background:"#708aff",
+            },
+             {
+               status:"high",
+            classname:"Form__type-high",
+            background:"#ff0000",
+            },
+  ]
+   console.log(selectedProject)
+   console.log(selectedProject)
   return (
     <>
       <form className="Form" onSubmit={ handleSubmit }>
-        <h2>Add New Scheduals</h2>
-        {/* <div>
-          <input
-            type="text"
-            value={title}
-            id="title"
-            className="Form__input"
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder=""
-          />
-        </div> */}
-        <div>
+         <h2>Assign New Task</h2>
+         
+         <div className="employeContainer">
+            <label>select which Employee you want to assign 
+            { !openEmployee && <FaArrowDown className="icon"
+              onClick={ () =>
+              {
+                setOpenEmployee( true );
+                setOpenProject( false )
+              } } /> }
+            { openEmployee && <FaArrowUp className="icon"
+              onClick={ () => setOpenEmployee( false ) } /> }
+            </label>
+          <div className="employeContainer_members"> 
+           <span
+           onClick={ () => setOpenEmployee((prev)=>!prev)}
+           >{ selectedEmployee !== null  ? `${selectedEmployee} :--    ${jobCatagory}`  : "---------------"}</span> 
+          { openEmployee && member.map((employee,i)=>(
+           <div
+             key={ i } 
+              onClick={ () =>{
+                setSelectedEmployee( employee.name );
+                setOpenEmployee( false );
+                setJobCatagory(employee.jobCatagory)
+              } }
+              className="employeContainer_members-employe"
+           >
+              <div>
+                <img src={ employee.profile } alt="profile" />
+            <h4>
+              {employee.name}
+            </h4>
+            </div>
+            <p>{employee.jobCatagory}</p>
+            </div>
+        ) ) }
+         </div>
+        </div>
+        <div className="project">
+            <label>select In which project you want to assign 
+            {!openProject &&<FaArrowDown className="icon" onClick={ () => {setOpenProject(true); setOpenEmployee(false)}} />}
+            {openProject &&<FaArrowUp className="icon" onClick={ () => setOpenProject(false)} />}
+            </label>
+          <div className="project_types"> 
+           <span 
+           onClick={ () => setOpenProject((prev)=>!prev)}
+           >{ selectedProject !== null  ? selectedProject  : "---------------"}</span> 
+          { openProject && projectTypes.map((item,i)=>(
+           <div
+             key={ i } 
+              onClick={ () => { setSelectedProject( item.title ); setOpenProject(false)
+}}
+             style={ { background: `${ item.color }` } }
+             className="project_types-type"
+           >
+           <h4>
+              {item.title}
+            </h4>
+           {item.icon} 
+         </div>
+        ) ) }
+         </div>
+        </div>
+        <div className="Form__textArea">
+          <label>Whats Need to be Assign</label>
+
           <textarea
             type="text"
             id="description"
             value={description}
-            className="Form__textarea"
-            onChange={(e) => setDescription(e.target.value)}
+             onChange={(e) => setDescription(e.target.value)}
             placeholder=""
           />
         </div>
         <div className="Form__type">
+          <label>Select The Priority</label>
+        { data.map( ( item, i ) => (
           <div
-            onClick={() => {
-              setLow((prev) => !prev);
-              setMedium(false);
-              setHigh(false);
-              setSelected("low");
-            }}
-            className="Form__type-all Form__type-low"
-            style={{
-              background: selected === "low" && "#ddd461",
-              color: selected === "low" && "white",
-            }}
-          >
-            Low
-          </div>
-          <div
-            onClick={() => {
-              setMedium((prev) => !prev);
-              setSelected("medium");
-              setHigh(false);
-              setLow(false);
-            }}
-            className="Form__type-all Form__type-medium"
-            style={{
-              background: selected === "medium" && "#708aff",
-              color: selected === "medium" && "white",
-            }}
-          >
-            Medium
-          </div>
-           <div
-            onClick={() => {
-              setHigh((prev) => !prev);
-              setSelected("high");
-              setMedium(false);
-              setLow(false);
-            }}
-            className="Form__type-all Form__type-high"
-            style={{
-              background: selected === "high" && "#ff0000",
-              color: selected === "high" && "white",
-            }}
-          >
-            High
-          </div>
+           onClick={()=>setSelected(item.status)}
+            className={`Form__type-all ${ item.classname }` }
+            key={i}
+            style={ {
+              background: selected ===item.status && item.background,
+              color:selected ==item.status && "white" }} >
+             {item.status}
+       </div>
+       ))}
         </div>
         <div className="Form__date">
-          <Calendar value={value} onChange={onChange} />
+          {/* <Calendar value={value} onChange={onChange} /> */}
           <div>
-          <HiCalendar className="calanderIcon" />
-            <label>start date</label> <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
+         
+            <label>
+               <HiCalendar className="calanderIcon" />
+              task need to start</label>
+            <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
           </div>
           <div>
+            <label>
            <HiCalendar className="calanderIcon" />
-            <label>start date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
+              to be submitted date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
           </div>
         </div>
-        <div className="Form__tags">
-          <h3>Select Tag :</h3>
-          {colors.map((color) => (
-            <div className="Form__tag">
-              <div
-                className="tag"
-                onClick={() => setTagColor(color)}
-                style={{
-                  background: `${color}`,
-                  border: tagColor === color ? "2px solid black" : "none",
-                }}
-              ></div>
-            </div>
-          ))}
-        </div>
+        
         <button type="submit" className="Form__button">
-          <p>Add To Do List</p>
-          <div>
-            <AiFillPlusCircle />
-          </div>
+          <p>Assign Task</p>
         </button>
       </form>
-      {/* <Outlet /> */}
-    </>
+     </>
   );
 };
 
