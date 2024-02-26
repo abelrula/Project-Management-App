@@ -1,5 +1,7 @@
 import { useState } from "react";
   import InfoCard from "../../Componentes/InfoCard/InfoCard";
+import { IoCloseCircleSharp } from "react-icons/io5";
+   import img1 from "../../assets/worker2.jpg"
  import Header from "../../Componentes/Header/Header";
 import {
   Chart as ChartJs,
@@ -14,11 +16,16 @@ import { Bar } from "react-chartjs-2";
  import "./report.css"
 import TeamMembers from "../../Componentes/teamMembers/TeamMembers";
 import TotalWorkinghour from "../../Componentes/TotalWorkinghour/TotalWorkinghour";
+import AddProjectForm from "../../Componentes/AddProjectForm/AddProjectForm";
+import AddMemberForm from "../../Componentes/AddMemberForm/AddMemberForm";
 
 ChartJs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 // import 'chart.js/auto'
 const Report = () => {
-  const [filter, setFilter] = useState(new Date().toISOString());
+  
+  const [ openModal, setOpenModal ] = useState( true );
+  const [ openModalType, setOpenModalType ] = useState( "" );
+   const [ filter, setFilter ] = useState( new Date().toISOString() );
   const colorsData = [
     "rgba(94, 145, 151, 0.67)",
     "rgba(147, 12, 194, 0.4)",
@@ -202,13 +209,21 @@ const Report = () => {
               title="Total Projects"
               amount={50}
               buttonTitle="Add New Projects"
+              setOpenModal={setOpenModal}
+              setOpenModalType={setOpenModalType}
             />
             <InfoCard
               title="Team size"
               buttonTitle="Add New Members"
               amount={16}
+              setOpenModal={setOpenModal}
+              setOpenModalType={setOpenModalType}
             />
           </div>
+          { openModal && openModalType === "Add New Projects" ?
+            <AddProjectForm setOpenModal={ setOpenModal } /> :
+            openModal && openModalType === "Add New Members" ?
+             <AddMemberForm setOpenModal={ setOpenModal } /> : null }
           <div className="projectsStatusBar">
             {/* <h1>Projects Status</h1> */}
             <div>

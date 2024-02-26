@@ -16,7 +16,7 @@ const SchedulesForm = ({setActive}) => {
   
  const [selected, setSelected] = useState(null);
   const [tagColor, setTagColor] = useState(""); 
-  const colors = ["#FFD801", "#F6BE00", "#B5EAAA", "#FAFAD2", "#FFDB58"];
+  const colors = ["#ff6161","#39a8f7"];
   console.log(moment(startDate).toDate());
   console.log(moment(endDate).toDate());
   function handleSubmit(e) {
@@ -26,29 +26,30 @@ const SchedulesForm = ({setActive}) => {
 
   return (
     <>
-      <form className="Form" onSubmit={ handleSubmit }>
-        <div className="Form_header">
+      <form className="SchedualForm" onSubmit={ handleSubmit }>
+        <div className="SchedualForm_header">
         <h2>Add New Scheduals</h2>
         <IoCloseCircleSharp fontSize={27}  className="icon" onClick={()=>setActive(false)}/>
         </div>
         <div>
+          <h2>Add Events</h2>
           <textarea
             type="text"
             id="description"
             value={description}
-            className="Form__textarea"
+            className="SchedualForm__textarea"
             onChange={(e) => setDescription(e.target.value)}
             placeholder=""
           />
         </div>
-        <div className="Form__type">
+        <div className="SchedualForm__type">
           <div
             onClick={() => {
               setPersonal((prev) => !prev);
               setBuisnes(false);
               setSelected("personal");
             }}
-            className="Form__type--all Form__type--personal"
+            className="SchedualForm__type--all SchedualForm__type--personal"
             style={{
               background: selected === "personal" && "#183de2",
               color: selected === "personal" && "white",
@@ -62,7 +63,7 @@ const SchedulesForm = ({setActive}) => {
               setSelected("buisness");
               setPersonal(false);
             }}
-            className="Form__type--all Form__type--buisness"
+            className="SchedualForm__type--all SchedualForm__type--buisness"
             style={{
               background: selected === "buisness" && "#183de2",
               color: selected === "buisness" && "white",
@@ -71,21 +72,22 @@ const SchedulesForm = ({setActive}) => {
             Buisness
           </div>
         </div>
-        <div className="Form__date">
+        <div className="SchedualForm__date">
           {/* <Calendar value={value} onChange={onChange} /> */}
           <div>
-          <HiCalendar className="calanderIcon" />
-            <label>start date</label> <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
+         
+            <label>  <HiCalendar className="calanderIcon" />start date</label> <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
           </div>
           <div>
-           <HiCalendar className="calanderIcon" />
-            <label>start date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
+           
+            <label> <HiCalendar className="calanderIcon" />end date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
           </div>
         </div>
-        <div className="Form__tags">
+        <div className="SchedualForm__tags">
           <h3>Select Tag :</h3>
-          {colors.map((color) => (
-            <div className="Form__tag">
+          <div>
+          { colors.map( ( color ) => (
+            <div className="SchedualForm__tag">
               <div
                 className="tag"
                 onClick={() => setTagColor(color)}
@@ -97,8 +99,9 @@ const SchedulesForm = ({setActive}) => {
             </div>
           ))}
         </div>
-        <button type="submit" className="Form__button">
-          <p>Add To Do List</p>{" "}
+        </div>
+        <button type="submit" className="SchedualForm__button">
+          <p>Add To Do List</p>
           <div>
             <AiFillPlusCircle />
           </div>
