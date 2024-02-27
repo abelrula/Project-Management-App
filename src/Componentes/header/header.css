@@ -77,41 +77,47 @@ height: 100vh;
 transition: ease-in-out linear 1s ;
 }
 .closeIcon{
-  position: absolute;
-    font-size: 40px;
-    right: 200px;
-    top: 30px;
-    color: white;  
+ position: absolute;
+    font-size: 31px;
+    right: 0;
+    top: 0;
+    color: black;
+    cursor: pointer;
 }
 .closeIcon:hover{
-    cursor: pointer;
-    font-size: 50px;
-
+ scale: 1.1;
 }
 .profile_description{
-      background: #f2f2f2c7;
+    position: relative;
+    background: #ffffff;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 800px;
+    width: 600px;
     height: 400px;
     border-radius: 10px;
 }
 /* .profile_description_right{
 } */
+.profile_description_right{
+        background: #646766;
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+}
 .profile_description_right img{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
 }
 .profile_description_right p {
         font-family: cursive;
-    font-size: 22px;
+    font-size: 18px;
 }
 .profile_description_right span{
     font-family: sans-serif;
-    font-size: 17px;
+    font-size: 15px;
 }
 .profile_description_left{
     display: flex;
@@ -128,16 +134,16 @@ align-items: start;}
     padding: 5px;
 }
 .profile_description_left-bio p{
-    font-family: cursive;
+       font-family: cursive;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 15px;
     color: #646464;
 }
-.profile_description_left-bio label{
-        font-family: system-ui;
-    font-weight: 700;
-    font-size: 20px;
-}
+ .profile_description label {
+    font-family: ui-monospace;
+        font-weight: 700;
+         font-size: 18px;
+ }
 .profile_description_left-totalFriends{
     display: flex;
     gap: 20px;
@@ -147,15 +153,11 @@ align-items: start;}
     padding: 5px;
     
 }
-.profile_description_left-totalFriends label{
-    font-family: system-ui;
-    font-weight: 700;
-    font-size: 20px;
-}
+ 
 .profile_description_left-totalFriends span{
-    font-family: cursive;
+          font-family: cursive;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 15px;
     color: #646464;
 }
 .profile_description_left-AccomplishedProject{
@@ -164,41 +166,39 @@ align-items: start;}
     border-radius: 10px;
     padding: 5px;
 }
-.profile_description_left-AccomplishedProject label{
-        font-family: system-ui;
-    font-weight: 700;
-    font-size: 20px;
-
-}
+ 
 .profile_description_left-AccomplishedProject span {
-font-family: cursive;
+    font-family: cursive;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 15px;
     color: #646464;
 
 }
  
 .profile_description_left-projectsIncluded    {
-        display: flex;
-    gap: 15px;
-        height: 40px;
+      display: flex;
+    gap: 40px;
+    height: 40px;
     border-left: 1px solid #b5b5bb;
     border-radius: 10px;
     padding: 5px;
 }
-.profile_description_left-projectsIncluded   label {
-     font-family: system-ui;
-    font-weight: 700;
-    font-size: 20px;
-}
+ 
 /* .profile_description_left-projectsIncluded ul {
 
 } */
+.profile_description_left-projectsIncluded ul {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 5px;
+
+}
 .profile_description_left-projectsIncluded ul li{
-        font-family: cursive;
+    font-family: cursive;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 15px;
     color: #646464;
-    list-style: none;
+    list-style: lower-roman;
 
 }

@@ -15,11 +15,11 @@ import "./gantchart.css";
 ChartJs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const GantChartComponenet = () => {
-  const [filter, setFilter] = useState(new Date().toISOString());
+
+const [filter, setFilter] = useState("2024-01");
   console.log(filter);
   console.log(filter.substring(0, 4));
   console.log(filter.substring(5, 7));
-
   // let [status, setStatus] = useState("");
   // const [forms, setForms] = useState({
   //   startdate: "",
@@ -272,7 +272,7 @@ const GantChartComponenet = () => {
   };
 
   return (
-    <div className="gantChart">
+   <div className="gantChart">
       <h2>tracking all the task</h2>
       <div className="chartColors">
         <div>
@@ -289,17 +289,18 @@ const GantChartComponenet = () => {
             <span></span>
           </p>
         </div>
-      </div>
-      <Bar data={data} plugins={todayLine} options={options} />
-      <div>
+         <div>
         <h5>project date</h5>
         <input
           type="month"
+          defaultValue="2024-01"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
         />
       </div>
-    </div>
+      </div>
+      <Bar data={data} plugins={todayLine} options={options} />
+     </div>
   );
 };
 

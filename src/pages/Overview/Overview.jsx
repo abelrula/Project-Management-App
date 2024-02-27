@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment,useState } from "react";
 import { BsListTask } from "react-icons/bs";
 import { TbStatusChange } from "react-icons/tb";
 import { TbTimeDuration0 } from "react-icons/tb";
@@ -10,118 +10,20 @@ import { FcHighPriority } from "react-icons/fc";
 import { FcMediumPriority } from "react-icons/fc";
 import { FcLowPriority } from "react-icons/fc";
 import { MdOutlineLowPriority } from "react-icons/md";
-import { LuBoxSelect } from "react-icons/lu";
-import ProgressBar from "../../Componentes/progressBar/ProgressBar";
- import Header from "../../Componentes/Header/Header";
+  import Header from "../../Componentes/Header/Header";
+   import { Link } from "react-router-dom";
  import "./overview.css"
+import overView from "../../data/overView";
 
 const Overview = () => {
-    const data = [
-    {
-      dataTitle: "building outer social life issues",
-      allData: [
-        {
-          task: "completeing the dashboard",
-          associate: "Not Assigned",
-          owner: "simon jorge",
-          priority: "high",
-          status: "not started",
-          startdate: "2023-25-12",
-          duedate: "2023-25-12...",
-          duration: "45 days",
-          complete: <ProgressBar progress={95} bgcolor="blue" />,
-        },
-        {
-          task: "completeing the dashboard",
-          associate: "Not Assigned",
-          owner: "simon jorge",
-          priority: "medium",
-          status: "in progress",
-          startdate: "2023-25-12",
-          duedate: "2023-25-12...",
-          duration: "45 days",
-          complete: <ProgressBar progress={25} bgcolor="blue" />,
-        },
-        {
-          task: "completeing the dashboard",
-          associate: "Not Assigned",
-          owner: "simon jorge",
-          priority: "low",
-          status: "finished",
-          startdate: "2023-25-12",
-          duedate: "2023-25-12...",
-          duration: "45 days",
-          complete: <ProgressBar progress={45} bgcolor="blue" />,
-        },
-        {
-          task: "completeing the dashboard",
-          associate: "Not Assigned",
-          owner: "simon jorge",
-          priority: "medium",
-          status: "not started",
-          startdate: "2023-25-12",
-          duedate: "2023-25-12...",
-          duration: "45 days",
-          complete: <ProgressBar progress={15} bgcolor="blue" />,
-        },
-        {
-          task: "completeing the dashboard",
-          associate: "Not Assigned",
-          owner: "simon jorge",
-          priority: "high",
-          status: "finsihed",
-          startdate: "2023-25-12",
-          duedate: "2023-25-12...",
-          duration: "45 days",
-          complete: <ProgressBar progress={45} bgcolor="blue" />,
-        },
-      ],
-    },
-    {
-      dataTitle: "inner confidence building",
-      allData: [
-        {
-          task: "completeing the dashboard",
-          associate: "Not Assigned",
-          owner: "simon jorge",
-          priority: "low",
-          status: "in progress",
-          startdate: "2023-25-12",
-          duedate: "2023-25-12...",
-          duration: "45 days",
-          complete: <ProgressBar progress={70} bgcolor="blue" />,
-        },
-        {
-          task: "completeing the dashboard",
-          associate: "Not Assigned",
-          owner: "simon jorge",
-          priority: "low",
-          status: "not started",
-          startdate: "2023-25-12",
-          duedate: "2023-25-12...",
-          duration: "45 days",
-          complete: <ProgressBar progress={45} bgcolor="blue" />,
-        },
-        {
-          task: "completeing the dashboard",
-          associate: "Not Assigned",
-          owner: "simon jorge",
-          priority: "medium",
-          status: "in progress",
-          startdate: "2023-25-12",
-          duedate: "2023-25-12...",
-          duration: "45 days",
-          complete: <ProgressBar progress={45} bgcolor="blue" />,
-        },
-      ],
-    },
-  ];
+   const [ checked, setChecked ] = useState()
+  console.log(checked);
   return (
- <>
+    <>
       <Header title="Project Overview" />
       <table border="0">
         <thead>
-          <tr>
+          <tr className="data">
             <th colspan="5">
               <select>
                 <option value="All"> All</option>
@@ -131,14 +33,14 @@ const Overview = () => {
               </select>
             </th>
             <th colspan="2">
-              <button>Add Task</button>
-            </th>
-            <th colspan="2">
               <select>
                 <option value="Open"> classic</option>
                 <option value="Not Assigned"> Ascending</option>
                 <option value="Finished"> descending</option>
               </select>
+            </th>
+             <th colspan="2">
+              <Link to="/assignTask" className="link">Assign Task</Link>
             </th>
           </tr>
           <tr>
@@ -192,7 +94,7 @@ const Overview = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, i) => (
+          {overView.map((item, i) => (
             <Fragment key={i}>
               <tr>
                 <th colspan="9">{item.dataTitle}</th>
@@ -200,7 +102,7 @@ const Overview = () => {
               {item.allData.map((descData, i) => (
                 <tr key={i} className="data">
                   <td>
-                    <LuBoxSelect />
+                    <input type="checkbox" onClick={(e)=>setChecked(e.target.checked)} />
                     {descData.task}
                   </td>
                   <td>{descData.associate} </td>
@@ -242,7 +144,8 @@ const Overview = () => {
           ))}
         </tbody>
       </table>
-    </>  )
+    </>
+  );
 }
 
 export default Overview

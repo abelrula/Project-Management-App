@@ -48,10 +48,10 @@ const Header = ({ title }) => {
       </div>
     </div>
       {openModal && (<div className="modal">
-        <IoCloseCircleSharp
+        <div className="profile_description">
+           <IoCloseCircleSharp
           onClick={ () => setpenModal( false ) }
             className="closeIcon" />
-        <div className="profile_description">
           <div className="profile_description_right">
             <img src={ img1 } alt="profile" />
               <p>Simon panda</p>
@@ -71,7 +71,7 @@ const Header = ({ title }) => {
               <span>200</span>
             </div>
               <div className="profile_description_left-projectsIncluded">
-              <label>Included Projects :- </label>
+              <label>Included Projects </label>
                 <ul>
               <li>Operations</li>
               <li>data managements</li>
