@@ -5,6 +5,8 @@ import MessageLayout from "./Componentes/Layouts/MessageLayout";
 import Layout from "./Componentes/Layouts/Layout";
 import SettingsLayout from "./Componentes/Layouts/SettingsLayout";
 import Setting from "./Componentes/Setting/Setting";
+import MessagesConvoversation from "./Componentes/messages/MessagesConvoversation/MessagesConvoversation";
+import MessageListheader from "./Componentes/messages/MessageListheader/MessageListheader";
 
 const App=() =>{
  
@@ -20,6 +22,8 @@ const App=() =>{
            <Route path="report" element={<Report />} />
            <Route path="team" element={<GantChart />} />
            <Route path="message" element={<MessageLayout />}>
+              <Route index element={<MessageListheader />} />
+             <Route path=":id" element={<MessagesConvoversation />} />
            </Route>
            <Route path="videoChat" element={<VideoChat />} />
            <Route path="assignTask" element={<AddTodo />} />

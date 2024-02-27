@@ -1,0 +1,93 @@
+.messagelist{
+     background: #e7e7e7;
+    min-height: 100vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+       gap: 15px;
+    padding: 10px 3px;
+min-width: 280px;
+    border-right: 1px solid #003a63;
+}
+.messagelist h4{
+        color: black;
+    font-size: 30px;
+    border-bottom: 1px solid #35352f;
+    padding: 5px;
+    font-family: math;
+}
+.searchArea{
+        background: white;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+}
+.searchArea input{
+    border: none;
+    padding: 5px 15px;
+    outline: none;
+    font-size: 15px;
+}
+.Allmessages{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.messageListHeader{
+  width: 100%;
+    text-align: start;
+    color: #000000;
+    font-size: 35px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 500;
+     font-family: auto;
+    margin-left: 10px;   
+
+}
+.IndivdualMesssge{
+  display: flex;
+    gap: 10px;
+     text-decoration: none;
+    color: #000000;
+    border-radius: 10px;
+    padding: 3px;
+    font-family: cursive;
+}
+.IndivdualMesssge img{
+       width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.IndivdualMesssge__info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+.IndivdualMesssge__info_top{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.IndivdualMesssge__info-name{
+    font-weight: bolder;
+    font-size: larger;
+    font-family: monospace;
+    color: #000000;
+
+}
+.IndivdualMesssge__info-sentTime{
+    font-size: 11px;
+    font-family: cursive;
+    color:#14680d;
+}
+.IndivdualMesssge__info-message{
+    position: relative;
+    left: 10px;
+    font-family: cursive;
+    font-size: medium;
+    color: #797f85;
+}

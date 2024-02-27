@@ -1,10 +1,14 @@
- import "./message.css"
-
- 
-const Message = () => {
+import React from "react";
+  import "./message.css";
+import MessageLayout from "../../Componentes/Layouts/MessageLayout";
+ const Messages = () => {
   return (
-    <div>Message</div>
-  )
-}
+    <>
+       <div>
+        <MessageLayout />
+      </div>
+    </>
+  );
+};
 
-export default Message
+export default Messages;

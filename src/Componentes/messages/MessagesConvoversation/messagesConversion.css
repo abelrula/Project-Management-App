@@ -1,0 +1,189 @@
+.element-with-scroll {   
+  scrollbar-color: rgb(14, 13, 13) rgb(173, 175, 173);
+  scrollbar-width: thin;
+   /* width: 2px;
+  height: 10px; */
+}
+
+/* Styling the scrollbar in Chrome and Safari */
+.element-with-scroll::-webkit-scrollbar {
+  width: 2px;
+  height: 10px;
+}
+
+.element-with-scroll::-webkit-scrollbar-thumb {
+  background-color: #080807;
+; /* Set thumb color for Chrome and Safari */
+}
+
+.element-with-scroll::-webkit-scrollbar-track {
+  background-color: #bdbdbd; /* Set track color for Chrome and Safari */
+}
+
+.messageConvo{
+    display:flex;
+    flex: 4;
+}
+.MessagesConvoversation{
+    background: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex: 4;
+}
+.MessagesConvoversation__header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: #dddddd;
+    padding: 7px 20px;
+    flex: 1;
+}
+.MessagesConvoversation__header__sender{
+    display: flex;
+    gap: 10px;
+}
+.MessagesConvoversation__header__sender img{
+width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+   cursor: pointer; 
+
+}
+.MessagesConvoversation__header__sender-stat{
+display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: system-ui;
+    font-weight: 700;
+    font-size: larger;
+}
+.MessagesConvoversation__header__sender-stat-name{
+   color: #000000;
+    font-size: medium;
+    align-items: center;
+    display: flex;
+   cursor: pointer; 
+
+}
+.MessagesConvoversation__header__sender-stat-activeStatus{
+       background: #00ab0a;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    top: 3px;
+    left: 2px;
+}
+ .MessagesConvoversation__header__right{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.MessagesConvoversation__header__right-videoCall{
+
+}
+.MessagesConvoversation__header__right-audioCall{
+
+}
+
+
+ .MessagesConvoversation__list{
+    background: #ffffff;
+    height: 545px;  
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    padding: 16px;
+    gap: 15px;
+        overflow-y: scroll;
+        font-family: cursive;
+            flex: 15
+ }
+ .MessagesConvoversation__list__sender{
+        height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+ }
+ .MessagesConvoversation__list__sender-message{
+    width: 360px;
+    text-align: left;
+    background: #575554;
+    border-radius: 10px;
+    padding: 10px;
+    color: wheat;
+    font-family: cursive;
+    font-weight: 100;
+    font-size: 15px;
+ }
+ .MessagesConvoversation__list__sender-timeSent{
+
+ }
+ .MessagesConvoversation__list__reciever{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+        flex-direction: column;
+    align-self: end;
+    }
+ .MessagesConvoversation__list__reciever-message{
+      width: 360px;
+    text-align: left;
+    background: #265985;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+     text-align: left;
+     font-family: cursive;
+    font-weight: 100;
+    font-size: 15px;
+ }
+ .MessagesConvoversation__list__reciever-timeSent{
+
+ }
+ .MessagesConvoversation__TypingBox{
+    height: 75px;
+    background: #dddddd;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex: 2
+
+ }
+ .MessagesConvoversation__TypingBox textarea{
+       width: 430px;
+    border-radius: 20px;
+    height: 30px;
+    padding: 10px;
+    font-size: 20px;
+     border: none;
+     outline: none;
+ }
+.MessagesConvoversation__TypingBox button{
+    padding: 11px 33px;
+    border-radius: 10px;
+    background: #000000;
+    font-size: 17px;
+    color: #f9f6f1;
+    font-family: cursive;
+    font-weight: lighter;
+     height: fit-content;
+    
+ }
+ .MessagesConvoversation__TypingBox div {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 0px;
+    height: 60px;
+    gap: 5px;
+    border-radius: 10px;
+ }
