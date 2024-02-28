@@ -3,15 +3,18 @@ import "./messagesConversion.css";
 import { FaVideo } from "react-icons/fa6";
 import { IoIosCall } from "react-icons/io";
 import { useParams } from "react-router-dom";
- import { GrAttachment } from "react-icons/gr";
+import MemeberInfo from "../../memeberInfo/MemeberInfo";
+import { GrAttachment } from "react-icons/gr";
 import { BsEmojiSmile } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
- const MessagesConvoversation = memo(() => {
+import { sideOpenClose } from "../../../redux/slices/toggleandModal";
+const MessagesConvoversation = memo(() => {
   const [messages, setMessages] = useState([]);
   const [showInfo, setShowInfo] = useState(false);
   const { id } = useParams();
   const dispatch = useDispatch();
-   useEffect(() => {
+  const showModal=useSelector(state=>state.ToggleandModal.toggle)
+  useEffect(() => {
     async function fetchMessages() {
       const res = await fetch("http://localhost:3500/conversations/" + id);
       console.log(res);
@@ -23,6 +26,7 @@ import { useDispatch, useSelector } from "react-redux";
   }, [ id ] );
   
   console.log(messages);
+  console.log(showModal);
   return (
     <div className="messageConvo">
       <div className="MessagesConvoversation">
@@ -79,7 +83,8 @@ import { useDispatch, useSelector } from "react-redux";
           <button>send</button>
         </div>
       </div>
-     </div>
+      {showModal && <MemeberInfo setShowInfo={setShowInfo} />}
+    </div>
   );
 });
 export default MessagesConvoversation;
