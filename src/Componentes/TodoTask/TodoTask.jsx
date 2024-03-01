@@ -14,7 +14,7 @@ import ProjectCatagories from "../ProjectCatagories/ProjectCatagories";
 // import { Doughnut } from "react-chartjs-2";
 
 const TodoTask = () => {
-  const {  isLoading } = useGetTodosQuery();
+  // const {  isLoading } = useGetTodosQuery();
 
   const date = new Date();
   const chartref = useRef(null);
@@ -59,7 +59,6 @@ const TodoTask = () => {
   }, []);
   return (
     <div className="Dashboard">
-      {isLoading && <h1> Loading...</h1>}
       <div className="Dashboard_TaskStatus">
         <Calendar value={date} />
         <UrgentTask />

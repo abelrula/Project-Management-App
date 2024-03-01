@@ -1,11 +1,14 @@
 import React from "react";
-   
+import Header from "../../Componentes/Header/Header";
+ import Videoparticipants from "../../Componentes/Video/videoparticipants/Videoparticipants";
+
 const VideoChat = () => {
   return (
     <>
-      <div>Video Chat</div>
+      <Header title="Meet Up With Your Teams" />
+       <Videoparticipants />
     </>
   )
 };
 
-export default VideoChat;
+export default VideoChat
