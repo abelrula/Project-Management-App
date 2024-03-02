@@ -50,7 +50,7 @@
           width: 100%;
         border-bottom: 1px solid #e7dfdf;
     padding: 10px;
-    justify-content:space-evenly
+    justify-content:space-between
 }  
 .SchedualForm__type{
  display: flex;
@@ -152,21 +152,26 @@ justify-content: space-evenly;    width: 100%;
      width: 100%;
      gap: 10px;
  }
+ .SchedualForm__date div input{
+  width: 200px;
+  cursor: pointer;
+ }
    
  .SchedualForm__tags{
     margin-top: 20px;
     gap: 10px;
   }
- .SchedualForm__tag:hover{
-   border:#643333 solid 2px 
-   }
+
    .SchedualForm__tags div{
         display: flex;
-    gap: 15px;
+     gap: 15px;
    }
    
  .tag{
       width: 35px;
     height: 35px;
      border-radius: 50%;
+ }
+ .tag:hover{
+  scale: 1.1;
  }

@@ -1,5 +1,5 @@
 .projectCatagory{
-   width: 415px;
+     width: 415px;
     background: white;
     border-radius: 20px;
     display: flex;
@@ -8,8 +8,8 @@
     padding: 3px 3px;
     font-family: math;
     font-weight: bold;
-    height: 151px;
-    gap: 12px;
+    height: 110px;
+    gap: 5px;
 }
 .projectCatagory__top{
     display: flex;

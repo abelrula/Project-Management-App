@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from "react";
+import  { useEffect, useRef, useState } from "react";
 import { useGetTodosQuery } from "../../api/apiSlice";
 import "./todoTask.css";
 import UrgentTask from "../urgentTask/UrgentTask";
@@ -11,11 +11,12 @@ import Chart from "chart.js/auto";
 // import UserProgress from "../userProgress/UserProgress";
 import TotalNumber from "../TotalTaskstatus/TotalNumber";
 import ProjectCatagories from "../ProjectCatagories/ProjectCatagories";
-// import { Doughnut } from "react-chartjs-2";
+import { IoChevronBack } from "react-icons/io5";
 
 const TodoTask = () => {
   // const {  isLoading } = useGetTodosQuery();
-
+const [open,setOpen]=useState(false)
+const [openTitle,setOpenTitle]=useState("null")
   const date = new Date();
   const chartref = useRef(null);
   const chartInstance = useRef(null);
@@ -29,14 +30,15 @@ const TodoTask = () => {
       {
         type: "doughnut",
         data: {
-          labels: ["red", "yellow", "blue"],
+          labels: ["Total Task", "Total Task Done", "OverDue","Not Started"],
           datasets: [
             {
-              data: [30, 5, 25],
+              data: [30, 5, 25,200],
               backgroundColor: [
                 "rgb(25,00,132)",
-                "rgb(54,162,235)",
+                "rgb(54,16,235)",
                 "rgb(255,205,86)",
+                "rgb(125,84,16)",
               ],
             },
           ],
@@ -44,7 +46,7 @@ const TodoTask = () => {
           options: {
                 plugins: {
                     legend: {
-                        position: 'right'
+                        position: 'bottom'
                     }
                 }
             }
@@ -56,24 +58,61 @@ const TodoTask = () => {
         chartInstance.current.destroy();
       }
     };
-  }, []);
+  }, [] );
+  const data = [
+    {
+      title: "Completed tasks",
+      value:17
+    },
+     {
+      title: "Incompleted tasks",
+      value:45
+    },
+     {
+      title: "Overdue tasks",
+      value:30
+    },
+     {
+      title: "Total tasks",
+      value:120
+    }
+  ]
   return (
     <div className="Dashboard">
       <div className="Dashboard_TaskStatus">
         <Calendar value={date} />
         <UrgentTask />
         <div className="Dashboard_TaskCompletion-doghnutGraph">
-          <h5>Task completion status by this month</h5>
-          <canvas ref={chartref}  />
+           <canvas ref={chartref}  />
         </div>
         {/* <AssignedTask title="Task I've Assigned" /> */}
+          { !open ? (
         <div className="Dashboard_TaskCompletion-totalTaskCount">
-          <TotalNumber title="Completed tasks" value={17} />
-          <TotalNumber title="Incompleted tasks" value={45} />
-          <TotalNumber title="Overdue tasks" value={30} />
-          <TotalNumber title="Total tasks" value={120} />
-        </div>
-        <div className="Dashboard_TaskCompletion_Project">
+        {  data.map( ( item, i ) => (
+            <TotalNumber
+              key={ i }
+              title={ item.title }
+              value={ item.value }
+              setOpenTitle={ setOpenTitle }
+              setOpen={ setOpen } />
+        ) )
+            }
+        </div>)
+           : (
+            <div className="Dashboard_TaskCompletion-differentStatus">
+              <IoChevronBack
+              onClick={ () =>setOpen( false )}
+              className="icon"/>
+              {
+                data.map( ( data, i ) => (
+                  <div className="TaskCompletion_List">
+                    <p>{ data.title }</p>
+                  </div>
+                ) )
+                }
+            </div>)
+          }
+         <div className="Dashboard_TaskCompletion_Project">
           <div className="Dashboard_TaskCompletion_Project-Catagori">
             <ProjectCatagories />
             <CommentSection />

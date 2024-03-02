@@ -1,7 +1,7 @@
 .projectCatagories{
-     display: flex;
+         display: flex;
     gap: 10px;
-    overflow-x: scroll;
+    overflow-x: hidden;
     padding: 5px;
     position: relative;
 }

@@ -16,7 +16,8 @@ const SchedulesForm = ({setActive}) => {
   
  const [selected, setSelected] = useState(null);
   const [tagColor, setTagColor] = useState(""); 
-  const colors = ["#ff6161","#39a8f7"];
+   const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
+
   console.log(moment(startDate).toDate());
   console.log(moment(endDate).toDate());
   function handleSubmit(e) {

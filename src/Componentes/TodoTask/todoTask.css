@@ -59,17 +59,36 @@ display: flex;
     justify-content: center;
     padding: 5px;
  }
-  
-.Dashboard_TaskCompletion-doghnutGraph{
-    width: 340px;
-    justify-content: center;
+  .Dashboard_TaskCompletion-differentStatus{
+       width: 405px;
+    background: transparent;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    height: 320px;
+    gap: 10px;
+     border-radius: 10px;
      padding: 5px;
-    height: 310px;
-    background: white;
-    padding: 15px;
+    background-color: white;
+  }
+   .Dashboard_TaskCompletion-differentStatus .icon{
+    cursor: pointer;
+    font-size: 25px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px; }
+   .Dashboard_TaskCompletion-differentStatus .icon:hover{
+     scale:1.1
+  }
+ .TaskCompletion_List{
+
+ }
+.Dashboard_TaskCompletion-doghnutGraph{
+      height: 330px;
+    background: transparent;
+    width: 400px;
+     display: flex;
+    align-self: center;
+    justify-content: center;
 }
 .Dashboard_TaskCompletion-doghnutGraph h5{
       font-family: system-ui;
@@ -89,9 +108,11 @@ display: flex;
     width: 720px;
 }
 .Dashboard_TaskCompletion_Project-Catagori{
-    display: flex;
+      display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     align-items: center;
  }
+
+
 

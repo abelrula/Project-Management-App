@@ -13,6 +13,10 @@
     font-weight: 100;
     color: #77797b;
 }
+.totalTaskStatus .icon:hover{
+  cursor: pointer;
+  scale: 1.1;
+}
 .totalTaskStatus span{
     margin: auto;
     font-size: 22px;
@@ -22,6 +26,6 @@
 .totalTaskStatus div{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
 }

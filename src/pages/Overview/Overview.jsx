@@ -14,6 +14,7 @@ import { MdOutlineLowPriority } from "react-icons/md";
    import { Link } from "react-router-dom";
  import "./overview.css"
 import overView from "../../data/overView";
+ import { BiUpArrowAlt,BiDownArrowAlt } from "react-icons/bi";
 
 const Overview = () => {
    const [ checked, setChecked ] = useState()
@@ -21,10 +22,14 @@ const Overview = () => {
   return (
     <>
       <Header title="Project Overview" />
-      <table border="0">
+      <table >
         <thead>
           <tr className="data">
-            <th colspan="5">
+            <th >
+              <BiUpArrowAlt className="icon"/>
+              <BiDownArrowAlt className="icon"/>
+            </th>
+            <th  >
               <select>
                 <option value="All"> All</option>
                 <option value="Open"> Open</option>
@@ -32,14 +37,7 @@ const Overview = () => {
                 <option value="Finished"> Finished</option>
               </select>
             </th>
-            <th colspan="2">
-              <select>
-                <option value="Open"> classic</option>
-                <option value="Not Assigned"> Ascending</option>
-                <option value="Finished"> descending</option>
-              </select>
-            </th>
-             <th colspan="2">
+             <th colspan="8">
               <Link to="/assignTask" className="link">Assign Task</Link>
             </th>
           </tr>
