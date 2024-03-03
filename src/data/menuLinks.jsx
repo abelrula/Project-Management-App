@@ -35,6 +35,11 @@ const menuLinks = [
     icon: <FaRegCalendarAlt className="icon" fill="#ffa909" />,
   },
   {
+    title: "Gant Chart",
+    to: "team",
+    icon: <HiUserGroup className="icon" fill="#ffa909" />,
+  },
+  {
     title: "Overview",
     to: "overview",
     icon: <MdLocalLibrary className="icon" fill="#ffa909" />,
@@ -43,11 +48,6 @@ const menuLinks = [
     title: "Report",
     to: "report",
     icon: <BsActivity className="icon" fill="#ffa909" />,
-  },
-  {
-    title: "Team",
-    to: "team",
-    icon: <HiUserGroup className="icon" fill="#ffa909" />,
   },
   {
     title: "Message",

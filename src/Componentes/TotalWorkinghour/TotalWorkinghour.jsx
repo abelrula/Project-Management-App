@@ -1,20 +1,12 @@
 import React, { useState } from "react";
 import "./totalWorkinghour.css";
-
-const TotalWorkinghour = ({
-  sideData,
-  underData,
-  title,
-  color,
-  Total,
-  avg,
-}) => {
+import { week, hours } from "../../data/hour&month";
+const TotalWorkinghour = () => {
   const [dateSelection, setDateSelection] = useState();
-  
     return (
  <div className="workHour">
       <div className="workHour__header">
-        <h5 className="workHour__header-title">{title}</h5>
+        <h5 className="workHour__header-title">Total-Workings-Hour</h5>
         <select onClick={(e) => setDateSelection(e.target.value)}>
           <option value="Week">Week</option>
           <option value="Month">Month</option>
@@ -23,43 +15,30 @@ const TotalWorkinghour = ({
       </div>
       <div className="workHour__total">
         <h5
-          className={
-            title === "Total-Workings-Hour"
-              ? "workHour__total-hour"
-              : "workHour__total-revenue"
-          }
+          className= "workHour__total-hour"
         >
-          {Total}
+          37 hours
         </h5>
         <span
-          className={
-            title === "Total-Workings-Hour"
-              ? "workHour__header-avg-hour"
-              : "workHour__header-avg-revenue"
-          }
-        >
-          Avg. {avg}/Month
+          className="workHour__header-avg-hour" >
+          Avg. 148 Hr/Month
         </span>
       </div>
       <div className="workHour__container">
         <div className="workHour__container-hours">
-          {sideData.map((item, i) => (
+          {hours.map((item, i) => (
             <span key={i}>{item}</span>
           ))}
         </div>
         <div className="workHour__container-contnet">
-          {underData.map((item, i) => (
+          {week.map((item, i) => (
             <div className="hour" key={i}>
-              <div
-                className={
-                  title === "Total-Workings-Hour" ? "fillHour" : "fillRevenue"
-                }
-              >
+              <div className="fillHour">
                 <div
                   style={{
                     height: `${item.height}`,
                     width: "100%",
-                    background: `${color}`,
+                    background: "#d59566",
                     borderRadius: "10px",
                   }}
                 ></div>

@@ -11,7 +11,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { week, Month, hours, Revenue } from "../../data/hour&month";
 import { Bar } from "react-chartjs-2";
  import "./report.css"
 import TeamMembers from "../../Componentes/teamMembers/TeamMembers";
@@ -241,14 +240,7 @@ const Report = () => {
         </div>
         {/* <AllprojectProgress /> */}
         <div className="totalRevenues">
-          <TotalWorkinghour
-            sideData={hours}
-            underData={week}
-            title="Total-Workings-Hour"
-            color="#d59566"
-            Total="37 hours"
-            avg="148 Hr"
-          />
+          <TotalWorkinghour />
           <div className="bar">
             <h5>Total-Revenue</h5>
             <Bar data={data} options={options} />

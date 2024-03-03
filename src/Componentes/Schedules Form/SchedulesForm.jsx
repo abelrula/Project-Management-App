@@ -76,12 +76,17 @@ const SchedulesForm = ({setActive}) => {
         <div className="SchedualForm__date">
           {/* <Calendar value={value} onChange={onChange} /> */}
           <div>
-         
-            <label>  <HiCalendar className="calanderIcon" />start date</label> <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
+            <label>
+              <HiCalendar className="calanderIcon" />start date
+            </label>
+            <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
           </div>
           <div>
            
-            <label> <HiCalendar className="calanderIcon" />end date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
+            <label>
+              <HiCalendar className="calanderIcon" />end date
+            </label>
+            <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
           </div>
         </div>
         <div className="SchedualForm__tags">

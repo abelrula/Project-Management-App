@@ -16,11 +16,8 @@ const Header = ({ title }) => {
       <div className="greeting">
         <p className="TodayTodo__wavingHand">{title}</p>
         {pathname === "/" ? (
-          <>
-            <p className="date">{date.toDateString()}</p>
-            <p className="time">{date.toLocaleTimeString()}</p>
-          </>
-        ) : null}
+             <p className="date">{date.toDateString()}</p>
+         ) : null}
        </div>
 
       <div className="left">

@@ -1,7 +1,7 @@
 export const week = [
   {
     day: "Mon",
-    height: "50%",
+    height: "10%",
   },
   {
     day: "Tue",

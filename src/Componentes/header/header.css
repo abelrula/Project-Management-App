@@ -1,9 +1,15 @@
 .header{
-    display: flex;
+   display: flex;
     justify-content: space-between;
-        padding: 0px 50px;
-            margin-top: 20px;
-                font-family: cursive;
+    padding: 0px 50px;
+     font-family: cursive;
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 0px;
 }
 .header h1{
     font-family: cursive;
