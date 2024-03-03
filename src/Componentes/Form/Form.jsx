@@ -13,7 +13,8 @@ const Form = ({setActive}) => {
   const [openProject,  setOpenProject]=useState(false)
   const [openEmployee,setOpenEmployee]=useState(false)
  const [jobCatagory,setJobCatagory]=useState(null)
- const [selected, setSelected] = useState(null);
+  const [ selected, setSelected ] = useState( null );
+  const [attachedDocuments,setAttachedDocuments]=useState(null)
   
    const members = "http://localhost:3500/members";
   const [member, setMember] = useState([]);
@@ -115,13 +116,23 @@ const Form = ({setActive}) => {
          </div>
         </div>
         <div className="Form__textArea">
-          <label>Whats Need to be Assign</label>
-
+          <label>Add Task Discription</label>
           <textarea
             type="text"
             id="description"
             value={description}
              onChange={(e) => setDescription(e.target.value)}
+            placeholder=""
+          />
+        </div>
+          <div className="Form__AttachDocuments">
+          <label>Attach Documents</label>
+
+          <input
+            type="file"
+            id="documents"
+            value={attachedDocuments}
+             onChange={(e) => setAttachedDocuments(e.target.value)}
             placeholder=""
           />
         </div>

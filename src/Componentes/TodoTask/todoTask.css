@@ -32,10 +32,8 @@ display: flex;
     gap: 30px;
     flex-wrap: wrap;
 }
- 
   .bargraph{
-        
-        background: #ffffff;
+    background: #ffffff;
     border-radius: 20px;
     height: 300px;
     display:flex;
@@ -59,7 +57,7 @@ display: flex;
     justify-content: center;
     padding: 5px;
  }
-  .Dashboard_TaskCompletion-differentStatus{
+  .Dashboard_TaskCompletion_container{
        width: 405px;
     background: transparent;
     display: flex;
@@ -67,28 +65,82 @@ display: flex;
     height: 320px;
     gap: 10px;
      border-radius: 10px;
-     padding: 5px;
     background-color: white;
+        overflow-y: scroll;
   }
-   .Dashboard_TaskCompletion-differentStatus .icon{
+ 
+   .Dashboard_TaskCompletion_container .icon{
     cursor: pointer;
     font-size: 25px;
     color: black;
     border: 1px solid black;
-    border-radius: 10px; }
-   .Dashboard_TaskCompletion-differentStatus .icon:hover{
+         border-radius: 10px; 
+  }
+   .Dashboard_TaskCompletion_ .icon:hover{
      scale:1.1
   }
- .TaskCompletion_List{
-
+ .Dashboard_TaskCompletion_container {
+   display: flex;
+     justify-content: space-evenly;
+    font-family: monospace;
+    border-radius: 5px;
+    color: white;
+ }
+ .Dashboard_TaskCompletion_container span{
+        background: white;
+    display: flex;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    border-bottom: 1px solid rgb(169 161 161);
+    align-items: center;
+    color: black;
+ }
+  .Dashboard_TaskCompletion_container span p{
+text-align: center;
+    margin: 0 auto;
+    font-family: math;
+    font-size: 20px;
+  }
+ .Dashboard_TaskCompletion_container ul li :nth-child(3){
+     background-color: #7b7272;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+ }
+  .Dashboard_TaskCompletion_container ul li :nth-child(2){
+     background-color: #569985;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+ }
+ .Dashboard_TaskCompletion_container ul{
+ display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px 15px;
+    height: 250px;
+ 
+ }
+ .Dashboard_TaskCompletion_container ul li{
+   display: flex;
+    gap: 10px;
+    align-items: center;
+    background: #ffffffa6;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+    border-bottom: 1px solid #d4cfcf;
  }
 .Dashboard_TaskCompletion-doghnutGraph{
-      height: 330px;
-    background: transparent;
-    width: 400px;
-     display: flex;
+  height: 310px;
+    background: white;
+    width: 370px;
+    display: flex;
     align-self: center;
     justify-content: center;
+    border-radius: 15px;
+    padding: 5px;
 }
 .Dashboard_TaskCompletion-doghnutGraph h5{
       font-family: system-ui;

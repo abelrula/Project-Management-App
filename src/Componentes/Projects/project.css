@@ -9,7 +9,8 @@
     display:flex;
     gap: 10px;
         margin-left: 15px;
-        transform: translateX(0px);
+        transform: translateX(0);
+        transition: all ease 1s;
 }
 .projectCatagories__cards-card{
     display: flex;

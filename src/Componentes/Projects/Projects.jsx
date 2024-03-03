@@ -6,11 +6,14 @@ import project from "../../data/projectTypes";
 const Projects = () => {
   const listRef = useRef();
   function handleClick(direction) {
-    if (direction === "right") {
-      // listRef.current.style.transform = `translateX(200px)`;
+    let distanceL = listRef.current.getBoundingClientRect().x - 585
+    let distanceR = listRef.current.getBoundingClientRect().x - 485
+     if ( direction === "right" ){
+     console.log(distance);
+      listRef.current.style.transform = `translateX(${95+distanceL}px)`;
     }
     if (direction === "left") {
-      // listRef.current.style.transform = `translateX(-200px)`;
+      listRef.current.style.transform = `translateX(${-195+distanceR}px)`;
     }
   }
   console.log(listRef.current);
@@ -18,7 +21,7 @@ const Projects = () => {
     <div className="projectCatagories">
       <BiArrowFromRight
         className="sliderArrow left"
-        onClick={handleClick("left")}
+        onClick={()=>handleClick("left")}
       />
       <div className="projectCatagories__cards" ref={listRef}>
         {project?.map((item, i) => (
@@ -34,7 +37,7 @@ const Projects = () => {
       </div>
       <BiArrowFromLeft
         className="sliderArrow right"
-        onClick={handleClick("right")}
+        onClick={()=>handleClick("right")}
       />
     </div>
   );

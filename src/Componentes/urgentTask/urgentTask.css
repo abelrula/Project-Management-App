@@ -14,7 +14,7 @@
     border-radius: 20px;
     padding: 10px;
     flex: 1 1;
-    min-width: 400px;
+    min-width: 430px;
     max-width: 400px;
     max-height: 300px;
     display: flex;
@@ -52,7 +52,7 @@ display: flex;
     display: flex;
     color: #d7a66f;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
 }
 .todayTodos{
 font-size: 1rem;

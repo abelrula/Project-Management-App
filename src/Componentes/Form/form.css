@@ -175,6 +175,21 @@ color: black;
     font-size: 1.1rem;
     padding: 15px;
  }
+ .Form__AttachDocuments{
+     display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: -100px;
+ }
+ .Form__AttachDocuments input{
+        border: 1px solid #b7b7b7;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 10px;
+    font-family: cursive;
+    font-size: 15px;
+    background: white;
+ }
 .Form__type{
  display: flex;
     align-items: baseline;
@@ -270,9 +285,9 @@ width: 100%;
 }
  
  .Form__type-all{ 
-    background: #fcfcfc;
+        background: #fcfcfc;
     height: 30px;
-    width: 140px;
+    width: 85px;
     display: flex;
     place-content: center;
     align-items: center;
