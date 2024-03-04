@@ -18,6 +18,7 @@ import { MdLocalLibrary } from "react-icons/md";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { BsActivity } from "react-icons/bs";
 import { SiCodefactor } from "react-icons/si";
+import { GrTasks } from "react-icons/gr";
 const menuLinks = [
   {
     title: "Home",
@@ -38,6 +39,10 @@ const menuLinks = [
     title: "Gant Chart",
     to: "team",
     icon: <HiUserGroup className="icon" fill="#ffa909" />,
+  },{
+    title: "Tasks",
+    to: "tasks",
+    icon: <GrTasks className="icon" fill="#ffa909" />,
   },
   {
     title: "Overview",
@@ -58,12 +63,7 @@ const menuLinks = [
     title: "Video Meeting",
     to: "videoChat",
     icon: <BiVideo className="icon" fill="#ffa909" />,
-  },
-  {
-    title: "Assign Task",
-    to: "assignTask",
-    icon: <IoIosAddCircle className="icon" fill="tomato" />,
-  },
+  }
 ];
 
 export default menuLinks;

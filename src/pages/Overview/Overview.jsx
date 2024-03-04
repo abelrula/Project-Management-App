@@ -15,9 +15,11 @@ import { MdOutlineLowPriority } from "react-icons/md";
  import "./overview.css"
 import overView from "../../data/overView";
 import Form from "../../Componentes/Form/Form";
- import { BiUpArrowAlt,BiDownArrowAlt } from "react-icons/bi";
+import { BiUpArrowAlt, BiDownArrowAlt } from "react-icons/bi";
+ import img1 from "../../assets/worker2.jpg"
 
 const Overview = () => {
+  const [ active, setActive ] = useState(false)
    const [ checked, setChecked ] = useState()
   console.log(checked);
   return (
@@ -39,7 +41,7 @@ const Overview = () => {
               </select>
             </th>
              <th colspan="8">
-              <Link to="/assignTask" className="link">Assign Task</Link>
+              <button className="link"  onClick={()=>setActive(true)} >Assign Task</button>
             </th>
           </tr>
           <tr>
@@ -105,8 +107,11 @@ const Overview = () => {
                     {descData.task}
                   </td>
                   <td>{descData.associate} </td>
-                  <td>{descData.owner}</td>
-                  <td>
+                  <td className="assignedTo">
+                    <img src={ img1 } alt="person" />
+                    <span>{ descData.owner }</span>
+                    s</td>
+                  <td >
                     <span>
                       {descData.priority === "high" ? (
                         <FcHighPriority />
@@ -143,6 +148,7 @@ const Overview = () => {
           ))}
         </tbody>
       </table>
+    {active &&  <Form  setActive={setActive}/> }
     </>
   );
 }

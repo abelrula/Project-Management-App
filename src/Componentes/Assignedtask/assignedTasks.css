@@ -1,0 +1,105 @@
+ .AssignedTask{
+  background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-shadow: 3px 1px 1px 1px #9ca5a5;
+    border-radius: 10px;
+    flex: 1 1;
+    width: -webkit-fill-available;
+    height: 300px;
+  }
+ .AssignedTask__situation{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 25px;
+    flex: 1;
+ }
+ .AssignedTask__situation-types{
+  display: flex;
+    gap: 40px;
+        align-items: center;
+  }
+ .AssignedTask__situation-types > li.workProgress{
+    border-bottom: 3px solid #d7a66f;
+    padding: 3px 14px;
+ }
+ .AssignedTask__situation--description{
+  width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ }
+ .AssignedTask__situation-types > li {
+  display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 5px 0px;
+ }
+ .AssignedTask__situation-types > li  > label{
+color: #767171;
+    font-size: 1rem;
+    font-weight: 700;
+ }
+ .AssignedTask__situation--description--list {
+   display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #f6ecec;
+    border-right: none;
+    border-left: none;
+    padding: 5px;
+}
+.AssignedTask__situation--description--list .icon{
+   color:#d7a66f;
+   font-size:large
+}
+.AssignedTask__situation--description--list > span {
+  display: flex;
+  gap:10px;
+  align-items: center;
+}
+ .AssignedTask__situation--description--list > span > p{
+     font-size: 1.1rem;
+    color: #5f7485;
+ }
+ .AssignedTask__situation--description--list:nth-child(1){
+  font-size: 0.7rem;
+ }
+ .AssignedTask__situation--description--list > img{
+width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: cover;
+    object-position: 75% 10%;
+ }
+ .AssignedTask__situation--description--footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+    align-items: center;
+    width: 100%;
+ }
+ 
+ .AssignedTask__situation--description--footer > p{
+  font-size: 1rem;
+  color:#bfb9b1
+ }
+ .AssignedTask__situation--description--footer > button{
+padding: 5px 15px;
+    font-size: 1.rem;
+    background: #e57085;
+    color: white;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+ }
+ .AssignedTask__situation--description--footer > button:hover{
+ background: #2b4168;
+    color: rgb(255, 255, 255);
+ }

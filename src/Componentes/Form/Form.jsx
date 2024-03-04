@@ -3,6 +3,7 @@ import React, { useState ,useEffect} from "react";
 import { HiCalendar } from "react-icons/hi";
    import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 import projectTypes from "../../data/projectTypes";
+import { IoCloseCircleSharp } from "react-icons/io5";
 const Form = ({setActive}) => {
   const date = new Date();
      const [startDate, setStartDate] = useState(date);
@@ -50,10 +51,12 @@ const Form = ({setActive}) => {
    console.log(selectedProject)
    console.log(selectedProject)
   return (
-    <>
+    <div className="modal">
       <form className="Form" onSubmit={ handleSubmit }>
-         <h2>Assign New Task</h2>
-         
+        <div  className="Form-header">
+          <h2>Assign New Task</h2>
+          <IoCloseCircleSharp fontSize={ 27 } className="icon" onClick={ () => setActive( false ) } />
+        </div>
          <div className="employeContainer">
             <label>select which Employee you want to assign 
             { !openEmployee && <FaArrowDown className="icon"
@@ -170,7 +173,7 @@ const Form = ({setActive}) => {
           <p>Assign Task</p>
         </button>
       </form>
-     </>
+     </div>
   );
 };
 
