@@ -17,6 +17,7 @@ import TeamMembers from "../../Componentes/teamMembers/TeamMembers";
 import TotalWorkinghour from "../../Componentes/TotalWorkinghour/TotalWorkinghour";
 import AddProjectForm from "../../Componentes/AddProjectForm/AddProjectForm";
 import AddMemberForm from "../../Componentes/AddMemberForm/AddMemberForm";
+import AssignedTask from "../../Componentes/Assignedtask/AssignedTask";
 
 ChartJs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 // import 'chart.js/auto'
@@ -130,10 +131,8 @@ const Report = () => {
         position: "bottom",
         type: "time",
         time: {
-          // unit: "day",
-          displayFormats: {
-            day: "d",
-          },
+          unit: "year",
+         
         },
         min: startDate,
         max: endDate,
@@ -236,7 +235,8 @@ const Report = () => {
             <Bar data={data1} plugins={todayLine} options={options1} />
           </div>
           {/* <ProjectCatagories /> */}
-          <TeamMembers />
+          {/* <TeamMembers /> */}
+          <AssignedTask title="My tasks" footer="Add Tasks" />
         </div>
         {/* <AllprojectProgress /> */}
         <div className="totalRevenues">
@@ -245,14 +245,6 @@ const Report = () => {
             <h5>Total-Revenue</h5>
             <Bar data={data} options={options} />
           </div>
-          {/* <TotalWorkinghour
-            sideData={Revenue}
-            underData={Month}
-            title="Total Revenue"
-            color="#3787db"
-            Total="+ $25000"
-            avg="$2000"
-          /> */}
         </div>
       </div>
     </>

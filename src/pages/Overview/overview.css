@@ -67,6 +67,19 @@ font-size: 15px;
 tr td:nth-child(6){
     text-align: center;
 }
+tr .assignedTo{
+    display: flex;
+}
+tr .assignedTo span{
+    font-size: 10px;
+}
+ 
+tr .assignedTo img{
+    width: 25px;
+    height: 25px;
+ border-radius: 50%;
+ object-fit: cover;
+}
  
 tbody tr td{
    text-align: left;

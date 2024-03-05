@@ -12,17 +12,16 @@ const Calander = (props) => {
   const localizer = momentLocalizer( moment );
   const [ events, setEvents ] = useState()
   const [ active, setActive ] = useState(false)
-  
+  console.log(moment(new Date()))
+  console.log(moment("2024-03-18T10:00:00").toDate())
   useEffect( () =>{
-     
      const fetchEvents = async () =>{
-      
-       const res = await fetch( "http://localhost:3500/event" )
+       const res = await fetch( "http://localhost:3500/events" )
        if ( !res.ok )  console.log( "error occured" )
        const data= await res.json()
        const newData=data.map((data)=>{
-       const start=moment(data.start).toDate()
-       const end=moment(data.end).toDate()
+       const start=moment(data.startDate).toDate()
+       const end=moment(data.endDate).toDate()
           return{
             ...data,
             start,

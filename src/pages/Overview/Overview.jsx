@@ -110,7 +110,7 @@ const Overview = () => {
                   <td className="assignedTo">
                     <img src={ img1 } alt="person" />
                     <span>{ descData.owner }</span>
-                    s</td>
+                    </td>
                   <td >
                     <span>
                       {descData.priority === "high" ? (
