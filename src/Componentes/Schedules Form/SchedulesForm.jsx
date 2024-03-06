@@ -8,21 +8,28 @@ import Calendar from "react-calendar";
 import moment from "moment";
 const SchedulesForm = ({setActive}) => {
   const date = new Date();
-   const [startDate, setStartDate] = useState("");
-   const [endDate, setEndate] = useState("");
+   const [schedualTime, setSchedualTime] = useState("");
+   const [startTime, setStartTime] = useState("");
+   const [endTime, setEndTime] = useState("");
   const [description, setDescription] = useState("");
-  const [personal, setPersonal] = useState(false);
-  const [buisnes, setBuisnes] = useState(false);
-  
- const [selected, setSelected] = useState(null);
   const [tagColor, setTagColor] = useState(""); 
    const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
-
-  console.log(moment(startDate).toDate());
-  console.log(moment(endDate).toDate());
-  function handleSubmit(e) {
+console.log(startTime,endTime)
+console.log(moment(schedualTime).toDate())
+  function handleSubmit ( e )
+  {
     e.preventDefault();
-  
+    fetch( "http://localhost:3500/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify( {
+        id: nanoid(),
+        description,
+        startTime,
+        endTime,
+        tagColor,
+      } )
+    } )
   }
 
   return (
@@ -43,50 +50,25 @@ const SchedulesForm = ({setActive}) => {
             placeholder=""
           />
         </div>
-        <div className="SchedualForm__type">
-          <div
-            onClick={() => {
-              setPersonal((prev) => !prev);
-              setBuisnes(false);
-              setSelected("personal");
-            }}
-            className="SchedualForm__type--all SchedualForm__type--personal"
-            style={{
-              background: selected === "personal" && "#183de2",
-              color: selected === "personal" && "white",
-            }}
-          >
-            Personal
-          </div>
-          <div
-            onClick={() => {
-              setBuisnes((prev) => !prev);
-              setSelected("buisness");
-              setPersonal(false);
-            }}
-            className="SchedualForm__type--all SchedualForm__type--buisness"
-            style={{
-              background: selected === "buisness" && "#183de2",
-              color: selected === "buisness" && "white",
-            }}
-          >
-            Buisness
-          </div>
-        </div>
         <div className="SchedualForm__date">
           {/* <Calendar value={value} onChange={onChange} /> */}
           <div>
             <label>
-              <HiCalendar className="calanderIcon" />start date
+              <HiCalendar className="calanderIcon" />On Date
             </label>
-            <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
+            <input type="date" onChange={ ( e ) => setSchedualTime( e.target.value ) } />
           </div>
           <div>
-           
             <label>
-              <HiCalendar className="calanderIcon" />end date
+              <HiCalendar className="calanderIcon" />Start Time
             </label>
-            <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
+            <input type="time" onChange={ ( e ) => setStartTime( e.target.value ) } />
+          </div>
+             <div>
+            <label>
+              <HiCalendar className="calanderIcon" />End Time
+            </label>
+            <input type="time" onChange={ ( e ) => setEndTime( e.target.value ) } />
           </div>
         </div>
         <div className="SchedualForm__tags">

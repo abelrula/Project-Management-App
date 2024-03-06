@@ -3,11 +3,18 @@ import { MdDonutLarge, MdUpdate } from "react-icons/md";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 import { MdRadioButtonUnchecked } from "react-icons/md";
  import "./assignedTasks.css";
+import { useLocation } from "react-router-dom";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { CiLock } from "react-icons/ci";
+import AddTodoForm from "../AddTodoForm/AddTodoForm"
 
- const AssignedTask = ({ title ,footer}) => {
+
+ const AssignedTask = ({ title ,footer,setActive}) => {
   const [workProgress, setWorkProgress] = useState("Upcoming");
+  const [active,setActive]=useState(false)
    const [todos,setTodos]=useState([])
-    
+   const location = useLocation()
+   console.log(location);
    useEffect( () =>
    {
      const fetchTodos= async ()=> {
@@ -36,7 +43,11 @@ import { MdRadioButtonUnchecked } from "react-icons/md";
   // console.log(workProgress);
   return (
     <div className="AssignedTask">
-      <h3>{title}</h3>
+      <span><p>{ title }</p>
+        { location.pathname === "/report" ?
+          <IoCloseCircleOutline className="icon" onClick={ () => setActive( false ) } /> 
+          : <CiLock />
+      }</span>
       <div className="AssignedTask__situation">
         <>
           <div className="AssignedTask__situation-types">
@@ -102,12 +113,15 @@ import { MdRadioButtonUnchecked } from "react-icons/md";
                 </div>
                 <div className="AssignedTask__situation--description--footer">
                   <p>tasks you assigned will appear here</p>
-                  <button>{footer}</button>
+                  <button onClick={()=>setActive(true)}>{footer}</button>
                 </div>
               </>
             )}
           </div>
         </>
+      </div>
+      <div className="modal">
+        <AddTodoForm setActive={setActive} />
       </div>
     </div>
   );

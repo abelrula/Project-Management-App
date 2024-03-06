@@ -12,23 +12,10 @@
     gap: 15px;
     width: 670px;
     margin-top: 20px;
-    flex-direction:4;
+    flex-direction: 4;
  }
- .Form-header{
-   display: flex;
-    align-items: center;
-    /* gap: 20px; */
-    justify-content: space-between;
-    width: 90%;
- }
- .Form-header .icon{
-font-size: 35px;
- }
- .Form-header .icon:hover{
-   scale: 1.1;
-   cursor: pointer;
- }
-.Form-header h2{
+ 
+.Form h2{
          font-family: sans-serif;
     font-size: larger;
     border-bottom: #afafaf solid 1px;

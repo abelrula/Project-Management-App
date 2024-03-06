@@ -8,6 +8,24 @@
     flex: 1 1;
     width: -webkit-fill-available;
     height: 300px;
+    max-width: 900px;
+  }
+  .AssignedTask span{
+   display: flex;
+    justify-content: space-between;
+    width: 60%;
+    flex-direction: fle;
+    align-self: end;
+    padding: 5px;
+    font-size: 20px;
+    font-family: monospace;
+  }
+  .AssignedTask span .icon{
+      color: black;
+    font-size: 25px;
+  }
+  .AssignedTask span .icon:hover{
+   scale: 1.1;
   }
  .AssignedTask__situation{
     display: flex;
