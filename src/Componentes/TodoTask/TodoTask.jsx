@@ -1,4 +1,4 @@
-import  { useEffect, useRef, useState } from "react";
+import  { Fragment, useEffect, useRef, useState } from "react";
 import { useGetTodosQuery } from "../../api/apiSlice";
 import "./todoTask.css";
 import UrgentTask from "../urgentTask/UrgentTask";
@@ -12,11 +12,15 @@ import Chart from "chart.js/auto";
 import TotalNumber from "../TotalTaskstatus/TotalNumber";
 import ProjectCatagories from "../ProjectCatagories/ProjectCatagories";
 import { IoChevronBack } from "react-icons/io5";
+import overView, { allData } from "../../data/overView";
+import AssignedTask from "../Assignedtask/AssignedTask";
+import TodoForm from "../TodoForm/TodoForm";
 
 const TodoTask = () => {
   // const {  isLoading } = useGetTodosQuery();
+    const [active,setActive]=useState(false)
 const [open,setOpen]=useState(false)
-const [openTitle,setOpenTitle]=useState("null")
+const [openTitle,setOpenTitle]=useState(null)
   const date = new Date();
   const chartref = useRef(null);
   const chartInstance = useRef(null);
@@ -61,31 +65,34 @@ const [openTitle,setOpenTitle]=useState("null")
   }, [] );
   const data = [
     {
-      title: "Completed tasks",
+      title: "Completed Tasks",
       value:17
     },
      {
-      title: "Incompleted tasks",
+      title: "Incompleted Tasks",
       value:45
     },
      {
-      title: "Overdue tasks",
+      title: "OverDue Tasks",
       value:30
     },
      {
-      title: "Total tasks",
+      title: "Total Tasks",
       value:120
     }
   ]
+  console.log(active)
   return (
-    <div className="Dashboard">
+    <>
+      <div className="Dashboard">
       <div className="Dashboard_TaskStatus">
         <Calendar value={date} />
-        <UrgentTask />
+        {/* <UrgentTask /> */}
+        <AssignedTask setActive={setActive} title="My tasks" footer="Add To Do" />
         <div className="Dashboard_TaskCompletion-doghnutGraph">
            <canvas ref={chartref}  />
         </div>
-        {/* <AssignedTask title="Task I've Assigned" /> */}
+        {/* <AssignedTask title="Task I've Assigned" footer="Assign Task" /> */}
           { !open ? (
         <div className="Dashboard_TaskCompletion-totalTaskCount">
         {  data.map( ( item, i ) => (
@@ -99,17 +106,24 @@ const [openTitle,setOpenTitle]=useState("null")
             }
         </div>)
            : (
-            <div className="Dashboard_TaskCompletion-differentStatus">
-              <IoChevronBack
+                <div className="Dashboard_TaskCompletion_container">
+              <span>
+                <IoChevronBack
               onClick={ () =>setOpen( false )}
-              className="icon"/>
+                  className="icon" />
+                <p>{openTitle}</p>
+             </span>
+              <ul>
               {
-                data.map( ( data, i ) => (
-                  <div className="TaskCompletion_List">
-                    <p>{ data.title }</p>
-                  </div>
+                allData.map( ( data, i ) => (
+                  <li>
+                    <p>{ data.task }</p>
+                    <p>{ data.associate }</p>
+                    <p>{ data.priority }</p>
+                  </li>
                 ) )
-                }
+              }
+              </ul>
             </div>)
           }
          <div className="Dashboard_TaskCompletion_Project">
@@ -122,6 +136,12 @@ const [openTitle,setOpenTitle]=useState("null")
         {/* <UserProgress /> */}
       </div>
     </div>
+     { active &&
+       ( <div className="modal">
+        <TodoForm  setActive={setActive}  />
+        </div>)
+      }
+    </>
   );
 };
 

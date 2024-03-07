@@ -4,7 +4,7 @@ import { HiCalendar } from "react-icons/hi";
 import { IoCloseCircleOutline } from "react-icons/io5";
    import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 import projectTypes from "../../data/projectTypes";
-const AddTodoForm = ({setActive}) => {
+const AddTodoForm = ({setOpenModal}) => {
   const date = new Date();
      const [startDate, setStartDate] = useState(date);
    const [endDate, setEndate] = useState(date);
@@ -54,7 +54,7 @@ const AddTodoForm = ({setActive}) => {
     <>
       <form className="Form" onSubmit={ handleSubmit }>
          <h2>Assign New Task          
-           <IoCloseCircleOutline className="icon" onClick={ () => setActive( false ) } /> 
+           <IoCloseCircleOutline className="icon" onClick={ () => setOpenModal( false ) } /> 
 </h2>
          <div className="employeContainer">
             <label>select which Employee you want to assign 

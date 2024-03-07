@@ -25,6 +25,7 @@ const Report = () => {
   
   const [ openModal, setOpenModal ] = useState( true );
   const [ openModalType, setOpenModalType ] = useState( "" );
+  const [ active, setActive ] = useState(false);
    const [ filter, setFilter ] = useState( new Date().toISOString() );
   const colorsData = [
     "rgba(94, 145, 151, 0.67)",
@@ -202,6 +203,15 @@ const Report = () => {
       <Header title="Report" />
       <div className="Reports">
         <div className="TotalProjectsMemberes">
+          {!active && <button
+            onClick={()=>setActive((prev)=>!prev)}>
+            View Asssigned Task
+          </button>}
+          {active && 
+           <div className="modal">
+          <AssignedTask title="Employee Tasks" footer="Assign Tasks" setActive={setActive} />
+           </div>
+          }
           <div className="totals">
             <InfoCard
               title="Total Projects"
@@ -232,16 +242,15 @@ const Report = () => {
                 onChange={(e) => setFilter(e.target.value)}
               />
             </div>
-            <Bar data={data1} plugins={todayLine} options={options1} />
+           {!active && <Bar data={data1} plugins={todayLine} options={options1} />}
           </div>
           {/* <ProjectCatagories /> */}
           {/* <TeamMembers /> */}
-          <AssignedTask title="My tasks" footer="Add Tasks" />
         </div>
         {/* <AllprojectProgress /> */}
-        <div className="totalRevenues">
-          <TotalWorkinghour />
-          <div className="bar">
+          <div className="totalRevenues">
+            <TotalWorkinghour />
+            <div className="bar">
             <h5>Total-Revenue</h5>
             <Bar data={data} options={options} />
           </div>

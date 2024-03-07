@@ -110,8 +110,7 @@ width: 40px;
  }
  .AssignedTask__situation--description--footer > button{
 padding: 5px 15px;
-    font-size: 1.rem;
-    background: #e57085;
+     background: #e57085;
     color: white;
     font-weight: 800;
     border: none;

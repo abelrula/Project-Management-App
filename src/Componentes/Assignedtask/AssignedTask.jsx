@@ -9,11 +9,10 @@ import { CiLock } from "react-icons/ci";
 import AddTodoForm from "../AddTodoForm/AddTodoForm"
 
 
- const AssignedTask = ({ title ,footer,setActive}) => {
+ const AssignedTask = ({title,footer,setActive}) => {
   const [workProgress, setWorkProgress] = useState("Upcoming");
-  const [active,setActive]=useState(false)
    const [todos,setTodos]=useState([])
-   const location = useLocation()
+const location = useLocation()
    console.log(location);
    useEffect( () =>
    {
@@ -42,8 +41,8 @@ import AddTodoForm from "../AddTodoForm/AddTodoForm"
   ];
   // console.log(workProgress);
   return (
-    <div className="AssignedTask">
-      <span><p>{ title }</p>
+    <><div className="AssignedTask">
+      <span><p>{ title } </p>
         { location.pathname === "/report" ?
           <IoCloseCircleOutline className="icon" onClick={ () => setActive( false ) } /> 
           : <CiLock />
@@ -112,18 +111,22 @@ import AddTodoForm from "../AddTodoForm/AddTodoForm"
                   />
                 </div>
                 <div className="AssignedTask__situation--description--footer">
-                  <p>tasks you assigned will appear here</p>
-                  <button onClick={()=>setActive(true)}>{footer}</button>
+                  {location.pathname === "/report" ? <p>tasks you assigned will appear here</p> : null}
+                  <button
+                    onClick={ () => { setActive( true ); console.log( "clicked" ) } }
+                  > { footer }
+                  </button>
                 </div>
               </>
             )}
           </div>
         </>
       </div>
-      <div className="modal">
-        <AddTodoForm setActive={setActive} />
-      </div>
+
+      
     </div>
+    
+    </>
   );
 };
 
