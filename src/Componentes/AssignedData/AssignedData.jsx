@@ -10,14 +10,14 @@ const AssignedData = () => {
     {
         async function fetchTask ()
         {
-            const data =id=== Number && await fetch( "http://localhost:3500/todo" )
+            const data = id && await fetch( "http://localhost:3500/todo" ) 
             const res = await data.json()
             
         }
         fetchTask()
     },[])
     return (
-    <div className="AssignedTask__situation--description">
+     <div className="AssignedTask__situation--description">
                 <div className="AssignedTask__situation--description--list">
                   <span>
                     <MdRadioButtonUnchecked className="icon" />

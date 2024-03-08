@@ -88,7 +88,7 @@ const [openTitle,setOpenTitle]=useState(null)
       <div className="Dashboard_TaskStatus">
         <Calendar value={date} />
         {/* <UrgentTask /> */}
-        <AssignedTask setActive={setActive} title="My tasks" footer="Add To Do" />
+        <AssignedTask setActive={setActive}  title="My tasks" footer="Add To Do" />
         <div className="Dashboard_TaskCompletion-doghnutGraph">
            <canvas ref={chartref}  />
         </div>

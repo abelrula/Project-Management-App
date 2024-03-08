@@ -7,6 +7,7 @@ import SettingsLayout from "./Componentes/Layouts/SettingsLayout";
 import Setting from "./Componentes/Setting/Setting";
 import MessagesConvoversation from "./Componentes/messages/MessagesConvoversation/MessagesConvoversation";
 import MessageListheader from "./Componentes/messages/MessageListheader/MessageListheader";
+import AssignedTask from "./Componentes/Assignedtask/AssignedTask";
  
 
 const App=() =>{
@@ -16,15 +17,13 @@ const App=() =>{
          <BrowserRouter>
        <Routes>
          <Route path="/" element={<Layout />}>
-           <Route index element={<Home />} />
+          <Route index element={ <Home /> } />
            <Route path="mytasks" element={<MyTask />} />
            <Route path="schedule" element={<Schedules />} />
            <Route path="overview" element={<Overview />} />
            <Route path="report" element={<Report />} />
            <Route path="team" element={<GantChart />} />
-          <Route path="tasks" element={ <Tasks /> } >
-            {/* <Route path=":id" element={<VideoChat />} /> */}
-            </Route>
+          <Route path="tasks" element={ <Tasks /> } />
            <Route path="message" element={<MessageLayout />}>
               <Route index element={<MessageListheader />} />
              <Route path=":id" element={<MessagesConvoversation />} />

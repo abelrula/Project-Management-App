@@ -1,29 +1,34 @@
 import  { useState,useEffect } from "react";
 import { MdDonutLarge, MdUpdate } from "react-icons/md";
-import { RiCheckboxCircleFill } from "react-icons/ri";
+import { RiCheckboxCircleFill, RiProfileFill } from "react-icons/ri";
 import { MdRadioButtonUnchecked } from "react-icons/md";
  import "./assignedTasks.css";
 import { useLocation } from "react-router-dom";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
 import AddTodoForm from "../AddTodoForm/AddTodoForm"
+import img1 from "../../assets/worker1.jpg"
+import { AiOutlineProfile } from "react-icons/ai";
+import { IoPersonOutline } from "react-icons/io5";
 
-
- const AssignedTask = ({title,footer,setActive}) => {
-  const [workProgress, setWorkProgress] = useState("Upcoming");
+   const AssignedTask = ({title,footer,setActive}) => {
+   const [todoStatus, setTodoStatus] = useState("Upcoming");
    const [todos,setTodos]=useState([])
-const location = useLocation()
-   console.log(location);
+     const location = useLocation()
+     let filterdData="completed"
    useEffect( () =>
    {
      const fetchTodos= async ()=> {
        const res = await fetch("http://localhost:3500/todo")
-       const data= await res.json()
-        setTodos(data)
+       const data = await res.json()
+       console.log(data);
+       todoStatus === "Completed" ? filterdData = data.filter( ( item ) => item.completed === true ):
+        todoStatus === "Overdue"  ?  filterdData=data.filter((item)=> new Date(`${item.date}`).getTime() < new Date().getTime()) :
+        filterdData=data.filter((item)=>new Date(`${item.date}`).getTime() > new Date().getTime())
+        setTodos(filterdData)
       }
-     
       fetchTodos()
-    }, [])
+    }, [todoStatus])
     console.log(todos);
   const progressTypes = [
     {
@@ -42,19 +47,20 @@ const location = useLocation()
   // console.log(workProgress);
   return (
     <><div className="AssignedTask">
-      <span><p>{ title } </p>
+      <span>
+        <p>{ title } </p>
         { location.pathname === "/report" ?
           <IoCloseCircleOutline className="icon" onClick={ () => setActive( false ) } /> 
           : <CiLock />
-      }</span>
+        }
+      </span>
       <div className="AssignedTask__situation">
-        <>
           <div className="AssignedTask__situation-types">
             {progressTypes.map((type, i) => (
               <li
-                className={workProgress === type.title && "workProgress"}
-                onClick={() => setWorkProgress(type.title)}
-                key={i}
+                className={todoStatus === type.title && "workProgress"}
+                onClick={() => setTodoStatus(type.title)}
+                key={ i }
               >
                 {type.icon}
                 <label>{type.title}</label>
@@ -62,70 +68,26 @@ const location = useLocation()
             ))}
           </div>
           <div className="AssignedTask__situation--description">
-            {workProgress === "Upcoming" && (
-              <>
-                <div className="AssignedTask__situation--description--list">
+              {todos?.map((item)=>(
+                 <div className="AssignedTask__situation--description--list">
                   <span>
-                    <MdRadioButtonUnchecked className="icon" />
-                    <p>Over all the risk of the project</p>
+                   <input type="checkbox" value={item.completed} />
+                    <p>{item.description.length > 26 ?`${item.description.substring(0,26)}...` : item.description }</p>
                   </span>
+                { location.pathname === "/report" ?
                   <img
-                    src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="avatar"
-                  />
-                </div>
+                    src= {img1} 
+                    alt="avatar"s
+                  /> : <IoPersonOutline />}
+                  </div>
+                  ))}
                 <div className="AssignedTask__situation--description--footer">
                   <p>tasks you assigned will appear here</p>
-                  <button>Assign Task</button>
+                  <button onClick={()=>setActive(true)}>{footer}</button>
                 </div>
-              </>
-            )}
-            {workProgress === "Overdue" && (
-              <>
-                <div className="AssignedTask__situation--description--list">
-                  <span>
-                    <MdRadioButtonUnchecked className="icon" />
-                    <p>Over all the risk of the project</p>
-                  </span>
-                  <img
-                    src="https://images.unsplash.com/photo-1495603889488-42d1d66e5523?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGJsYWNrJTIwbWFsZXN8ZW58MHx8MHx8fDA%3D"
-                    alt="avatar"
-                  />
-                </div>
-                <div className="AssignedTask__situation--description--footer">
-                  <p>tasks you assigned will appear here</p>
-                  <button>Assign Task</button>
-                </div>
-              </>
-            )}
-            {workProgress === "Completed" && (
-              <>
-                <div className="AssignedTask__situation--description--list">
-                  <span>
-                    <MdRadioButtonUnchecked className="icon" />
-                    <p>Completed all the risk of the project</p>
-                  </span>
-                  <img
-                    src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="avatar"
-                  />
-                </div>
-                <div className="AssignedTask__situation--description--footer">
-                  {location.pathname === "/report" ? <p>tasks you assigned will appear here</p> : null}
-                  <button
-                    onClick={ () => { setActive( true ); console.log( "clicked" ) } }
-                  > { footer }
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
-        </>
+           </div>
       </div>
-
-      
     </div>
-    
     </>
   );
 };
