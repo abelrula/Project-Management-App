@@ -8,7 +8,7 @@
       "buisness": false,
       "completed": true,
       "tagColor": "#F6BE00",
-      "date": "Tue Jan 09 2024 ",
+      "date": "Sun Mar 10 2024",
       "createdAt": "2024-03-04T06:49:05.638Z"
     },
     {
@@ -19,30 +19,8 @@
       "buisness": false,
       "completed": true,
       "tagColor": "#F6BE00",
-      "date": "Tue Jan 09 2024 ",
+      "date": "Sun Mar 10 2024",
       "createdAt": "2024-03-04T06:49:06.183Z"
-    },
-    {
-      "id": "UNkveg4cQWYMWtue-9yX4",
-      "title": "",
-      "description": "biceps: -hammer,curls,sitted -curl ,-sitted hamer triceps: -triceps extension,-skull crush,-triangle push up back: -pull up , -one hand grip pull down",
-      "personal": true,
-      "buisness": false,
-      "completed": true,
-      "tagColor": "#F6BE00",
-      "date": "Tue Jan 09 2024 ",
-      "createdAt": "2024-03-04T06:49:06.539Z"
-    },
-    {
-      "id": "qGrFOXkNl9KdcR7opvO-7",
-      "title": "",
-      "description": "Over all the risk of the project",
-      "personal": true,
-      "buisness": false,
-      "completed": true,
-      "tagColor": "#B5EAAA",
-      "date": "Thu Jan 11 2024 ",
-      "createdAt": "2024-03-04T07:44:17.705Z"
     },
     {
       "id": "7H-0N460Pny3NBQDf0y5Z",
@@ -52,7 +30,7 @@
       "buisness": false,
       "completed": true,
       "tagColor": "#B5EAAA",
-      "date": "Thu Jan 11 2024",
+      "date": "Thu Mar 11 2024",
       "createdAt": "2024-03-04T07:44:29.977Z"
     },
     {
@@ -94,7 +72,7 @@
       "description": "biceps: -hammer,curls,sitted -curl ,-sitted hamer triceps: -triceps extension,-skull crush,-triangle push up back: -pull up , -one hand grip pull down",
       "personal": true,
       "buisness": false,
-      "completed": false,
+      "completed": true,
       "tagColor": "#B5EAAA",
       "date": "Fri Jan 12 2024",
       "createdAt": "2024-01-12T07:32:53.237Z"
@@ -171,7 +149,7 @@
       "buisness": false,
       "personal": true,
       "tagColor": "#5e9197ab",
-      "completed": false,
+      "completed": true,
       "date": "2024-03-04",
       "createdAt": "2024-03-04"
     },
@@ -181,7 +159,7 @@
       "buisness": true,
       "personal": false,
       "tagColor": "#5e9197ab",
-      "completed": false,
+      "completed": true,
       "date": "2024-03-05",
       "createdAt": "2024-03-05"
     },
@@ -194,6 +172,65 @@
       "completed": false,
       "date": "",
       "createdAt": ""
+    },
+    {
+      "id": "Q1ySTvS-cG8iBrbdQKexY",
+      "description": "",
+      "tagColor": "",
+      "completed": false,
+      "date": "",
+      "selected": "buisness",
+      "createdAt": ""
+    },
+    {
+      "id": "6aKsCkjWSgoOAtNEPoBlR",
+      "description": "sdsdsfsdfsfd",
+      "selected": "personal",
+      "tagColor": "#5e9197ab",
+      "completed": false,
+      "status": false,
+      "date": "2024-03-13",
+      "createdAt": "2024-03-13"
+    },
+    {
+      "id": "8Y5_0LoV4rFBchqVME-zN",
+      "description": "sdsdsfsdfsfd",
+      "selected": "personal",
+      "tagColor": "#5e9197ab",
+      "completed": false,
+      "status": false,
+      "date": "2024-03-13",
+      "createdAt": "2024-03-13"
+    },
+    {
+      "id": "B9VVxK__k7w-l6lUCX_To",
+      "description": "sdsdsfsdfsfd",
+      "selected": "personal",
+      "tagColor": "#5e9197ab",
+      "completed": false,
+      "status": false,
+      "date": "2024-03-13",
+      "createdAt": "2024-03-13"
+    },
+    {
+      "id": "k2t0PoFUDStncJa7WPrHr",
+      "description": "sdsdsfsdfsfd",
+      "selected": "buisness",
+      "tagColor": "#5e9197ab",
+      "completed": false,
+      "status": false,
+      "date": "2024-03-13",
+      "createdAt": "2024-03-13"
+    },
+    {
+      "id": "ye1NLLlwmRqdX1D79Jmad",
+      "description": "sdsdsfsdfsfd",
+      "selected": "buisness",
+      "tagColor": "#5e9197ab",
+      "completed": false,
+      "status": false,
+      "date": "2024-03-13",
+      "createdAt": "2024-03-13"
     }
   ],
   "members": [
@@ -385,5 +422,34 @@
       ]
     }
   ],
-  "events": []
+  "events": [
+    {
+      "id": "3OHjE18jeurA3TEi57TEb",
+      "description": "gfgfgfgfgfgfgf",
+      "startTime": "23:04",
+      "endTime": "23:05",
+      "tagColor": "#39a8f7"
+    },
+    {
+      "id": "uTEKfbySgfnKPNkI1qNZs",
+      "description": "gfgfgfgfgfgfgf",
+      "startTime": "23:04",
+      "endTime": "23:05",
+      "tagColor": "#39a8f7"
+    },
+    {
+      "id": "of-FtLTDYlbjWAl7YHfzB",
+      "description": "gfgfgfgfgfgfgf",
+      "startTime": "23:04",
+      "endTime": "23:05",
+      "tagColor": "#39a8f7"
+    },
+    {
+      "id": "t-IU_D9okGshPTiUM0jTv",
+      "description": "gfgfgfgfgfgfgf",
+      "startTime": "23:04",
+      "endTime": "23:05",
+      "tagColor": "#39a8f7"
+    }
+  ]
 }
