@@ -130,6 +130,7 @@ width: 359px;    overflow: hidden;
     border-radius: 10px;
     border: 1px solid;
     margin-top: 20px;
+    cursor: pointer;
 }
 .TodoForm__date{
      gap:10px; 
@@ -140,7 +141,8 @@ width: 359px;    overflow: hidden;
      display: flex;
     align-items: center;
 justify-content: space-evenly;    width: 100%;
-}.TodoForm__date div label{
+}
+.TodoForm__date div label{
       display: flex;
     align-items: center;
      width: 100%;

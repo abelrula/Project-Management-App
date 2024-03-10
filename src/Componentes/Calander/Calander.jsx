@@ -20,7 +20,8 @@ const Calander = (props) => {
        if ( !res.ok )  console.log( "error occured" )
        const data= await res.json()
        const newData=data.map((data)=>{
-       const start=moment(data.startDate).toDate()
+         const start = moment( data.startDate ).toDate()
+        //  console.log(start,end)
        const end=moment(data.endDate).toDate()
           return{
             ...data,
@@ -29,11 +30,11 @@ const Calander = (props) => {
           }
 })
        setEvents(newData)
-       console.log(newData)
+    console.log(events)
+      //  console.log(newData)
       }
        fetchEvents()
     }, [] ) 
-    console.log(events)
   
   const component = {
     event: (prop) => {
@@ -88,7 +89,7 @@ const Calander = (props) => {
         localizer={localizer}
         components={ component }
          max={moment("2023-12-15T21:00:00").toDate()}
-        min={ moment( "2023-12-15T07:00:00" ).toDate() }
+         min={ moment( "2023-12-15T07:00:00" ).toDate() }
         onDragStart={(props)=>console.log(props )}
         onEventDrop={ ( props ) =>
         {

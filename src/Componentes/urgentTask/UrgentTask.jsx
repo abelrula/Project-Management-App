@@ -1,17 +1,18 @@
 //  import { useGetTodosQuery } from "../../api/apiSlice";
-import { AiFillCheckCircle } from "react-icons/ai";
-import { BiCircle } from "react-icons/bi";
+ import { BiArrowBack, BiCircle, BiLeftArrow } from "react-icons/bi";
 import "./urgentTask.css";
 import { useEffect,useState } from "react";
 import moment from "moment";
-const UrgentTask = () => {
+ const UrgentTask = ({setUrgent}) => {
   // const { data: todos, isSuccess } = useGetTodosQuery();
   const [ todo, setTodos ] = useState( [] );
   const [ completed, setCompleted ] = useState(null)
   console.log(completed);
   // const todayTodo =
   //   isSuccess && todos.filter((item) => item.date === Date().substring(0, 16));
- const todayDate=new Date().toISOString().substring(0,10)
+  const todayDate = new Date().toString().substring( 0, 10 )
+  console.log( todayDate )
+  
  useEffect(() => {
     const fetchTodos = async () => {
       const res = await fetch("http://localhost:3500/todo");
@@ -22,12 +23,16 @@ const UrgentTask = () => {
     };
     fetchTodos();
  }, [] );
-    console.log(todo)
-    const todayTodo = todo?.filter(( item ) =>  item.date == todayDate  );
+  console.log( todo )
+  
+    const todayTodo = todo?.filter(( item ) =>  item.date.substring(0,10) == todayDate  );
     console.log(todayTodo)
   return (
    <div className="TodayTodo__view--task">
-      <h5>Urgent Tasks</h5>
+      <div className="TodayTodo__view--task-header">
+      <BiArrowBack color="black" onClick={()=>setUrgent(false)} className="icon"/>
+      <h5>Urgent Tasks For Today</h5>
+      </div>
       <ul className=" element-with-scroll">
         {todayTodo?.length > 0 ? (
           todayTodo.map((item) => (

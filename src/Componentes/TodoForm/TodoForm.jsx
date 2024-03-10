@@ -9,8 +9,6 @@ const TodoForm = ({setActive}) => {
   const date = new Date();
    const [startDate, setStartDate] = useState("");
    const [description, setDescription] = useState("");
-  const [personal, setPersonal] = useState(false);
-  const [buisness, setBuisnes] = useState(false);
   const [todos,setTodos]=useState([])
  const [selected, setSelected] = useState(null);
   const [tagColor, setTagColor] = useState(""); 
@@ -31,21 +29,19 @@ const TodoForm = ({setActive}) => {
   function handleSubmit ( e )
   {
     e.preventDefault();
-    const id = todos.length ? todos[todos.length - 1].id+ 1 : 1;
      fetch( "http://localhost:3500/todo", {
       method: "POST",
      headers:{"Content-Type": "application/json" },
      body: JSON.stringify( {
        id: nanoid(),
          description,
-         buisness,
-         personal,
+         selected,
          tagColor,
          completed:false,
+         status:"" || false,
          date:startDate,
          createdAt:startDate
       } )
-
     })
      setBuisnes ( null )
     setDescription ("" )
@@ -53,7 +49,10 @@ const TodoForm = ({setActive}) => {
     setStartDate("")
      
   }
+  
+
    console.log(todos);
+   const todoType=["business","personal"]
   return (
     <>
       <form className="TodoForm" onSubmit={ handleSubmit }>
@@ -75,8 +74,6 @@ const TodoForm = ({setActive}) => {
         <div className="TodoForm__type">
           <div
             onClick={() => {
-              setPersonal((prev) => !prev);
-              setBuisnes(false);
               setSelected("personal");
             }}
             className="TodoForm__type--all SchedualForm__type--personal"
@@ -89,13 +86,11 @@ const TodoForm = ({setActive}) => {
           </div>
           <div
             onClick={() => {
-              setBuisnes((prev) => !prev);
               setSelected("buisness");
-              setPersonal(false);
             }}
             className="TodoForm__type--all TodoForm__type--buisness"
             style={{
-              background: selected === "buisness" && "#183de2",
+              background: selected === "buisness" && "red",
               color: selected === "buisness" && "white",
             }}
           >

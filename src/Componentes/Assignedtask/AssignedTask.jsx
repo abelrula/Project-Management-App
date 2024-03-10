@@ -8,10 +8,10 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
 import AddTodoForm from "../AddTodoForm/AddTodoForm"
 import img1 from "../../assets/worker1.jpg"
-import { AiOutlineProfile } from "react-icons/ai";
+import {AiFillRightCircle, AiOutlineProfile } from "react-icons/ai";
 import { IoPersonOutline } from "react-icons/io5";
 
-   const AssignedTask = ({title,footer,setActive}) => {
+   const AssignedTask = ({title,setUrgent,footer,setActive}) => {
    const [todoStatus, setTodoStatus] = useState("Upcoming");
    const [todos,setTodos]=useState([])
      const location = useLocation()
@@ -44,6 +44,17 @@ import { IoPersonOutline } from "react-icons/io5";
       title: "Completed",
     },
   ];
+  function handleComplete (e,id){
+     
+    e.preventDefault();
+     fetch( `http://localhost:3500/todo/${id}`, {
+      method: "PATCH",
+      headers:{"Content-Type": "application/json" },
+      body: JSON.stringify( {
+          completed:e.target.checked,
+      } )
+    })
+  }
   // console.log(workProgress);
   return (
     <><div className="AssignedTask">
@@ -52,7 +63,7 @@ import { IoPersonOutline } from "react-icons/io5";
         { location.pathname === "/report" ?
           <IoCloseCircleOutline className="icon" onClick={ () => setActive( false ) } /> 
           : <CiLock />
-        }
+        } <button className="AssignedTask_Button" onClick={()=>setUrgent(true)}>see urgent <AiFillRightCircle className="icon" /></button>
       </span>
       <div className="AssignedTask__situation">
           <div className="AssignedTask__situation-types">
@@ -71,8 +82,8 @@ import { IoPersonOutline } from "react-icons/io5";
               {todos?.map((item)=>(
                  <div className="AssignedTask__situation--description--list">
                   <span>
-                   <input type="checkbox" value={item.completed} />
-                    <p>{item.description.length > 26 ?`${item.description.substring(0,26)}...` : item.description }</p>
+                   <input type="checkbox" value={item.completed} onChange={(e)=>handleComplete(e,item.id)} />
+                    <p>{item.description?.length > 26 ? `${item.description.substring(0,26)}...` : item.description }</p>
                   </span>
                 { location.pathname === "/report" ?
                   <img

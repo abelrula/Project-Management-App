@@ -9,7 +9,7 @@
     border: 1px solid black;
     position: sticky;
     top:0;
-    max-width: 185px;}
+    width: 120px;}
 .side > h1{
     font-size: 1.3rem;
     text-align: start;
@@ -25,7 +25,6 @@
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
-    flex-direction: column;
     border: 1px solid #5d5252;
 }
    .sideWord label{
@@ -38,20 +37,14 @@
 .side >label:hover ,link:hover{
     cursor: pointer;
 }
-.sideWord:last-child{
-    display: flex;
-    justify-content: center;
-}
-  
 .navigationLinks{
     display: flex;
     flex-direction: column;
-      align-items: center;
     justify-content: space-between;
    padding: 10px 0;
     height: 100vh;
-    width: max-content;
     margin-top: 35px;
+    
 }
 .navigationTopLinks{
      display: flex;
@@ -59,7 +52,7 @@
     gap: 10px;
 }
  .navigationLinks  .icon{
-  font-size:15px;
+  font-size:20px;
       color: #ffa600;
 }
 .logout{
@@ -75,9 +68,8 @@ h4{
 .navigationTBottomLinks{
     display: flex;
      gap: 15px;
-    font-size: 20px;
+    font-size: 20px;   
+     flex-direction: column;
 }
-.icon:is(:active){
-    color:goldenrod
-}
+ 
  

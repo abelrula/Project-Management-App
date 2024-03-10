@@ -25,11 +25,6 @@ const menuLinks = [
     to: "/",
     icon: <BiHomeAlt2 className="icon" fill="#ffa909" />,
   },
-  // {
-  //   title: "My Tasks",
-  //   to: "myTasks",
-  //   icon: <SiCodefactor className="icon" fill="#ffa909" />,
-  // },
   {
     title: "Schedules",
     to: "schedule",
@@ -39,10 +34,6 @@ const menuLinks = [
     title: "Gant Chart",
     to: "team",
     icon: <HiUserGroup className="icon" fill="#ffa909" />,
-  },{
-    title: "Tasks",
-    to: "tasks",
-    icon: <GrTasks className="icon" fill="#ffa909" />,
   },
   {
     title: "Overview",
@@ -59,11 +50,11 @@ const menuLinks = [
     to: "message",
     icon: <BiMessage className="icon" fill="#ffa909" />,
   },
-  {
-    title: "Video Meeting",
-    to: "videoChat",
-    icon: <BiVideo className="icon" fill="#ffa909" />,
-  }
+  // {
+  //   title: "Video Meeting",
+  //   to: "videoChat",
+  //   icon: <BiVideo className="icon" fill="#ffa909" />,
+  // }
 ];
 
 export default menuLinks;

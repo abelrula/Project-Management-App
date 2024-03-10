@@ -15,12 +15,15 @@ import { IoChevronBack } from "react-icons/io5";
 import overView, { allData } from "../../data/overView";
 import AssignedTask from "../Assignedtask/AssignedTask";
 import TodoForm from "../TodoForm/TodoForm";
+import { useLocation } from "react-router-dom";
 
 const TodoTask = () => {
   // const {  isLoading } = useGetTodosQuery();
     const [active,setActive]=useState(false)
 const [open,setOpen]=useState(false)
-const [openTitle,setOpenTitle]=useState(null)
+  const [ openTitle, setOpenTitle ] = useState( null )
+  const [ urgent, setUrgent ] = useState( false )
+  const location=useLocation()
   const date = new Date();
   const chartref = useRef(null);
   const chartInstance = useRef(null);
@@ -81,32 +84,32 @@ const [openTitle,setOpenTitle]=useState(null)
       value:120
     }
   ]
-  console.log(active)
+  console.log(urgent)
   return (
     <>
       <div className="Dashboard">
       <div className="Dashboard_TaskStatus">
         <Calendar value={date} />
-        {/* <UrgentTask /> */}
-        <AssignedTask setActive={setActive}  title="My tasks" footer="Add To Do" />
+          { urgent ?
+            <UrgentTask setUrgent={ setUrgent } /> :
+            <AssignedTask setUrgent={ setUrgent } setActive={ setActive } title="My tasks" footer="Add To Do" />
+          }
         <div className="Dashboard_TaskCompletion-doghnutGraph">
            <canvas ref={chartref}  />
-        </div>
+         </div>
         {/* <AssignedTask title="Task I've Assigned" footer="Assign Task" /> */}
           { !open ? (
         <div className="Dashboard_TaskCompletion-totalTaskCount">
-        {  data.map( ( item, i ) => (
+        {data.map( ( item, i ) => (
             <TotalNumber
               key={ i }
               title={ item.title }
               value={ item.value }
               setOpenTitle={ setOpenTitle }
               setOpen={ setOpen } />
-        ) )
-            }
+        ) )}
         </div>)
-           : (
-                <div className="Dashboard_TaskCompletion_container">
+           : (<div className="Dashboard_TaskCompletion_container">
               <span>
                 <IoChevronBack
               onClick={ () =>setOpen( false )}
