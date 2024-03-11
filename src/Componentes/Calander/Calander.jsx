@@ -13,25 +13,23 @@ const Calander = (props) => {
   const [ events, setEvents ] = useState()
   const [ active, setActive ] = useState(false)
   console.log(moment(new Date()))
-  console.log(moment("2024-03-18T10:00:00").toDate())
+  console.log(moment("2024-03-18T10:00:00").i)
   useEffect( () =>{
      const fetchEvents = async () =>{
        const res = await fetch( "http://localhost:3500/events" )
        if ( !res.ok )  console.log( "error occured" )
        const data= await res.json()
        const newData=data.map((data)=>{
-         const start = moment( data.startDate ).toDate()
-        //  console.log(start,end)
-       const end=moment(data.endDate).toDate()
+         const startTime = moment( data.start ).toDate()
+         const endTime=moment(data.end).toDate()
           return{
             ...data,
-            start,
-            end
+            start:startTime,
+            end:endTime
           }
 })
        setEvents(newData)
-    console.log(events)
-      //  console.log(newData)
+       console.log(events)
       }
        fetchEvents()
     }, [] ) 
@@ -75,7 +73,7 @@ const Calander = (props) => {
   const onChangeEventsTime=useCallback((start,end,appointementId) => {
     setEvents(( event ) =>event?.data?.appointements?.id === appointementId ? {
           ...event,
-      start, end
+       start, end
     } : event
     )
   } ,[])
@@ -90,7 +88,7 @@ const Calander = (props) => {
         components={ component }
          max={moment("2023-12-15T21:00:00").toDate()}
          min={ moment( "2023-12-15T07:00:00" ).toDate() }
-        onDragStart={(props)=>console.log(props )}
+         onDragStart={(props)=>console.log(props )}
         onEventDrop={ ( props ) =>
         {
           const{ start, end}=props

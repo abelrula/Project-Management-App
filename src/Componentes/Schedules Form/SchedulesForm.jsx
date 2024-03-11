@@ -4,18 +4,18 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { HiCalendar } from "react-icons/hi";
 import "./schedulesForm.css";
+import { GiLevelTwo } from "react-icons/gi";
 import Calendar from "react-calendar";
 import moment from "moment";
 const SchedulesForm = ({setActive}) => {
-  const date = new Date();
+   const date = new Date();
    const [schedualTime, setSchedualTime] = useState("");
    const [startTime, setStartTime] = useState("");
    const [endTime, setEndTime] = useState("");
-  const [description, setDescription] = useState("");
-  const [tagColor, setTagColor] = useState(""); 
+   const [description, setDescription] = useState("");
+   const [tagColor, setTagColor] = useState(""); 
    const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
-console.log(startTime,endTime)
-console.log(moment(schedualTime).toDate())
+  //  console.log(moment(schedualTime).toDate())
   function handleSubmit ( e )
   {
     e.preventDefault();
@@ -23,13 +23,16 @@ console.log(moment(schedualTime).toDate())
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify( {
-        id: nanoid(),
-        description,
-        startTime,
-        endTime,
-        tagColor,
+        title:description,
+        start:startTime,
+        end:endTime,
       } )
     } )
+    setActive(false)
+    setEndTime("")
+    setStartTime("")
+    setDescription("")
+    setTagColor("")
   }
 
   return (
@@ -40,7 +43,7 @@ console.log(moment(schedualTime).toDate())
         <IoCloseCircleSharp fontSize={27}  className="icon" onClick={()=>setActive(false)}/>
         </div>
         <div>
-          <h2>Add Events</h2>
+          <label>Add Events</label>
           <textarea
             type="text"
             id="description"
@@ -54,25 +57,20 @@ console.log(moment(schedualTime).toDate())
           {/* <Calendar value={value} onChange={onChange} /> */}
           <div>
             <label>
-              <HiCalendar className="calanderIcon" />On Date
-            </label>
-            <input type="date" onChange={ ( e ) => setSchedualTime( e.target.value ) } />
-          </div>
-          <div>
-            <label>
               <HiCalendar className="calanderIcon" />Start Time
             </label>
-            <input type="time" onChange={ ( e ) => setStartTime( e.target.value ) } />
-          </div>
+            <input type="datetime-local" onChange={ ( e ) => setStartTime( e.target.value ) } />
+           </div>
+           <GiLevelTwo size={20} />
              <div>
             <label>
               <HiCalendar className="calanderIcon" />End Time
             </label>
-            <input type="time" onChange={ ( e ) => setEndTime( e.target.value ) } />
+            <input type="datetime-local" onChange={ ( e ) => setEndTime( e.target.value ) } />
           </div>
         </div>
         <div className="SchedualForm__tags">
-          <h3>Select Tag :</h3>
+          <label>Select Tag :</label>
           <div>
           { colors.map( ( color ) => (
             <div className="SchedualForm__tag">
