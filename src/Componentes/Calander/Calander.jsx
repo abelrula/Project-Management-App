@@ -12,8 +12,6 @@ const Calander = (props) => {
   const localizer = momentLocalizer( moment );
   const [ events, setEvents ] = useState()
   const [ active, setActive ] = useState(false)
-  console.log(moment(new Date()))
-  console.log(moment("2024-03-18T10:00:00").i)
   useEffect( () =>{
      const fetchEvents = async () =>{
        const res = await fetch( "http://localhost:3500/events" )
@@ -36,7 +34,9 @@ const Calander = (props) => {
   
   const component = {
     event: (prop) => {
-      const EventType = prop?.event?.data?.type;
+      const EventType = prop?.event?.type;
+      console.log(prop)
+      console.log(EventType)
       switch (EventType) {
         case "buisnes":
           return (
@@ -70,17 +70,18 @@ const Calander = (props) => {
     },
   };
   // console.log( moment( "2024-02-13T11:00:00" ).toDate() );
-  const onChangeEventsTime=useCallback((start,end,appointementId) => {
-    setEvents(( event ) =>event?.data?.appointements?.id === appointementId ? {
-          ...event,
-       start, end
-    } : event
-    )
-  } ,[])
+  // const onChangeEventsTime=useCallback((start,end,appointementId) => {
+  //   setEvents(( event ) =>event?.data?.appointements?.id === appointementId ? {
+  //         ...event,
+  //      start, end
+  //   } : event
+  //   )
   // console.log(events)
   return (
     <div className='scheduals'>
-{ !active  && <button className='scheduals_AddButton' onClick={()=>setActive(true)}>Add New Scheduals</button>}    <div className='scheduals_schedualsList'>
+      { !active && <button className='scheduals_AddButton'
+        onClick={ () => setActive( true ) }>Add New Scheduals</button> }
+      <div className='scheduals_schedualsList'>
       <DndCalendar
         defaultView="week"
         events={events}
@@ -88,24 +89,24 @@ const Calander = (props) => {
         components={ component }
          max={moment("2023-12-15T21:00:00").toDate()}
          min={ moment( "2023-12-15T07:00:00" ).toDate() }
-         onDragStart={(props)=>console.log(props )}
-        onEventDrop={ ( props ) =>
-        {
-          const{ start, end}=props
-          // console.log( "start", start, "end", end )
-          console.log(props )
-          // console.log( props )
-          const appointementId= props?.event?.data?.appointements?.id
-           onChangeEventsTime( start, end, appointementId )
-        }}
-        onEventResize={ (props ) =>
-        {
-           const{ start, end}=props
-          console.log( "start", start, "end", end )
-          // console.log( props )
-          const appointementId= props?.event?.data?.appointements?.id
-           onChangeEventsTime( start, end, appointementId )
-        } }
+        //  onDragStart={(props)=>console.log(props )}
+        // onEventDrop={ ( props ) =>
+        // {
+        //   const{ start, end}=props
+        //   // console.log( "start", start, "end", end )
+        //   console.log(props )
+        //   // console.log( props )
+        //   const appointementId= props?.event?.data?.appointements?.id
+        //    onChangeEventsTime( start, end, appointementId )
+        // }}
+        // onEventResize={ (props ) =>
+        // {
+        //    const{ start, end}=props
+        //   console.log( "start", start, "end", end )
+        //   // console.log( props )
+        //   const appointementId= props?.event?.data?.appointements?.id
+        //    onChangeEventsTime( start, end, appointementId )
+        // } }
       />
      {active && <SchedulesForm setActive={setActive} />}
     </div>

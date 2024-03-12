@@ -9,10 +9,10 @@ import Calendar from "react-calendar";
 import moment from "moment";
 const SchedulesForm = ({setActive}) => {
    const date = new Date();
-   const [schedualTime, setSchedualTime] = useState("");
    const [startTime, setStartTime] = useState("");
    const [endTime, setEndTime] = useState("");
    const [description, setDescription] = useState("");
+   const [schedualType, setSchedualType] = useState(false);
    const [tagColor, setTagColor] = useState(""); 
    const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
   //  console.log(moment(schedualTime).toDate())
@@ -25,14 +25,15 @@ const SchedulesForm = ({setActive}) => {
       body: JSON.stringify( {
         title:description,
         start:startTime,
-        end:endTime,
+        end: endTime,
+        type:schedualType
       } )
     } )
-    setActive(false)
-    setEndTime("")
+     setEndTime("")
     setStartTime("")
     setDescription("")
     setTagColor("")
+    setSchedualType(false)
   }
 
   return (
@@ -67,6 +68,32 @@ const SchedulesForm = ({setActive}) => {
               <HiCalendar className="calanderIcon" />End Time
             </label>
             <input type="datetime-local" onChange={ ( e ) => setEndTime( e.target.value ) } />
+          </div>
+        </div>
+         <div className="TodoForm__type">
+          <div
+            onClick={() => {
+              setSchedualType("personal");
+            }}
+            className="TodoForm__type--all SchedualForm__type--personal"
+            style={{
+              background: schedualType === "personal" && "#183de2",
+              color: schedualType === "personal" && "white",
+            }}
+          >
+            Personal
+          </div>
+          <div
+            onClick={() => {
+              setSchedualType("buisness");
+            }}
+            className="TodoForm__type--all TodoForm__type--buisness"
+            style={{
+              background: schedualType === "buisness" && "red",
+              color: schedualType === "buisness" && "white",
+            }}
+          >
+            Buisness
           </div>
         </div>
         <div className="SchedualForm__tags">

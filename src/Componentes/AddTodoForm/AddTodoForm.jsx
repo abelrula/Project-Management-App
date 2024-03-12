@@ -129,7 +129,6 @@ const AddTodoForm = ({setOpenModal}) => {
         </div>
           <div className="Form__AttachDocuments">
           <label>Attach Documents</label>
-
           <input
             type="file"
             id="documents"

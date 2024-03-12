@@ -34,10 +34,15 @@
   }
   .scheduals_AddButton:hover{
   cursor: pointer;
-scale: 1.1;  }
-.scheduals{
+  scale: 1.1;  }
+
+  .scheduals{
       display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px
 }
+    .rbc-addons-dnd .rbc-event {
+    transition: opacity 150ms;
+    border: none;
+  }
