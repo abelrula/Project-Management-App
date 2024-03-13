@@ -458,5 +458,29 @@
       "type": "buisnes",
       "id": 5
     }
+  ],
+  "AssignedProjects": [
+    {
+      "task": "dsfsesfedsf",
+      "project": "Customer",
+      "assignedTo": "simon Jorge",
+      "jobCatagory": "project manager",
+      "document": "C:\\fakepath\\20230720_113124.jpg",
+      "startDate": "2024-03-21",
+      "endDate": "2024-03-13T18:08:26.824Z",
+      "priority": "medium",
+      "id": 1
+    },
+    {
+      "task": "dsfer fdgdegfrd fdrgttdgrdd",
+      "project": "Marketing",
+      "assignedTo": "Fabio Lucas",
+      "jobCatagory": "Technical support specialist",
+      "document": "C:\\fakepath\\4_5841591259877084132.pdf",
+      "startDate": "2024-02-25",
+      "endDate": "2024-03-13T18:12:21.584Z",
+      "priority": "high",
+      "id": 2
+    }
   ]
 }

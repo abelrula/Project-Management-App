@@ -95,12 +95,7 @@ const Overview = () => {
           </tr>
         </thead>
         <tbody>
-          {overView.map((item, i) => (
-            <Fragment key={i}>
-              <tr>
-                <th colspan="9">{item.dataTitle}</th>
-              </tr>
-              {item.allData.map((descData, i) => (
+              {overView.map((descData, i) => (
                 <tr key={i} className="data">
                   <td>
                     <input type="checkbox" onClick={(e)=>setChecked(e.target.checked)} />
@@ -143,9 +138,7 @@ const Overview = () => {
                   <td>{descData.duration}</td>
                   <td>{descData.complete}</td>
                 </tr>
-              ))}
-            </Fragment>
-          ))}
+            ))  }
         </tbody>
       </table>
     {active &&  <Form  setActive={setActive}/> }

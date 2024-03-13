@@ -6,15 +6,15 @@ import projectTypes from "../../data/projectTypes";
 import { IoCloseCircleSharp } from "react-icons/io5";
 const Form = ({setActive}) => {
   const date = new Date();
-     const [startDate, setStartDate] = useState(date);
-   const [endDate, setEndate] = useState(date);
+  const [startDate, setStartDate] = useState(date);
+  const [endDate, setEndate] = useState(date);
   const [description, setDescription] = useState("");
   const [selectedProject,setSelectedProject]=useState(null)
   const [selectedEmployee,setSelectedEmployee]=useState(null)
   const [openProject,  setOpenProject]=useState(false)
   const [openEmployee,setOpenEmployee]=useState(false)
- const [jobCatagory,setJobCatagory]=useState(null)
-  const [ selected, setSelected ] = useState( null );
+  const [jobCatagory,setJobCatagory]=useState(null)
+  const [ priority, setPriority ] = useState( null );
   const [attachedDocuments,setAttachedDocuments]=useState(null)
   
    const members = "http://localhost:3500/members";
@@ -30,6 +30,23 @@ const Form = ({setActive}) => {
    
   function handleSubmit(e) {
     e.preventDefault();
+    fetch("http://localhost:3500/AssignedProjects",{
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body:JSON.stringify({
+       task:description,
+       project:selectedProject,
+       assignedTo: selectedEmployee,
+       jobCatagory: jobCatagory,
+       document:attachedDocuments,
+       startDate,
+       endDate,
+       priority
+      })
+    })
+    setActive(false)
   }
  const data=[
             {
@@ -48,8 +65,6 @@ const Form = ({setActive}) => {
             background:"#ff0000",
             },
   ]
-   console.log(selectedProject)
-   console.log(selectedProject)
   return (
     <div className="modal">
       <form className="Form" onSubmit={ handleSubmit }>
@@ -60,8 +75,7 @@ const Form = ({setActive}) => {
          <div className="employeContainer">
             <label>select which Employee you want to assign 
             { !openEmployee && <FaArrowDown className="icon"
-              onClick={ () =>
-              {
+              onClick={ () =>{
                 setOpenEmployee( true );
                 setOpenProject( false )
               } } /> }
@@ -143,12 +157,12 @@ const Form = ({setActive}) => {
           <label>Select The Priority</label>
         { data.map( ( item, i ) => (
           <div
-           onClick={()=>setSelected(item.status)}
+           onClick={()=>setPriority(item.status)}
             className={`Form__type-all ${ item.classname }` }
             key={i}
             style={ {
-              background: selected ===item.status && item.background,
-              color:selected ==item.status && "white" }} >
+              background: priority ===item.status && item.background,
+              color:priority ==item.status && "white" }} >
              {item.status}
        </div>
        ))}
@@ -170,7 +184,7 @@ const Form = ({setActive}) => {
         </div>
         
         <button type="submit" className="Form__button">
-          <p>Assign Task</p>
+          Assign Task
         </button>
       </form>
      </div>
