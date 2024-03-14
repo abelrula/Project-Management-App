@@ -122,6 +122,10 @@ background-color: aliceblue;
     font-weight: 800;
     padding: 10px 0px;
     font-family: monospace;
+        text-align: center;
+}
+tbody .data{
+
 }
 tbody tr th{
      font-size: larger;
@@ -133,6 +137,8 @@ tbody tr th{
     color: #ffffff;
  }
  
-    tr td:nth-child(7){
+   tbody tr td:nth-child(1){
+         text-align: start;
+ padding:0 10px;
        color:red
     }

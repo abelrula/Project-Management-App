@@ -9,12 +9,12 @@ const Form = ({setActive}) => {
   const [startDate, setStartDate] = useState(date);
   const [endDate, setEndate] = useState(date);
   const [description, setDescription] = useState("");
-  const [selectedProject,setSelectedProject]=useState(null)
-  const [selectedEmployee,setSelectedEmployee]=useState(null)
+  const [selectedProject,setSelectedProject]=useState("")
+  const [selectedEmployee,setSelectedEmployee]=useState("")
   const [openProject,  setOpenProject]=useState(false)
   const [openEmployee,setOpenEmployee]=useState(false)
-  const [jobCatagory,setJobCatagory]=useState(null)
-  const [ priority, setPriority ] = useState( null );
+  const [jobCatagory,setJobCatagory]=useState("")
+  const [ priority, setPriority ] = useState( "" );
   const [attachedDocuments,setAttachedDocuments]=useState(null)
   
    const members = "http://localhost:3500/members";
@@ -43,7 +43,10 @@ const Form = ({setActive}) => {
        document:attachedDocuments,
        startDate,
        endDate,
-       priority
+       priority,
+       status:"not Started",
+       duration:"",
+       progressPercent:""
       })
     })
     setActive(false)

@@ -17,6 +17,7 @@ const TotalHour = () => {
         label: "hours",
         data: [10,7,5,3,4,5,6,7,8,9,10],
         backgroundColor: "#d19f54",
+        borderRadius: 5,
         //  borderColor:"beige"
       },
     ],

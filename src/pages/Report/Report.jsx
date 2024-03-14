@@ -59,8 +59,8 @@ const Report = () => {
         </div>
         {/* <AllprojectProgress /> */}
            <div className="totalRevenues">
-          <TotalHour />
           <TotalRevenue />
+          <TotalHour />
            </div>
       </div>
     </>

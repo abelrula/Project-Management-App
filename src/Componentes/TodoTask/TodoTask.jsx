@@ -12,7 +12,7 @@ import Chart from "chart.js/auto";
 import TotalNumber from "../TotalTaskstatus/TotalNumber";
 import ProjectCatagories from "../ProjectCatagories/ProjectCatagories";
 import { IoChevronBack } from "react-icons/io5";
-import overView, { allData } from "../../data/overView";
+import overView from "../../data/overView";
 import AssignedTask from "../Assignedtask/AssignedTask";
 import TodoForm from "../TodoForm/TodoForm";
 import { useLocation } from "react-router-dom";
@@ -118,7 +118,7 @@ const [open,setOpen]=useState(false)
              </span>
               <ul>
               {
-                allData.map( ( data, i ) => (
+                overView.map( ( data, i ) => (
                   <li>
                     <p>{ data.task }</p>
                     <p>{ data.associate }</p>

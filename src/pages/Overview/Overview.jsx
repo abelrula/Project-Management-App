@@ -1,4 +1,4 @@
-import { Fragment,useState } from "react";
+import { Fragment,useState,useEffect } from "react";
 import { BsListTask } from "react-icons/bs";
 import { TbStatusChange } from "react-icons/tb";
 import { TbTimeDuration0 } from "react-icons/tb";
@@ -17,11 +17,26 @@ import overView from "../../data/overView";
 import Form from "../../Componentes/Form/Form";
 import { BiUpArrowAlt, BiDownArrowAlt } from "react-icons/bi";
  import img1 from "../../assets/worker2.jpg"
+import ProgressBar from "../../Componentes/progressBar/ProgressBar";
 
 const Overview = () => {
-  const [ active, setActive ] = useState(false)
+  
+   const [ projectTasks, setProjectTasks ] = useState( [] )
+   const [ active, setActive ] = useState( false )
    const [ checked, setChecked ] = useState()
-  console.log(checked);
+  useEffect( () =>
+  { 
+      const AssignedProjects=async()=>{
+        const res = await fetch( " http://localhost:3500/AssignedProjects" )
+        const data = await res.json()
+        setProjectTasks(data)
+        console.log(data);
+}
+      AssignedProjects()
+  console.log(projectTasks);
+
+  },[])
+ 
   return (
     <>
       <Header title="Project Overview" />
@@ -53,11 +68,6 @@ const Overview = () => {
             </th>
             <th>
               <span>
-                Associate <CgAssign />
-              </span>
-            </th>
-            <th>
-              <span>
                 Owner
                 <MdOutlineAssignmentInd />
               </span>
@@ -80,11 +90,6 @@ const Overview = () => {
               </span>
             </th>
             <th>
-              <span>
-                Due Date <TbCalendarDue />
-              </span>
-            </th>
-            <th>
               <span>Duaration</span>
             </th>
             <th>
@@ -93,18 +98,17 @@ const Overview = () => {
               </span>
             </th>
           </tr>
-        </thead>
+          </thead>
         <tbody>
-              {overView.map((descData, i) => (
+              {projectTasks.map((descData, i) => (
                 <tr key={i} className="data">
                   <td>
                     <input type="checkbox" onClick={(e)=>setChecked(e.target.checked)} />
                     {descData.task}
                   </td>
-                  <td>{descData.associate} </td>
                   <td className="assignedTo">
                     <img src={ img1 } alt="person" />
-                    <span>{ descData.owner }</span>
+                    <span>{ descData.assignedTo }</span>
                     </td>
                   <td >
                     <span>
@@ -133,10 +137,9 @@ const Overview = () => {
                       {descData.status}
                     </span>
                   </td>
-                  <td>{descData.startdate}</td>
-                  <td>{descData.duedate}</td>
+                  <td>{descData.startDate}</td>
                   <td>{descData.duration}</td>
-                  <td>{descData.complete}</td>
+                  <td><ProgressBar progress={descData.progressPercent} bgcolor="blue" /></td>
                 </tr>
             ))  }
         </tbody>

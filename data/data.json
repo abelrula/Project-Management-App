@@ -461,26 +461,88 @@
   ],
   "AssignedProjects": [
     {
-      "task": "dsfsesfedsf",
+      "task": "completeing the fromt",
       "project": "Customer",
       "assignedTo": "simon Jorge",
       "jobCatagory": "project manager",
       "document": "C:\\fakepath\\20230720_113124.jpg",
       "startDate": "2024-03-21",
-      "endDate": "2024-03-13T18:08:26.824Z",
+      "endDate": "2024-03-13",
+      "status": "in progress",
+      "duration": "125 days",
       "priority": "medium",
-      "id": 1
+      "id": 1,
+      "progressPercent": 45
     },
     {
-      "task": "dsfer fdgdegfrd fdrgttdgrdd",
+      "task": "completeing the dashboard",
       "project": "Marketing",
       "assignedTo": "Fabio Lucas",
       "jobCatagory": "Technical support specialist",
       "document": "C:\\fakepath\\4_5841591259877084132.pdf",
       "startDate": "2024-02-25",
-      "endDate": "2024-03-13T18:12:21.584Z",
+      "endDate": "2024-03-13",
       "priority": "high",
-      "id": 2
+      "id": 2,
+      "status": "in progress",
+      "duration": "45 days",
+      "progressPercent": 95
+    },
+    {
+      "task": "completeing the dashboard",
+      "project": "Marketing",
+      "assignedTo": "",
+      "jobCatagory": "",
+      "document": "C:\\fakepath\\4_5841591259877084132.pdf",
+      "startDate": "2024-02-25",
+      "endDate": "2024-03-13",
+      "priority": "high",
+      "id": 3,
+      "status": "not started",
+      "duration": "0 days",
+      "progressPercent": 10
+    },
+    {
+      "task": "completeing the alllllll",
+      "project": "Operations",
+      "assignedTo": "",
+      "jobCatagory": "",
+      "document": "C:\\fakepath\\4_5841591259877084132.pdf",
+      "startDate": "2024-02-25",
+      "endDate": "2024-03-13",
+      "priority": "high",
+      "id": 3,
+      "status": "not started",
+      "duration": "0",
+      "progressPercent": 0
+    },
+    {
+      "task": "completeing the back",
+      "project": "Marketing",
+      "assignedTo": "Christina Ryoji",
+      "jobCatagory": "Sales engineer.",
+      "document": "C:\\fakepath\\4_5841591259877084132.pdf",
+      "startDate": "2024-02-25",
+      "endDate": "2024-03-13",
+      "priority": "medium",
+      "id": 4,
+      "status": "finished",
+      "duration": "95 days",
+      "progressPercent": 100
+    },
+    {
+      "task": "dsdfseefwfe",
+      "project": "Research",
+      "assignedTo": "Ashely jhonson",
+      "jobCatagory": "Database administrator",
+      "document": "C:\\fakepath\\20240217_143418.jpg",
+      "startDate": "2024-03-16",
+      "endDate": "2024-03-14T17:55:13.591Z",
+      "priority": "high",
+      "status": "not Started",
+      "duration": "",
+      "progressPercent": "",
+      "id": 5
     }
   ]
 }

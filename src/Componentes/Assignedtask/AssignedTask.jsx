@@ -79,8 +79,8 @@ import { IoPersonOutline } from "react-icons/io5";
             ))}
           </div>
           <div className="AssignedTask__situation--description">
-              {todos?.map((item)=>(
-                 <div className="AssignedTask__situation--description--list">
+              {todos?.map((item,i)=>(
+                 <div className="AssignedTask__situation--description--list" key={i}>
                   <span>
                    <input type="checkbox" value={item.completed} onChange={(e)=>handleComplete(e,item.id)} />
                     <p>{item.description?.length > 26 ? `${item.description.substring(0,26)}...` : item.description }</p>

@@ -22,6 +22,7 @@ const TotalRevenue = () => {
         label: "$ revenue",
         data: [3000, 5000, 10000, 1000, 2000],
         backgroundColor: "#004077",
+        borderRadius: 10,
         //  borderColor:"beige"
       },
     ],
