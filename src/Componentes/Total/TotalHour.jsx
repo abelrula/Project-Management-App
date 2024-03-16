@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Bar } from "react-chartjs-2";
 
 const TotalHour = () => {
- const data = {
-    labels: [
+  const [ value, setValue ] = useState( "weekly" )
+  const [ labels, setLabels ] = useState( [] )
+  const week= [
       "Mon",
       "Tue",
       "Wend",
@@ -11,10 +12,36 @@ const TotalHour = () => {
       "Fri",
       "Sat",
       "Sun",
-    ],
+     ]
+     const month=[
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apri",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Nov",
+      "Dec",
+  ] 
+  useEffect( () =>
+  {
+    if ( value === "Weekly" )
+    {
+     setLabels(week )
+    }
+    else if ( value === "Monthly" )
+    setLabels(month)
+
+  },[value])
+  console.log(labels)
+  const data = {
+    labels,
     datasets: [
       {
-        label: "hours",
+        label: "Total Working Hours",
         data: [10,7,5,3,4,5,6,7,8,9,10],
         backgroundColor: "#d19f54",
         borderRadius: 5,
@@ -25,8 +52,11 @@ const TotalHour = () => {
   const options = {};
 
     return (
-    <div className="bar">
-            <h5>Total-Hours</h5>
+      <div className="bar">
+        <select onChange={(e)=>setValue(e.target.value)}>
+                <option value="Weekly"> Weekly</option>
+                <option value="Monthly">Monthly</option>
+              </select>
             <Bar data={data} options={options} />
     </div>
   )

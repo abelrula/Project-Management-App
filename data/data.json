@@ -72,7 +72,7 @@
       "description": "biceps: -hammer,curls,sitted -curl ,-sitted hamer triceps: -triceps extension,-skull crush,-triangle push up back: -pull up , -one hand grip pull down",
       "personal": true,
       "buisness": false,
-      "completed": true,
+      "completed": false,
       "tagColor": "#B5EAAA",
       "date": "Fri Jan 12 2024",
       "createdAt": "2024-01-12T07:32:53.237Z"
@@ -457,6 +457,13 @@
       "end": "2024-03-12T18:39",
       "type": "buisnes",
       "id": 5
+    },
+    {
+      "title": "fewfesdsdsfd",
+      "start": "2024-03-15T07:16",
+      "end": "2024-03-15T09:16",
+      "type": "personal",
+      "id": 6
     }
   ],
   "AssignedProjects": [

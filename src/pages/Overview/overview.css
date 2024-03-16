@@ -81,10 +81,7 @@ tr .assignedTo img{
  object-fit: cover;
 }
  
-tbody tr td{
-   text-align: left;
-   background-color: aliceblue;
-}
+
  
 .data th .icon{
            font-size: 25px;
@@ -122,7 +119,7 @@ background-color: aliceblue;
     font-weight: 800;
     padding: 10px 0px;
     font-family: monospace;
-        text-align: center;
+    text-align: center;
 }
 tbody .data{
 
@@ -140,5 +137,5 @@ tbody tr th{
    tbody tr td:nth-child(1){
          text-align: start;
  padding:0 10px;
-       color:red
     }
+ 

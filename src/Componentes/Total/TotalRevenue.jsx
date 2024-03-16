@@ -19,7 +19,7 @@ const TotalRevenue = () => {
     ],
     datasets: [
       {
-        label: "$ revenue",
+        label: "$ Total Revenue",
         data: [3000, 5000, 10000, 1000, 2000],
         backgroundColor: "#004077",
         borderRadius: 10,
@@ -30,7 +30,6 @@ const TotalRevenue = () => {
   const options = {};
     return (
             <div className="bar">
-            <h5>Total-Revenue</h5>
             <Bar data={data} options={options} />
             </div>
   )
