@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJs,
   BarElement,
@@ -8,10 +6,15 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-ChartJs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+import { week, Month, hours, Revenue } from "../../data/hour&month";
+import { Bar } from "react-chartjs-2";
+ ChartJs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+import "./projectStatus.css"
+// import 'chartjs-adapter-moment';
 
-const ProjectStatus = ({active}) => {
-  const [ filter, setFilter ] = useState( new Date().toISOString() );
+const ProjectStatus = () =>
+{
+    const [filter, setFilter] = useState(new Date().toISOString());
   const colorsData = [
     "rgba(94, 145, 151, 0.67)",
     "rgba(147, 12, 194, 0.4)",
@@ -117,8 +120,10 @@ const ProjectStatus = ({active}) => {
         position: "bottom",
         type: "time",
         time: {
-          unit: "year",
-         
+          // unit: "day",
+          displayFormats: {
+            day: "d",
+          },
         },
         min: startDate,
         max: endDate,
@@ -157,8 +162,9 @@ const ProjectStatus = ({active}) => {
       },
     },
   };
-    return (
-      <div className="projectsStatusBar">
+    return ( 
+       <>
+     <div className="projectsStatusBar">
             {/* <h1>Projects Status</h1> */}
             <div>
               <h5>Project-Duaration</h5>
@@ -168,9 +174,10 @@ const ProjectStatus = ({active}) => {
                 onChange={(e) => setFilter(e.target.value)}
               />
             </div>
-           {!active && <Bar data={data1} plugins={todayLine} options={options1} />}
+            <Bar data={data1} plugins={todayLine} options={options1} />
           </div>
-  )
-}
-
-export default ProjectStatus
+        </>
+    )
+  }
+  
+  export default ProjectStatus
