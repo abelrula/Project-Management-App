@@ -10,6 +10,7 @@ import { week, Month, hours, Revenue } from "../../data/hour&month";
 import { Bar } from "react-chartjs-2";
  ChartJs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 import "./projectStatus.css"
+import { useState } from "react";
 // import 'chartjs-adapter-moment';
 
 const ProjectStatus = () =>

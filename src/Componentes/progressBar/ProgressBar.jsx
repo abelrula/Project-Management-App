@@ -2,11 +2,11 @@
 
 import React from "react";
 import "./proressBar.css";
-const ProgressBar = ({ bgcolor, progress, height }) => {
+const ProgressBar = ({  progress }) => {
   const Childdiv = {
     height: "100%",
     width: `${progress}%`,
-    backgroundColor: bgcolor,
+    backgroundColor: "#3535ff",
     borderRadius: 40,
     textAlign: "right",
     alignItems: "center",
