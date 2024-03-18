@@ -1,145 +1,111 @@
-.ProjectOverView{
-    
-}
+
 table{
- width: 100%;
+width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
     border-spacing: 0px;
+    border: 1px solid #aba5a5;
     font-family: monospace;
+    font-size: 12px;
  }
-
-thead th span{
-     display: flex;
-    align-items: center;
-    padding: 0px 19px;
-    gap:5px;
+ th p{
+       display: flex;
+    align-items: center; 
+    gap:5px
  }
-td{
-      padding: 5px 0px;
-}
-.status{
-    padding: 2px 5px;
-    border-radius: 20px; 
-    color: white;
-    justify-content: center;
-
-}
-tbody tr td span{
-    display: flex;
-    align-items: center;
-    padding: 0px 6px;
-    gap: 5px;
+  tr th{
+        border: 1px solid #e3e1e1;
+        padding: 10px;
  }
-thead tr th {
-      color: #888f8f;
-    padding: 10px;
-    background-color: #ffffff;
-}
-thead tr th select {
-    border: navajowhite;
-    outline: navajowhite;
-    border-radius: 10px;
-    padding: 5px 10px;
-    color: black;
-    background: #b2b0b5;
-    color: white;
-    display: flex;
-}
-.da
-thead tr th button {
-    padding: 3px 20px;
-    background: #0e90ff;
-    border: navajowhite;
-    border-radius: 10px;
-    color: white;
-    font-weight: 800;
-    font-family: auto;
-    font-size: 15px;
-}
 thead tr th select option{
 font-size: 15px;
     font-family: ui-monospace;
 }
- tr td:first-child{
-    min-width: 225px;
-}
-tr td:nth-child(6){
+
+tr td:nth-child(5){
     text-align: center;
+    position: relative;
 }
-tr .assignedTo{
-    display: flex;
+td{
+        border: 1px solid #e3e1e1;
+    padding: 3px 0px;
+    cursor:pointer
 }
-tr .assignedTo span{
-    font-size: 10px;
-}
- 
-tr .assignedTo img{
-    width: 25px;
-    height: 25px;
- border-radius: 50%;
- object-fit: cover;
-}
- 
-
- 
-.data th .icon{
-           font-size: 25px;
-    color: black;
-    border: 1px solid #9c9c9c;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 0 5px;
-    margin-left: 20;
-     position: relative;
-    right: 60px;
-}
-.data th .icon:hover{
-    scale: 1.1;
-}
-
-.data th .link{
-        background: red;
-    padding: 6px;
-    border-radius: 10px;
-    text-decoration: none;
+   td input{
+        width: 100%;
+    padding: 5px 5px;
+    background: #e7e7e7;
+    border: none;
     font-size: 12px;
-    color: white;
-    font-weight: 100;
-    font-family: cursive;
-        border: none;
-}
-.data th .link:hover{
-    scale: 1.1;
-}
-tbody .data td{
-background-color: aliceblue;
-    border-bottom: 1px solid wheat;
-    color: black;
-    font-weight: 800;
     font-family: monospace;
-    text-align: center;
-        border: 1px solid #cbcbcb;
-}
-tbody .data{
+    font-weight: 100;
+    border: none;
+    }
 
-}
-tbody tr th{
-     font-size: larger;
-    font-weight: 800;
-    height: 40px;
-     background: #a5a5a56e;
-    padding: 5px 10px;
-    text-align: justify;
-    color: #ffffff;
+ .taskStatus{
+      position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    display: flex;
+    align-items: center;
+justify-content: space-evenly;
+    font-size: 13px;
  }
- 
-   tbody tr td:nth-child(1){
-         text-align: start;
- padding:0 10px;
-    }
-    
-    tbody{
-
-    }
- 
+ td{
+    position: relative;
+    text-align: center;
+ }
+ .taskStatus_menu{
+       display: flex;
+    flex-direction: column;
+    gap: 3px;
+    z-index: 100;
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    top: 25px;
+    background: #777777;
+    height: auto;
+    width: 150px;
+    border-radius: 10px;
+    transition: 10ms all ease-in;
+    left: -20px;
+ }
+ .taskStatus_menu-item{
+     color: white;
+    border: none;
+    cursor: pointer;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    padding: 11px 16px;
+    width: 90%;
+    align-self: center;
+    gap: 10px;
+ }
+ .taskStatus_menu-item:hover{
+    scale:1.1;
+    cursor: pointer;
+    background:#959595
+ }
+ .taskStatus-stat{
+    cursor: pointer;
+    position: absolute;
+ }
+ .taskStatus_menu-item span {
+    width: 10px;
+    height: 10px;
+ }
+ td p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+ }
+ td img{
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+ }

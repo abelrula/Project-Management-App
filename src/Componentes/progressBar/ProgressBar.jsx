@@ -6,7 +6,7 @@ const ProgressBar = ({  progress }) => {
   const Childdiv = {
     height: "100%",
     width: `${progress}%`,
-    backgroundColor: "#3535ff",
+    backgroundColor: "#284b86",
     borderRadius: 40,
     textAlign: "right",
     alignItems: "center",

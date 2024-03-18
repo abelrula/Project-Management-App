@@ -464,6 +464,20 @@
       "end": "2024-03-15T09:16",
       "type": "personal",
       "id": 6
+    },
+    {
+      "title": "cfxfcxg",
+      "start": "2024-03-17T23:46",
+      "end": "2024-03-17T16:46",
+      "type": "personal",
+      "id": 7
+    },
+    {
+      "title": "",
+      "start": "2024-03-17T07:46",
+      "end": "2024-03-17T08:46",
+      "type": "personal",
+      "id": 8
     }
   ],
   "AssignedProjects": [
@@ -548,7 +562,7 @@
       "priority": "high",
       "status": "not Started",
       "duration": "",
-      "progressPercent": "",
+      "progressPercent": 30,
       "id": 5
     }
   ]

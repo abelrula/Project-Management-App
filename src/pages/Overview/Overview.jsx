@@ -3,7 +3,7 @@
             import { TbStatusChange } from "react-icons/tb";
             import { TbTimeDuration0 } from "react-icons/tb";
             import { FaHourglassStart } from "react-icons/fa";
-            import { MdOutlineAssignmentInd } from "react-icons/md";
+            import { MdArrowDropDown, MdOutlineAssignmentInd } from "react-icons/md";
             import { CgAssign } from "react-icons/cg";
             import { TbCalendarDue } from "react-icons/tb";
             import { FcHighPriority } from "react-icons/fc";
@@ -24,6 +24,11 @@
               const [ active, setActive ] = useState( false )
               const [ checked, setChecked ] = useState()
               const columns=[
+                {
+                  accessorKey:"completed",
+                  header:<p>check <BsListTask /></p>,
+                  cell:CheckedCell
+                } ,
                 {
                   accessorKey:"task",
                   header:<p>Task <BsListTask /></p>,
@@ -87,7 +92,6 @@
                     const res = await fetch( "http://localhost:3500/AssignedProjects" )
                     const data = await res.json()
                     setProjectTasks(data)
-                    console.log(data);
             }
                   AssignedProjects()
 
@@ -96,16 +100,11 @@
                 data: projectTasks,
                 columns,
                 getCoreRowModel:getCoreRowModel() ,
-                metea: {
-                  updateData:(rowIndex,columnId,value)=>setData(prev=>prev.map((row,i)=>
-                    i === rowIndex ? {
-                      ...prev[ rowIndex ],
-                      [columnId]:value
-                  }:row
-                  ) )
+                meta: {
+                  updateData: ( rowIndex, columnId, value ) => ( setProjectTasks( ( prev ) => prev.map( ( row, i ) => i === rowIndex ? { ...prev[ rowIndex ], [ columnId ]: value } : row
+                  ) ))
                 }
             })
-            console.log(tableData.getHeaderGroups())
               return (
                 <>
                   <Header title="Project Overview" />
@@ -237,23 +236,24 @@
 
             export default Overview
             
-            
+            export const CheckedCell = ({getValue,row,column,table}) => {
+              return (
+               <input
+                  type="checkbox"
+                  />
+              )
+            } 
             export const TaskCell = ({getValue,row,column,table}) => {
-              const initilaValue=getValue()
+              const initilaValue = getValue()
               const [value,setValue]=useState(initilaValue)
-              console.log(value)
-              function onBlur(){
+              const onBlur=()=>{
                 table.options.meta?.updateData(row.index,column.id,value)
               }
-              useEffect( () =>
-              {
-             setValue(initilaValue)
-            },[initilaValue])
+              useEffect( () =>{
+              setValue(initilaValue)
+              },[initilaValue])
               return (
-               <> <input
-                  type="checkbox"
-                  onBlur={onBlur}
-                  value={ value } />
+               <> 
                   <input
                   type="text"
                   onBlur={onBlur}
@@ -264,9 +264,13 @@
             }
             
             const PriorityCell = ({getValue,row,column,table}) => {
+              const { name, value } = getValue() || {}
+              const initilaValue = getValue()
+              const {updateData}=table.options.meta
               const [active,setActive]=useState(false)
-              const [selectedValue,setSelectedValue]=useState("")
+              const [selectedValue,setSelectedValue]=useState(initilaValue)
               const [selectedValueColor,setSelectedValueColor]=useState("")
+              console.log()
               const Status = [
                 {
                 status:"High",
@@ -281,13 +285,14 @@
                 color:"#e1ff48"
             }
             ]
-              console.log(selectedValue)
               return (
                 <>
-                  <div 
+                  <div
                   className="taskStatus"
-                      style={{background:selectedValueColor}}
-                    onClick={ () => setActive( true ) }>{ !active && !selectedValue ? "None" : selectedValue }
+                  style={{background:selectedValueColor}}
+                  onClick={ () => setActive( true ) }>
+                    { !active && !selectedValue ? "None" : selectedValue }
+                    <MdArrowDropDown />
                   </div>
                  { active &&
                     <div className="taskStatus_menu">
@@ -297,10 +302,13 @@
                       key={ i } 
                       // style={{background:status.color}}
                       onClick={()=> {
-                      setSelectedValueColor(status.color)
+                        updateData(row.index,column.id,status.status)
+                        setSelectedValueColor(status.color)
                         setSelectedValue( status.status );
                         setActive( false )
-                      } }>{ status.status }</div>
+                      } }>
+                    <span style={ { background: status.color } }></span>
+                      { status.status }</div>
                      )
                       ) }
                     </div>
@@ -310,8 +318,11 @@
             }
             
      const StatusCell = ({getValue,row,column,table}) => {
-              const [active,setActive]=useState(false)
-              const [selectedValue,setSelectedValue]=useState("")
+              const { name, value } = getValue() || {}
+              const initilaValue = getValue()
+              const {updateData}=table.options.meta        
+              const [ active, setActive ] = useState( false )
+              const [selectedValue,setSelectedValue]=useState(initilaValue)
               const [selectedValueColor,setSelectedValueColor]=useState("")
                  const Status = [
                 {
@@ -332,13 +343,14 @@
                 },
             
             ]
-              console.log(selectedValue)
               return (
                 <>
                   <div 
                   className="taskStatus"
                       style={{background:selectedValueColor}}
-                    onClick={ () => setActive( true ) }>{ !active && !selectedValue ? "None" : selectedValue }
+                    onClick={ () => setActive( true ) }>
+                    { !active && !selectedValue ? "None" : selectedValue }
+                    <MdArrowDropDown />
                   </div>
                  { active &&
                     <div className="taskStatus_menu">
@@ -347,10 +359,13 @@
                     className="taskStatus_menu-item"
                       key={ i } 
                        onClick={()=> {
-                       setSelectedValueColor(status.color)
+                        updateData(row.index,column.id,selectedValue)
+                        setSelectedValueColor(status.color)
                         setSelectedValue( status.status );
                         setActive( false )
-                      } }>{ status.status }</div>
+                      } }>
+                    <span style={ { background: status.color } }></span>
+                        { status.status }</div>
                      )
                       ) }
                     </div>
