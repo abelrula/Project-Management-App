@@ -24,11 +24,11 @@
               const [ active, setActive ] = useState( false )
               const [ checked, setChecked ] = useState()
               const columns=[
-                {
-                  accessorKey:"completed",
-                  header:<p>check <BsListTask /></p>,
-                  cell:CheckedCell
-                } ,
+                // {
+                //   accessorKey:"completed",
+                //   header:<p>check <BsListTask /></p>,
+                //   cell:CheckedCell
+                // } ,
                 {
                   accessorKey:"task",
                   header:<p>Task <BsListTask /></p>,
@@ -92,126 +92,29 @@
                     const res = await fetch( "http://localhost:3500/AssignedProjects" )
                     const data = await res.json()
                     setProjectTasks(data)
-            }
+                  }
                   AssignedProjects()
-
-              },[])
+                },[])
+                console.log(projectTasks)
               const tableData = useReactTable( {
                 data: projectTasks,
                 columns,
                 getCoreRowModel:getCoreRowModel() ,
                 meta: {
-                  updateData: ( rowIndex, columnId, value ) => ( setProjectTasks( ( prev ) => prev.map( ( row, i ) => i === rowIndex ? { ...prev[ rowIndex ], [ columnId ]: value } : row
+                  updateData: ( rowIndex, columnId, value ) => (
+                    setProjectTasks( ( prev ) =>
+                      prev.map( ( row, i ) =>
+                        i === rowIndex ? { ...prev[ rowIndex ]
+                          ,[columnId ]: value
+                        }
+                          : row
                   ) ))
                 }
             })
+              
               return (
                 <>
                   <Header title="Project Overview" />
-                  {/* <table >
-                    <thead>
-                      <tr className="data">
-                        <th >
-                          <BiUpArrowAlt className="icon"/>
-                          <BiDownArrowAlt className="icon"/>
-                        </th>
-                        <th  >
-                          <select>
-                            <option value="All"> All</option>
-                            <option value="Open"> Open</option>
-                            <option value="Not Assigned"> Not Assigned</option>
-                            <option value="Finished"> Finished</option>
-                          </select>
-                        </th>
-                        <th colspan="8">
-                          <button className="link"  onClick={()=>setActive(true)} >Assign Task</button>
-                        </th>
-                      </tr>
-                      <tr>
-                        <th>
-                          <span>
-                            Task
-                            <BsListTask />
-                          </span>
-                        </th>
-                        <th>
-                          <span>
-                            Owner
-                            <MdOutlineAssignmentInd />
-                          </span>
-                        </th>
-                        <th>
-                          <span>
-                            Priority
-                            <MdOutlineLowPriority />
-                          </span>
-                        </th>
-                        <th>
-                          <span>
-                            Status
-                            <TbStatusChange />
-                          </span>
-                        </th>
-                        <th>
-                          <span>
-                            Start Date <FaHourglassStart />
-                          </span>
-                        </th>
-                        <th>
-                          <span>Duaration</span>
-                        </th>
-                        <th>
-                          <span>
-                            %Complete <TbTimeDuration0 />
-                          </span>
-                        </th>
-                      </tr>
-                      </thead>
-                    <tbody>
-                          {projectTasks.map((descData, i) => (
-                            <tr key={i} className="data">
-                              <td>
-                                <input type="checkbox" onClick={(e)=>setChecked(e.target.checked)} />
-                                {descData.task}
-                              </td>
-                              <td className="assignedTo">
-                                <img src={ img1 } alt="person" />
-                                <span>{ descData.assignedTo }</span>
-                                </td>
-                              <td >
-                                <span>
-                                  {descData.priority === "high" ? (
-                                    <FcHighPriority />
-                                  ) : descData.priority === "medium" ? (
-                                    <FcMediumPriority />
-                                  ) : (
-                                    <FcLowPriority />
-                                  )}
-                                  {descData.priority}
-                                </span>
-                              </td>
-                              <td>
-                                <span
-                                  className="status"
-                                  style={{
-                                    background:
-                                      descData.status === "not started"
-                                        ? "#2d6ba1"
-                                        : descData.status === "in progress"
-                                        ? "#5c6621"
-                                        : "#796a19",
-                                  }}
-                                >
-                                  {descData.status}
-                                </span>
-                              </td>
-                              <td>{descData.startDate}</td>
-                              <td>{descData.duration}</td>
-                              <td><ProgressBar progress={descData.progressPercent} bgcolor="blue" /></td>
-                            </tr>
-                        ))  }
-                    </tbody>
-                  </table> */}
                   <div>
                     <table>
                       { tableData.getHeaderGroups().map( (headerGroup) =>(
@@ -234,7 +137,7 @@
               );
             }
 
-            export default Overview
+export default Overview
             
             export const CheckedCell = ({getValue,row,column,table}) => {
               return (
@@ -243,7 +146,7 @@
                   />
               )
             } 
-            export const TaskCell = ({getValue,row,column,table}) => {
+            export const TaskCell = ( { getValue, row, column, table } ) =>{
               const initilaValue = getValue()
               const [value,setValue]=useState(initilaValue)
               const onBlur=()=>{
@@ -266,7 +169,7 @@
             const PriorityCell = ({getValue,row,column,table}) => {
               const { name, value } = getValue() || {}
               const initilaValue = getValue()
-              const {updateData}=table.options.meta
+             
               const [active,setActive]=useState(false)
               const [selectedValue,setSelectedValue]=useState(initilaValue)
               const [selectedValueColor,setSelectedValueColor]=useState("")
@@ -302,7 +205,7 @@
                       key={ i } 
                       // style={{background:status.color}}
                       onClick={()=> {
-                        updateData(row.index,column.id,status.status)
+                         table.options.meta?.updateData(row.index,column.id,status.status)
                         setSelectedValueColor(status.color)
                         setSelectedValue( status.status );
                         setActive( false )
@@ -323,43 +226,53 @@
               const {updateData}=table.options.meta        
               const [ active, setActive ] = useState( false )
               const [selectedValue,setSelectedValue]=useState(initilaValue)
-              const [selectedValueColor,setSelectedValueColor]=useState("")
-                 const Status = [
+              const [ selectedValueColor, setSelectedValueColor ] = useState( {})
+       
+      //  useEffect(()=>{
+        //  ()
+        // const values=Status.filter( ( item ) => item.status === initilaValue)
+        // initilaValue === "not started" ? 
+        // setSelectedValueColor(values)
+        // console.log( selectedValueColor)    
+        // console.log( values)    
+      //  },[])     
+      //  console.log( initilaValue)    
+       const Status = [
                 {
-                status:"in Progress",
-                color:"#f53210"
+                  status:"in progress",
+                  color:"#f53210"
                 },
                 {
                     status:"Open",
                     color:"#3fab1d"
                 },
                 {
-                    status:"Finished",
+                    status:"finished",
                     color:"#e1ff48"
                 },
                 {
                     status:"not started",
                     color:"#e1ff48"
                 },
-            
-            ]
+       ]
+           
               return (
                 <>
                   <div 
-                  className="taskStatus"
+                      className="taskStatus"
                       style={{background:selectedValueColor}}
-                    onClick={ () => setActive( true ) }>
+                      onClick={ () => setActive( true ) }>
                     { !active && !selectedValue ? "None" : selectedValue }
                     <MdArrowDropDown />
                   </div>
-                 { active &&
+                    { active &&
                     <div className="taskStatus_menu">
-                  { Status.map((status,i)=>(
+                    { Status.map((status,i)=>(
                     <div
-                    className="taskStatus_menu-item"
+                      className="taskStatus_menu-item"
                       key={ i } 
                        onClick={()=> {
-                        updateData(row.index,column.id,selectedValue)
+                        table.options.meta?.updateData(row.index,column.id,selectedValue)
                         setSelectedValueColor(status.color)
                         setSelectedValue( status.status );
                         setActive( false )

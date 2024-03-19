@@ -23,7 +23,7 @@ const Header = ({ title }) => {
       <div className="left">
         <div className="notification">
           <BiBell className="icon" fill="#ffa909" fontSize={28} />
-          <span>2</span>
+          <span>12</span>
         </div>
         <div className="header__profile">
           <img

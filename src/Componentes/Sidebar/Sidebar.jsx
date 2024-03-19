@@ -22,7 +22,8 @@ const Sidebar = () => {
               className="sideWord"
               key={i}
             >
-              {link.icon}
+              { link.icon }
+              {link.title === "Message" && <span>4</span> }
               <label>{link.title}</label>
             </NavLink>
           ))}

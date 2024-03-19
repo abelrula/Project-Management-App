@@ -26,6 +26,8 @@
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid #5d5252;
+        width: 90px;
+        position: relative;
 }
    .sideWord label{
        color: #979393;
@@ -51,6 +53,18 @@
     flex-direction: column;
     gap: 10px;
 }
+ .navigationTopLinks span{
+    position: absolute;
+    top: -10px;
+    color: red;
+    left: 20px;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    font-size: 13px;
+    font-weight: bold;
+    background: white;
+ }
  .navigationLinks  .icon{
   font-size:20px;
       color: #ffa600;
@@ -71,5 +85,5 @@ h4{
     font-size: 20px;   
      flex-direction: column;
 }
- 
+
  

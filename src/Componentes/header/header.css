@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    padding: 10px 0px;
+    padding: 10px 100px;
 }
 .header h1{
     font-family: cursive;
@@ -26,17 +26,21 @@ display: flex;
 gap: 20px;
 }
 .header .left .notification{
-    position: relative;
+       position: relative;
     top: 10px;
-    width: 50px;
+    width: 60px;
 }
 .header .left .notification span{
-       position: relative;
+           position: relative;
     bottom: 24px;
     font-family: sans-serif;
-    font-weight: 900;
     right: 6px;
-    font-size: 12px;
+    font-size: 10px;
+    border: 50%;
+    border-radius: 50%;
+    background: #34453f;
+    color: white;
+    padding: 5px 6px
 }
 .header__profile{
     position: relative;
