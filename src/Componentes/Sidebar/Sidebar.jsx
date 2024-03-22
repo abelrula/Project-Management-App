@@ -2,9 +2,13 @@ import  { useState } from "react";
 // import FilterTodo from "../FilterTodo";
 import { NavLink } from "react-router-dom";
 import { IoIosSettings } from "react-icons/io";
-import { IoHelpCircle } from "react-icons/io5";
+import { IoHelpCircle, IoReturnDownForwardSharp } from "react-icons/io5";
  import "./sidebar.css";
 import menuLinks from "../../data/menuLinks";
+import { FaBinoculars, FaProjectDiagram } from "react-icons/fa";
+import { MdOutlineArrowCircleDown } from "react-icons/md";
+import { BsArrowDownCircle, BsEggFried } from "react-icons/bs";
+import projectTypes from "../../data/projectTypes";
 const Sidebar = () => {
   const selectedObj = {
     color: "black",
@@ -13,6 +17,10 @@ const Sidebar = () => {
 
   return (
     <div className="side">
+      <div className="brandIcon">
+        <BsEggFried className="icon" />
+        <h1>Projects</h1>
+      </div>
       <div className="navigationLinks">
         <div className="navigationTopLinks">
           {menuLinks.map((link, i) => (
@@ -23,10 +31,22 @@ const Sidebar = () => {
               key={i}
             >
               { link.icon }
-              {link.title === "Message" && <span>4</span> }
               <label>{link.title}</label>
+              {link.title === "Message" && <span>4</span> }
             </NavLink>
           ))}
+        </div>
+         <div className="projects">
+         <h5 >recent projects  <IoReturnDownForwardSharp /></h5>
+          {
+            projectTypes.map( ( project, i ) => (
+              <NavLink className="label"
+                style={ ( { isActive } ) => ( isActive ? selectedObj : null ) }
+                to={ `projects` }>
+                { project.title }
+              </NavLink>
+            ))
+          }
         </div>
         <div className="navigationTBottomLinks">
           <NavLink 
@@ -45,9 +65,9 @@ const Sidebar = () => {
               >
             <IoHelpCircle className="icon" />
               <label>Help</label>
-
           </NavLink>
         </div>
+       
       </div>
     </div>
   );

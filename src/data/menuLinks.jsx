@@ -35,11 +35,7 @@ const menuLinks = [
     to: "team",
     icon: <HiUserGroup className="icon" fill="#ffa909" />,
   },
-  {
-    title: "Overview",
-    to: "overview",
-    icon: <MdLocalLibrary className="icon" fill="#ffa909" />,
-  },
+ 
   {
     title: "Report",
     to: "report",

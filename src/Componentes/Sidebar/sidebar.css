@@ -9,29 +9,45 @@
     border: 1px solid black;
     position: sticky;
     top:0;
-    width: 120px;}
+    width: 150px;}
 .side > h1{
     font-size: 1.3rem;
     text-align: start;
     margin-left:20px;
     margin-top:-5px;
 }
-.sideWord{
+.brandIcon{
        display: flex;
+    gap: 7px;
+    align-items: center;
+    border-bottom: 1px solid #5d5f5c;
+    margin-top: 10px;
+}
+.brandIcon .icon{
+        color: #41ff73;
+    font-size: 15px;
+}
+.brandIcon h1{
+         font-size: 25px;
+    color: #00db39;
+    font-family: system-ui;
+    font-weight: 100;
+}
+.sideWord{
+display: flex;
     gap: 5px;
     text-decoration: none;
     padding: 4px 5px;
     display: flex;
     align-items: center;
-    border-radius: 10px;
     cursor: pointer;
-    border: 1px solid #5d5252;
-        width: 90px;
-        position: relative;
+    width: 100%;
+    position: relative;
+    height: 25px;
 }
    .sideWord label{
-       color: #979393;
-    font-size: 11px;
+       color: #b1b1b1;
+    font-size: 12px;
     cursor: pointer;
     font-family: sans-serif;
 
@@ -40,33 +56,32 @@
     cursor: pointer;
 }
 .navigationLinks{
-    display: flex;
+       display: flex;
     flex-direction: column;
-    justify-content: space-between;
-   padding: 10px 0;
+    padding: 10px 0;
     height: 100vh;
-    margin-top: 35px;
+    margin-top: 5px;
     
 }
 .navigationTopLinks{
-     display: flex;
+        display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
  .navigationTopLinks span{
     position: absolute;
-    top: -10px;
+    top: -2px;
     color: red;
-    left: 20px;
+    left: 68px;
     border-radius: 50%;
-    width: 17px;
-    height: 17px;
-    font-size: 13px;
+    width: 13px;
+    height: 13px;
+    font-size: 11px;
     font-weight: bold;
     background: white;
  }
  .navigationLinks  .icon{
-  font-size:20px;
+  font-size:13px;
       color: #ffa600;
 }
 .logout{
@@ -80,10 +95,39 @@ h4{
     color: #ffffff;
 }
 .navigationTBottomLinks{
-    display: flex;
-     gap: 15px;
-    font-size: 20px;   
-     flex-direction: column;
+display: flex;
+    gap: 15px;
+    font-size: 20px;
+     bottom: 0;
+    position: absolute;
 }
-
+.navigationLinks .projects{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+}
+.navigationLinks .projects .icon{
+}
+.navigationLinks .projects h5{
+               text-align: start;
+    font-size: 14px;
+        font-family: fangsong;
+     color: #b1b1b1;
+     background: #252525;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 3px;
+}
+.navigationLinks .projects .label{
+       color: #8b8282;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: sans-serif;
+    padding: 4px 8px;
+    background: #141414;
+    text-decoration: none;
+    text-align: start;
+}
  

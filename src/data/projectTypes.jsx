@@ -9,7 +9,7 @@ const projectTypes = [
     icon: <FaResearchgate fill="red" className="icon" />
   },
   {
-    title: "Customer",
+    title: "Software Developement",
     color: "rgb(205 137 95 / 57%)",
     icon: <RiCustomerService2Fill fill="black" />
   },
@@ -24,7 +24,7 @@ const projectTypes = [
     icon: <MdOutlineAspectRatio fill="green" />
   },
   {
-    title: "Research",
+    title: "Daniel Apartemnt",
     color: "yellow",
     icon: <FaResearchgate />
   },

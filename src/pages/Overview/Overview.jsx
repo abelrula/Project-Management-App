@@ -1,12 +1,12 @@
             import { Fragment,useState,useEffect } from "react";
-            import { BsListTask } from "react-icons/bs";
-            import { TbStatusChange } from "react-icons/tb";
+            import { BsListTask, BsPersonCircle } from "react-icons/bs";
+            import { TbStatusChange, TbTimeDuration10 } from "react-icons/tb";
             import { TbTimeDuration0 } from "react-icons/tb";
             import { FaHourglassStart } from "react-icons/fa";
             import { MdArrowDropDown, MdOutlineAssignmentInd } from "react-icons/md";
             import { CgAssign } from "react-icons/cg";
             import { TbCalendarDue } from "react-icons/tb";
-            import { FcHighPriority } from "react-icons/fc";
+            import { FcDoughnutChart, FcHighPriority } from "react-icons/fc";
             import { FcMediumPriority } from "react-icons/fc";
             import { FcLowPriority } from "react-icons/fc";
             import { MdOutlineLowPriority } from "react-icons/md";
@@ -15,20 +15,21 @@
             import "./overview.css"
             import overView from "../../data/overView";
             import Form from "../../Componentes/Form/Form";
-            import { BiUpArrowAlt, BiDownArrowAlt } from "react-icons/bi";
+            import { BiUpArrowAlt, BiDownArrowAlt, BiCheckShield } from "react-icons/bi";
             import img1 from "../../assets/worker2.jpg"
             import ProgressBar from "../../Componentes/progressBar/ProgressBar";
             import {useReactTable,flexRender,getCoreRowModel} from "@tanstack/react-table"
+import { RiPercentFill } from "react-icons/ri";
             const Overview = () => {
               const [ projectTasks, setProjectTasks ] = useState( [] )
               const [ active, setActive ] = useState( false )
               const [ checked, setChecked ] = useState()
               const columns=[
-                // {
-                //   accessorKey:"completed",
-                //   header:<p>check <BsListTask /></p>,
-                //   cell:CheckedCell
-                // } ,
+                {
+                  accessorKey:"completed",
+                  header:<p><BiCheckShield /></p>,
+                  cell:CheckedCell
+                } ,
                 {
                   accessorKey:"task",
                   header:<p>Task <BsListTask /></p>,
@@ -36,14 +37,14 @@
                 },
                 {
                   accessorKey:"assignedTo",
-                  header:<p>assignedTo <MdOutlineAssignmentInd /></p>,
-                  cell: ( props ) => <p> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
+                  header:<p>assigned To <MdOutlineAssignmentInd /></p>,
+                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
                 },
-                {
-                  accessorKey:"project",
-                  header: <p>project</p>,
-                  cell: ( props ) => <p>{ props.getValue() }</p>
-                },
+                // {
+                //   accessorKey:"project",
+                //   header: <p>project</p>,
+                //   cell: ( props ) => <p>{ props.getValue() }</p>
+                // },
                 {
                   accessorKey:"priority",
                   header:<p>Priority <MdOutlineLowPriority /></p>,
@@ -72,7 +73,7 @@
                 // },
                 { 
                   accessorKey:"duration",
-                  header:"Duration",
+                  header:<p>Duration <FcDoughnutChart /></p>,
                   cell: ( props ) => <p>{ props.getValue() }</p>
                 },
                 // ,{ 
@@ -82,7 +83,7 @@
                 // },
                 {
                   accessorKey:"progressPercent",
-                  header:<p> %Complete <TbTimeDuration0 /></p>,
+                  header:<p> <RiPercentFill />Complete <TbTimeDuration0 /></p>,
                   cell: ( props ) => <ProgressBar progress={ props.getValue() } />
                 }
               ]
@@ -91,7 +92,7 @@
                   const AssignedProjects=async()=>{
                     const res = await fetch( "http://localhost:3500/AssignedProjects" )
                     const data = await res.json()
-                    setProjectTasks(data)
+                      setProjectTasks(data)
                   }
                   AssignedProjects()
                 },[])
@@ -169,32 +170,33 @@ export default Overview
             const PriorityCell = ({getValue,row,column,table}) => {
               const { name, value } = getValue() || {}
               const initilaValue = getValue()
-             
               const [active,setActive]=useState(false)
               const [selectedValue,setSelectedValue]=useState(initilaValue)
               const [selectedValueColor,setSelectedValueColor]=useState("")
-              console.log()
               const Status = [
                 {
-                status:"High",
-                color:"#f53210"
-            },
-             {
-                status:"Medium",
-                color:"#3fab1d"
-            },
-            {
-                status:"Low",
-                color:"#e1ff48"
-            }
-            ]
+                status:"high",
+                },
+                 {
+                    status:"medium",
+                },
+                {
+                    status:"low",
+                }
+                ]
+                
+            useEffect(()=>{
+           const values = Status.filter( ( item ) => item.status === initilaValue && item.color )
+          setSelectedValueColor(values[0]?.color)
+          console.log( values)    
+       },[])  
               return (
                 <>
                   <div
                   className="taskStatus"
-                  style={{background:selectedValueColor}}
+                    style={ { background: selectedValueColor } }
                   onClick={ () => setActive( true ) }>
-                    { !active && !selectedValue ? "None" : selectedValue }
+                    {  selectedValue }
                     <MdArrowDropDown />
                   </div>
                  { active &&
@@ -206,11 +208,9 @@ export default Overview
                       // style={{background:status.color}}
                       onClick={()=> {
                          table.options.meta?.updateData(row.index,column.id,status.status)
-                        setSelectedValueColor(status.color)
                         setSelectedValue( status.status );
                         setActive( false )
                       } }>
-                    <span style={ { background: status.color } }></span>
                       { status.status }</div>
                      )
                       ) }
@@ -228,22 +228,14 @@ export default Overview
               const [selectedValue,setSelectedValue]=useState(initilaValue)
               const [ selectedValueColor, setSelectedValueColor ] = useState( {})
        
-      //  useEffect(()=>{
-        //  ()
-        // const values=Status.filter( ( item ) => item.status === initilaValue)
-        // initilaValue === "not started" ? 
-        // setSelectedValueColor(values)
-        // console.log( selectedValueColor)    
-        // console.log( values)    
-      //  },[])     
-      //  console.log( initilaValue)    
+       
        const Status = [
                 {
                   status:"in progress",
-                  color:"#f53210"
+                  color:"#f59210"
                 },
                 {
-                    status:"Open",
+                    status:"open",
                     color:"#3fab1d"
                 },
                 {
@@ -252,15 +244,20 @@ export default Overview
                 },
                 {
                     status:"not started",
-                    color:"#e1ff48"
+                    color:"#ff6c6c"
                 },
        ]
-           
+            useEffect(()=>{
+           const values = Status.filter( ( item ) => item.status === initilaValue && item.color )
+          setSelectedValueColor(values[0]?.color)
+          console.log( values)    
+       },[])    
               return (
                 <>
                   <div 
                       className="taskStatus"
-                      style={{background:selectedValueColor}}
+                    style={ {
+                      background: selectedValueColor}}
                       onClick={ () => setActive( true ) }>
                     { !active && !selectedValue ? "None" : selectedValue }
                     <MdArrowDropDown />
