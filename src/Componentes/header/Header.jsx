@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./header.css";
 import { BiBell } from "react-icons/bi";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
    import img1 from "../../assets/worker2.jpg"
 import { BsPersonFillCheck, BsPersonFillGear } from "react-icons/bs";
 import { IoCloseCircleSharp } from "react-icons/io5";
@@ -12,17 +12,25 @@ const Header = ({ title }) => {
   const [showProfileInfo, setShowProfileInfo] = useState(false);
   console.log(pathname);
   return (
-    <><div className="header">
+    <>
+      <div className="header">
+        {pathname === "/" ? (
       <div className="greeting">
         <p className="TodayTodo__wavingHand">{title}</p>
-        {pathname === "/" ? (
              <p className="date">{date.toDateString()}</p>
-         ) : null}
        </div>
-
+         ) : null}
+        { pathname === "/projects/0" ? (
+          <nav className="Overview_header" >
+              <NavLink className="link">Tasks</NavLink>                     
+              <NavLink className="link">MileStones</NavLink>                     
+              <NavLink className="link">Documents</NavLink>                     
+              <NavLink className="link">Task Lists</NavLink>                     
+          </nav>
+         ) : null}
       <div className="left">
         <div className="notification">
-          <BiBell className="icon" fill="#ffa909" fontSize={28} />
+          <BiBell className="icon" fill="#ffa909" fontSize={23} />
           <span>12</span>
         </div>
         <div className="header__profile">

@@ -42,7 +42,7 @@ const Sidebar = () => {
             projectTypes.map( ( project, i ) => (
               <NavLink className="label"
                 style={ ( { isActive } ) => ( isActive ? selectedObj : null ) }
-                to={ `projects` }>
+                to={ `projects/${i}` }>
                 { project.title }
               </NavLink>
             ))

@@ -7,6 +7,7 @@ import SettingsLayout from "./Componentes/Layouts/SettingsLayout";
 import Setting from "./Componentes/Setting/Setting";
 import MessagesConvoversation from "./Componentes/messages/MessagesConvoversation/MessagesConvoversation";
 import MessageListheader from "./Componentes/messages/MessageListheader/MessageListheader";
+import Projects from "./Componentes/Table/Projects";
   
 
 const App=() =>{
@@ -16,12 +17,12 @@ const App=() =>{
        <Routes>
          <Route path="/" element={<Layout />}>
           <Route index element={ <Home /> } />
-           {/* <Route path="mytasks" element={<MyTask />} /> */}
            <Route path="schedule" element={<Schedules />} />
-           <Route path="projects" element={<Overview />} />
+           <Route path="projects" element={<Overview />} >
+            <Route path=":id" element={<Projects />} />
+          </Route>
            <Route path="report" element={<Report />} />
            <Route path="team" element={<GantChart />} />
-          {/* <Route path="tasks" element={ <Tasks /> } /> */}
            <Route path="message" element={<MessageLayout />}>
               <Route index element={<MessageListheader />} />
              <Route path=":id" element={<MessagesConvoversation />} />
