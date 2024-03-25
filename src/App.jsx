@@ -18,9 +18,11 @@ const App=() =>{
          <Route path="/" element={<Layout />}>
           <Route index element={ <Home /> } />
            <Route path="schedule" element={<Schedules />} />
-           <Route path="projects" element={<Overview />} >
-            <Route path=":id" element={<Projects />} />
-          </Route>
+            <Route path="projects" element={<Overview />} >
+                <Route path=":id" element={<Projects />} >
+                  <Route path="description" element={<ProjectsDescriiption />} />
+                </Route>
+            </Route>
            <Route path="report" element={<Report />} />
            <Route path="team" element={<GantChart />} />
            <Route path="message" element={<MessageLayout />}>

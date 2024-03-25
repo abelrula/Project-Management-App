@@ -17,6 +17,7 @@ const TotalRevenue = () => {
       "Nov",
       "Dec",
     ],
+    
     datasets: [
       {
         label: "$ Total Revenue",

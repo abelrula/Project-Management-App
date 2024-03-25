@@ -21,8 +21,8 @@
     border-radius: 50%;
 }
 .header .left{
-display: flex;
-align-items: end;
+     display: flex;
+    align-items: center;
 }
 .header .left .notification{
        position: relative;
@@ -213,17 +213,48 @@ align-items: start;}
 
 }
 .Overview_header{
+       display: flex;
+    gap: 5px;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.Overview_header-ProjectName{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.Overview_header-ProjectName h1{
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.Overview_header-ProjectName span{
+      border-radius: 5px;
+    padding: 0px 20px;
+    font-size: 13px;
+    font-family: auto;
+    border: 1px solid #387a95;
+    color: #387a95;
+    font-weight: 700;
+
+}
+.Overview_header-ProjectName span:hover{
+    scale:1.1;
+    background-color:#387a95 ;
+    color: white;
+
+}
+ .Overview_header-links{
     display: flex;
     gap: 25px;
     align-items: end;
     margin-left: -40px;
 }
-.Overview_header :first-child{
+.Overview_header-links :first-child{
            background: #bdbdbd;
     border-radius: 9px;
     padding: 2px 5px;
 }
-.Overview_header .link{
+.Overview_header-links .link{
       text-decoration: none;
     color: #818080;
     font-size: 15px;

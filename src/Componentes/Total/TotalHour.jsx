@@ -28,11 +28,11 @@ const TotalHour = () => {
   ] 
   useEffect( () =>
   {
-    if ( value === "Weekly" )
+    if ( value === "weekly" )
     {
      setLabels(week )
     }
-    else if ( value === "Monthly" )
+    else if ( value === "monthly" )
     setLabels(month)
 
   },[value])
@@ -54,8 +54,8 @@ const TotalHour = () => {
     return (
       <div className="bar">
         <select onChange={(e)=>setValue(e.target.value)}>
-                <option value="Weekly"> Weekly</option>
-                <option value="Monthly">Monthly</option>
+                <option value="weekly"> weekly</option>
+                <option value="monthly">monthly</option>
               </select>
             <Bar data={data} options={options} />
     </div>

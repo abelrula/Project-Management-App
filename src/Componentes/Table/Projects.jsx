@@ -11,7 +11,7 @@ import React from 'react'
             import { FcMediumPriority } from "react-icons/fc";
             import { FcLowPriority } from "react-icons/fc";
             import { MdOutlineLowPriority } from "react-icons/md";
-            import { BiUpArrowAlt, BiDownArrowAlt, BiCheckShield } from "react-icons/bi";
+            import { BiUpArrowAlt, BiDownArrowAlt, BiCheckShield, BiPlus } from "react-icons/bi";
             import img1 from "../../assets/worker2.jpg"
             import overView from "../../data/overView";
             import { Link } from "react-router-dom";
@@ -22,8 +22,9 @@ import React from 'react'
             import TaskCell from "./TaskCell"
             import PriorityCell from "./PriorityCell"
             import StatusCell from "./StatusCell"
-      import { RiPercentFill } from "react-icons/ri";
-import { GiClassicalKnowledge } from 'react-icons/gi';
+            import { RiPercentFill } from "react-icons/ri";
+            import { GiClassicalKnowledge } from 'react-icons/gi';
+            import { IoAddCircle } from 'react-icons/io5';
 const Projects = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
               const [ active, setActive ] = useState( false )
@@ -64,11 +65,11 @@ const Projects = () => {
                   header:<p> Start Date <FaHourglassStart /></p>,
                   cell: ( props ) => <p>{ props.getValue() }</p>
                 },
-                // { 
-                //   accessorKey:"duedate",
-                //   header:"duedate",
-                //   cell: ( props ) => <p>{ props.getValue() }</p>
-                // }
+                { 
+                  accessorKey:"duedate",
+                  header:"duedate",
+                  cell: ( props ) => <p>{ props.getValue() }</p>
+                }
                 ,
                 // { 
                 //   accessorKey:"endDate",
@@ -117,14 +118,13 @@ const Projects = () => {
                 }
              })
               
-
     return (
       <div>
            <div className="tableFilter">
             <h4>All Open </h4>
           <div>
-            <span><GiClassicalKnowledge/>Classics</span>
-            <span>Add Tasks</span>
+            <span ><GiClassicalKnowledge className="icon"/>Classics</span>
+            <span>Add Tasks <IoAddCircle className="icon"/></span>
             </div>
            </div>
                     <table>

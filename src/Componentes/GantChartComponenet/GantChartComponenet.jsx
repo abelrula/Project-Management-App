@@ -53,67 +53,7 @@ const [filter, setFilter] = useState("2024-01");
     "rgba(255, 206, 86, 1)",
   ];
   const data = {
-    datasets: [
-      {
-        label: "$ revenue",
-        data: [
-          {
-            x: ["2024-01-08", "2024-01-05"],
-            y: "Task 1",
-            name: "Simon panda",
-            status: "1",
-          },
-          {
-            x: ["2024-01-13", "2024-01-17"],
-            y: "Task 2",
-            name: "Abel",
-            status: "1",
-          },
-          {
-            x: ["2024-01-18", "2024-01-20"],
-            y: "Task 3",
-            name: "Yosef",
-            status: "2",
-          },
-          {
-            x: ["2024-01-21", "2024-01-26"],
-            y: "Task 4",
-            name: "Tsehay",
-            status: "0",
-          },
-          {
-            x: ["2024-02-27", "2024-02-30"],
-            y: "Task 5",
-            name: "pand",
-            status: "2",
-          },
-          {
-            x: ["2024-02-18", "2024-02-20"],
-            y: "Task 6",
-            name: "rula",
-            status: "2",
-          },
-          {
-            x: ["2024-01-21", "2024-02-26"],
-            y: "Task 7",
-            name: "biladen",
-            status: "0",
-          },
-          {
-            x: ["2024-02-27", "2024-03-30"],
-            y: "Task 8",
-            name: "miko",
-            status: "2",
-          },
-        ],
-        backgroundColor: (ctx) => {
-          return colorsData[ctx.raw.status];
-        },
-        borderSkipped: false,
-        borderRadius: 10,
-        barPercentage: 0.5,
-      },
-    ],
+ 
   };
 
   // const icons = [<FaCheckCircle />, <FcDeleteColumn />, <FcProcess />];

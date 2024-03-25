@@ -21,12 +21,22 @@ const Header = ({ title }) => {
        </div>
          ) : null}
         { pathname === "/projects/0" ? (
-          <nav className="Overview_header" >
-              <NavLink className="link">Tasks</NavLink>                     
-              <NavLink className="link">MileStones</NavLink>                     
-              <NavLink className="link">Documents</NavLink>                     
-              <NavLink className="link">Task Lists</NavLink>                     
+         <div className="Overview_header">
+          <div className="Overview_header-ProjectName">
+             <h1>daniels apartement </h1>
+             <span>open details</span>
+          </div>
+           <nav className="Overview_header-links" >
+              <NavLink to="project/description" className="link">Tasks</NavLink>                     
+              <NavLink to="project/description" className="link">MileStones</NavLink>                     
+              <NavLink to="project/description" className="link">Documents</NavLink>                     
+              <NavLink to="project/description" className="link">Task Lists</NavLink>                     
+              <NavLink to="project/description" className="link">Gant Charts</NavLink>                     
+              <NavLink to="project/description" className="link">Issues</NavLink>                     
+              <NavLink to="project/description" className="link">Reports</NavLink>                     
+              <NavLink to="project/description" className="link">Timesheets</NavLink>                     
           </nav>
+         </div>
          ) : null}
       <div className="left">
         <div className="notification">
