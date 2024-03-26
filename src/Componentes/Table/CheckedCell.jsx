@@ -23,7 +23,7 @@ import React from 'react'
                   onBlur={onBlur}
                   value={ value }
                   onChange={ ( e ) => setValue( e.target.value ) } />
-                  </>
+               </>
               )
             }
 

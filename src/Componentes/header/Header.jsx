@@ -27,14 +27,12 @@ const Header = ({ title }) => {
              <span>open details</span>
           </div>
            <nav className="Overview_header-links" >
-              <NavLink to="project/description" className="link">Tasks</NavLink>                     
-              <NavLink to="project/description" className="link">MileStones</NavLink>                     
-              <NavLink to="project/description" className="link">Documents</NavLink>                     
-              <NavLink to="project/description" className="link">Task Lists</NavLink>                     
-              <NavLink to="project/description" className="link">Gant Charts</NavLink>                     
-              <NavLink to="project/description" className="link">Issues</NavLink>                     
-              <NavLink to="project/description" className="link">Reports</NavLink>                     
-              <NavLink to="project/description" className="link">Timesheets</NavLink>                     
+              <NavLink to="description" className="link">Tasks</NavLink>                     
+              <NavLink to="description" className="link">Documents</NavLink>                     
+              <NavLink to="description" className="link">Gant Charts</NavLink>                     
+              <NavLink to="description" className="link">Issues</NavLink>                     
+              <NavLink to="description" className="link">Reports</NavLink>                     
+              <NavLink to="description" className="link">Timesheets</NavLink>                     
           </nav>
          </div>
          ) : null}

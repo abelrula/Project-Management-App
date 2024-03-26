@@ -14,7 +14,7 @@ import React from 'react'
             import { BiUpArrowAlt, BiDownArrowAlt, BiCheckShield, BiPlus } from "react-icons/bi";
             import img1 from "../../assets/worker2.jpg"
             import overView from "../../data/overView";
-            import { Link } from "react-router-dom";
+            import { Link, NavLink } from "react-router-dom";
             import ProgressBar from "../../Componentes/progressBar/ProgressBar";
             import Form from "../../Componentes/Form/Form";
             import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
@@ -27,6 +27,7 @@ import React from 'react'
             import { IoAddCircle } from 'react-icons/io5';
 const Projects = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
+  const [ issueTracking, setIssueTracking ] = useState( [] )
               const [ active, setActive ] = useState( false )
               const [ checked, setChecked ] = useState()
               const columns=[
@@ -65,11 +66,11 @@ const Projects = () => {
                   header:<p> Start Date <FaHourglassStart /></p>,
                   cell: ( props ) => <p>{ props.getValue() }</p>
                 },
-                { 
-                  accessorKey:"duedate",
-                  header:"duedate",
-                  cell: ( props ) => <p>{ props.getValue() }</p>
-                }
+                // { 
+                //   accessorKey:"duedate",
+                //   header:"duedate",
+                //   cell: ( props ) => <p>{ props.getValue() }</p>
+                // }
                 ,
                 // { 
                 //   accessorKey:"endDate",
@@ -92,16 +93,45 @@ const Projects = () => {
                   cell: ( props ) => <ProgressBar progress={ props.getValue() } />
                 }
               ]
-              useEffect( () =>
-              { 
-                  const AssignedProjects=async()=>{
-                    const res = await fetch( "http://localhost:3500/AssignedProjects" )
+                const columns1=[
+                 {
+                  accessorKey:"issues",
+                  header:<p>issues <BsListTask /></p>,
+                 cell: ( props ) => <p>{props.getValue()} </p>
+                },
+                {
+                  accessorKey:"assigne",
+                  header:<p>assigne <MdOutlineAssignmentInd /></p>,
+                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
+                  },
+                  {
+                  accessorKey:"reporter",
+                  header:<p>reporter <MdOutlineAssignmentInd /></p>,
+                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
+                },
+                {
+                  accessorKey:"status",
+                  header:<p>Status<TbStatusChange /></p>,
+                 cell: ( props ) => <p>{ props.getValue() }</p>
+                },
+                { 
+                  accessorKey:"startDate",
+                  header:<p> Start Date <FaHourglassStart /></p>,
+                  cell: ( props ) => <p>{ props.getValue() }</p>
+                } 
+              ]
+              useEffect( () =>{ 
+                   async function  AssignedProjects(){
+                    const res = await fetch( "http://localhost:3500/project" )
                     const data = await res.json()
-                      setProjectTasks(data)
+                    setIssueTracking(data[0].issueTracking)
+                    setProjectTasks(data[0].projectTasks[0].subtasks)
                   }
                   AssignedProjects()
                 },[])
-                console.log(projectTasks)
+                      console.log(issueTracking)
+                      console.log(projectTasks)
+                // console.log(projectTasks)
               const tableData = useReactTable( {
                 data: projectTasks,
                 columns,
@@ -110,7 +140,7 @@ const Projects = () => {
                   updateData: ( rowIndex, columnId, value ) => (
                     setProjectTasks( ( prev ) =>
                       prev.map( ( row, i ) =>
-                        i === rowIndex ? { ...prev[ rowIndex ]
+                        i === rowIndex ? { ...prev[rowIndex ]
                           ,[columnId ]: value
                         }
                           : row
@@ -120,27 +150,45 @@ const Projects = () => {
               
     return (
       <div>
+         {/* <div className="Overview_header">
+          <div className="Overview_header-ProjectName">
+             <h1>daniels apartement </h1>
+             <span>open details</span>
+          </div>
+           <nav className="Overview_header-links" >
+              <NavLink to="description" className="link">Tasks</NavLink>                     
+              <NavLink to="description" className="link">Documents</NavLink>                     
+              <NavLink to="description" className="link">Gant Charts</NavLink>                     
+              <NavLink to="description" className="link">Issues</NavLink>                     
+              <NavLink to="description" className="link">Reports</NavLink>                     
+              <NavLink to="description" className="link">Timesheets</NavLink>                     
+          </nav>
+         </div> */}
            <div className="tableFilter">
             <h4>All Open </h4>
           <div>
             <span ><GiClassicalKnowledge className="icon"/>Classics</span>
-            <span>Add Tasks <IoAddCircle className="icon"/></span>
+            <span>Add Tasks<IoAddCircle className="icon"/></span>
             </div>
            </div>
                     <table>
-                      { tableData.getHeaderGroups().map( (headerGroup) =>(
+           <thead>
+             { tableData.getHeaderGroups().map( (headerGroup) =>(
                         <tr key={ headerGroup.id }>
                         {headerGroup.headers.map((header)=>(
                           <th key={header.id}>{header.column.columnDef.header}</th>
                         ))}
                       </tr>))}
-                      {
+                     </thead>
+                      <tbody>
+              {
                         tableData.getRowModel().rows.map( row => <tr key={ row.id }>
                           { row.getVisibleCells().map( cell => <td key={ cell.id }>
                                 {flexRender(cell.column.columnDef.cell,cell.getContext())}
                           </td>)}
                         </tr>)
                       }
+                    </tbody>
                     </table>
                 {active &&  <Form  setActive={setActive}/> }
       </div>

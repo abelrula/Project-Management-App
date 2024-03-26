@@ -8,6 +8,7 @@ import Setting from "./Componentes/Setting/Setting";
 import MessagesConvoversation from "./Componentes/messages/MessagesConvoversation/MessagesConvoversation";
 import MessageListheader from "./Componentes/messages/MessageListheader/MessageListheader";
 import Projects from "./Componentes/Table/Projects";
+import ProjectsDescriiption from "./Componentes/ProjectsDescriiption/ProjectsDescriiption";
   
 
 const App=() =>{
@@ -20,7 +21,7 @@ const App=() =>{
            <Route path="schedule" element={<Schedules />} />
             <Route path="projects" element={<Overview />} >
                 <Route path=":id" element={<Projects />} >
-                  <Route path="description" element={<ProjectsDescriiption />} />
+                  <Route path=":projectdesc" element={<ProjectsDescriiption />} />
                 </Route>
             </Route>
            <Route path="report" element={<Report />} />

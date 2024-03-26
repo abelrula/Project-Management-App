@@ -20,7 +20,6 @@ import { MdArrowDropDown } from "react-icons/md";
             useEffect(()=>{
            const values = Status.filter( ( item ) => item.status === initilaValue && item.color )
           setSelectedValueColor(values[0]?.color)
-          console.log( values)    
        },[])  
               return (
                 <>
