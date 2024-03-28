@@ -28,6 +28,34 @@ import React from 'react'
 const Projects = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
   const [ issueTracking, setIssueTracking ] = useState( [] )
+  
+  //   {
+  //     issues: "completeing the dashboard",
+  //     project: "Marketing",
+  //     reporter: "Fabio Lucas",
+  //     assigne: "Fabio Lucas",
+  //     jobCatagory: "Technical support specialist",
+  //     startDate: "2024-02-25",
+  //     status: "in progress"
+  //   },
+  //   {
+  //     issues: "completeing the dashboard",
+  //     project: "Marketing",
+  //     reporter: "Fabio Lucas",
+  //     assigne: "Fabio Lucas",
+  //     jobCatagory: "Technical support specialist",
+  //     startDate: "2024-02-25",
+  //     status: "in progress"
+  //   }
+  //   ,{
+  //     issues:"completeing the dashboard",
+  //     project: "Marketing",
+  //     reporter: "Fabio Lucas",
+  //     assigne: "Fabio Lucas",
+  //     jobCatagory: "Technical support specialist",
+  //     startDate: "2024-02-25",
+  //     status: "in progress"
+  //   } ] )
               const [ active, setActive ] = useState( false )
               const [ checked, setChecked ] = useState()
               const columns=[
@@ -93,44 +121,49 @@ const Projects = () => {
                   cell: ( props ) => <ProgressBar progress={ props.getValue() } />
                 }
               ]
-                const columns1=[
-                 {
-                  accessorKey:"issues",
-                  header:<p>issues <BsListTask /></p>,
-                 cell: ( props ) => <p>{props.getValue()} </p>
-                },
-                {
-                  accessorKey:"assigne",
-                  header:<p>assigne <MdOutlineAssignmentInd /></p>,
-                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
-                  },
-                  {
-                  accessorKey:"reporter",
-                  header:<p>reporter <MdOutlineAssignmentInd /></p>,
-                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
-                },
-                {
-                  accessorKey:"status",
-                  header:<p>Status<TbStatusChange /></p>,
-                 cell: ( props ) => <p>{ props.getValue() }</p>
-                },
-                { 
-                  accessorKey:"startDate",
-                  header:<p> Start Date <FaHourglassStart /></p>,
-                  cell: ( props ) => <p>{ props.getValue() }</p>
-                } 
-              ]
+              // const columns2=[
+              //   {
+              //     accessorKey:"issues",
+              //     header:<p>issues <BsListTask /></p>,
+              //     cell: ( props ) => <p>{ props.getValue() }</p>
+              //   },
+              //   {
+              //     accessorKey:"assigne",
+              //     header:<p>assigne<MdOutlineAssignmentInd /></p>,
+              //     cell: ( props ) => <p>{ props.getValue() }</p>
+              //    } ,
+              //   {
+              //     accessorKey:"status",
+              //     header:<p>Status<TbStatusChange /></p>,
+              //     cell: ( props ) => <p>{ props.getValue() }</p>
+              //   }
+              //   , { 
+              //     accessorKey:"startDate",
+              //     header:<p> Start Date <FaHourglassStart /></p>,
+              //     cell: ( props ) => <p>{ props.getValue() }</p>
+              //   },
+              //   { 
+              //     accessorKey:"project",
+              //     header:<p>project <FcDoughnutChart /></p>,
+              //     cell: ( props ) => <p>{ props.getValue() }</p>
+              //   },
+              //   {
+              //     accessorKey:"reporter",
+              //     header:<p> <RiPercentFill />reporter <TbTimeDuration0 /></p>,
+              //     cell: ( props ) => <p>{ props.getValue() }</p>
+              //   }
+              // ]
+             
               useEffect( () =>{ 
                    async function  AssignedProjects(){
                     const res = await fetch( "http://localhost:3500/project" )
                     const data = await res.json()
-                    setIssueTracking(data[0].issueTracking)
                     setProjectTasks(data[0].projectTasks[0].subtasks)
+                    setIssueTracking(data[0].issueTracking)
                   }
                   AssignedProjects()
                 },[])
                       console.log(issueTracking)
-                      console.log(projectTasks)
                 // console.log(projectTasks)
               const tableData = useReactTable( {
                 data: projectTasks,
@@ -139,7 +172,7 @@ const Projects = () => {
                 meta: {
                   updateData: ( rowIndex, columnId, value ) => (
                     setProjectTasks( ( prev ) =>
-                      prev.map( ( row, i ) =>
+                      prev?.map( ( row, i ) =>
                         i === rowIndex ? { ...prev[rowIndex ]
                           ,[columnId ]: value
                         }
@@ -150,20 +183,6 @@ const Projects = () => {
               
     return (
       <div>
-         {/* <div className="Overview_header">
-          <div className="Overview_header-ProjectName">
-             <h1>daniels apartement </h1>
-             <span>open details</span>
-          </div>
-           <nav className="Overview_header-links" >
-              <NavLink to="description" className="link">Tasks</NavLink>                     
-              <NavLink to="description" className="link">Documents</NavLink>                     
-              <NavLink to="description" className="link">Gant Charts</NavLink>                     
-              <NavLink to="description" className="link">Issues</NavLink>                     
-              <NavLink to="description" className="link">Reports</NavLink>                     
-              <NavLink to="description" className="link">Timesheets</NavLink>                     
-          </nav>
-         </div> */}
            <div className="tableFilter">
             <h4>All Open </h4>
           <div>
@@ -182,9 +201,9 @@ const Projects = () => {
                      </thead>
                       <tbody>
               {
-                        tableData.getRowModel().rows.map( row => <tr key={ row.id }>
-                          { row.getVisibleCells().map( cell => <td key={ cell.id }>
-                                {flexRender(cell.column.columnDef.cell,cell.getContext())}
+                     tableData.getRowModel().rows.map( row => <tr key={ row.id }>
+                     { row.getVisibleCells().map( cell => <td key={ cell.id }>
+                     {flexRender(cell.column.columnDef.cell,cell.getContext())}
                           </td>)}
                         </tr>)
                       }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import "./header.css";
 import { BiBell } from "react-icons/bi";
 import { NavLink, useLocation } from "react-router-dom";
@@ -9,8 +9,16 @@ const Header = ({ title }) => {
   const date = new Date();
   const { pathname } = useLocation();
   const [openModal, setpenModal] = useState(false);
+  const [ projectTypes, setProjectTypes ] = useState( [] )
   const [showProfileInfo, setShowProfileInfo] = useState(false);
-  console.log(pathname);
+   useEffect( () =>{ 
+                   async function  AssignedProjects(){
+                    const res = await fetch( "http://localhost:3500/project" )
+                    const data = await res.json()
+                    setProjectTypes(data)
+                   }
+                  AssignedProjects()
+                },[])
   return (
     <>
       <div className="header">
@@ -20,19 +28,19 @@ const Header = ({ title }) => {
              <p className="date">{date.toDateString()}</p>
        </div>
          ) : null}
-        { pathname === "/projects/0" ? (
+         { projectTypes.map( project=>  project.projectName.split("").filter(i=> i !== " ").join("")).filter(project=>pathname === project) ? (
          <div className="Overview_header">
           <div className="Overview_header-ProjectName">
              <h1>daniels apartement </h1>
              <span>open details</span>
           </div>
            <nav className="Overview_header-links" >
-              <NavLink to="description" className="link">Tasks</NavLink>                     
-              <NavLink to="description" className="link">Documents</NavLink>                     
-              <NavLink to="description" className="link">Gant Charts</NavLink>                     
-              <NavLink to="description" className="link">Issues</NavLink>                     
-              <NavLink to="description" className="link">Reports</NavLink>                     
-              <NavLink to="description" className="link">Timesheets</NavLink>                     
+              <NavLink to="." className="link">Tasks</NavLink>                     
+              <NavLink to="documents" className="link">Documents</NavLink>                     
+              <NavLink to="gantChart" className="link">Gant Charts</NavLink>                     
+              <NavLink to="issues" className="link">Issues</NavLink>                     
+              <NavLink to="report" className="link">Reports</NavLink>                     
+              <NavLink to="timesheets" className="link">Timesheets</NavLink>                     
           </nav>
          </div>
          ) : null}

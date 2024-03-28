@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import  { useState,useEffect } from "react";
 // import FilterTodo from "../FilterTodo";
 import { NavLink } from "react-router-dom";
 import { IoIosSettings } from "react-icons/io";
@@ -10,11 +10,19 @@ import { MdOutlineArrowCircleDown } from "react-icons/md";
 import { BsArrowDownCircle, BsEggFried } from "react-icons/bs";
 import projectTypes from "../../data/projectTypes";
 const Sidebar = () => {
+  const [ projectTypes, setProjectTypes ] = useState( [] )
   const selectedObj = {
     color: "black",
     background: "#545351",
   };
-
+   useEffect( () =>{ 
+                   async function  AssignedProjects(){
+                    const res = await fetch( "http://localhost:3500/project" )
+                    const data = await res.json()
+                    setProjectTypes(data)
+                   }
+                  AssignedProjects()
+                },[])
   return (
     <div className="side">
       <div className="brandIcon">
@@ -42,8 +50,8 @@ const Sidebar = () => {
             projectTypes.map( ( project, i ) => (
               <NavLink className="label"
                 style={ ( { isActive } ) => ( isActive ? selectedObj : null ) }
-                to={ `projects/${i}` }>
-                { project.title }
+                to={ `projects/${project.projectName.split("").filter(i=> i !== " ").join("")}` }>
+                { project.projectName }
               </NavLink>
             ))
           }

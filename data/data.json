@@ -492,7 +492,8 @@
       "status": "open",
       "duration": "125 days",
       "subtasks":[
-      {"task": "completeing the fromt",
+      {
+        "task": "completeing the floor completeing the floorcompleteing the floorcompleteing the floorcompleteing the floor",
       "project": "Customer",
       "assignedTo": "simon Jorge",
       "jobCatagory": "project manager",
@@ -897,7 +898,8 @@
       "progressPercent": 45}
     ],
     "issueTracking":[
-      {"issues": "completeing the dashboard",
+      {
+      "issues": "completeing the dashboard",
       "project": "Marketing",
       "reporter": "Fabio Lucas",
       "assigne": "Fabio Lucas",
@@ -905,21 +907,26 @@
       "startDate": "2024-02-25",
       "status": "in progress"
     },
-    {"issues": "completeing the dashboard",
+    {
+      "issues": "completeing the dashboard",
       "project": "Marketing",
       "reporter": "Fabio Lucas",
       "assigne": "Fabio Lucas",
       "jobCatagory": "Technical support specialist",
       "startDate": "2024-02-25",
       "status": "in progress"
-    },{"issues": "completeing the dashboard",
+    }
+    ,{
+      "issues": "completeing the dashboard",
       "project": "Marketing",
       "reporter": "Fabio Lucas",
       "assigne": "Fabio Lucas",
       "jobCatagory": "Technical support specialist",
       "startDate": "2024-02-25",
       "status": "in progress"
-    },{"issues": "completeing the dashboard",
+    },
+    {
+      "issues": "completeing the dashboard",
       "project": "Marketing",
       "reporter": "Fabio Lucas",
       "assigne": "Fabio Lucas",

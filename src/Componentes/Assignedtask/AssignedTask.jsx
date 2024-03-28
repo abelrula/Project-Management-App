@@ -69,7 +69,7 @@ import { IoPersonOutline } from "react-icons/io5";
           <div className="AssignedTask__situation-types">
             {progressTypes.map((type, i) => (
               <li
-                className={todoStatus === type.title && "workProgress"}
+                className={todoStatus === type.title ? "workProgress" : undefined}
                 onClick={() => setTodoStatus(type.title)}
                 key={ i }
               >
