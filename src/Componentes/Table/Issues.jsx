@@ -15,8 +15,8 @@ import React from 'react'
             import img1 from "../../assets/worker2.jpg"
             import overView from "../../data/overView";
             import { Link, NavLink } from "react-router-dom";
-            import ProgressBar from "../../Componentes/progressBar/ProgressBar";
-            import Form from "../../Componentes/Form/Form";
+            import ProgressBar from "../progressBar/ProgressBar";
+            import Form from "../Form/Form";
             import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
             import CheckedCell from "./CheckedCell"
             import TaskCell from "./TaskCell"
@@ -25,7 +25,7 @@ import React from 'react'
             import { RiPercentFill } from "react-icons/ri";
             import { GiClassicalKnowledge } from 'react-icons/gi';
             import { IoAddCircle } from 'react-icons/io5';
-const Projects = () => {
+const Issues = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
   const [ issueTracking, setIssueTracking ] = useState( [] )
   
@@ -70,21 +70,6 @@ const Projects = () => {
                   cell:TaskCell
                 },
                 {
-                  accessorKey:"assignedTo",
-                  header:<p>assigned To <MdOutlineAssignmentInd /></p>,
-                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
-                },
-                // {
-                //   accessorKey:"project",
-                //   header: <p>project</p>,
-                //   cell: ( props ) => <p>{ props.getValue() }</p>
-                // },
-                {
-                  accessorKey:"priority",
-                  header:<p>Priority <MdOutlineLowPriority /></p>,
-                  cell:PriorityCell
-                },
-                {
                   accessorKey:"status",
                   header:<p>Status<TbStatusChange /></p>,
                   cell: StatusCell 
@@ -93,33 +78,16 @@ const Projects = () => {
                   accessorKey:"startDate",
                   header:<p> Start Date <FaHourglassStart /></p>,
                   cell: ( props ) => <p>{ props.getValue() }</p>
-                },
-                // { 
-                //   accessorKey:"duedate",
-                //   header:"duedate",
-                //   cell: ( props ) => <p>{ props.getValue() }</p>
-                // }
-                ,
-                // { 
-                //   accessorKey:"endDate",
-                //   header:"EndDate",
-                //   cell: ( props ) => <p>{ props.getValue() }</p>
-                // },
-                { 
-                  accessorKey:"duration",
-                  header:<p>Duration <FcDoughnutChart /></p>,
-                  cell: ( props ) => <p>{ props.getValue() }</p>
-                },
-                ,{ 
-                  accessorKey:"document",
-                  header:"document",
-                  cell: ( props ) => <p>{ props.getValue() }</p>
+                },{
+                  accessorKey:"assignedTo",
+                  header:<p>Reoprter <MdOutlineAssignmentInd /></p>,
+                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
                 },
                 {
-                  accessorKey:"progressPercent",
-                  header:<p> <RiPercentFill />Complete <TbTimeDuration0 /></p>,
-                  cell: ( props ) => <ProgressBar progress={ props.getValue() } />
-                }
+                  accessorKey:"assignedTo",
+                  header:<p>Assigne <MdOutlineAssignmentInd /></p>,
+                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
+                },
               ]
               // const columns2=[
               //   {
@@ -214,4 +182,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default Issues

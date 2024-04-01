@@ -28,7 +28,10 @@ const Header = ({ title }) => {
              <p className="date">{date.toDateString()}</p>
        </div>
          ) : null}
-         { projectTypes.map( project=>  project.projectName.split("").filter(i=> i !== " ").join("")).filter(project=>pathname === project) ? (
+        { projectTypes.map( project => project.projectName.split( "" )
+          .filter( i => i !== " " )
+          .join( "" ) )
+          .filter( project => pathname === project ) ? (
          <div className="Overview_header">
           <div className="Overview_header-ProjectName">
              <h1>daniels apartement </h1>

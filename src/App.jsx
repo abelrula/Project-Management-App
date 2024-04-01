@@ -10,10 +10,10 @@ import MessageListheader from "./Componentes/messages/MessageListheader/MessageL
 import Projects from "./Componentes/Table/Projects";
   import Timesheets from "./Componentes/ProjectSubInfo/Timesheets/Timesheets"
   import ProGantChart from "./Componentes/ProjectSubInfo/GantChart/GantChart"
-  import Issues from "./Componentes/ProjectSubInfo/Issues/Issues"
   import Reports from "./Componentes/ProjectSubInfo/Reports/Reports"
   import Documents from "./Componentes/ProjectSubInfo/Documents/Documents"
-import ProjectsDescriiption from "./Componentes/ProjectsDescriiption/ProjectsDescriiption"
+import Issues from "./Componentes/Table/Issues";
+// import ProjectsDescriiption from "./Componentes/ProjectsDescriiption/ProjectsDescriiption"
 const App=() =>{
  
   return (
