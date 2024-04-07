@@ -1,20 +1,20 @@
 import React, { useState ,useEffect} from "react";
- import "./addTodoForm.css";
+ import "./form.css";
 import { HiCalendar } from "react-icons/hi";
-import { IoCloseCircleOutline } from "react-icons/io5";
    import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
-import projectTypes from "../../data/projectTypes";
-const AddTodoForm = ({setOpenModal}) => {
+import { IoCloseCircleSharp } from "react-icons/io5";
+import projectTypes from "../../../data/projectTypes";
+const Form = ({setActive}) => {
   const date = new Date();
-     const [startDate, setStartDate] = useState(date);
-   const [endDate, setEndate] = useState(date);
+  const [startDate, setStartDate] = useState(date);
+  const [endDate, setEndate] = useState(date);
   const [description, setDescription] = useState("");
-  const [selectedProject,setSelectedProject]=useState(null)
-  const [selectedEmployee,setSelectedEmployee]=useState(null)
+  const [selectedProject,setSelectedProject]=useState("")
+  const [selectedEmployee,setSelectedEmployee]=useState("")
   const [openProject,  setOpenProject]=useState(false)
   const [openEmployee,setOpenEmployee]=useState(false)
- const [jobCatagory,setJobCatagory]=useState(null)
-  const [ selected, setSelected ] = useState( null );
+  const [jobCatagory,setJobCatagory]=useState("")
+  const [ priority, setPriority ] = useState( "" );
   const [attachedDocuments,setAttachedDocuments]=useState(null)
   
    const members = "http://localhost:3500/members";
@@ -27,9 +27,29 @@ const AddTodoForm = ({setOpenModal}) => {
     }
     fetchMembers();
   }, []);
-   j
+   
   function handleSubmit(e) {
     e.preventDefault();
+    fetch("http://localhost:3500/AssignedProjects",{
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body:JSON.stringify({
+       task:description,
+       project:selectedProject,
+       assignedTo: selectedEmployee,
+       jobCatagory: jobCatagory,
+       document:attachedDocuments,
+       startDate,
+       endDate,
+       priority,
+       status:"not Started",
+       duration:"",
+       progressPercent:""
+      })
+    })
+    setActive(false)
   }
  const data=[
             {
@@ -48,19 +68,17 @@ const AddTodoForm = ({setOpenModal}) => {
             background:"#ff0000",
             },
   ]
-   console.log(selectedProject)
-   console.log(selectedProject)
   return (
-    <>
+    <div className="modal">
       <form className="Form" onSubmit={ handleSubmit }>
-         <h2>Assign New Task          
-           <IoCloseCircleOutline className="icon" onClick={ () => setOpenModal( false ) } /> 
-</h2>
+        <div  className="Form-header">
+          <h2>Assign New Task</h2>
+          <IoCloseCircleSharp fontSize={ 27 } className="icon" onClick={ () => setActive( false ) } />
+        </div>
          <div className="employeContainer">
             <label>select which Employee you want to assign 
             { !openEmployee && <FaArrowDown className="icon"
-              onClick={ () =>
-              {
+              onClick={ () =>{
                 setOpenEmployee( true );
                 setOpenProject( false )
               } } /> }
@@ -129,6 +147,7 @@ const AddTodoForm = ({setOpenModal}) => {
         </div>
           <div className="Form__AttachDocuments">
           <label>Attach Documents</label>
+
           <input
             type="file"
             id="documents"
@@ -141,12 +160,12 @@ const AddTodoForm = ({setOpenModal}) => {
           <label>Select The Priority</label>
         { data.map( ( item, i ) => (
           <div
-           onClick={()=>setSelected(item.status)}
+           onClick={()=>setPriority(item.status)}
             className={`Form__type-all ${ item.classname }` }
             key={i}
             style={ {
-              background: selected ===item.status && item.background,
-              color:selected ==item.status && "white" }} >
+              background: priority ===item.status && item.background,
+              color:priority ==item.status && "white" }} >
              {item.status}
        </div>
        ))}
@@ -168,11 +187,11 @@ const AddTodoForm = ({setOpenModal}) => {
         </div>
         
         <button type="submit" className="Form__button">
-          <p>Assign Task</p>
+          Assign Task
         </button>
       </form>
-     </>
+     </div>
   );
 };
 
-export default AddTodoForm;
+export default Form;

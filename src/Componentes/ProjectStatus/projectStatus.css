@@ -1,9 +1,9 @@
 .projectsStatusBar{
-background: #fffefd;
+   background: #fffefd;
     padding: 5px;
     border-radius: 10px;
     text-align: left;
-    width: 570px;
+    width: 520px;
 }
 .projectsStatusBar div h5{
        font-family: system-ui;

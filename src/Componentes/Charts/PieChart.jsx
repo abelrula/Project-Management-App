@@ -1,19 +1,18 @@
 import React, {  useRef,useEffect } from 'react'
 import Chart from "chart.js/auto";
 
-const Doughnut = () => {
-   const chartref = useRef(null);
+const PieChart = () => {
+     const chartref = useRef(null);
   const chartInstance = useRef(null);
-    
-    useEffect(() => {
-        if ( chartInstance.current )
-        {
-        chartInstance.current.destroy();
-        }
-        const myChartref = chartref.current.getContext("2d");
-        chartInstance.current = new Chart(
-        myChartref,
-      {type: "doughnut",
+  useEffect(() => {
+    if (chartInstance.current) {
+      chartInstance.current.destroy();
+    }
+    const myChartref = chartref.current.getContext("2d");
+    chartInstance.current = new Chart(
+      myChartref,
+      {
+        type: "pie",
         data: {
           labels: ["Total Task", "Total Task Done", "OverDue","Not Started"],
           datasets: [
@@ -21,9 +20,9 @@ const Doughnut = () => {
               data: [30, 5, 25,200],
               backgroundColor: [
                 "rgb(25,00,132)",
-                "rgb(54,16,235)",
-                "rgb(255,205,86)",
-                "rgb(125,84,16)",
+                "rgb(163, 38, 38)",
+                "rgb(159, 159, 227)",
+                "rgb(81, 172, 215)",
               ],
             },
           ],
@@ -43,7 +42,8 @@ const Doughnut = () => {
         chartInstance.current.destroy();
       }
     };
-    }, [] );   
+  }, [] );
+  
     
  
     return (
@@ -53,4 +53,4 @@ const Doughnut = () => {
   )
 }
 
-export default Doughnut
+export default PieChart

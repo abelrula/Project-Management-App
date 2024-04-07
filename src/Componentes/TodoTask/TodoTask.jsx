@@ -7,8 +7,6 @@ import CommentSection from "../commentSection/CommentSection";
 // import AssignedTask from "../Assignedtask/AssignedTask";
 import Calendar from "react-calendar";
 import "../../../node_modules/react-calendar/src/Calendar.css";
-import Chart from "chart.js/auto";
-// import UserProgress from "../userProgress/UserProgress";
 import TotalNumber from "../TotalTaskstatus/TotalNumber";
 import ProjectCatagories from "../ProjectCatagories/ProjectCatagories";
 import { IoChevronBack } from "react-icons/io5";
@@ -16,6 +14,7 @@ import overView from "../../data/overView";
 import AssignedTask from "../Assignedtask/AssignedTask";
 import TodoForm from "../TodoForm/TodoForm";
 import { useLocation } from "react-router-dom";
+import PieChart from "../Charts/PieChart";
 
 const TodoTask = () => {
   // const {  isLoading } = useGetTodosQuery();
@@ -25,48 +24,8 @@ const [open,setOpen]=useState(false)
   const [ urgent, setUrgent ] = useState( false )
   const location=useLocation()
   const date = new Date();
-  const chartref = useRef(null);
-  const chartInstance = useRef(null);
-  useEffect(() => {
-    if (chartInstance.current) {
-      chartInstance.current.destroy();
-    }
-    const myChartref = chartref.current.getContext("2d");
-    chartInstance.current = new Chart(
-      myChartref,
-      {
-        type: "doughnut",
-        data: {
-          labels: ["Total Task", "Total Task Done", "OverDue","Not Started"],
-          datasets: [
-            {
-              data: [30, 5, 25,200],
-              backgroundColor: [
-                "rgb(25,00,132)",
-                "rgb(54,16,235)",
-                "rgb(255,205,86)",
-                "rgb(125,84,16)",
-              ],
-            },
-          ],
-        },
-          options: {
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
-            }
-      },
-      []
-     );
-    return () => {
-      if (chartInstance.current) {
-        chartInstance.current.destroy();
-      }
-    };
-  }, [] );
-  const data = [
+  console.log(urgent)
+   const data = [
     {
       title: "Completed Tasks",
       value:17
@@ -83,8 +42,7 @@ const [open,setOpen]=useState(false)
       title: "Total Tasks",
       value:120
     }
-  ]
-  console.log(urgent)
+  ] 
   return (
     <>
       <div className="Dashboard">
@@ -92,13 +50,11 @@ const [open,setOpen]=useState(false)
         <Calendar value={date} />
           { urgent ?
             <UrgentTask setUrgent={ setUrgent } /> :
-            <AssignedTask setUrgent={ setUrgent } setActive={ setActive } title="My tasks" footer="Add To Do" />
+            <AssignedTask setUrgent={ setUrgent } 
+              setActive={ setActive }
+              title="My tasks" footer="Add To Do" />
           }
-        <div className="Dashboard_TaskCompletion-doghnutGraph">
-           <canvas ref={chartref}  />
-         </div>
-        {/* <AssignedTask title="Task I've Assigned" footer="Assign Task" /> */}
-          { !open ? (
+         <PieChart />
         <div className="Dashboard_TaskCompletion-totalTaskCount">
         {data.map( ( item, i ) => (
             <TotalNumber
@@ -107,28 +63,8 @@ const [open,setOpen]=useState(false)
               value={ item.value }
               setOpenTitle={ setOpenTitle }
               setOpen={ setOpen } />
-        ) )}
-        </div>)
-           : (<div className="Dashboard_TaskCompletion_container">
-              <span>
-                <IoChevronBack
-              onClick={ () =>setOpen( false )}
-                  className="icon" />
-                <p>{openTitle}</p>
-             </span>
-              <ul>
-              {
-                overView.map( ( data, i ) => (
-                  <li>
-                    <p>{ data.task }</p>
-                    <p>{ data.associate }</p>
-                    <p>{ data.priority }</p>
-                  </li>
-                ) )
-              }
-              </ul>
-            </div>)
-          }
+         ) )}
+        </div>
          <div className="Dashboard_TaskCompletion_Project">
           <div className="Dashboard_TaskCompletion_Project-Catagori">
             <ProjectCatagories />
@@ -136,7 +72,6 @@ const [open,setOpen]=useState(false)
           </div>
           <TeamMembers />
         </div>
-        {/* <UserProgress /> */}
       </div>
     </div>
      { active &&

@@ -1,0 +1,8 @@
+.Dashboard_TaskCompletion-doghnutGraph{
+
+}
+.Project_reports{
+   display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

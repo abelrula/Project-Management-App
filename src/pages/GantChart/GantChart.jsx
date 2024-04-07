@@ -1,4 +1,4 @@
- import GantChartComponenet from "../../Componentes/GantChartComponenet/GantChartComponenet"
+ import GantChartComponenet from "../../Componentes/Charts/GantChartComponenet/GantChartComponenet"
 import Header from "../../Componentes/Header/Header"
 import "./gantChart.css"
 const GantChart = () => {

@@ -6,7 +6,7 @@ import { MdRadioButtonUnchecked } from "react-icons/md";
 import { useLocation } from "react-router-dom";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
-import AddTodoForm from "../AddTodoForm/AddTodoForm"
+import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm"
 import img1 from "../../assets/worker1.jpg"
 import {AiFillRightCircle, AiOutlineProfile } from "react-icons/ai";
 import { IoPersonOutline } from "react-icons/io5";

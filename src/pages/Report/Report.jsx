@@ -3,12 +3,12 @@ import { useState } from "react";
  import Header from "../../Componentes/Header/Header";
  import "./report.css"
 import TeamMembers from "../../Componentes/teamMembers/TeamMembers";
-import AddProjectForm from "../../Componentes/AddProjectForm/AddProjectForm";
-import AddMemberForm from "../../Componentes/AddMemberForm/AddMemberForm";
+import AddProjectForm from "../../Componentes/Forms/AddProjectForm/AddProjectForm";
+import AddMemberForm from "../../Componentes/Forms/AddMemberForm/AddMemberForm";
 import AssignedTask from "../../Componentes/Assignedtask/AssignedTask";
 import ProjectStatus from "../../Componentes/ProjectStatus/ProjectStatus";
-import TotalHour from "../../Componentes/Total/TotalHour";
-import TotalRevenue from "../../Componentes/Total/TotalRevenue";
+import TotalRevenue from "../../Componentes/Charts/TotalRevenue";
+import TotalHour from "../../Componentes/Charts/TotalHour";
 
 // import 'chart.js/auto'
 const Report = () => {

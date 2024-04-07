@@ -1,12 +1,15 @@
-import React from 'react'
-import TotalHour from '../../Total/TotalHour'
-import TotalRevenue from '../../Total/TotalRevenue'
+import PieChart from '../../Charts/PieChart';
+import TotalHour from '../../Charts/TotalHour'
+import TotalRevenue from '../../Charts/TotalRevenue'
+import "./reports.css";
 
 const Reports = () => {
+ 
   return (
-    <div style={{height:"700px",gap:"20px", width:"500px"}}>
+    <div className="Project_reports">
       <TotalHour />
       <TotalRevenue />
+      <PieChart />
     </div>
   )
 }
