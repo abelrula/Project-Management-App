@@ -1,4 +1,4 @@
-import PieChart from '../../Charts/PieChart';
+import  { IssuePieChart, TaskPieChart } from '../../Charts/PieChart';
 import TotalHour from '../../Charts/TotalHour'
 import TotalRevenue from '../../Charts/TotalRevenue'
 import "./reports.css";
@@ -9,7 +9,8 @@ const Reports = () => {
     <div className="Project_reports">
       <TotalHour />
       <TotalRevenue />
-      <PieChart />
+      <TaskPieChart />
+      <IssuePieChart />
     </div>
   )
 }

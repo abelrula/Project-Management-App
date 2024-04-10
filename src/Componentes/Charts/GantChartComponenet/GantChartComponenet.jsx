@@ -59,52 +59,117 @@ const GantChartComponenet = () => {
         data: [
           {
             x: [ "2024-01-08", "2024-01-05" ],
-            y: "Task 1",
+            y: "Task 15656",
             name: "Simon panda",
             status: "1",
           },
           {
             x: [ "2024-01-13", "2024-01-17" ],
-            y: "Task 2",
+            y: "Task 2676",
             name: "Abel",
             status: "1",
           },
           {
             x: [ "2024-01-18", "2024-01-20" ],
-            y: "Task 3",
+            y: "Task 390",
+            name: "Yosef",
+            status: "2",
+          },
+           {
+            x: [ "2024-01-08", "2024-01-05" ],
+            y: "Task 1786",
+            name: "Simon panda",
+            status: "1",
+          },
+          {
+            x: [ "2024-01-13", "2024-01-17" ],
+            y: "Task 872",
+            name: "Abel",
+            status: "1",
+          },
+          {
+            x: [ "2024-01-18", "2024-01-20" ],
+            y: "Task 1212",
+            name: "Yosef",
+            status: "2",
+          }, {
+            x: [ "2024-01-08", "2024-01-05" ],
+            y: "Task 11213",
+            name: "qimon panda",
+            status: "1",
+          },
+          {
+            x: [ "2024-01-13", "2024-01-17" ],
+            y: "Task 221",
+            name: "wbel",
+            status: "1",
+          },
+          {
+            x: [ "2024-01-18", "2024-01-20" ],
+            y: "Task 21323",
             name: "Yosef",
             status: "2",
           },
           {
             x: [ "2024-01-21", "2024-01-26" ],
-            y: "Task 4",
-            name: "Tsehay",
+            y: "Task 44",
+            name: "lsehay",
             status: "0",
           },
           {
             x: [ "2024-02-27", "2024-02-30" ],
-            y: "Task 5",
-            name: "pand",
+            y: "Task 15",
+            name: "vand",
             status: "2",
           },
           {
             x: [ "2024-02-18", "2024-02-20" ],
-            y: "Task 6",
+            y: "Task 412",
             name: "rula",
             status: "2",
           },
           {
             x: [ "2024-01-21", "2024-02-26" ],
-            y: "Task 7",
+            y: "Task 117",
             name: "biladen",
             status: "0",
           },
           {
             x: [ "2024-02-27", "2024-03-30" ],
-            y: "Task 8",
+            y: "Task 8213",
+            name: "miko",
+            status: "2",
+          }, {
+            x: [ "2024-01-21", "2024-01-26" ],
+            y: "Task 45",
+            name: "lsehay",
+            status: "0",
+          },
+          {
+            x: [ "2024-02-27", "2024-02-30" ],
+            y: "Task 17",
+            name: "vand",
+            status: "2",
+          },
+          {
+            x: [ "2024-02-18", "2024-02-20" ],
+            y: "Task 412",
+            name: "rula",
+            status: "2",
+          },
+          {
+            x: [ "2024-01-21", "2024-02-26" ],
+            y: "Task 817",
+            name: "biladen",
+            status: "0",
+          },
+          {
+            x: [ "2024-02-27", "2024-03-30" ],
+            y: "Task 813",
             name: "miko",
             status: "2",
           },
+          
         ],
         backgroundColor: ( ctx ) =>
         {
@@ -112,7 +177,7 @@ const GantChartComponenet = () => {
         },
         borderSkipped: false,
         borderRadius: 10,
-        barPercentage: 0.5,
+        barPercentage: 0.7,
       },
     ],
   }
@@ -264,6 +329,7 @@ const GantChartComponenet = () => {
             });
             return [
               ctx[0].raw.name,
+              ctx[0].raw.y,
               `Task Deadline:- ${formatteStartDate} - ${formattedEndDate}`,
             ];
           },

@@ -14,7 +14,7 @@ import overView from "../../data/overView";
 import AssignedTask from "../Assignedtask/AssignedTask";
 import TodoForm from "../TodoForm/TodoForm";
 import { useLocation } from "react-router-dom";
-import PieChart from "../Charts/PieChart";
+import { TaskPieChart } from "../Charts/PieChart";
 
 const TodoTask = () => {
   // const {  isLoading } = useGetTodosQuery();
@@ -54,7 +54,7 @@ const [open,setOpen]=useState(false)
               setActive={ setActive }
               title="My tasks" footer="Add To Do" />
           }
-         <PieChart />
+         <TaskPieChart />
         <div className="Dashboard_TaskCompletion-totalTaskCount">
         {data.map( ( item, i ) => (
             <TotalNumber

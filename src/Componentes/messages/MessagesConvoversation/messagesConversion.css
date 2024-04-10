@@ -118,10 +118,11 @@ display: flex;
     color: wheat;
     font-family: cursive;
     font-weight: 100;
-    font-size: 15px;
+    font-size: 13px;
  }
  .MessagesConvoversation__list__sender-timeSent{
-
+font-size:12px;
+text-align: end;
  }
  .MessagesConvoversation__list__reciever{
     height: fit-content;
@@ -141,10 +142,11 @@ display: flex;
      text-align: left;
      font-family: cursive;
     font-weight: 100;
-    font-size: 15px;
+    font-size: 13px;
  }
  .MessagesConvoversation__list__reciever-timeSent{
-
+font-size:12px;
+text-align: end;
  }
  .MessagesConvoversation__TypingBox{
     height: 75px;

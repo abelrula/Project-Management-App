@@ -133,7 +133,7 @@ text-align: center;
     border-bottom: 1px solid #d4cfcf;
  }
 .Dashboard_TaskCompletion-doghnutGraph{
-  height: 310px;
+  height: 240px;
     background: white;
     width: 370px;
     display: flex;
