@@ -38,7 +38,8 @@ const Header = ({ title }) => {
              <span>open details</span>
           </div>
            <nav className="Overview_header-links" >
-              <NavLink to="." className="link">Tasks</NavLink>                     
+              <NavLink to="." className="link">Dashboard</NavLink>                     
+              <NavLink to="tasks" className="link">Tasks</NavLink>                     
               <NavLink to="documents" className="link">Documents</NavLink>                     
               <NavLink to="gantChart" className="link">Gant Charts</NavLink>                     
               <NavLink to="issues" className="link">Issues</NavLink>                     

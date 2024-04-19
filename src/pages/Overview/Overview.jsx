@@ -1,6 +1,6 @@
        
-              import Header from "../../Componentes/Header/Header";
-              // import ProjectsDescriiption from "../../Componentes/ProjectsDescriiption/ProjectsDescriiption";
+ import Header from "../../Componentes/header/Header";
+ // import ProjectsDescriiption from "../../Componentes/ProjectsDescriiption/ProjectsDescriiption";
             import "./overview.css"
              import { Outlet } from 'react-router-dom'
              
@@ -9,7 +9,7 @@
              
               return (
                 <>
-               <Header />
+                 <Header />
                 <Outlet />
                 </>
               );

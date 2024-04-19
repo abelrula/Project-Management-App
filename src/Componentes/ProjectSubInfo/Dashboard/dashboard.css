@@ -1,0 +1,19 @@
+.dashboard{
+    background: transparent;
+    display: flex;
+    height: 320px;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 5px;
+}
+.totalTaskStatus{
+    width: 286px;
+    height: 175px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid #bfb3b3;}

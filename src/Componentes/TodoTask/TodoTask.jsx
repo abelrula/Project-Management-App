@@ -28,19 +28,23 @@ const [open,setOpen]=useState(false)
    const data = [
     {
       title: "Completed Tasks",
-      value:17
+      value:17,
+      color:"green"
     },
      {
       title: "Incompleted Tasks",
-      value:45
+      value:45,
+      color:"red"
     },
      {
       title: "OverDue Tasks",
-      value:30
+      value:30,
+      color:"blue"
     },
      {
       title: "Total Tasks",
-      value:120
+      value:12,
+      color:"black"
     }
   ] 
   return (
@@ -62,7 +66,8 @@ const [open,setOpen]=useState(false)
               title={ item.title }
               value={ item.value }
               setOpenTitle={ setOpenTitle }
-              setOpen={ setOpen } />
+              setOpen={ setOpen }
+              color={item.color} />
          ) )}
         </div>
          <div className="Dashboard_TaskCompletion_Project">

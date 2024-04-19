@@ -18,10 +18,10 @@ import React from 'react'
             import ProgressBar from "../progressBar/ProgressBar";
             import Form from "../Form/Form";
             import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
-            import CheckedCell from "./CheckedCell"
+            import CheckedCell from "./Cells/CheckedCell"
             import TaskCell from "./TaskCell"
-            import PriorityCell from "./PriorityCell"
-            import StatusCell from "./StatusCell"
+            import PriorityCell from "./Cells/PriorityCell"
+            import StatusCell from "./Cells/StatusCell"
             import { RiPercentFill } from "react-icons/ri";
             import { GiClassicalKnowledge } from 'react-icons/gi';
             import { IoAddCircle } from 'react-icons/io5';

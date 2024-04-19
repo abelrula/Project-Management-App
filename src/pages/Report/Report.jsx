@@ -1,7 +1,7 @@
 import { useState } from "react";
   import InfoCard from "../../Componentes/InfoCard/InfoCard";
- import Header from "../../Componentes/Header/Header";
- import "./report.css"
+  import Header from "../../Componentes/header/Header";
+  import "./report.css"
 import TeamMembers from "../../Componentes/teamMembers/TeamMembers";
 import AddProjectForm from "../../Componentes/Forms/AddProjectForm/AddProjectForm";
 import AddMemberForm from "../../Componentes/Forms/AddMemberForm/AddMemberForm";
@@ -9,6 +9,7 @@ import AssignedTask from "../../Componentes/Assignedtask/AssignedTask";
 import ProjectStatus from "../../Componentes/ProjectStatus/ProjectStatus";
 import TotalRevenue from "../../Componentes/Charts/TotalRevenue";
 import TotalHour from "../../Componentes/Charts/TotalHour";
+import LineChart from "../../Componentes/Charts/LineChart";
 
 // import 'chart.js/auto'
 const Report = () => {
@@ -16,9 +17,7 @@ const Report = () => {
   const [ openModal, setOpenModal ] = useState( true );
   const [ openModalType, setOpenModalType ] = useState( "" );
   const [ active, setActive ] = useState(false);
-  
-
-  
+ 
   return (
     <>
       <Header title="Report" />
@@ -61,6 +60,7 @@ const Report = () => {
            <div className="totalRevenues">
           <TotalRevenue />
           <TotalHour />
+          <LineChart color="black" />
            </div>
       </div>
     </>

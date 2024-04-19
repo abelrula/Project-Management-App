@@ -1,6 +1,8 @@
 import React from 'react'
+import {Chart,defaults} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-
+defaults.maintainAspectRatioa=false
+defaults.responsive=true
 const TotalRevenue = () => {
   
     const data = {

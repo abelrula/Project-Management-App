@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../../Componentes/Header/Header";
- import Videoparticipants from "../../Componentes/Video/videoparticipants/Videoparticipants";
+import Header from "../../Componentes/header/Header";
+import Videoparticipants from "../../Componentes/Video/videoparticipants/Videoparticipants";
 
 const VideoChat = () => {
   return (

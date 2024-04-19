@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import {Chart,defaults} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+defaults.maintainAspectRatioa=false
+defaults.responsive=true
 
 const TotalHour = () => {
   const [ value, setValue ] = useState( "weekly" )

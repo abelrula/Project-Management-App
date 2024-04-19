@@ -13,6 +13,7 @@ import Projects from "./Componentes/Table/Projects";
   import Reports from "./Componentes/ProjectSubInfo/Reports/Reports"
   import Documents from "./Componentes/ProjectSubInfo/Documents/Documents"
 import Issues from "./Componentes/Table/Issues";
+import Dashoboard from "./Componentes/ProjectSubInfo/Dashboard/Dashoboard";
 // import ProjectsDescriiption from "./Componentes/ProjectsDescriiption/ProjectsDescriiption"
 const App=() =>{
  
@@ -23,7 +24,8 @@ const App=() =>{
               <Route index element={ <Home /> } />
               <Route path="schedule" element={<Schedules />} />
               <Route path="projects/:id" element={<Overview />} >
-                      <Route index element={<Projects />}  />
+                      <Route index element={<Dashoboard />}  />
+                      <Route path="tasks" element={<Projects />}  />
                       <Route path="gantChart" element={<ProGantChart />} />
                       <Route path="issues" element={ <Issues /> } />
                       <Route path="documents" element={<Documents />} />

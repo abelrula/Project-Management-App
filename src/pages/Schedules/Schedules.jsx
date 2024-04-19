@@ -1,6 +1,6 @@
  import Calander from "../../Componentes/Calander/Calander"
 import "./schedules.css"
- import Header from "../../Componentes/Header/Header";
+ import Header from "../../Componentes/header/Header";
 
 const Schedules = () => {
   return (

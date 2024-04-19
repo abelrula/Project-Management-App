@@ -47,15 +47,14 @@ display: flex;
     color: #898981;
   }
  .Dashboard_TaskCompletion-totalTaskCount{
-         width: 405px;
-    background: transparent;
-    display: flex;
-    height: 320px;
-    gap: 10px;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    justify-content: center;
-    padding: 5px;
+  background: transparent;
+  display: flex;
+  height: 320px;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  justify-content: center;
+  padding: 5px;
  }
   .Dashboard_TaskCompletion_container{
        width: 405px;

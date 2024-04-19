@@ -46,10 +46,11 @@ display: flex;
     height: 25px;
 }
    .sideWord label{
-       color: #b1b1b1;
+    color: #e5e5e5;
     font-size: 12px;
     cursor: pointer;
-    font-family: sans-serif;
+    font-family: monospace;
+    font-weight: 100;
 
 }
 .side >label:hover ,link:hover{

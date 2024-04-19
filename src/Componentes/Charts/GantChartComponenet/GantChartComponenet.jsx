@@ -6,12 +6,15 @@ import {
   LinearScale,
   Tooltip,
   Legend,
+  defaults
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import "chartjs-adapter-date-fns";
 import { FaCheckCircle } from "react-icons/fa";
 import { FcDeleteColumn, FcProcess } from "react-icons/fc";
 import "./gantchart.css";
+defaults.maintainAspectRatioa=false
+defaults.responsive=true
 ChartJs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const GantChartComponenet = () => {
@@ -59,113 +62,113 @@ const GantChartComponenet = () => {
         data: [
           {
             x: [ "2024-01-08", "2024-01-05" ],
-            y: "Task 15656",
+            y: "Du15656",
             name: "Simon panda",
             status: "1",
           },
           {
             x: [ "2024-01-13", "2024-01-17" ],
-            y: "Task 2676",
+            y: "Du2676",
             name: "Abel",
             status: "1",
           },
           {
             x: [ "2024-01-18", "2024-01-20" ],
-            y: "Task 390",
+            y: "Du390",
             name: "Yosef",
             status: "2",
           },
            {
             x: [ "2024-01-08", "2024-01-05" ],
-            y: "Task 1786",
+            y: "Du1786",
             name: "Simon panda",
             status: "1",
           },
           {
             x: [ "2024-01-13", "2024-01-17" ],
-            y: "Task 872",
+            y: "Du872",
             name: "Abel",
             status: "1",
           },
           {
             x: [ "2024-01-18", "2024-01-20" ],
-            y: "Task 1212",
+            y: "Du1212",
             name: "Yosef",
             status: "2",
           }, {
             x: [ "2024-01-08", "2024-01-05" ],
-            y: "Task 11213",
+            y: "Du11213",
             name: "qimon panda",
             status: "1",
           },
           {
             x: [ "2024-01-13", "2024-01-17" ],
-            y: "Task 221",
+            y: "Du221",
             name: "wbel",
             status: "1",
           },
           {
             x: [ "2024-01-18", "2024-01-20" ],
-            y: "Task 21323",
+            y: "Du21323",
             name: "Yosef",
             status: "2",
           },
           {
             x: [ "2024-01-21", "2024-01-26" ],
-            y: "Task 44",
+            y: "Du44",
             name: "lsehay",
             status: "0",
           },
           {
             x: [ "2024-02-27", "2024-02-30" ],
-            y: "Task 15",
+            y: "Du15",
             name: "vand",
             status: "2",
           },
           {
             x: [ "2024-02-18", "2024-02-20" ],
-            y: "Task 412",
+            y: "Du412",
             name: "rula",
             status: "2",
           },
           {
             x: [ "2024-01-21", "2024-02-26" ],
-            y: "Task 117",
+            y: "Du117",
             name: "biladen",
             status: "0",
           },
           {
             x: [ "2024-02-27", "2024-03-30" ],
-            y: "Task 8213",
+            y: "Du8213",
             name: "miko",
             status: "2",
           }, {
             x: [ "2024-01-21", "2024-01-26" ],
-            y: "Task 45",
+            y: "Du45",
             name: "lsehay",
             status: "0",
           },
           {
             x: [ "2024-02-27", "2024-02-30" ],
-            y: "Task 17",
+            y: "Du17",
             name: "vand",
             status: "2",
           },
           {
             x: [ "2024-02-18", "2024-02-20" ],
-            y: "Task 412",
+            y: "Du412",
             name: "rula",
             status: "2",
           },
           {
             x: [ "2024-01-21", "2024-02-26" ],
-            y: "Task 817",
+            y: "Du817",
             name: "biladen",
             status: "0",
           },
           {
             x: [ "2024-02-27", "2024-03-30" ],
-            y: "Task 813",
+            y: "Du813",
             name: "miko",
             status: "2",
           },

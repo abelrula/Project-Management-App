@@ -1,7 +1,16 @@
 import React from 'react'
-     import { Fragment,useState,useEffect } from "react";
-            import { BsListTask, BsPersonCircle } from "react-icons/bs";
-            import { TbStatusChange, TbTimeDuration10 } from "react-icons/tb";
+import { Link, NavLink } from "react-router-dom";
+import { Fragment,useState,useEffect } from "react";
+import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
+import ProgressBar from "../../Componentes/progressBar/ProgressBar";
+import Form from "../../Componentes/Form/Form";
+import CheckedCell from "./Cells/CheckedCell"
+import TaskCell from "./TaskCell"
+import PriorityCell from "./Cells/PriorityCell"
+import overView from "../../data/overView";
+import StatusCell from "./Cells/StatusCell"
+import img1 from "../../assets/worker2.jpg"
+           import { TbStatusChange, TbTimeDuration10 } from "react-icons/tb";
             import { TbTimeDuration0 } from "react-icons/tb";
             import { FaHourglassStart } from "react-icons/fa";
             import { MdArrowDropDown, MdOutlineAssignmentInd } from "react-icons/md";
@@ -12,19 +21,11 @@ import React from 'react'
             import { FcLowPriority } from "react-icons/fc";
             import { MdOutlineLowPriority } from "react-icons/md";
             import { BiUpArrowAlt, BiDownArrowAlt, BiCheckShield, BiPlus } from "react-icons/bi";
-            import img1 from "../../assets/worker2.jpg"
-            import overView from "../../data/overView";
-            import { Link, NavLink } from "react-router-dom";
-            import ProgressBar from "../../Componentes/progressBar/ProgressBar";
-            import Form from "../../Componentes/Form/Form";
-            import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
-            import CheckedCell from "./CheckedCell"
-            import TaskCell from "./TaskCell"
-            import PriorityCell from "./PriorityCell"
-            import StatusCell from "./StatusCell"
             import { RiPercentFill } from "react-icons/ri";
             import { GiClassicalKnowledge } from 'react-icons/gi';
             import { IoAddCircle } from 'react-icons/io5';
+            import { BsListTask, BsPersonCircle } from "react-icons/bs";
+
 const Projects = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
   const [ issueTracking, setIssueTracking ] = useState( [] )
@@ -94,11 +95,11 @@ const Projects = () => {
                   header:<p> Start Date <FaHourglassStart /></p>,
                   cell: ( props ) => <p>{ props.getValue() }</p>
                 },
-                // { 
-                //   accessorKey:"duedate",
-                //   header:"duedate",
-                //   cell: ( props ) => <p>{ props.getValue() }</p>
-                // }
+                { 
+                  accessorKey:"duedate",
+                  header:"duedate",
+                  cell: ( props ) => <p>{ props.getValue() }</p>
+                }
                 ,
                 // { 
                 //   accessorKey:"endDate",
@@ -108,11 +109,6 @@ const Projects = () => {
                 { 
                   accessorKey:"duration",
                   header:<p>Duration <FcDoughnutChart /></p>,
-                  cell: ( props ) => <p>{ props.getValue() }</p>
-                },
-                ,{ 
-                  accessorKey:"document",
-                  header:"document",
                   cell: ( props ) => <p>{ props.getValue() }</p>
                 },
                 {
