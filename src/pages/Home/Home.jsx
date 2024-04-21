@@ -1,13 +1,13 @@
+import Dashboard from "../../Componentes/Dashboard/Dashboard";
 import Header from "../../Componentes/header/Header";
-import TodoTask from "../../Componentes/TodoTask/TodoTask";
-import "./home.css"
+ import "./home.css"
  
 
 function Home() {
   return (
     <>
       <Header title="Welcome, Abel ! 👋" />
-      <TodoTask />
+      <Dashboard />
     </>
   );
 }

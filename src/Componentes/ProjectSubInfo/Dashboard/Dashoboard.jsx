@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import LineChart from '../../Charts/LineChart'
-import TotalNumber from '../../TotalTaskstatus/TotalNumber'
-import "./dashboard.css"
+ import "./dashboard.css"
+import TotalNumber from '../../Dashboard/TotalTaskstatus/TotalNumber'
 const Dashoboard = () => {
    
   const [ openTitle, setOpenTitle ] = useState( null )

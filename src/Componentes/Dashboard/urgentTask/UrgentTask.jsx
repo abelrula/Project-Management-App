@@ -29,10 +29,10 @@ import moment from "moment";
     console.log(todayTodo)
   return (
    <div className="TodayTodo__view--task">
-      <div className="TodayTodo__view--task-header">
+      <span className="TodayTodo__view--task-header">
       <BiArrowBack color="black" onClick={()=>setUrgent(false)} className="icon"/>
       <h5>Urgent Tasks For Today</h5>
-      </div>
+      </span>
       <ul className=" element-with-scroll">
         {todayTodo?.length > 0 ? (
           todayTodo.map((item) => (

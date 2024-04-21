@@ -3,11 +3,22 @@
     flex-direction: column;
     gap: 10px;
     border-radius: 20px;
-    box-shadow: 3px 1px 1px 1px #9ca5a5;
+    border: 1px solid #d5c9c9;
     background: #ffffffad;
     padding: 5px;
-    width: 500px;
+    width: 350px;
     height: 300px;
+}
+.TeamDirectory span{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.TeamDirectory span h3{
+    font-size: 18px;
+     font-weight: 100;
+    color: #776f6f;
+     font-family: monospace;
 }
 .TeamDirectory > h5{
        font-family: system-ui;
@@ -23,14 +34,13 @@
     justify-content: flex-start;
     padding: 0 5px;
     overflow-y: scroll;
-        width: 300px;
-    
+     
   }
  .TeamDirectory__members__member{
     background: #e5e5e5;
     padding: 5px;
     border-radius: 10px;
-        width: 85px;
+        width: 100px;
         transition: all ease-in-out 1s;
     }
     .TeamDirectory__members__member:hover {
@@ -39,8 +49,8 @@ scale: 1.2;
 
 } 
  .TeamDirectory__members__member > img{
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background-position: center;
     object-fit: cover;

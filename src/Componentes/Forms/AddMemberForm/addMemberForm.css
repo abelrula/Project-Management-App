@@ -1,16 +1,15 @@
 .modal{
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    position: fixed;
-    background: #352e2ec7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99;
-height: 100vh;
- transition: ease-in-out linear 1s ;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #bdadad9c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  height: 100vh;
+  transition: ease-in-out linear 1s;
 }
 .addMember{
        display: flex;

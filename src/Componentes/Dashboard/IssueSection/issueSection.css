@@ -1,0 +1,65 @@
+.issueSection{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border:1px solid #bdb8b8;
+    border-radius: 10px;
+    height: 300px;
+    width: 350px;
+    gap: 15px;
+}
+.issueSection_header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.issueSection_header .icon{
+    color: black;
+    font-size: 20px;  
+}
+.issueSection_header h3{
+    font-size: 18px;
+     font-weight: 100;
+    color: #776f6f;
+     font-family: monospace
+}
+.issueSection_issues{
+display:flex;
+flex-direction: column;
+gap:5px
+}
+.issueSection   h3{
+    font-size: 18px;
+     font-weight: 100;
+    color: #776f6f;
+     font-family: monospace}
+  .issueSection_issues   .issueSection_issues-projectIssue{
+    display: flex;
+    gap: 10px;
+    border:1px solid #dbdbdb;
+
+}
+.issueSection_issues-projectIssue    img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: cover;
+    object-position: 75% 10%;
+}
+.issueSection_issues-projectIssue   span{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+}
+.issueSection_issues-projectIssue  span   h6{
+    font-size: 0.8rem;
+    color: #6d6666;
+}
+.issueSection_issues-projectIssue   span   p {
+     align-self: center;
+    margin-left: 30px;
+        color: #7ac7ae;
+    margin-bottom: 5px;
+}

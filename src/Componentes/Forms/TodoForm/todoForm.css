@@ -1,20 +1,22 @@
 .TodoForm{
-       display: flex;
-    flex-direction: column;
-    place-items: center;
-    color: rgb(11, 12, 12);
-    height: 670px;
-    border-radius: 20px;
-    border: 1px solid rgb(85, 82, 82);
-    font-weight: 800;
-    box-shadow: 0px 0px 12px 0px black;
-    background: #ffffffad;
-    grid-area: form;
-    padding: 15px;
-     padding: 15px;
-width: 359px;    overflow: hidden;
-     gap:15px;
-     margin-top:20px
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  color: rgb(11, 12, 12);
+  height: 100vh;
+   border-left: 1px solid rgb(175 150 150);
+  font-weight: 800;
+  box-shadow: 0px 0px 12px 0px black;
+  background: #ffffff;
+  grid-area: form;
+  padding: 15px;
+  padding: 15px;
+  width: 550px;
+  overflow: hidden;
+  gap: 15px;
+   position: absolute;
+  right: 0;
+  color: black
 }
 .TodoForm_header{
         display: flex;

@@ -2,6 +2,8 @@ import React from 'react'
 import {Chart,defaults} from "chart.js/auto";
 import {Pie} from "react-chartjs-2"
 import "./pieChart.css"
+import { PiDotsSixVerticalBold } from "react-icons/pi";
+
 defaults.maintainAspectRatioa=false
 defaults.responsive=true
 export const TaskPieChart = () => {
@@ -28,10 +30,10 @@ export const TaskPieChart = () => {
             }
       
     return (
-        <div className="Dashboard_TaskCompletion-doghnutGraph">
-          <h5>Task Status</h5>
-           <Pie data={data} options={options}  />
-         </div>
+        <div className="taskCompletion_graph-doghnutGraph">
+         <span><PiDotsSixVerticalBold  fontSize={20} color="black"/><h5>Task Status</h5></span>
+            <Pie data={data} options={options}  />
+          </div>
   )
 }
 
@@ -63,8 +65,8 @@ export const IssuePieChart = () =>
         }
  
     return (
-        <div className="Dashboard_TaskCompletion-doghnutGraph">
-          <h5>Issue Status</h5>
+        <div className="taskCompletion_graph-doghnutGraph">
+         <span><PiDotsSixVerticalBold  fontSize={20} color="black"/><h5>Task Status</h5></span>
            <Pie data={data} options={options}  />
          </div>
     )

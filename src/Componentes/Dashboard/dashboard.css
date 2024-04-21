@@ -1,7 +1,6 @@
 
- 
 .TodayTodo__wavingHand{
-           font-size: 2rem;
+    font-size: 20px;
     font-family: monospace;
     font-family: system-ui;
     font-weight: 900;
@@ -9,12 +8,12 @@
  }
  
 .Dashboard{
-          display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
  }
 .date{
-      font-size: 1.1rem;
+    font-size: 15px;
     font-weight: 900;
     font-family: cursive;
 }
@@ -27,10 +26,15 @@ display: flex;
     flex-direction: column;
     align-items: center;
 }
-.Dashboard_TaskStatus{
-   display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+.Dashboard_TaskCompletion-totalTaskCount{
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.Dashboard_Status{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
   .bargraph{
     background: #ffffff;
@@ -46,16 +50,7 @@ display: flex;
     font-weight: 100;
     color: #898981;
   }
- .Dashboard_TaskCompletion-totalTaskCount{
-  background: transparent;
-  display: flex;
-  height: 320px;
-  gap: 10px;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  justify-content: center;
-  padding: 5px;
- }
+
   .Dashboard_TaskCompletion_container{
        width: 405px;
     background: transparent;
@@ -155,8 +150,16 @@ text-align: center;
 }
 .Dashboard_TaskCompletion_Project{
   display: flex;
-    gap: 15px;
-    width: 720px;
+  gap: 15px;
+  width: 656px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  box-shadow: 3px 1px 1px 1px #9ca5a5;
+  border-radius: 10px;
+  height: 300px;
+  width: 350px;
 }
 .Dashboard_TaskCompletion_Project-Catagori{
       display: flex;
@@ -164,6 +167,7 @@ text-align: center;
     gap: 5px;
     align-items: center;
  }
+
 
 
 

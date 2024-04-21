@@ -14,7 +14,7 @@ import { IoPersonOutline } from "react-icons/io5";
    const AssignedTask = ({title,setUrgent,footer,setActive}) => {
    const [todoStatus, setTodoStatus] = useState("Upcoming");
    const [todos,setTodos]=useState([])
-     const location = useLocation()
+     const {pathname} = useLocation()
      let filterdData="completed"
    useEffect( () =>
    {
@@ -60,10 +60,10 @@ import { IoPersonOutline } from "react-icons/io5";
     <><div className="AssignedTask">
       <span>
         <p>{ title } </p>
-        { location.pathname === "/report" ?
+        {pathname === "/report" ?
           <IoCloseCircleOutline className="icon" onClick={ () => setActive( false ) } /> 
-          : <CiLock />
-        } <button className="AssignedTask_Button" onClick={()=>setUrgent(true)}>see urgent <AiFillRightCircle className="icon" /></button>
+          : <CiLock className="icon" />
+        } { pathname !== "/report"  && <button className="AssignedTask_Button" onClick={()=>setUrgent(true)}>see urgent <AiFillRightCircle className="icon" /></button>}
       </span>
       <div className="AssignedTask__situation">
           <div className="AssignedTask__situation-types">
@@ -78,7 +78,7 @@ import { IoPersonOutline } from "react-icons/io5";
               </li>
             ))}
           </div>
-          <div className="AssignedTask__situation--description">
+          <div className="AssignedTask__situation--description element-with-scroll">
               {todos?.map((item,i)=>(
                  <div className="AssignedTask__situation--description--list" key={i}>
                   <span>

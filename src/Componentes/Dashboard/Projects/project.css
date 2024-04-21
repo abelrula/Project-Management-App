@@ -1,0 +1,98 @@
+.projectCatagories{
+gap: 15px;
+width: 656px;
+background: white;
+display: flex;
+flex-direction: column;
+padding: 5px;
+border:1px solid #bdb8b8;
+border-radius: 10px;
+height: 300px;
+width: 350px;}
+.projectCatagories_header{
+
+}
+.projectCatagories_header span{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.projectCatagories_header span h3{
+    font-size: 18px;
+     font-weight: 100;
+    color: #776f6f;
+     font-family: monospace
+}
+.projectCatagories__cards{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.projectCatagories__cards-card{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 25px;
+}
+.projectCatagories__cards-card .title{
+    color: black;
+    font-size: 12px;
+    font-weight: 200;
+}
+.projectCatagories__cards-card span{
+     font-size: 13px;
+    font-family: cursive;
+    font-weight: 100;
+    color: #898981;
+}
+.iconWrapper{
+      background: antiquewhite;
+    width: 40px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    border-radius: 5px;
+}
+.sliderArrow{
+   position: absolute;
+    width: 18px;
+    font-size: 30px;
+    height: 100%;
+    background: linear-gradient(45deg, #6e6666, #00000036);
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: white;
+    cursor: pointer;
+}
+ .right{
+    right: 0;
+}
+
+ .left{
+    left: 0;
+}
+
+.projectCatagory__top{
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    font-weight: 700;
+    color: black;
+    font-family: system-ui;
+}
+.cards{
+      display: flex;
+    gap: 10px;
+}
+
+.projectCatagory__top span {
+      font-size: 18px;
+    font-family: system-ui;
+    font-weight: 100;
+    color: #898981;
+}

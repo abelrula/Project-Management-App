@@ -1,5 +1,6 @@
 .rbc-calendar {
     background: #ffffff;
+    border-radius: 5px;
 }
 .rbc-event{
     padding: 0 !important;
@@ -45,4 +46,11 @@
     .rbc-addons-dnd .rbc-event {
     transition: opacity 150ms;
     border: none;
+  }
+  .react-calendar__tile {
+    font-size: 11px
+  }
+    .react-calendar__month-view__weekdays {
+      font-size: 10px;
+      color: black;
   }

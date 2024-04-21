@@ -1,10 +1,10 @@
 import React, { useState ,useEffect} from "react";
- import "./form.css";
+ import "./assignTaskForm.css";
 import { HiCalendar } from "react-icons/hi";
    import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
-import projectTypes from "../../data/projectTypes";
+import projectTypes from "../../../data/projectTypes";
 import { IoCloseCircleSharp } from "react-icons/io5";
-const Form = ({setActive}) => {
+const AssignTaskForm = ({setActive}) => {
   const date = new Date();
   const [startDate, setStartDate] = useState(date);
   const [endDate, setEndate] = useState(date);
@@ -194,4 +194,4 @@ const Form = ({setActive}) => {
   );
 };
 
-export default Form;
+export default AssignTaskForm;

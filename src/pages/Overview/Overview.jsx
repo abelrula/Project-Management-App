@@ -10,7 +10,7 @@
               return (
                 <>
                  <Header />
-                <Outlet />
+                 <Outlet />
                 </>
               );
             }

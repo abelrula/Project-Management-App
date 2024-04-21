@@ -1,5 +1,6 @@
 import  { useEffect, useState } from "react";
 import "./teamMembers.css";
+import { PiDotsSixVerticalBold } from "react-icons/pi";
 const TeamMembers = () => {
   const members = "http://localhost:3500/members";
   const [member, setMember] = useState([]);
@@ -13,7 +14,7 @@ const TeamMembers = () => {
   }, []);
   return (
     <div className="TeamDirectory">
-      <h5>Team-Directory</h5>
+      <span> <PiDotsSixVerticalBold fontSize={20} color="black" /> <h3>Team Directories</h3></span>
       <div className="TeamDirectory__members element-with-scroll">
         {member?.map((member, i) => (
           <div className="TeamDirectory__members__member" key={i}>

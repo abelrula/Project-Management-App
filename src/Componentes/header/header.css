@@ -9,25 +9,28 @@
     left: 0;
     right: 0;
     width: 100%;
-    padding: 5px 75px;}
+    padding: 5px 75px;
+    align-items: center;
+height: 65px;
+border-bottom: #e5dddd 1px solid;
+}
 .header h1{
     font-family: cursive;
     font-size: 2rem;
 }
-.header img{
-     width: 30px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: 50%;
-}
 .header .left{
-     display: flex;
-    align-items: center;
+    display: flex;
+     justify-content: center;
+    gap: 15px;
+    position: relative;
+    top: 10px;
+    align-items: end
 }
 .header .left .notification{
-       position: relative;
-    top: 7px;
-    width: 60px;
+    height: 23px;}
+.left .icon{
+    font-size: 20px;
+    color: black;
 }
 .header .left .notification span{
          position: relative;
@@ -41,9 +44,11 @@
     color: white;
     padding: 2px 3px;
 }
-.header__profile{
-    position: relative;
-    top: 7px;
+.profile{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%; 
 }
 .header__profile .arrowdown{
     position: absolute;
@@ -94,18 +99,29 @@ transition: ease-in-out linear 1s ;
     color: black;
     cursor: pointer;
 }
+
 .closeIcon:hover{
  scale: 1.1;
 }
 .profile_description{
-    position: relative;
-    background: #ffffff;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 600px;
-    height: 400px;
-    border-radius: 10px;
+    flex-direction: column;
+    place-items: center;
+    color: rgb(11, 12, 12);
+    height: 100vh;
+     border-left: 1px solid rgb(175 150 150);
+    font-weight: 800;
+    box-shadow: 0px 0px 12px 0px black;
+    background: #ffffff;
+    grid-area: form;
+    padding: 15px;
+    padding: 15px;
+    width: 550px;
+    overflow: hidden;
+    gap: 15px;
+     position: absolute;
+    right: 0;
+    color: black
 }
 /* .profile_description_right{
 } */

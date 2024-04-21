@@ -1,26 +1,20 @@
+.TodayTodo__view--task{
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border:1px solid #bdb8b8;
+  height: 300px;
+  width: 350px;
+}
 .TodayTodo__view--task   h5{
-   align-items: start;
-    display: flex;
-    font-size: 1rem;
-    margin-top: 10px;
-     font-family: fangsong;
-    font-weight: 100;
-    color: #898981;
+  font-weight: 100;
+  /* color: #898981; */
+  font-size: 16px;
+  font-family: monospace;
+  width: 100%;
  }
 
-  .TodayTodo__view--task{
-    background: #ffffffad;
-    box-shadow: 3px 1px 1px 1px #9ca5a5;
-    border-radius: 20px;
-    padding: 10px;
-    flex: 1 1;
-    min-width: 430px;
-    max-width: 400px;
-    max-height: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
    .TodayTodo__view--task   ul{
      padding: 10px 5px;
     overflow-y: scroll;
@@ -83,9 +77,8 @@ width: 8px;
 .TodayTodo__view--task-header{
   display:flex;
   align-items: center;
-  justify-content: space-between;
-  width: 60%;
-}
+  justify-content: space-evenly;
+ }
 .TodayTodo__view--task-header .icon:hover{
 cursor: pointer;
 scale:1.1

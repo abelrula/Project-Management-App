@@ -4,7 +4,7 @@ width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
     border-spacing: 0px;
-    border: 1px solid #aba5a5;
+    border:1px solid #e1e1e1;
     font-family: monospace;
     font-size: 12px;
  background: white}
@@ -14,7 +14,7 @@ width: 100%;
     gap:5px;
     justify-content:center;
      font-weight: bold;
-    color: rgb(171 171 171);
+    color: #3e5b5e;
     text-transform: capitalize;
     letter-spacing: 1px;
 }
@@ -145,3 +145,4 @@ display: flex;
  .tableFilter div .icon{
 
  }
+ 

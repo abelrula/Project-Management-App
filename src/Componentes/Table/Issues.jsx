@@ -15,9 +15,8 @@ import React from 'react'
             import img1 from "../../assets/worker2.jpg"
             import overView from "../../data/overView";
             import { Link, NavLink } from "react-router-dom";
-            import ProgressBar from "../progressBar/ProgressBar";
-            import Form from "../Form/Form";
-            import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
+             import ProgressBar from "../progressBar/ProgressBar";
+             import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
             import CheckedCell from "./Cells/CheckedCell"
             import TaskCell from "./TaskCell"
             import PriorityCell from "./Cells/PriorityCell"
@@ -25,6 +24,8 @@ import React from 'react'
             import { RiPercentFill } from "react-icons/ri";
             import { GiClassicalKnowledge } from 'react-icons/gi';
             import { IoAddCircle } from 'react-icons/io5';
+import AssignTaskForm from '../Forms/AssignTaskForm/AssignTaskForm';
+
 const Issues = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
   const [ issueTracking, setIssueTracking ] = useState( [] )
@@ -177,7 +178,7 @@ const Issues = () => {
                       }
                     </tbody>
                     </table>
-                {active &&  <Form  setActive={setActive}/> }
+                {active &&  <AssignTaskForm  setActive={setActive}/> }
       </div>
   )
 }

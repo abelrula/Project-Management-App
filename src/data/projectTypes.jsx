@@ -4,7 +4,7 @@ import { RiCustomerService2Fill, RiMarkPenFill } from "react-icons/ri";
 
 const projectTypes = [
   {
-    title: "Research",
+    title: "Daniels Apartement",
     color: "rgb(94 145 151 / 67%)",
     icon: <FaResearchgate fill="red" className="icon" />
   },
@@ -14,17 +14,12 @@ const projectTypes = [
     icon: <RiCustomerService2Fill fill="black" />
   },
   {
-    title: "Marketing",
-    color: "rgb(147 12 194 / 62%)",
-    icon: <RiMarkPenFill fill="brown" />
-  },
-  {
-    title: "Operations",
+    title: "Construction",
     color: "rgb(205 177 95 / 77%)",
     icon: <MdOutlineAspectRatio fill="green" />
   },
   {
-    title: "Daniel Apartemnt",
+    title: "Abel Apartemnt",
     color: "yellow",
     icon: <FaResearchgate />
   },

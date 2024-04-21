@@ -1,24 +1,22 @@
  .AssignedTask{
-  background: white;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    box-shadow: 3px 1px 1px 1px #9ca5a5;
-    border-radius: 10px;
-    flex: 1 1;
-    width: -webkit-fill-available;
-    height: 300px;
-    max-width: 900px;
+   background: white;
+   display: flex;
+   flex-direction: column;
+   padding: 5px;
+   border:1px solid #bdb8b8;
+   border-radius: 10px;
+   height: 300px;
+   width: 350px;
   }
   .AssignedTask span{
    display: flex;
-    justify-content: space-between;
-    width: 60%;
-    flex-direction: fle;
-    align-self: end;
-    padding: 5px;
-    font-size: 20px;
-    font-family: monospace;
+   justify-content: space-between;
+   width: 60%;
+   flex-direction: fle;
+   align-self: end;
+   /* padding: 5px; */
+   font-size: 16px;
+   font-family: monospace;
   }
   .AssignedTask span input :hover{
    scale: 1.1;
@@ -55,10 +53,9 @@
     cursor:pointer
  }
  .AssignedTask__situation-types > li  > label{
-color: #767171;
-    cursor:pointer;
-    font-size: 1rem;
-    font-weight: 700;
+   color: #767171;
+   cursor: pointer;
+   font-size: 14px
  }
  .AssignedTask__situation--description--list {
    display: flex;
@@ -80,9 +77,11 @@ color: #767171;
   width: 100%;
 }
  .AssignedTask__situation--description--list > span > p{
-     font-size: 1.1rem;
-  width: 100%;
-    color: #5f7485;
+   font-size: 13px;
+   width: 100%;
+   color: #546a7c;
+   text-align: left;
+   margin-left: 15px;
  }
  .AssignedTask__situation--description--list > span > input:hover{
   scale: 1.1;
@@ -136,6 +135,15 @@ background: #b3a662;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+.AssignedTask span .icon{
+   font-size: 20px;
+    color: black;
+
+}.AssignedTask span .icon:hover{
+   font-size: 22px;
+   color: rgb(138, 11, 11);
+
 }
 .AssignedTask_Button:hover{
 scale: 1.1;

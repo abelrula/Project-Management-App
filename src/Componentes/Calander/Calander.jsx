@@ -5,27 +5,28 @@ import "./calender.css";
 import withDragAndDrop, { withDragAndDropProps } from "react-big-calendar/lib/addons/dragAndDrop";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import { Calendar as BigCalander, momentLocalizer } from "react-big-calendar";
- import SchedulesForm from '../Schedules Form/SchedulesForm';
-
+ import SchedulesForm from '../Forms/Schedules Form/SchedulesForm';
+ 
  const DndCalendar=withDragAndDrop(BigCalander)
-const Calander = (props) => {
-  const localizer = momentLocalizer( moment );
-  const [ events, setEvents ] = useState()
-  const [ active, setActive ] = useState(false)
-  useEffect( () =>{
-     const fetchEvents = async () =>{
-       const res = await fetch( "http://localhost:3500/events" )
-       if ( !res.ok )  console.log( "error occured" )
-       const data= await res.json()
-       const newData=data.map((data)=>{
-         const startTime = moment( data.start ).toDate()
-         const endTime=moment(data.end).toDate()
-          return{
-            ...data,
-            start:startTime,
-            end:endTime
-          }
-})
+
+ const Calander = (props) => {
+        const localizer = momentLocalizer( moment );
+        const [ events, setEvents ] = useState()
+        const [ active, setActive ] = useState(false)
+        useEffect( () =>{
+          const fetchEvents = async () =>{
+            const res = await fetch( "http://localhost:3500/events" )
+            if ( !res.ok )  console.log( "error occured" )
+            const data= await res.json()
+            const newData=data.map((data)=>{
+              const startTime = moment( data.start ).toDate()
+              const endTime=moment(data.end).toDate()
+                return{
+                  ...data,
+                  start:startTime,
+                  end:endTime
+                }
+      })
        setEvents(newData)
        console.log(events)
       }

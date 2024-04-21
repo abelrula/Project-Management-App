@@ -1,0 +1,62 @@
+.CommentSection{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid #bdb8b8;
+    border-radius: 10px;
+    height: 300px;
+    width: 350px;
+    gap: 20px;
+}
+.CommentSection_TeamsComment{
+display:flex;
+flex-direction: column;
+gap:5px
+}
+.CommentSection_header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.CommentSection_header .icon{
+    color: black;
+    font-size: 20px;  
+}
+.CommentSection_header h3{
+    font-size: 18px;
+     font-weight: 100;
+    color: #776f6f;
+     font-family: monospace
+ }
+  .CommentSection_TeamsComment   .CommentSection_TeamsComment-Usercomments{
+    display: flex;
+    gap: 10px;
+    border:1px solid #dbdbdb;
+}
+.CommentSection_TeamsComment-Usercomments    img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: cover;
+    object-position: 75% 10%;
+}
+.CommentSection_TeamsComment-Usercomments   span{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+}
+.CommentSection_TeamsComment-Usercomments  span   h6{
+    font-size: 12px;
+    color: #b3b3b3;
+    font-family: cursive
+}
+.CommentSection_TeamsComment-Usercomments   span   p {
+    align-self: center;
+    margin-left: 15px;
+    color: #353535;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+}

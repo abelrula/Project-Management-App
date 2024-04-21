@@ -3,8 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Fragment,useState,useEffect } from "react";
 import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
 import ProgressBar from "../../Componentes/progressBar/ProgressBar";
-import Form from "../../Componentes/Form/Form";
-import CheckedCell from "./Cells/CheckedCell"
+ import CheckedCell from "./Cells/CheckedCell"
 import TaskCell from "./TaskCell"
 import PriorityCell from "./Cells/PriorityCell"
 import overView from "../../data/overView";
@@ -25,6 +24,7 @@ import img1 from "../../assets/worker2.jpg"
             import { GiClassicalKnowledge } from 'react-icons/gi';
             import { IoAddCircle } from 'react-icons/io5';
             import { BsListTask, BsPersonCircle } from "react-icons/bs";
+import AssignTaskForm from '../Forms/AssignTaskForm/AssignTaskForm';
 
 const Projects = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
@@ -62,17 +62,17 @@ const Projects = () => {
               const columns=[
                 {
                   accessorKey:"completed",
-                  header:<p><BiCheckShield /></p>,
+                  header:<p><BiCheckShield color="#3e5b5e" /></p>,
                   cell:CheckedCell
                 } ,
                 {
                   accessorKey:"task",
-                  header:<p>Task <BsListTask /></p>,
+                  header:<p>Task <BsListTask color="#3e5b5e" /></p>,
                   cell:TaskCell
                 },
                 {
                   accessorKey:"assignedTo",
-                  header:<p>assigned To <MdOutlineAssignmentInd /></p>,
+                  header:<p>assigned To <MdOutlineAssignmentInd color="#3e5b5e" /></p>,
                   cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
                 },
                 // {
@@ -82,22 +82,22 @@ const Projects = () => {
                 // },
                 {
                   accessorKey:"priority",
-                  header:<p>Priority <MdOutlineLowPriority /></p>,
+                  header:<p>Priority <MdOutlineLowPriority color="#3e5b5e" /></p>,
                   cell:PriorityCell
                 },
                 {
                   accessorKey:"status",
-                  header:<p>Status<TbStatusChange /></p>,
+                  header:<p>Status<TbStatusChange color="#3e5b5e" /></p>,
                   cell: StatusCell 
                 }
                 , { 
                   accessorKey:"startDate",
-                  header:<p> Start Date <FaHourglassStart /></p>,
+                  header:<p> Start Date <FaHourglassStart color="#3e5b5e" /></p>,
                   cell: ( props ) => <p>{ props.getValue() }</p>
                 },
                 { 
-                  accessorKey:"duedate",
-                  header:"duedate",
+                  accessorKey:"endDate",
+                  header:<p>duedate <FaHourglassStart color="#3e5b5e" /></p> ,
                   cell: ( props ) => <p>{ props.getValue() }</p>
                 }
                 ,
@@ -108,12 +108,12 @@ const Projects = () => {
                 // },
                 { 
                   accessorKey:"duration",
-                  header:<p>Duration <FcDoughnutChart /></p>,
+                  header:<p>Duration <FcDoughnutChart color="#3e5b5e" /></p>,
                   cell: ( props ) => <p>{ props.getValue() }</p>
                 },
                 {
                   accessorKey:"progressPercent",
-                  header:<p> <RiPercentFill />Complete <TbTimeDuration0 /></p>,
+                  header:<p>Complete <TbTimeDuration0 color="#3e5b5e" /></p>,
                   cell: ( props ) => <ProgressBar progress={ props.getValue() } />
                 }
               ]
@@ -205,7 +205,7 @@ const Projects = () => {
                       }
                     </tbody>
                     </table>
-                {active &&  <Form  setActive={setActive}/> }
+                {active &&  <AssignTaskForm  setActive={setActive}/> }
       </div>
   )
 }
