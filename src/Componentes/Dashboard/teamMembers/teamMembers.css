@@ -37,11 +37,11 @@
      
   }
  .TeamDirectory__members__member{
-    background: #e5e5e5;
     padding: 5px;
     border-radius: 10px;
-        width: 100px;
-        transition: all ease-in-out 1s;
+    width: 100px;
+    transition: all ease-in-out 1s;
+    border: 1px solid #baa7a7;
     }
     .TeamDirectory__members__member:hover {
     z-index: 11000;

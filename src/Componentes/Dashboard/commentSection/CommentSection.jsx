@@ -1,12 +1,17 @@
 import React from "react";
 import "./commentSection.css";
 import { ImStatsDots } from "react-icons/im";
+import { LiaComments } from "react-icons/lia";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 import { GrProjects } from "react-icons/gr";
 const CommentSection = () => {
   return (
     <div className="CommentSection">
-      <div className="CommentSection_header"> <PiDotsSixVerticalBold fontSize={20} color="black" /> <h3>New Comments</h3></div>
+      <div className="CommentSection_header"> 
+      <PiDotsSixVerticalBold fontSize={20} color="black" />
+       <h3>New Comments</h3>
+     <LiaComments  />
+       </div>
       <div className="CommentSection_TeamsComment">
         <div className="CommentSection_TeamsComment-Usercomments">
           <img

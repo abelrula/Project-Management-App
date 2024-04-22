@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Chart,defaults} from "chart.js/auto";
-import {Pie} from "react-chartjs-2"
+import {Doughnut, Pie} from "react-chartjs-2"
 import "./pieChart.css"
 import { PiDotsSixVerticalBold } from "react-icons/pi";
+import LineChart from './LineChart';
 
 defaults.maintainAspectRatioa=false
 defaults.responsive=true
@@ -40,6 +41,7 @@ export const TaskPieChart = () => {
 
 export const IssuePieChart = () =>
 {
+  const [selectedChart,SetSelectedChart]=useState("pie chart")
     const data={
       labels: ["reopened", "in progress", "to be tested","closed" ,"todo" ,"open"],
       datasets: [
@@ -63,11 +65,18 @@ export const IssuePieChart = () =>
                 }
             }
         }
- 
+ const chartsOptions=["pie chart","Dougnut Chart","Line chart",]
     return (
         <div className="taskCompletion_graph-doghnutGraph">
          <span><PiDotsSixVerticalBold  fontSize={20} color="black"/><h5>Task Status</h5></span>
-           <Pie data={data} options={options}  />
+         <div className='charts'>
+         {chartsOptions.map((chart,i)=>( 
+         <span className={`chart ${selectedChart === chart ? "active" : "none"}`} key={i} onClick={()=>{SetSelectedChart(chart)}}>{chart}</span>
+         ))}
+         </div>
+          {selectedChart=== "pie chart" ? <Pie data={data} options={options}  /> :
+                            selectedChart=== "Line chart" ? <LineChart /> :<Doughnut data={data} options={options}   />
+        }
          </div>
     )
 }

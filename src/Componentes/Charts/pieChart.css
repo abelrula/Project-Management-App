@@ -1,27 +1,45 @@
  .taskCompletion_graph-doghnutGraph{
-    height: 300px;
-    background: white;
-    width: 330px;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    border-radius: 15px;
-    padding: 15px;
-    flex-direction: column;
-    border: 1px solid #bdb8b8;
+  background: white;
+  width: 330px;
+  height: 300px;
+  display: flex;
+  align-self: center;
+   border-radius: 15px;
+  padding: 3px 10px;
+  flex-direction: column;
+  border: 1px solid #bdb8b8;
+  gap: 10px;
+
 }
 .taskCompletion_graph-doghnutGraph span {
   display: flex;
     gap: 20px;
     align-items: center;
-}
+ }
 .taskCompletion_graph-doghnutGraph span  h5{
   font-size: 18px;
   font-weight: 100;
   color: #776f6f;
   font-family: monospace
  } 
+ .taskCompletion_graph-doghnutGraph .charts {
+  display: flex;
+    gap: 20px;
+    align-items: center;
+ }
+ .charts .chart{
+  background: #545463;
+  padding: 0px 9px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: white;
+ }
 
-
+.chart:hover{
+ scale: 1.1; 
+}
+.chart.active{
+  background: #000000;
+}
 
 

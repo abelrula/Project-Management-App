@@ -72,7 +72,7 @@
       "description": "biceps: -hammer,curls,sitted -curl ,-sitted hamer triceps: -triceps extension,-skull crush,-triangle push up back: -pull up , -one hand grip pull down",
       "personal": true,
       "buisness": false,
-      "completed": false,
+      "completed": true,
       "tagColor": "#B5EAAA",
       "date": "Fri Jan 12 2024",
       "createdAt": "2024-01-12T07:32:53.237Z"
@@ -83,7 +83,7 @@
       "description": "biceps: -hammer,curls,sitted -curl ,-sitted hamer triceps: -triceps extension,-skull crush,-triangle push up back: -pull up , -one hand grip pull down",
       "personal": true,
       "buisness": false,
-      "completed": false,
+      "completed": true,
       "tagColor": "#FFD801",
       "date": "Fri Jan 12 2024",
       "createdAt": "2024-01-12T07:32:56.566Z"
@@ -159,7 +159,7 @@
       "buisness": true,
       "personal": false,
       "tagColor": "#5e9197ab",
-      "completed": true,
+      "completed": false,
       "date": "2024-03-05",
       "createdAt": "2024-03-05"
     },
@@ -471,7 +471,8 @@
       "end": "2024-04-20T16:46",
       "type": "personal",
       "id": 7
-    },{
+    },
+    {
       "title": "Building a cedat strip canoe",
       "start": "2024-04-15T09:46",
       "end": "2024-04-16T16:46",

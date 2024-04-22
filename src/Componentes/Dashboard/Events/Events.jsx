@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./events.css";
+import { MdEvent } from "react-icons/md";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 import moment from "moment";
 const Events = () => {
@@ -24,11 +25,11 @@ const Events = () => {
  fetchEvents()
 }, [] ) 
 console.log(events)
- 
+
 
   return (
     <div className="evenetSection">
-            <span> <PiDotsSixVerticalBold fontSize={20} color="black" /> <h3> My Events</h3></span>
+            <span> <PiDotsSixVerticalBold fontSize={20} color="black" /> <h3> My Events</h3> <MdEvent/></span>
       <div className="evenetSection_events element-with-scroll">
        {events?.map((event,i)=>(
         <div  className="evenetSection_events-event" key={i}>

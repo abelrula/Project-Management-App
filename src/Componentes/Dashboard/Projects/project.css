@@ -29,6 +29,8 @@ width: 350px;}
     align-items: center;
     flex-direction: column;
     gap: 5px;
+    justify-content: space-between;
+
 }
 .projectCatagories__cards-card{
     display: flex;
@@ -36,6 +38,24 @@ width: 350px;}
     gap: 5px;
     width: 100%;
     height: 25px;
+}
+.projectCatagories__cards div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid lightgray;
+}
+.projectCatagories__cards div span {
+    display: flex;
+    gap: 10px;
+ }
+.projectCatagories__cards div span img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    object-position: 75% 25%;
+    border-radius: 50%;
 }
 .projectCatagories__cards-card .title{
     color: black;

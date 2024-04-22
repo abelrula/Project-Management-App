@@ -84,6 +84,8 @@ flex-direction: column;
     height: 240px;
     background: white;
     width: 445px;
+    height: 300px;
+    border: 1px solid #bdb8b8;
 
 }
 .bar h5{

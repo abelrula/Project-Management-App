@@ -3,13 +3,13 @@
   left: 0;
   top: 0;
   bottom: 0;
-  background: #bdadad9c;
+  background: #9f9f9f9c;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 99;
   height: 100vh;
-  transition: ease-in-out linear 1s;
+  transition: ease-in-out linear 4s;
 }
 .addMember{
        display: flex;

@@ -11,7 +11,7 @@ import "../../../node_modules/react-calendar/src/Calendar.css";
 import overView from "../../data/overView";
 import AssignedTask from "../Assignedtask/AssignedTask";
  import { useLocation } from "react-router-dom";
-import { TaskPieChart } from "../Charts/PieChart";
+import { IssuePieChart, TaskPieChart } from "../Charts/PieChart";
 import { CiSquareCheck } from "react-icons/ci";
 import { AiOutlineIssuesClose } from "react-icons/ai";
 import { GoIssueOpened } from "react-icons/go";
@@ -114,11 +114,11 @@ const [open,setOpen]=useState(false)
               title="My tasks" footer="Add To Do" />
           }
             <CommentSection />
-            <TaskPieChart/>
-            <IssueSection />
+            <IssuePieChart/>
+            <TeamMembers />
             <Events />
             <Projects />
-            <TeamMembers />
+            <IssueSection />
         </div>
       { active &&
        ( <div className="modal">

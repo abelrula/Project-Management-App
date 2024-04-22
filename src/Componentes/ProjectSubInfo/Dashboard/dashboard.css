@@ -1,11 +1,13 @@
 .dashboard{
     background: transparent;
     display: flex;
-    height: 320px;
     gap: 10px;
     flex-wrap: wrap;
-    border-radius: 10px;
-    justify-content: center;
-    padding: 5px;
-}
+     justify-content: center;
+ }
+ .Dashboard_graphs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+ }
  
