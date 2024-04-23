@@ -68,7 +68,7 @@ export const IssuePieChart = () =>
  const chartsOptions=["pie chart","Dougnut Chart","Line chart",]
     return (
         <div className="taskCompletion_graph-doghnutGraph">
-         <span><PiDotsSixVerticalBold  fontSize={20} color="black"/><h5>Task Status</h5></span>
+         <h3><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>
          <div className='charts'>
          {chartsOptions.map((chart,i)=>( 
          <span className={`chart ${selectedChart === chart ? "active" : "none"}`} key={i} onClick={()=>{SetSelectedChart(chart)}}>{chart}</span>

@@ -1,22 +1,25 @@
  .taskCompletion_graph-doghnutGraph{
   background: white;
   width: 330px;
-  height: 300px;
+  height: 240px;
   display: flex;
   align-self: center;
-   border-radius: 15px;
+  border-radius: 15px;
   padding: 3px 10px;
   flex-direction: column;
   border: 1px solid #bdb8b8;
   gap: 10px;
+  position: relative;
 
 }
-.taskCompletion_graph-doghnutGraph span {
+.taskCompletion_graph-doghnutGraph h3 {
   display: flex;
     gap: 20px;
     align-items: center;
+    position: absolute;
+    top: 0px;
  }
-.taskCompletion_graph-doghnutGraph span  h5{
+.taskCompletion_graph-doghnutGraph h3  span{
   font-size: 18px;
   font-weight: 100;
   color: #776f6f;
@@ -24,8 +27,10 @@
  } 
  .taskCompletion_graph-doghnutGraph .charts {
   display: flex;
-    gap: 20px;
-    align-items: center;
+  gap: 20px;
+  align-items: center;
+  position: absolute;
+  top: 35px;
  }
  .charts .chart{
   background: #545463;
