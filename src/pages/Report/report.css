@@ -20,7 +20,7 @@ display: flex;
  /* hello */
 
 .reports{
-display: flex;
+ display: flex;
     gap: 40px;
     flex-wrap: wrap;
     padding: 0px 15px;
@@ -81,10 +81,9 @@ flex-direction: column;
  padding: 5px;
     border-radius: 10px;
     text-align: left;
-    height: 240px;
-    background: white;
+     background: white;
     width: 360px;
-    height: 235px;
+    height: 245px;
     border: 1px solid #bdb8b8;
 
 }

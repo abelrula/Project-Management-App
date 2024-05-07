@@ -3,6 +3,7 @@ import "./events.css";
 import { MdEvent } from "react-icons/md";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 import moment from "moment";
+import ProfileImage from "../../ProfileImage/ProfileImage";
 const Events = () => {
    const [ events, setEvents ] = useState()
   useEffect( () =>{
@@ -33,8 +34,9 @@ console.log(events)
       <div className="evenetSection_events element-with-scroll">
        {events?.map((event,i)=>(
         <div  className="evenetSection_events-event" key={i}>
+          <ProfileImage name="Abel Zewdu"/>
           <input type="checkbox"/>
-         <p>{event.title.length > 30 ?`${event.title.substring(0,30)} ...` : event.title}</p>
+          <p>{event.title.length > 30 ?`${event.title.substring(0,30)} ...` : event.title}</p>
          <span>{event.start}</span>
         </div>
       )) }

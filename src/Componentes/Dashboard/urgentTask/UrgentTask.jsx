@@ -3,10 +3,13 @@
 import "./urgentTask.css";
 import { useEffect,useState } from "react";
 import moment from "moment";
- const UrgentTask = ({setUrgent}) => {
+import { useLocation } from "react-router-dom";
+import { PiDotsSixVerticalBold } from "react-icons/pi";
+  const UrgentTask = ({setUrgent}) => {
   // const { data: todos, isSuccess } = useGetTodosQuery();
   const [ todo, setTodos ] = useState( [] );
   const [ completed, setCompleted ] = useState(null)
+  const {pathname}=useLocation()
   console.log(completed);
   // const todayTodo =
   //   isSuccess && todos.filter((item) => item.date === Date().substring(0, 16));
@@ -28,10 +31,10 @@ import moment from "moment";
     const todayTodo = todo?.filter(( item ) =>  item.date.substring(0,10) == todayDate  );
     console.log(todayTodo)
   return (
-   <div className="TodayTodo__view--task">
+   <div className="TodayTodo__view--task" style={{height:pathname !=="/" ? "250px":"300px"}}>
       <span className="TodayTodo__view--task-header">
-      <BiArrowBack color="black" onClick={()=>setUrgent(false)} className="icon"/>
-      <h5>Urgent Tasks For Today</h5>
+      {pathname ==="/" && <BiArrowBack color="black" onClick={()=>setUrgent(false)} className="icon"/>}
+      {pathname ==="/" ? <h5>Urgent Tasks For Today</h5> : <h3><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Todays Work Items</p></h3> }
       </span>
       <ul className=" element-with-scroll">
         {todayTodo?.length > 0 ? (

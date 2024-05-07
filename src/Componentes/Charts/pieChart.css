@@ -1,7 +1,7 @@
  .taskCompletion_graph-doghnutGraph{
   background: white;
   width: 330px;
-  height: 240px;
+  height: 250px;
   display: flex;
   align-self: center;
   border-radius: 15px;
@@ -16,7 +16,6 @@
   display: flex;
     gap: 20px;
     align-items: center;
-    position: absolute;
     top: 0px;
  }
 .taskCompletion_graph-doghnutGraph h3  span{

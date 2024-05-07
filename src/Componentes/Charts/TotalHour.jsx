@@ -51,6 +51,20 @@ const TotalHour = () => {
         borderRadius: 5,
         //  borderColor:"beige"
       },
+      {
+        label: "Total Working Hours",
+        data: [10,7,5,3,4,5,6,7,8,9,10],
+        backgroundColor: "#d02f54",
+        borderRadius: 5,
+        //  borderColor:"beige"
+      },
+      {
+        label: "Total Working Hours",
+        data: [0,7,5,8,4,2,0,7,8,3,10],
+        backgroundColor: "#d19f10",
+        borderRadius: 5,
+        //  borderColor:"beige"
+      },
     ],
   };
   const options = {};

@@ -14,6 +14,7 @@ import { RiPassExpiredLine } from "react-icons/ri";
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { BsListTask } from "react-icons/bs";
 import TotalNumber from '../../Dashboard/TotalTaskstatus/TotalNumber'
+import UrgentTask from '../../Dashboard/urgentTask/UrgentTask';
 const Dashoboard = () => {
    
   const [ openTitle, setOpenTitle ] = useState( null )
@@ -89,6 +90,7 @@ const Dashoboard = () => {
       <TotalRevenue />
       <IssuePieChart />
       <IssuePieChart />
+      <UrgentTask />
       </div>
      </div>
   )

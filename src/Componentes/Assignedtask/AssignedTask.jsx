@@ -10,6 +10,7 @@ import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm"
 import img1 from "../../assets/worker1.jpg"
 import {AiFillRightCircle, AiOutlineProfile } from "react-icons/ai";
 import { IoPersonOutline } from "react-icons/io5";
+import ProfileImage from "../ProfileImage/ProfileImage";
 
    const AssignedTask = ({title,setUrgent,footer,setActive}) => {
    const [todoStatus, setTodoStatus] = useState("Upcoming");
@@ -81,15 +82,15 @@ import { IoPersonOutline } from "react-icons/io5";
           <div className="AssignedTask__situation--description element-with-scroll">
               {todos?.map((item,i)=>(
                  <div className="AssignedTask__situation--description--list" key={i}>
-                  <span>
-                   <input type="checkbox" value={item.completed} onChange={(e)=>handleComplete(e,item.id)} />
-                    <p>{item.description?.length > 26 ? `${item.description.substring(0,26)}...` : item.description }</p>
-                  </span>
                 { location.pathname === "/report" ?
                   <img
-                    src= {img1} 
-                    alt="avatar"s
-                  /> : <IoPersonOutline />}
+                  src= {img1} 
+                  alt="avatar"s
+                  /> : <ProfileImage name="Abel Zewdu"/>}
+                  <span>
+                   <input type="checkbox" value={item.completed} onChange={(e)=>handleComplete(e,item.id)} />
+                    <p>{item.description?.length > 32 ? `${item.description.substring(0,28)}...` : item.description }</p>
+                  </span>
                   </div>
                   ))}
                 <div className="AssignedTask__situation--description--footer">

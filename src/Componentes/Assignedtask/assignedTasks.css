@@ -75,6 +75,7 @@
   display: flex;
    align-items: center;
   width: 100%;
+  align-self: auto
 }
  .AssignedTask__situation--description--list > span > p{
    font-size: 13px;

@@ -113,8 +113,8 @@ const [open,setOpen]=useState(false)
               setActive={ setActive }
               title="My tasks" footer="Add To Do" />
           }
-            <CommentSection />
             <IssuePieChart/>
+            <CommentSection />
             <TeamMembers />
             <Events />
             <Projects />

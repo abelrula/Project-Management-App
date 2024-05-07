@@ -10,8 +10,7 @@ import MessageListheader from "./Componentes/messages/MessageListheader/MessageL
 import Projects from "./Componentes/Table/Projects";
   import Timesheets from "./Componentes/ProjectSubInfo/Timesheets/Timesheets"
   import ProGantChart from "./Componentes/ProjectSubInfo/GantChart/GantChart"
-  import Reports from "./Componentes/ProjectSubInfo/Reports/Reports"
-  import Documents from "./Componentes/ProjectSubInfo/Documents/Documents"
+   import Documents from "./Componentes/ProjectSubInfo/Documents/Documents"
 import Issues from "./Componentes/Table/Issues";
 import Dashoboard from "./Componentes/ProjectSubInfo/Dashboard/Dashoboard";
 // import ProjectsDescriiption from "./Componentes/ProjectsDescriiption/ProjectsDescriiption"
@@ -29,8 +28,7 @@ const App=() =>{
                       <Route path="gantChart" element={<ProGantChart />} />
                       <Route path="issues" element={ <Issues /> } />
                       <Route path="documents" element={<Documents />} />
-                      <Route path="report" element={<Reports />} />
-                      <Route path="timesheets" element={<Timesheets />} />
+                       <Route path="timesheets" element={<Timesheets />} />
               </Route>
               <Route path="report" element={<Report />} />
               <Route path="team" element={<GantChart />} />

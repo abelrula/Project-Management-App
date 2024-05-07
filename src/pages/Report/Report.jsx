@@ -20,7 +20,7 @@ const Report = () => {
   return (
     <>
       <Header title="Report" />
-      <div className="Reports">
+      <div className="reports">
         <div className="TotalProjectsMemberes">
           {!active && <button
             onClick={()=>setActive((prev)=>!prev)}>
@@ -51,14 +51,14 @@ const Report = () => {
           <AddProjectForm setOpenModal={ setOpenModal } /> :
           openModal && openModalType === "Add New Members" ?
           <AddMemberForm setOpenModal={ setOpenModal } /> : null }
-          <ProjectStatus active={active} />
+          {/* <ProjectStatus active={active} /> */}
           {/* <ProjectCatagories /> */}
           {/* <TeamMembers /> */}
         </div>
         {/* <AllprojectProgress /> */}
            <div className="totalRevenues">
           <TotalRevenue />
-          <TotalHour />
+          <TotalHour  />
           <LineChart color="black" />
            </div>
       </div>

@@ -4,11 +4,14 @@ import {Doughnut, Pie} from "react-chartjs-2"
 import "./pieChart.css"
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 import LineChart from './LineChart';
+import { useLocation } from 'react-router-dom';
 
 defaults.maintainAspectRatioa=false
 defaults.responsive=true
 export const TaskPieChart = () => {
-      const  data= {
+      
+  const {pathname}=useLocation()
+   const  data= {
           labels: ["Total Task", "Total Task Done", "OverDue","Not Started"],
           datasets: [
             {
@@ -31,7 +34,7 @@ export const TaskPieChart = () => {
             }
       
     return (
-        <div className="taskCompletion_graph-doghnutGraph">
+        <div className="taskCompletion_graph-doghnutGraph"  style={{height: pathname === "/" ?"300px": "250px"}} >
          <span><PiDotsSixVerticalBold  fontSize={20} color="black"/><h5>Task Status</h5></span>
             <Pie data={data} options={options}  />
           </div>
@@ -39,8 +42,9 @@ export const TaskPieChart = () => {
 }
 
 
-export const IssuePieChart = () =>
-{
+export const IssuePieChart = () =>{
+  
+  const {pathname}=useLocation()
   const [selectedChart,SetSelectedChart]=useState("pie chart")
     const data={
       labels: ["reopened", "in progress", "to be tested","closed" ,"todo" ,"open"],
@@ -67,8 +71,8 @@ export const IssuePieChart = () =>
         }
  const chartsOptions=["pie chart","Dougnut Chart","Line chart",]
     return (
-        <div className="taskCompletion_graph-doghnutGraph">
-         <h3><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>
+        <div className="taskCompletion_graph-doghnutGraph" style={{height: pathname === "/" ?"300px": "250px"}}>
+         <h3 style={{position: pathname === "/" ? "none" : "absolute"}}><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>
          <div className='charts'>
          {chartsOptions.map((chart,i)=>( 
          <span className={`chart ${selectedChart === chart ? "active" : "none"}`} key={i} onClick={()=>{SetSelectedChart(chart)}}>{chart}</span>
@@ -79,4 +83,4 @@ export const IssuePieChart = () =>
         }
          </div>
     )
-}
+  }

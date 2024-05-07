@@ -47,8 +47,7 @@ const Header = ({ title }) => {
               <NavLink to="documents" className="link">Documents</NavLink>                     
               <NavLink to="gantChart" className="link">Gant Charts</NavLink>                     
               <NavLink to="issues" className="link">Issues</NavLink>                     
-              <NavLink to="report" className="link">Reports</NavLink>                     
-              <NavLink to="timesheets" className="link">Timesheets</NavLink>                     
+               <NavLink to="timesheets" className="link">Timesheets</NavLink>                     
           </nav>
          </div>
          ) : null}
