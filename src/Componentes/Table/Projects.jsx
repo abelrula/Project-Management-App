@@ -24,6 +24,7 @@ import img1 from "../../assets/worker2.jpg"
             import { GiClassicalKnowledge } from 'react-icons/gi';
             import { IoAddCircle } from 'react-icons/io5';
             import { BsListTask, BsPersonCircle } from "react-icons/bs";
+            import ProfileImage from "../ProfileImage/ProfileImage"
 import AssignTaskForm from '../Forms/AssignTaskForm/AssignTaskForm';
 
 const Projects = () => {
@@ -73,7 +74,7 @@ const Projects = () => {
                 {
                   accessorKey:"assignedTo",
                   header:<p>assigned To <MdOutlineAssignmentInd color="#3e5b5e" /></p>,
-                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
+                  cell: ( props ) => <span><ProfileImage name={props.getValue()} /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </span>
                 },
                 // {
                 //   accessorKey:"project",
@@ -187,7 +188,7 @@ const Projects = () => {
             </div>
            </div>
                     <table>
-           <thead>
+             <thead>
              { tableData.getHeaderGroups().map( (headerGroup) =>(
                         <tr key={ headerGroup.id }>
                         {headerGroup.headers.map((header)=>(
@@ -196,7 +197,7 @@ const Projects = () => {
                       </tr>))}
                      </thead>
                       <tbody>
-              {
+                      {
                      tableData.getRowModel().rows.map( row => <tr key={ row.id }>
                      { row.getVisibleCells().map( cell => <td key={ cell.id }>
                      {flexRender(cell.column.columnDef.cell,cell.getContext())}

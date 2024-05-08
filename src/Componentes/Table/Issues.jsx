@@ -25,6 +25,7 @@ import React from 'react'
             import { GiClassicalKnowledge } from 'react-icons/gi';
             import { IoAddCircle } from 'react-icons/io5';
 import AssignTaskForm from '../Forms/AssignTaskForm/AssignTaskForm';
+import ProfileImage from '../ProfileImage/ProfileImage';
 
 const Issues = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
@@ -82,12 +83,12 @@ const Issues = () => {
                 },{
                   accessorKey:"assignedTo",
                   header:<p>Reoprter <MdOutlineAssignmentInd /></p>,
-                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
+                  cell: ( props ) => <span><ProfileImage name={props.getValue()} /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </span>
                 },
                 {
                   accessorKey:"assignedTo",
                   header:<p>Assigne <MdOutlineAssignmentInd /></p>,
-                  cell: ( props ) => <p><BsPersonCircle /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </p>
+                  cell: ( props ) => <span><ProfileImage name={props.getValue()} /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </span>
                 },
               ]
               // const columns2=[
