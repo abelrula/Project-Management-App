@@ -4,8 +4,7 @@ width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
     border-spacing: 0px;
-    border:1px solid #e1e1e1;
-    font-family: monospace;
+     font-family: monospace;
     font-size: 12px;
  background: white}
  th p{
@@ -18,10 +17,7 @@ width: 100%;
     text-transform: capitalize;
     letter-spacing: 1px;
 }
-  tr th{
-        border: 1px solid #e3e1e1;
-        padding: 10px;
- }
+
 thead tr th select option{
 font-size: 15px;
     font-family: ui-monospace;
@@ -118,9 +114,6 @@ td{
    align-items: center;
    gap: 10px;
    color: black;
-   position: absolute;
-   top: 2px;
-   left: 12px
 }
  td img{
     width:20px;

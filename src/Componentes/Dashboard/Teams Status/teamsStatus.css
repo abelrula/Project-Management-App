@@ -1,0 +1,49 @@
+.teamstatus{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border:1px solid #bdb8b8;
+    border-radius: 10px;
+    height: 250px;    width: 350px;
+    gap: 15px;
+}
+.teamstatus_header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.teamstatus_header .icon{
+    color: black;
+    font-size: 20px;  
+}
+.teamstatus_header h3{
+    font-size: 18px;
+     font-weight: 100;
+    color: #776f6f;
+     font-family: monospace
+}
+.teamstatus span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #7d7d7d;
+    font-size: 12px;
+    text-align: justify;
+}
+.teamstatus .tableHeader {}
+.teamstatus .tableHeader th {
+    border: none;
+    font-size: 15px;
+     font-weight: 100;
+}
+.teamstatus td ,th,tr {
+    border: none;
+
+}
+.teamstatus .tasks{
+color: #1b8d93;
+}
+.teamstatus .issue{
+    color: #082565;
+}
