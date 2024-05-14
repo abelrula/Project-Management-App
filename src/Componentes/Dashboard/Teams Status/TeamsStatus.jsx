@@ -9,7 +9,7 @@ const TeamsStatus = () => {
         <table>
             <thead>
                 <tr className='tableHeader'>
-                     <th colSpan={6}>Users
+                     <th colSpan={3}>Users
                     </th>
                     <th colSpan={3} className="tasks">Tasks
                     </th>
@@ -17,7 +17,7 @@ const TeamsStatus = () => {
                     </th>
                 </tr>
                 <tr>
-                    <th colSpan={6}>
+                    <th colSpan={3}>
                     </th>
                     <th className="tasks">Ov...
                     </th>
@@ -34,28 +34,31 @@ const TeamsStatus = () => {
                 </tr>
             </thead>
             <tbody>
-           <tr> <td colSpan={6}><span><ProfileImage name="simon Jorge" className="issue"/>simon Jorge  </span></td>
+           <tr> 
+                    <td colSpan={3}>
+                        <span><ProfileImage name="simon Jorge" className="issue"/>simon Jorge  </span>
+                    </td>
                     <td className="tasks">15</td>
                     <td className="tasks">10</td>
                     <td className="tasks">20</td>
                     <td className="issue">0</td>
                     <td className="issue">60</td>
                     <td className="issue">20</td></tr>
-                    <tr> <td colSpan={6}><span><ProfileImage name="Christina Ryoji" className="issue"/>Christina Ro... </span></td>
+                    <tr> <td colSpan={3}><span><ProfileImage name="Christina Ryoji" className="issue"/>Christina Ro... </span></td>
                     <td className="tasks">15</td>
                     <td className="tasks">10</td>
                     <td className="tasks">20</td>
                     <td className="issue">0</td>
                     <td className="issue">60</td>
                     <td className="issue">20</td></tr>
-                    <tr> <td colSpan={6}><span><ProfileImage name="Ashely jhonson" className="issue"/>Ashely jhonson  </span></td>
+                    <tr> <td colSpan={3}><span><ProfileImage name="Ashely jhonson" className="issue"/>Ashely jhonson  </span></td>
                     <td className="tasks">15</td>
                     <td className="tasks">10</td>
                     <td className="tasks">20</td>
                     <td className="issue">0</td>
                     <td className="issue">60</td>
                     <td className="issue">20</td></tr>
-                    <tr> <td colSpan={6}><span><ProfileImage name="Tmarcus Brown" className="issue"/>Tmarcus Brown  </span></td>
+                    <tr> <td colSpan={3}><span><ProfileImage name="Tmarcus Brown" className="issue"/>Tmarcus Brown  </span></td>
                     <td className="tasks">15</td>
                     <td className="tasks">10</td>
                     <td className="tasks">20</td>

@@ -71,7 +71,7 @@ export const IssuePieChart = () =>{
         }
  const chartsOptions=["pie chart","Dougnut Chart","Line chart",]
     return (
-        <div className="taskCompletion_graph-doghnutGraph" style={{height: pathname === "/" ?"300px": "250px"}}>
+        <div className="taskCompletion_graph-doghnutGraph" style={{height:"250px",width:"345px" }}>
          <h3 style={{position: pathname === "/" ? "none" : "absolute"}}><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>
          <div className='charts'>
          {chartsOptions.map((chart,i)=>( 

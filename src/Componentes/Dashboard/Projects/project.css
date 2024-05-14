@@ -7,8 +7,8 @@ flex-direction: column;
 padding: 5px;
 border:1px solid #bdb8b8;
 border-radius: 10px;
-height: 300px;
-width: 350px;}
+width: 355px;
+height: 245px;}
 .projectCatagories_header{
 
 }
@@ -19,10 +19,10 @@ width: 350px;}
 }
 
 .projectCatagories_header span h3{
-    font-size: 18px;
-     font-weight: 100;
-    color: #776f6f;
-     font-family: monospace
+    font-family: system-ui;
+    font-weight: 500;
+    color: black;
+    font-size: 17px;
 }
 .projectCatagories__cards{
     display: flex;

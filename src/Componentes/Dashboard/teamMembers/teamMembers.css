@@ -6,8 +6,8 @@
     border: 1px solid #d5c9c9;
     background: #ffffffad;
     padding: 5px;
-    width: 350px;
-    height: 300px;
+    width: 355px;
+    height: 245px
 }
 .TeamDirectory span{
     display: flex;
@@ -15,10 +15,10 @@
     align-items: center;
 }
 .TeamDirectory span h3{
-    font-size: 18px;
-     font-weight: 100;
-    color: #776f6f;
-     font-family: monospace;
+    font-family: system-ui;
+    font-weight: 500;
+    color: black;
+    font-size: 17px;
 }
 .TeamDirectory > h5{
        font-family: system-ui;

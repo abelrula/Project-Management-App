@@ -17,6 +17,10 @@
     gap: 20px;
     align-items: center;
     top: 0px;
+    font-family: system-ui;
+    font-weight: 500;
+    color: black;
+    font-size: 17px;
  }
 .taskCompletion_graph-doghnutGraph h3  span{
   font-size: 18px;

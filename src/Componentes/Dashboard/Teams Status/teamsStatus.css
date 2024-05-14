@@ -5,7 +5,8 @@
     padding: 10px;
     border:1px solid #bdb8b8;
     border-radius: 10px;
-    height: 250px;    width: 350px;
+    width: 355px;
+    height: 245px;
     gap: 15px;
 }
 .teamstatus_header{
@@ -18,10 +19,10 @@
     font-size: 20px;  
 }
 .teamstatus_header h3{
-    font-size: 18px;
-     font-weight: 100;
-    color: #776f6f;
-     font-family: monospace
+    font-family: system-ui;
+    font-weight: 500;
+    color: black;
+    font-size: 17px;
 }
 .teamstatus span {
     display: flex;

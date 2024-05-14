@@ -5,8 +5,8 @@
     padding: 10px;
     border: 1px solid #bdb8b8;
     border-radius: 10px;
-    height: 300px;
-    width: 350px;
+    width: 400px;
+    height: 245px;
     gap: 10px;
 }
 .evenetSection span{
@@ -41,10 +41,10 @@ padding: 5px 0px;
     padding: 2px 8px;
 }
 .evenetSection   h3{
-    font-size: 18px;
-     font-weight: 100;
-    color: #776f6f;
-     font-family: monospace;
+    font-family: system-ui;
+    font-weight: 500;
+    color: black;
+    font-size: 17px;
      
     }
 

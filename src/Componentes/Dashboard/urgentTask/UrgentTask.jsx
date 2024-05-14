@@ -31,7 +31,7 @@ import { PiDotsSixVerticalBold } from "react-icons/pi";
     const todayTodo = todo?.filter(( item ) =>  item.date.substring(0,10) == todayDate  );
     console.log(todayTodo)
   return (
-   <div className="TodayTodo__view--task" style={{height:pathname !=="/" ? "250px":"300px"}}>
+   <div className="TodayTodo__view--task">
       <span className="TodayTodo__view--task-header">
       {pathname ==="/" && <BiArrowBack color="black" onClick={()=>setUrgent(false)} className="icon"/>}
       {pathname ==="/" ? <h5>Urgent Tasks For Today</h5> : <h3><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Todays Work Items</p></h3> }
