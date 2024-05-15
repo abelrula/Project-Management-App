@@ -5,7 +5,7 @@ import { NavLink, useLocation } from "react-router-dom";
    import img1 from "../../assets/worker2.jpg"
 import { BsPersonFillCheck, BsPersonFillGear } from "react-icons/bs";
 import { IoCloseCircleSharp } from "react-icons/io5";
-import { CiSquarePlus } from "react-icons/ci";
+import { CiLogout, CiSquarePlus } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { GiClockwork } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
@@ -69,13 +69,21 @@ const Header = ({ title }) => {
     </div>
       {openModal && (<div className="modal">
         <div className="profile_description">
+          <div className="profile_description-header">
+          <span className="signout"><CiLogout /> sign out </span>
            <IoCloseCircleSharp
-          onClick={ () => setpenModal( false ) }
-            className="closeIcon" />
+              onClick={ () => setpenModal( false ) }
+               className="closeIcon" />
+          </div>
           <div className="profile_description_right">
             <img src={ img1 } alt="profile" />
-              <p>Simon panda</p>
-              <span>+2519095445</span>
+              <span>
+               <p>Simon panda</p>
+                <p>abelrula716@gmail.com</p>
+                <p>Synergetic Projects User-iD : 14896542</p>
+                <p>Organization-iD : 14896542</p>
+                <p>My account : my portal</p>
+               </span>
           </div>
         <div className="profile_description_left">
             <div className="profile_description_left-bio">

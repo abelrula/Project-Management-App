@@ -26,6 +26,7 @@ import React from 'react'
             import { IoAddCircle } from 'react-icons/io5';
 import AssignTaskForm from '../Forms/AssignTaskForm/AssignTaskForm';
 import ProfileImage from '../ProfileImage/ProfileImage';
+import { IoMdArrowDropdown } from 'react-icons/io';
 
 const Issues = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
@@ -60,6 +61,8 @@ const Issues = () => {
   //   } ] )
               const [ active, setActive ] = useState( false )
               const [ checked, setChecked ] = useState()
+              const [ selectedType, setSelectedType ] = useState("All")
+              const [ filterActive, setfilterActive ] = useState(false)
               const columns=[
                 {
                   accessorKey:"completed",
@@ -152,14 +155,23 @@ const Issues = () => {
              })
               
     return (
-      <div>
-           <div className="tableFilter">
-            <h4>All Open </h4>
-          <div>
+      <div className='tableContainer'>
+            <div className="tableHeader">
+            <div className="tableHeader_filter">
+             <label className="tableHeader_filter-selected"  onClick={()=>setfilterActive(true)}>Group By Task List <IoMdArrowDropdown /> {selectedType} <IoMdArrowDropdown />
+          </label>
+             {filterActive &&  
+              <ul className="tableHeader_filter-types">
+              {filterTypes.map((item,i)=>(
+              <li key={i} onClick={()=>{setSelectedType(item);setfilterActive(false)}}>{item}</li>
+             ))}
+             </ul>}
+              </div>
+            <div>
             <span ><GiClassicalKnowledge className="icon"/>Classics</span>
-            <span>Add Tasks<IoAddCircle className="icon"/></span>
+            <span onClick={()=>setActive(true)}>Add Tasks<IoAddCircle className="icon"/></span>
             </div>
-           </div>
+            </div>
                     <table>
            <thead>
              { tableData.getHeaderGroups().map( (headerGroup) =>(

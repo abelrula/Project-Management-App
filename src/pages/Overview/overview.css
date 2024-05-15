@@ -59,6 +59,7 @@ td{
     left: 8px;
     padding: 5px 0px;
     color: black;
+    
  }
  td{
     position: relative;
@@ -73,29 +74,30 @@ td{
     height: 10px;
     position: absolute;
     top: 25px;
-    background: #777777;
+    background: #ffffff;
     height: auto;
-    width: 150px;
+    width: 130px;
     border-radius: 10px;
     transition: 10ms all ease-in;
     left: -20px;
+    border: 1px solid #bababa;
  }
  .taskStatus_menu-item{
-     color: white;
-    border: none;
-    cursor: pointer;
-    height: 16px;
-    display: flex;
-    align-items: center;
-    padding: 11px 16px;
-    width: 90%;
-    align-self: center;
-    gap: 10px;
+   color: #100e0e;
+   border: none;
+   cursor: pointer;
+   height: 16px;
+   display: flex;
+   align-items: center;
+   padding: 11px 16px;
+   width: 100%;
+   align-self: center;
+   gap: 10px;
+   border-bottom: solid 1px #ede8e8;
  }
  .taskStatus_menu-item:hover{
     scale:1.1;
     cursor: pointer;
-    background:#959595
  }
 
  .taskStatus-stat{
@@ -118,6 +120,7 @@ td{
    align-items: center;
    gap: 10px;
    color: black;
+   border-radius: 50%;
 }
  td img{
     width:20px;
@@ -165,8 +168,8 @@ td{
    align-items: start;
    z-index: 5;
    position: absolute;
-   top: -10px;
-   left: 220px;
+   top: -14px;
+   left: 175px;
 }
  
  .tableHeader_filter-types li{

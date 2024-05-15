@@ -27,7 +27,7 @@ const Sidebar = () => {
     <div className="side">
       <div className="brandIcon">
         <BsEggFried className="icon" />
-        <h1>Projects</h1>
+        <h1>Synergetic Projects</h1>
       </div>
       <div className="navigationLinks">
         <div className="navigationTopLinks">

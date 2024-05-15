@@ -92,12 +92,9 @@ height: 100vh;
 transition: ease-in-out linear 1s ;
 }
 .closeIcon{
- position: absolute;
-    font-size: 31px;
-    right: 0;
-    top: 0;
-    color: black;
-    cursor: pointer;
+     font-size: 31px;
+     color: rgb(11, 12, 12);
+     cursor: pointer;
 }
 
 .closeIcon:hover{
@@ -116,7 +113,7 @@ transition: ease-in-out linear 1s ;
     grid-area: form;
     padding: 15px;
     padding: 15px;
-    width: 550px;
+    width: 400px;
     overflow: hidden;
     gap: 15px;
      position: absolute;
@@ -125,15 +122,31 @@ transition: ease-in-out linear 1s ;
 }
 /* .profile_description_right{
 } */
+.profile_description-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.signout{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #ff8f00;
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: 100;
+}
 .profile_description_right{
-        background: #646766;
-    padding: 30px;
+    display: flex;
+     padding: 30px;
     border-radius: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
+    gap: 10px;
 }
 .profile_description_right img{
-    width: 100px;
-    height: 100px;
+    width: 45px;
+    height: 45px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -141,10 +154,30 @@ transition: ease-in-out linear 1s ;
         font-family: cursive;
     font-size: 18px;
 }
-.profile_description_right span{
-    font-family: sans-serif;
-    font-size: 15px;
+.profile_description_right span {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
 }
+    .profile_description_right span p{
+        font-family: emoji;
+        font-size: 15px;
+        color: #585d5b;
+        font-weight: 100;
+}
+.profile_description_right span :first-child{
+    color: black;
+    font-family: monospace;
+    font-size: 21px;
+    font-weight: 700;
+ }
+ .profile_description_right span :last-child{
+    color: black;
+    font-family: math;
+    font-size: 14px;
+    font-weight: 700;
+ }
 .profile_description_left{
     display: flex;
     flex-direction: column;
