@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./issueSection.css";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
-const IssueSection = () => {
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { IoMdArrowDropdown } from "react-icons/io";
+const IssueSection = ({title}) => {
+  
+  const [ selectedType, setSelectedType ] = useState("All")
+  const [ filterActive, setfilterActive ] = useState(false)
+  const filterTypes=["All open","Closed","Upcoming","Over due","Completed"]     
+
   return (
     <div className="issueSection">
-      <div className="issueSection_header"> <PiDotsSixVerticalBold fontSize={20} color="black" /> <h3>Issue Section</h3></div>
+      <div className="issueSection_header"><h3><PiDotsSixVerticalBold fontSize={20} color="black" />{title}</h3>
+      <MdKeyboardArrowRight />
+      <div className="tableHeader">
+            <div className="tableHeader_filter">
+             <label className="tableHeader_filter-selected"  onClick={()=>setfilterActive(true)}> {selectedType} <IoMdArrowDropdown />
+</label>
+             {filterActive &&  
+              <ul className="tableHeader_filter-types">
+              {filterTypes.map((item,i)=>(
+              <li key={i} onClick={()=>{setSelectedType(item);setfilterActive(false)}}>{item}</li>
+             ))}
+             </ul>}
+              </div>
+            </div>
+      </div>
       <div className="issueSection_issues">
         <div className="issueSection_issues-projectIssue">
           <img

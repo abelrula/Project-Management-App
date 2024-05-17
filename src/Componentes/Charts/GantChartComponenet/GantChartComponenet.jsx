@@ -237,8 +237,12 @@ const GantChartComponenet = () => {
           chartArea: { top, bottom, left, right },
           scales: { x, y },
         } = chart;
+
         ctx.save();
+        ctx.restore();
+
         ctx.font = "bolder 12px sans-serif";
+        ctx.border = "solid 2px black";
         // ctx.textAlign = "left";
         // ctx.textBaseline = "middle";
         ctx.fillStyle = "black";

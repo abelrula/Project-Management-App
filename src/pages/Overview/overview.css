@@ -132,6 +132,7 @@ td{
    position: relative;
    display: flex;
    justify-content: space-between;
+   margin-left: -25px;
  }
  .tableHeader h4{
     color: #1717b5;

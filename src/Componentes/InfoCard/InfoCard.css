@@ -1,6 +1,6 @@
 .card{
-  width: 253px;
-    height: 150px;
+    width: 200px;
+    height: 120px;
     background: #ffffff;
     border-radius: 10px;
     font-family: sans-serif;
@@ -27,29 +27,26 @@
 }
  .card .Container .Total span{
           margin-left: 15px;
-    font-size: 2.4rem;
+    font-size:20px;
 }
  
  
-.card .Container .Add button{
-    background-color: rgb(126, 121, 123) ;
+.card .Container .Add{
+    background-color: rgb(126, 121, 123);
     color: white;
     border: none;
-    padding: 5px 51px;
-    border-radius: 10px;
+     border-radius: 10px;
     font-family: cursive;
-    font-size: 13px;
+    font-size: 10px;
+    line-height: 5px;
 }
-.card .Container .Add button:hover{
+.card .Container .Add:hover{
     background-color: rgb(101 98 99);
 } 
-.title :nth-child(2){
-    font-size: 20px;
-     border-radius: 20px;
-     color:rgb(102 109 103) ;
-}
+ 
 .title h3{
     color: #a3a19f;
     font-family: math;
     font-weight: 100;
+    font-size: 14px;
  }

@@ -52,19 +52,24 @@ const Header = ({ title }) => {
          </div>
          ) : null}
       <div className="left">
+      <span className="profile">
         <CiSquarePlus className="icon"/>
         <CiSearch className="icon"/>
         <GiClockwork className="icon"/>
-        <div className="notification">
+         <div className="notification">
           <IoIosNotificationsOutline    fontSize={25} />
           <span>12</span>
         </div>
-          <img
+        </span>
+        <span className="profile">
+        <img
             src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
             alt="profile"
             className="profile"
             onClick={() =>{ setShowProfileInfo((prev) => !prev);  setpenModal(true)}}
           />
+          <p>abel zewdu</p>
+        </span>
        </div>
     </div>
       {openModal && (<div className="modal">
@@ -85,20 +90,20 @@ const Header = ({ title }) => {
                 <p>My account : my portal</p>
                </span>
           </div>
-        <div className="profile_description_left">
-            <div className="profile_description_left-bio">
-              <label>Bio :-</label>
+        <div className="profile_description__middle">
+            <div className="profile_description__middle-item">
+              <label>Bio :</label>
               <p>livng with out pain is not the fact that we are alive</p>
          </div>
-            <div className="profile_description_left-totalFriends">
-              <label>Total friends :-</label>
+            <div className="profile_description__middle-item">
+              <label>Total friends :</label>
               <span>120</span>
          </div>
-          <div className="profile_description_left-AccomplishedProject">
-              <label>Accomplished projects :- </label>
+          <div className="profile_description__middle-item">
+              <label>Accomplished Tasks :- </label>
               <span>200</span>
             </div>
-              <div className="profile_description_left-projectsIncluded">
+              <div className="profile_description__middle-item">
               <label>Included Projects </label>
                 <ul>
               <li>Operations</li>

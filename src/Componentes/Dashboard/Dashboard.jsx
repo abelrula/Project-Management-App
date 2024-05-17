@@ -117,8 +117,9 @@ const [open,setOpen]=useState(false)
             <CommentSection />
             <TeamMembers />
             <Events />
+            <IssueSection  title="My Issue" />
             <Projects />
-            <IssueSection />
+            <IssueSection title="All Issue" />
         </div>
       { active &&
        ( <div className="modal">

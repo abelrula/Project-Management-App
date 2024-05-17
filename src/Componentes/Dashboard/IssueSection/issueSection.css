@@ -11,8 +11,17 @@
 }
 .issueSection_header{
     display: flex;
-    gap: 20px;
-    align-items: center;
+     align-items: center;
+}
+.issueSection_header .tableHeader_filter-types{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: start;
+    z-index: 5;
+    position: absolute;
+    top: -14px;
+    left: 35px;
 }
 .issueSection_header .icon{
     color: black;
@@ -34,6 +43,9 @@ gap:5px
     font-weight: 500;
     color: black;
     font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
   .issueSection_issues   .issueSection_issues-projectIssue{
     display: flex;

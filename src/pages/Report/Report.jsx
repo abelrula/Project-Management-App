@@ -22,7 +22,9 @@ const Report = () => {
       <Header title="Report" />
       <div className="reports">
         <div className="TotalProjectsMemberes">
-          {!active && <button
+          {/* {!active && <button
+
+          
             onClick={()=>setActive((prev)=>!prev)}>
             View Asssigned Task
           </button>}
@@ -30,7 +32,7 @@ const Report = () => {
            <div className="modal">
           <AssignedTask title="Employee Tasks" footer="Assign Tasks" setActive={setActive} />
            </div>
-          }
+          } */}
           <div className="totals">
             <InfoCard
               title="Total Projects"
@@ -40,12 +42,26 @@ const Report = () => {
               setOpenModalType={setOpenModalType}
             />
             <InfoCard
-              title="Team size"
+              title="All Member"
               buttonTitle="Add New Members"
               amount={16}
               setOpenModal={setOpenModal}
               setOpenModalType={setOpenModalType}
             />
+             <InfoCard
+              title="All Teams"
+              buttonTitle="Add New Team"
+              amount={16}
+              setOpenModal={setOpenModal}
+              setOpenModalType={setOpenModalType}
+            />  
+             <InfoCard
+              title="All Teams"
+              buttonTitle="Add New Team"
+              amount={16}
+              setOpenModal={setOpenModal}
+              setOpenModalType={setOpenModalType}
+            />  
           </div>
           { openModal && openModalType === "Add New Projects" ?
           <AddProjectForm setOpenModal={ setOpenModal } /> :
@@ -56,11 +72,9 @@ const Report = () => {
           {/* <TeamMembers /> */}
         </div>
         {/* <AllprojectProgress /> */}
-           <div className="totalRevenues">
           <TotalRevenue />
           <TotalHour  />
-          <LineChart color="black" />
-           </div>
+          {/* <LineChart color="black" /> */}
       </div>
     </>
   );

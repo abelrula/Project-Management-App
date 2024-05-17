@@ -11,7 +11,7 @@
 }
 .teamstatus_header{
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
 }
 .teamstatus_header .icon{
@@ -26,13 +26,16 @@
 }
 .teamstatus span {
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 10px;
     color: #7d7d7d;
     font-size: 12px;
     text-align: justify;
 }
-.teamstatus .tableHeader {}
+.teamstatus__tableRow{
+    font-size: 15px;
+    font-family: math;
+}
 .teamstatus .tableHeader th {
     border: none;
     font-size: 15px;

@@ -8,7 +8,7 @@ const TeamsStatus = () => {
           <div className="teamstatus_header"> <PiDotsSixVerticalBold fontSize={20} color="black" /> <h3>Teams Status</h3></div>
         <table>
             <thead>
-                <tr className='tableHeader'>
+                <tr className='teamstatus__tableRow'>
                      <th colSpan={3}>Users
                     </th>
                     <th colSpan={3} className="tasks">Tasks

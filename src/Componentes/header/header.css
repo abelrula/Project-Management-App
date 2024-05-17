@@ -21,10 +21,10 @@ border-bottom: #e5dddd 1px solid;
 .header .left{
     display: flex;
      justify-content: center;
-    gap: 15px;
+    gap: 30px;
     position: relative;
     top: 10px;
-    align-items: end
+    align-items: center
 }
 .header .left .notification{
     height: 23px;}
@@ -32,6 +32,7 @@ border-bottom: #e5dddd 1px solid;
     font-size: 20px;
     color: black;
 }
+
 .header .left .notification span{
          position: relative;
     bottom: 24px;
@@ -44,9 +45,18 @@ border-bottom: #e5dddd 1px solid;
     color: white;
     padding: 2px 3px;
 }
-.profile{
-    width: 35px;
-    height: 35px;
+.left .profile {
+    display: flex;
+    gap: 10px;
+    align-items: end;
+}
+.left .profile p{
+    font-family: math;
+    font-weight: 100;
+}
+.left .profile img{
+    width: 25px;
+    height: 25px;
     object-fit: cover;
     border-radius: 50%; 
 }
@@ -145,8 +155,8 @@ transition: ease-in-out linear 1s ;
     gap: 10px;
 }
 .profile_description_right img{
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -159,6 +169,7 @@ transition: ease-in-out linear 1s ;
     flex-direction: column;
     gap: 10px;
     align-items: start;
+    width: 260px;
 }
     .profile_description_right span p{
         font-family: emoji;
@@ -178,85 +189,55 @@ transition: ease-in-out linear 1s ;
     font-size: 14px;
     font-weight: 700;
  }
-.profile_description_left{
+.profile_description__middle{
+
+}
+.profile_description__middle-item{
     display: flex;
     flex-direction: column;
     gap: 10px;
-align-items: start;}
-.profile_description_left-bio{
+align-items: start;
+flex-direction: row;}
+.profile_description__middle-item{
     display: flex;
-        gap: 20px;
-    align-items: center;
-        height: 40px;
-    border-left: 1px solid #b5b5bb;
+     gap: 15px ;
+         height: 30px;
     border-radius: 10px;
     padding: 5px;
 }
-.profile_description_left-bio p{
+.profile_description__middle-item p{
        font-family: cursive;
     font-weight: 100;
-    font-size: 15px;
+    font-size: 12px;
     color: #646464;
 }
- .profile_description label {
+ .profile_description__middle-item label {
     font-family: ui-monospace;
         font-weight: 700;
-         font-size: 18px;
+         font-size: 12px;
  }
-.profile_description_left-totalFriends{
-    display: flex;
-    gap: 20px;
-        height: 40px;
-    border-left: 1px solid #b5b5bb;
-    border-radius: 10px;
-    padding: 5px;
-    
-}
- 
-.profile_description_left-totalFriends span{
-          font-family: cursive;
+.profile_description__middle-item span {
+    font-family: math;
     font-weight: 100;
-    font-size: 15px;
+    font-size: 12px;
     color: #646464;
 }
-.profile_description_left-AccomplishedProject{
-    height: 40px;
-    border-left: 1px solid #b5b5bb;
-    border-radius: 10px;
-    padding: 5px;
-}
  
-.profile_description_left-AccomplishedProject span {
-    font-family: cursive;
-    font-weight: 100;
-    font-size: 15px;
-    color: #646464;
-
-}
  
-.profile_description_left-projectsIncluded    {
-      display: flex;
-    gap: 40px;
-    height: 40px;
-    border-left: 1px solid #b5b5bb;
-    border-radius: 10px;
-    padding: 5px;
-}
- 
-/* .profile_description_left-projectsIncluded ul {
+/* .profile_description_left ul {
 
 } */
-.profile_description_left-projectsIncluded ul {
+.profile_description__middle-item ul {
     display: flex;
     flex-direction: column;
     align-items: baseline;
     gap: 5px;
 
 }
-.profile_description_left-projectsIncluded ul li{
+.profile_description__middle-item ul li{
     font-family: cursive;
     font-weight: 100;
-    font-size: 15px;
+    font-size: 12px;
     color: #646464;
     list-style: lower-roman;
 
