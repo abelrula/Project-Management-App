@@ -9,15 +9,18 @@ import { CiLogout, CiSquarePlus } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { GiClockwork } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
+import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm";
 
 
 const Header = ({ title }) => {
   const date = new Date();
   const { pathname } = useLocation();
-  const [openModal, setpenModal] = useState(false);
-  const [ projectTypes, setProjectTypes ] = useState( [] )
-  const [showProfileInfo, setShowProfileInfo] = useState(false);
-   useEffect( () =>{ 
+  const [ openModal, setOpenModal ] = useState( {
+    type: "",
+    open:false
+  } );
+   const [ projectTypes, setProjectTypes ] = useState( [] )
+    useEffect( () =>{ 
     async function  AssignedProjects(){
                     const res = await fetch( "http://localhost:3500/project" )
                     const data = await res.json()
@@ -53,7 +56,16 @@ const Header = ({ title }) => {
          ) : null}
       <div className="left">
       <span className="profile">
-        <CiSquarePlus className="icon"/>
+        <CiSquarePlus className="icon" onClick={()=>setOpenModal( {
+          type: "addTodo",
+          open:true
+        } ) } />
+            { openModal.type === "addTodo" && openModal.open === true &&
+              <div className="modal">
+                <AddTodoForm />
+               </div>
+
+}
         <CiSearch className="icon"/>
         <GiClockwork className="icon"/>
          <div className="notification">
@@ -66,18 +78,19 @@ const Header = ({ title }) => {
             src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
             alt="profile"
             className="profile"
-            onClick={() =>{ setShowProfileInfo((prev) => !prev);  setpenModal(true)}}
+            onClick={() =>{  setOpenModal( { type: "profile", open:true } )}}
           />
           <p>abel zewdu</p>
         </span>
        </div>
     </div>
-      {openModal && (<div className="modal">
+      { openModal.type === "profile" && openModal.open === true &&
+        ( <div className="modal">
         <div className="profile_description">
           <div className="profile_description-header">
           <span className="signout"><CiLogout /> sign out </span>
            <IoCloseCircleSharp
-              onClick={ () => setpenModal( false ) }
+              onClick={ () => setOpenModal({type:"",open:false})}
                className="closeIcon" />
           </div>
           <div className="profile_description_right">

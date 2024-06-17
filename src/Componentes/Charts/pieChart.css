@@ -10,6 +10,7 @@
   border: 1px solid #bdb8b8;
   gap: 10px;
   position: relative;
+  z-index:10
 
 }
 .taskCompletion_graph-doghnutGraph h3 {

@@ -123,8 +123,8 @@ font-size: 35px;
     padding: 10px;
  }
  .Form label{
-font-family: system-ui;
-    font-size: 17px;
+    font-family: math;
+    font-size: 14px;
     font-weight: 200;
     display: flex;
     gap: 10px;

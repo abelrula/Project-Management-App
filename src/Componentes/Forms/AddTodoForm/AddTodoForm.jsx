@@ -2,7 +2,9 @@ import React, { useState ,useEffect} from "react";
  import "./addTodoForm.css";
 import { HiCalendar } from "react-icons/hi";
 import { IoCloseCircleOutline } from "react-icons/io5";
-   import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+ import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 import projectTypes from "../../../data/projectTypes";
 const AddTodoForm = ({setOpenModal}) => {
   const date = new Date();
@@ -18,7 +20,8 @@ const AddTodoForm = ({setOpenModal}) => {
   const [attachedDocuments,setAttachedDocuments]=useState(null)
   
    const members = "http://localhost:3500/members";
-  const [member, setMember] = useState([]);
+  const [ value, setValue ] = useState( '' );
+  const [ member, setMember ] = useState( [] );
   useEffect(() => {
     async function fetchMembers() {
       const data = await fetch(members);
@@ -27,8 +30,7 @@ const AddTodoForm = ({setOpenModal}) => {
     }
     fetchMembers();
   }, []);
-   j
-  function handleSubmit(e) {
+   function handleSubmit(e) {
     e.preventDefault();
   }
  const data=[
@@ -53,9 +55,11 @@ const AddTodoForm = ({setOpenModal}) => {
   return (
     <>
       <form className="Form" onSubmit={ handleSubmit }>
-         <h2>Assign New Task          
-           <IoCloseCircleOutline className="icon" onClick={ () => setOpenModal( false ) } /> 
-</h2>
+        <header>
+           <h6>Assign New Task          
+         </h6>
+           <IoCloseCircleOutline className="icon" onClick={ () =>setOpenModal({type:"",open:false})} /> 
+       </header>
          <div className="employeContainer">
             <label>select which Employee you want to assign 
             { !openEmployee && <FaArrowDown className="icon"
@@ -119,13 +123,14 @@ const AddTodoForm = ({setOpenModal}) => {
         </div>
         <div className="Form__textArea">
           <label>Add Task Discription</label>
-          <textarea
+          {/* <textarea
             type="text"
             id="description"
             value={description}
              onChange={(e) => setDescription(e.target.value)}
             placeholder=""
-          />
+          /> */}
+           <ReactQuill theme="snow" value={value} onChange={setValue} />
         </div>
           <div className="Form__AttachDocuments">
           <label>Attach Documents</label>

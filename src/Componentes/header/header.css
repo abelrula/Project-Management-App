@@ -53,6 +53,8 @@ border-bottom: #e5dddd 1px solid;
 .left .profile p{
     font-family: math;
     font-weight: 100;
+        font-size: 10px;
+        color: white;
 }
 .left .profile img{
     width: 25px;
