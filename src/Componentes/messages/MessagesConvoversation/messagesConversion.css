@@ -52,12 +52,13 @@ width: 40px;
 
 }
 .MessagesConvoversation__header__sender-stat{
-display: flex;
+    color: #000000;
+    font-size: medium;
     align-items: center;
-    gap: 10px;
-    font-family: system-ui;
-    font-weight: 700;
-    font-size: larger;
+    display: flex;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: monospace;
 }
 .MessagesConvoversation__header__sender-stat-name{
    color: #000000;

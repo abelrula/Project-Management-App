@@ -120,7 +120,8 @@ const [open,setOpen]=useState(false)
             <IssueSection  title="My Issue" />
             <Projects />
             <IssueSection title="All Issue" />
-        </div>
+      </div>
+      
       { active &&
        ( <div className="modal">
         <TodoForm  setActive={setActive}  />

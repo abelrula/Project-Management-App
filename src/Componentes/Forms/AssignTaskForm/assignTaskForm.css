@@ -32,8 +32,7 @@ font-size: 35px;
 .Form-header h2{
          font-family: sans-serif;
     font-size: larger;
-    border-bottom: #afafaf solid 1px;
-    font-weight: 500;
+     font-weight: 500;
     margin-left: 10px;
     width: 100%;
     border-radius: 10px;
@@ -60,7 +59,7 @@ font-size: 35px;
     padding: 10px;
 }
 .employeContainer_members span{
-    background: #879971;
+     background: #d7a645;
     height: 23px;
     width: 300px;
     border-radius: 10px;
@@ -71,11 +70,11 @@ font-size: 35px;
     flex-direction: column;
     gap: 5px;
     position: absolute;
-        left: 330px;
+        left: 280px;
     z-index: 20000;
     background: white;
     padding: 5px;
-    top: 10px;
+    top: 0px;
 }
 .employeContainer_members-employe{
   width: 300px;
@@ -85,9 +84,13 @@ font-size: 35px;
     justify-content: space-between;
     border-radius: 10px;
     cursor: pointer;
-    background: #e1dbcf;
+  background: #d7a645;
     height: 100%;
     padding: 5px;
+ }
+ .employeContainer .icon, .project .icon{
+   font-size: 13px;
+    color: #bdabab;
  }
 .employeContainer_members-employe:hover{
    scale: 1.1;
@@ -131,7 +134,7 @@ font-size: 35px;
     align-items: center;
  }
  .project_types span{
-  background: #879971;
+   background: #d7a645;
     height: 23px;
     width: 300px;
     border-radius: 10px;
@@ -144,11 +147,11 @@ font-size: 35px;
     flex-direction: column;
     gap: 5px;
     position: absolute;
-        left: 330px;
+        left: 280px;
     z-index: 19999;
     background: white;
     padding: 5px;
-    top: 10px;
+    top: 0px;
   }
  .project_types-type{
     width: 300px;

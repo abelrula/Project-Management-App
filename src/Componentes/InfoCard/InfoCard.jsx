@@ -1,5 +1,6 @@
 import React from "react";
 import "./InfoCard.css";
+import CountUp from 'react-countup';
 import { PiDotsNine } from "react-icons/pi";
 const InfoCard = ({ title, setOpenModalType,buttonTitle, amount,setOpenModal }) => {
  
@@ -11,7 +12,8 @@ const InfoCard = ({ title, setOpenModalType,buttonTitle, amount,setOpenModal }) 
           <PiDotsNine />   
         </div>
         <div className="Total">
-          <span>{amount}</span>
+          <CountUp start={ 0 } duration={ 4.75 } end={ amount } />
+           
         </div>
         <div className="Add">
           <button

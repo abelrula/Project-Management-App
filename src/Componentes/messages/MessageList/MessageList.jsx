@@ -24,7 +24,7 @@ const MessageList = () => {
       </NavLink>
       <div className="searchArea">
         <BsSearch />
-        <input type="text" />
+        <input type="text" placeholder="search  " />
       </div>
       <hr></hr>
       <div className="Allmessages">

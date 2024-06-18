@@ -76,7 +76,10 @@ const AssignTaskForm = ({setActive}) => {
           <IoCloseCircleSharp fontSize={ 27 } className="icon" onClick={ () => setActive( false ) } />
         </div>
          <div className="employeContainer">
-            <label>select which Employee you want to assign 
+          <label>select which Employee you want to assign
+          <span
+           onClick={ () => setOpenEmployee((prev)=>!prev)}
+           >{ selectedEmployee !== null  ? `${selectedEmployee} :--    ${jobCatagory}`  : "---------------"}</span> 
             { !openEmployee && <FaArrowDown className="icon"
               onClick={ () =>{
                 setOpenEmployee( true );
@@ -86,9 +89,7 @@ const AssignTaskForm = ({setActive}) => {
               onClick={ () => setOpenEmployee( false ) } /> }
             </label>
           <div className="employeContainer_members"> 
-           <span
-           onClick={ () => setOpenEmployee((prev)=>!prev)}
-           >{ selectedEmployee !== null  ? `${selectedEmployee} :--    ${jobCatagory}`  : "---------------"}</span> 
+           
           { openEmployee && member.map((employee,i)=>(
            <div
              key={ i } 
