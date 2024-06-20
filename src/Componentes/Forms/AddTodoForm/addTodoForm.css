@@ -178,6 +178,14 @@
     border-top: 1px solid #d3cfcf;
 
  }
+ .Form__textarea p{
+    font-family: math;
+    font-weight: 100;
+    font-size: 10px;
+    color: rgb(0, 0, 0) !important;
+    font:bold
+
+}
  .Form__textArea textarea{
        margin-top: 10px;
     border-radius: 20px;

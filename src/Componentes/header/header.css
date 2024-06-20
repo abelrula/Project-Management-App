@@ -11,8 +11,9 @@
     width: 100%;
     padding: 5px 75px;
     align-items: center;
-height: 65px;
-border-bottom: #e5dddd 1px solid;
+  height: 65px;
+  border-bottom: #e5dddd 1px solid;
+  z-index: 999;
 }
 .header h1{
     font-family: cursive;

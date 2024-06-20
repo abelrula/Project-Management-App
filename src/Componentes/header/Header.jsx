@@ -10,6 +10,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { GiClockwork } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm";
+import Filter from "../Filter/Filter";
 
 
 const Header = ({ title }) => {
@@ -53,7 +54,8 @@ const Header = ({ title }) => {
                <NavLink to="timesheets" className="link">Timesheets</NavLink>                     
           </nav>
          </div>
-         ) : null}
+        ) : null }
+       { openModal.type === "search" && openModal.open === true &&<Filter />}
       <div className="left">
       <span className="profile">
         <CiSquarePlus className="icon" onClick={()=>setOpenModal( {
@@ -62,11 +64,11 @@ const Header = ({ title }) => {
         } ) } />
             { openModal.type === "addTodo" && openModal.open === true &&
               <div className="modal">
-                <AddTodoForm />
+                <AddTodoForm setOpenModal={setOpenModal} />
                </div>
 
 }
-        <CiSearch className="icon"/>
+        <CiSearch className="icon" onClick={() =>{  setOpenModal( { type: "search", open:true } )}}/>
         <GiClockwork className="icon"/>
          <div className="notification">
           <IoIosNotificationsOutline    fontSize={25} />
