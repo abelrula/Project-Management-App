@@ -67,7 +67,10 @@ const TotalHour = () => {
       },
     ],
   };
-  const options = {};
+  const options = {
+      responsive: true,
+
+  };
 
     return (
       <div className="bar">

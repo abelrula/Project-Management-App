@@ -38,7 +38,10 @@ const TotalRevenue = () => {
       },
     ],
   };
-  const options = {};
+  const options = {
+      responsive: true,
+
+  };
     return (
             <div className="bar">
                        <h3><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>

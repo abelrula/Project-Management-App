@@ -26,6 +26,7 @@ export const TaskPieChart = () => {
           ],
         }
         const  options= {
+       responsive: true,
                 plugins: {
                     legend: {
                         position: 'right'
@@ -63,13 +64,14 @@ export const IssuePieChart = () =>{
       ],
     }
       const options={
+      responsive: true,
             plugins: {
                 legend: {
                     position: 'right'
                 }
             }
         }
- const chartsOptions=["pie chart","Dougnut Chart","Line chart",]
+ const chartsOptions=["pie chart","Dougnut Chart"]
     return (
         <div className="taskCompletion_graph-doghnutGraph" style={{height:"250px",width:"345px" }}>
          <h3 style={{position: pathname === "/" ? "none" : "absolute"}}><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>
@@ -78,8 +80,7 @@ export const IssuePieChart = () =>{
          <span className={`chart ${selectedChart === chart ? "active" : "none"}`} key={i} onClick={()=>{SetSelectedChart(chart)}}>{chart}</span>
          ))}
          </div>
-          {selectedChart=== "pie chart" ? <Pie data={data} options={options}  /> :
-                            selectedChart=== "Line chart" ? <LineChart /> :<Doughnut data={data} options={options}   />
+          {selectedChart=== "pie chart" ? <Pie data={data} options={options}  /> : <Doughnut data={data} options={options}   />
         }
          </div>
     )
