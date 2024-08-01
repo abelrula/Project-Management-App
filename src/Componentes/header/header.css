@@ -9,11 +9,18 @@
     left: 0;
     right: 0;
     width: 100%;
-    padding: 5px 75px;
+    padding: 5px 25px;
     align-items: center;
   height: 65px;
   border-bottom: #e5dddd 1px solid;
   z-index: 999;
+}
+.header h3{
+       text-transform: capitalize;
+    font-family: math;
+     color: #000000;
+    font-weight: 700;
+    font-size: 20px;
 }
 .header h1{
     font-family: cursive;
