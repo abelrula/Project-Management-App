@@ -65,115 +65,136 @@ const GantChartComponenet = () => {
             y: "Du15656",
             name: "Simon panda",
             status: "1",
+            avatar:"https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
+            
           },
           {
             x: [ "2024-01-13", "2024-01-17" ],
             y: "Du2676",
             name: "Abel",
             status: "1",
+            avatar:"https://images.unsplash.com/photo-1495603889488-42d1d66e5523?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGJsYWNrJTIwbWFsZXN8ZW58MHx8MHx8fDA%3D"
           },
           {
             x: [ "2024-01-18", "2024-01-20" ],
             y: "Du390",
             name: "Yosef",
             status: "2",
+            avatar:"https://images.unsplash.com/photo-1495603889488-42d1d66e5523?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGJsYWNrJTIwbWFsZXN8ZW58MHx8MHx8fDA%3D"
           },
            {
             x: [ "2024-01-08", "2024-01-05" ],
             y: "Du1786",
             name: "Simon panda",
             status: "1",
+            avatar:"https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D"
           },
           {
             x: [ "2024-01-13", "2024-01-17" ],
             y: "Du872",
             name: "Abel",
             status: "1",
+            avatar:"https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D"
           },
           {
             x: [ "2024-01-18", "2024-01-20" ],
             y: "Du1212",
             name: "Yosef",
             status: "2",
+            avatar:"https://images.unsplash.com/photo-1573496527892-904f897eb744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
           }, {
             x: [ "2024-01-08", "2024-01-05" ],
             y: "Du11213",
             name: "qimon panda",
             status: "1",
+            avatar:"https://images.unsplash.com/photo-1573496527892-904f897eb744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
           },
           {
             x: [ "2024-01-13", "2024-01-17" ],
             y: "Du221",
             name: "wbel",
             status: "1",
+            avatar:"https://images.unsplash.com/photo-1573496527892-904f897eb744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
           },
           {
             x: [ "2024-01-18", "2024-01-20" ],
             y: "Du21323",
             name: "Yosef",
             status: "2",
+            avatar:"https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
           },
           {
             x: [ "2024-01-21", "2024-01-26" ],
             y: "Du44",
             name: "lsehay",
             status: "0",
+            avatar:"https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D"
           },
           {
             x: [ "2024-02-27", "2024-02-30" ],
             y: "Du15",
             name: "vand",
             status: "2",
+            avatar:""
           },
           {
             x: [ "2024-02-18", "2024-02-20" ],
             y: "Du412",
             name: "rula",
             status: "2",
+            avatar:"https://images.unsplash.com/photo-1573496527892-904f897eb744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
           },
           {
             x: [ "2024-01-21", "2024-02-26" ],
             y: "Du117",
             name: "biladen",
             status: "0",
+            avatar:"https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D"
           },
           {
             x: [ "2024-02-27", "2024-03-30" ],
             y: "Du8213",
             name: "miko",
             status: "2",
+            avatar:"https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
           }, {
             x: [ "2024-01-21", "2024-01-26" ],
             y: "Du45",
             name: "lsehay",
             status: "0",
+            avatar:"https://images.unsplash.com/photo-1573496527892-904f897eb744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
           },
           {
             x: [ "2024-02-27", "2024-02-30" ],
             y: "Du17",
             name: "vand",
             status: "2",
+            avatar:"https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
           },
           {
             x: [ "2024-02-18", "2024-02-20" ],
             y: "Du412",
             name: "rula",
             status: "2",
+            avatar:"https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D"
           },
           {
             x: [ "2024-01-21", "2024-02-26" ],
             y: "Du817",
             name: "biladen",
             status: "0",
+            avatar:"https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D"
           },
           {
             x: [ "2024-02-27", "2024-03-30" ],
             y: "Du813",
             name: "miko",
             status: "2",
+            avatar:"https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D"
           },
           
         ],
+
         backgroundColor: ( ctx ) =>
         {
           return colorsData[ ctx.raw.status ];
@@ -335,6 +356,7 @@ const GantChartComponenet = () => {
               day: "numeric",
             });
             return [
+              <img className="avatar" src={ctx[0].raw.avatar}  />,
               ctx[0].raw.name,
               ctx[0].raw.y,
               `Task Deadline:- ${formatteStartDate} - ${formattedEndDate}`,

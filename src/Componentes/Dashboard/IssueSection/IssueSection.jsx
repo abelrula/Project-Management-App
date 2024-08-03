@@ -3,6 +3,7 @@ import "./issueSection.css";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
+import AddButton from "../../AddButton/AddButton";
 const IssueSection = ({title}) => {
   
   const [ selectedType, setSelectedType ] = useState("All")
@@ -58,6 +59,7 @@ const IssueSection = ({title}) => {
           </span>
         </div>
       </div>
+                <AddButton name="Issue" />
     </div>
   );
 };

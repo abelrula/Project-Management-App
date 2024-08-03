@@ -7,7 +7,7 @@
     border-radius: 10px;
     width: 355px;
     height: 245px;
-    gap: 15px;
+    gap: 8px;
 }
 .issueSection_header{
     display: flex;
@@ -34,10 +34,9 @@
      font-family: monospace
 }
 .issueSection_issues{
-display:flex;
-flex-direction: column;
-gap:5px
-}
+display: flex;
+    flex-direction: column;
+ }
 .issueSection   h3{
     font-family: system-ui;
     font-weight: 500;
@@ -48,9 +47,11 @@ gap:5px
     gap: 5px;
 }
   .issueSection_issues   .issueSection_issues-projectIssue{
-    display: flex;
+       display: flex;
     gap: 10px;
-    border:1px solid #dbdbdb;
+    border: 1px solid #dbdbdb;
+    padding: 5px;
+    border-radius: 25px;
 
 }
 .issueSection_issues-projectIssue    img{
@@ -67,12 +68,16 @@ gap:5px
     flex-direction: column;
 }
 .issueSection_issues-projectIssue  span   h6{
-    font-size: 0.8rem;
-    color: #6d6666;
+ font-size: 12px;
+    color: #156993;
+    font-family: math;
+    font-weight: 100;
+    text-transform: capitalize;
 }
 .issueSection_issues-projectIssue   span   p {
-     align-self: center;
-    margin-left: 30px;
-        color: #7ac7ae;
+       color: #191c1b;
     margin-bottom: 5px;
+    font-family: math;
+    font-size: 13px;
+    text-wrap: pretty;
 }

@@ -11,7 +11,7 @@ import img1 from "../../assets/worker1.jpg"
 import {AiFillRightCircle, AiOutlineProfile } from "react-icons/ai";
 import { IoPersonOutline } from "react-icons/io5";
 import ProfileImage from "../ProfileImage/ProfileImage";
-
+import AddButton from "../AddButton/AddButton"
    const AssignedTask = ({title,setUrgent,footer,setActive}) => {
    const [todoStatus, setTodoStatus] = useState("Upcoming");
    const [todos,setTodos]=useState([])
@@ -93,10 +93,7 @@ import ProfileImage from "../ProfileImage/ProfileImage";
                   </span>
                   </div>
                   ))}
-                <div className="AssignedTask__situation--description--footer">
-                  <p>tasks you assigned will appear here</p>
-                  <button onClick={()=>setActive(true)}>{footer}</button>
-                </div>
+               <AddButton name={footer} />
            </div>
       </div>
     </div>

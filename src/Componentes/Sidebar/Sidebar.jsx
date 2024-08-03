@@ -5,15 +5,17 @@ import { IoIosSettings } from "react-icons/io";
 import { IoHelpCircle, IoReturnDownForwardSharp } from "react-icons/io5";
  import "./sidebar.css";
 import menuLinks from "../../data/menuLinks";
-import { FaBinoculars, FaProjectDiagram } from "react-icons/fa";
+import { FaBinoculars, FaProjectDiagram, FaRProject } from "react-icons/fa";
 import { MdOutlineArrowCircleDown } from "react-icons/md";
 import { BsArrowDownCircle, BsEggFried } from "react-icons/bs";
 import projectTypes from "../../data/projectTypes";
+import { HiBars3CenterLeft } from "react-icons/hi2";
 const Sidebar = () => {
   const [ projectTypes, setProjectTypes ] = useState( [] )
   const selectedObj = {
     color: "black",
-    background: "#545351",
+    background: "#dda12a87",
+    borderRadius:"5px"
   };
    useEffect( () =>{ 
                    async function  AssignedProjects(){
@@ -26,8 +28,9 @@ const Sidebar = () => {
   return (
     <div className="side">
       <div className="brandIcon">
-        <BsEggFried className="icon" />
-        <h1>Synergetic Projects</h1>
+        <h1><FaRProject />Synergetic Projects</h1>
+        <HiBars3CenterLeft
+          className="icon" />
       </div>
       <div className="navigationLinks">
         <div className="navigationTopLinks">

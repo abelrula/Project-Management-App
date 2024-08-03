@@ -1,25 +1,41 @@
-import {Chart,defaults} from "chart.js/auto";
-import {Line} from "react-chartjs-2"
-defaults.maintainAspectRatioa=false
-defaults.responsive=true
- const LineChart = ({color}) => {
  
-  const data={
-          labels: ["Jan", "Feb","Mar","Apri","May","Jun","Jul","Aug","Sep","Nov","Dec"],
-          datasets: [{
-            label:"Total",
-            data: [125, 329, 340, 148, 456, 157, 40],
-            // borderColor: 'rgb(75, 192, 192)',
-            pointBackgroundColor:"rgb(0 0 0 / 92%)",
-            borderColor:color,
-            pointBorderWidth:0.3,
-            pointBorderColor:"white",
-            pointRadius:1.2,
-            fill:color
-          }]
+import { Line } from "react-chartjs-2";
+
+const data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  datasets: [
+    {
+      label: "First ",
+      data: [33, 53, 85, 41, 44, 65],
+      fill: true,
+      backgroundColor: "rgba(75,192,192,0.2)",
+      borderColor: "rgba(75,192,192,1)"
+    },
+    {
+      label: "Second ",
+      data: [33, 25, 35, 51, 54, 76],
+      fill: false,
+      borderColor: "#742774"
+    }
+  ]
+};
+
+ function LineChart() {
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: (ctx) => 'Point Style: ' + ctx.chart.data.datasets[0].pointStyle,
         }
-   return (
-         <Line data={data} />
- )
+      }
+    }
+  };
+  return (
+      <Line config={config}  data={data} />
+   );
 }
 export default LineChart
