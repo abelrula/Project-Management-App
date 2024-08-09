@@ -1,16 +1,15 @@
 import  { useState,useEffect } from "react";
 import { MdDonutLarge, MdUpdate } from "react-icons/md";
-import { RiCheckboxCircleFill, RiProfileFill } from "react-icons/ri";
-import { MdRadioButtonUnchecked } from "react-icons/md";
- import "./assignedTasks.css";
-import { useLocation } from "react-router-dom";
+import { RiCheckboxCircleFill } from "react-icons/ri";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import {AiFillRightCircle } from "react-icons/ai";
 import { CiLock } from "react-icons/ci";
-import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm"
 import img1 from "../../assets/worker1.jpg"
-import {AiFillRightCircle, AiOutlineProfile } from "react-icons/ai";
-import { IoPersonOutline } from "react-icons/io5";
 import ProfileImage from "../ProfileImage/ProfileImage";
+import { useLocation } from "react-router-dom";
+import "./assignedTasks.css";
+
+
 import AddButton from "../AddButton/AddButton"
    const AssignedTask = ({title,setUrgent,footer,setActive}) => {
    const [todoStatus, setTodoStatus] = useState("Upcoming");
@@ -60,7 +59,7 @@ import AddButton from "../AddButton/AddButton"
   return (
     <><div className="AssignedTask">
       <span>
-        <p>{ title } </p>
+        <h3>{ title } </h3>
         {pathname === "/report" ?
           <IoCloseCircleOutline className="icon" onClick={ () => setActive( false ) } /> 
           : <CiLock className="icon" />

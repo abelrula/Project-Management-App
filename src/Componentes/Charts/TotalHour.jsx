@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import {Chart,defaults} from "chart.js/auto";
+import {defaults} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-import { PiDotsSixVerticalBold } from 'react-icons/pi';
+import { FaTasks } from "react-icons/fa";
+import BoxHeader from '../boxHeader/BoxHeader';
+import { Ri24HoursLine } from "react-icons/ri";
 defaults.maintainAspectRatioa=false
 defaults.responsive=true
 
 const TotalHour = () => {
   const [ value, setValue ] = useState( "monthly" )
+  const [ selectedType, setSelectedType ] = useState( "All" );
   const [ labels, setLabels ] = useState( [] )
+   const timeAlt=["week","month"]
   const week= [
       "Mon",
       "Tue",
@@ -74,12 +78,8 @@ const TotalHour = () => {
 
     return (
       <div className="bar">
-                       <h3 style={{display:"flex",gap:"10px"}}><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>
-        <select onChange={(e)=>setValue(e.target.value)}>
-                <option value="monthly">monthly</option>
-                <option value="weekly"> weekly</option>
-              </select>
-            <Bar data={data} options={options} />
+        <BoxHeader icon={<Ri24HoursLine />} header="Task hours" filterTypes={timeAlt} selectedType={selectedType} setSelectedType={setSelectedType}      />
+        <Bar data={data} options={options} />
     </div>
   )
 }

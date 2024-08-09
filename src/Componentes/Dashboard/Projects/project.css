@@ -9,21 +9,6 @@ border:1px solid #bdb8b8;
 border-radius: 10px;
 width: 330px;
 height: 245px;}
-.projectCatagories_header{
-
-}
-.projectCatagories_header span{
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
-.projectCatagories_header span h3{
-    font-family: system-ui;
-    font-weight: 500;
-    color: black;
-    font-size: 17px;
-}
 .projectCatagories__cards{
     display: flex;
     align-items: center;
@@ -97,22 +82,8 @@ height: 245px;}
     left: 0;
 }
 
-.projectCatagory__top{
-    display: flex;
-    justify-content: space-between;
-    font-size: large;
-    font-weight: 700;
-    color: black;
-    font-family: system-ui;
-}
 .cards{
       display: flex;
     gap: 10px;
 }
 
-.projectCatagory__top span {
-      font-size: 18px;
-    font-family: system-ui;
-    font-weight: 100;
-    color: #898981;
-}

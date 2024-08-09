@@ -1,6 +1,7 @@
 import  { useEffect, useState } from "react";
 import { RiTeamLine } from "react-icons/ri";
 import "./teamMembers.css";
+import BoxHeader from "../../boxHeader/BoxHeader";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 const TeamMembers = () => {
   const members = "http://localhost:3500/members";
@@ -15,11 +16,9 @@ const TeamMembers = () => {
   }, []);
   return (
     <div className="TeamDirectory">
-      <span> 
-        <PiDotsSixVerticalBold fontSize={20} color="black" />
-         <h3>Team Directories</h3>
-        <RiTeamLine/>
-         </span>
+ 
+      <BoxHeader icon={<RiTeamLine />} header="Team Directories"  />
+      
       <div className="TeamDirectory__members element-with-scroll">
         {member?.map((member, i) => (
           <div className="TeamDirectory__members__member" key={i}>

@@ -1,11 +1,13 @@
 import React from 'react'
 import "./teamsStatus.css"
 import { PiDotsSixVerticalBold } from "react-icons/pi";
+import { LiaChartBarSolid } from "react-icons/lia";
 import ProfileImage from "../../ProfileImage/ProfileImage"
+import BoxHeader from '../../boxHeader/BoxHeader';
 const TeamsStatus = () => {
     return (
         <div className="teamstatus">
-          <div className="teamstatus_header"> <PiDotsSixVerticalBold fontSize={20} color="black" /> <h3>Teams Status</h3></div>
+             <BoxHeader icon={<LiaChartBarSolid />} header="Teams Status"  />
         <table>
             <thead>
                 <tr className='teamstatus__tableRow'>

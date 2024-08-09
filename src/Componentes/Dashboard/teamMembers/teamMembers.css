@@ -9,17 +9,6 @@
     width:335px;
     height: 245px
 }
-.TeamDirectory span{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-.TeamDirectory span h3{
-    font-family: system-ui;
-    font-weight: 500;
-    color: black;
-    font-size: 17px;
-}
 .TeamDirectory > h5{
        font-family: system-ui;
     font-size: 1.3rem;

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Chart,defaults} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-import { PiDotsSixVerticalBold } from 'react-icons/pi';
-defaults.maintainAspectRatioa=false
+import { LiaMoneyCheckAltSolid } from "react-icons/lia";
+import BoxHeader from '../boxHeader/BoxHeader';
+defaults.maintainAspectRatioa = false
 defaults.responsive=true
 const TotalRevenue = () => {
   
@@ -44,7 +45,7 @@ const TotalRevenue = () => {
   };
     return (
             <div className="bar">
-                       <h3><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>
+          <BoxHeader icon={<LiaMoneyCheckAltSolid />} header="Task Revenue"    />
             <Bar data={data} options={options} />
             </div>
   )

@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import {Chart,defaults} from "chart.js/auto";
+import {defaults} from "chart.js/auto";
 import {Doughnut, Pie} from "react-chartjs-2"
 import "./pieChart.css"
-import { PiDotsSixVerticalBold } from "react-icons/pi";
-import LineChart from './LineChart';
 import { useLocation } from 'react-router-dom';
-
+import BoxHeader from '../boxHeader/BoxHeader';
+import { FaTasks } from "react-icons/fa";
 defaults.maintainAspectRatioa=false
 defaults.responsive=true
 export const TaskPieChart = () => {
@@ -36,7 +35,7 @@ export const TaskPieChart = () => {
       
     return (
         <div className="taskCompletion_graph-doghnutGraph"  style={{height: pathname === "/" ?"300px": "250px"}} >
-         <span><PiDotsSixVerticalBold  fontSize={20} color="black"/><h5>Task Status</h5></span>
+          <BoxHeader icon={<FaTasks />} header="Task Status"   />
             <Pie data={data} options={options}  />
           </div>
   )
@@ -46,6 +45,7 @@ export const TaskPieChart = () => {
 export const IssuePieChart = () =>{
   
   const {pathname}=useLocation()
+  const [ selectedType, setSelectedType ] = useState( "All" );
   const [selectedChart,SetSelectedChart]=useState("pie chart")
     const data={
       labels: ["reopened", "in progress", "to be tested","closed" ,"todo" ,"open"],
@@ -73,14 +73,9 @@ export const IssuePieChart = () =>{
         }
  const chartsOptions=["pie chart","Dougnut Chart"]
     return (
-        <div className="taskCompletion_graph-doghnutGraph" style={{height:"250px",width:"280px" }}>
-         <h3 style={{position: pathname === "/" ? "none" : "absolute"}}><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Task Status</p></h3>
-         <div className='charts'>
-         {chartsOptions.map((chart,i)=>( 
-         <span className={`chart ${selectedChart === chart ? "active" : "none"}`} key={i} onClick={()=>{SetSelectedChart(chart)}}>{chart}</span>
-         ))}
-         </div>
-          {selectedChart=== "pie chart" ? <Pie data={data} options={options}  /> : <Doughnut data={data} options={options}   />
+        <div className="taskCompletion_graph-doghnutGraph" style={{height:"250px",width:"320px" }}>
+        <BoxHeader icon={<FaTasks />} header="Task Status" filterTypes={chartsOptions} selectedType={selectedType} setSelectedType={setSelectedType}  />
+        { selectedChart === "pie chart" ? <Pie data={ data } options={ options } /> : <Doughnut  data={data} options={options}  style={ width="305px"}  />
         }
          </div>
     )

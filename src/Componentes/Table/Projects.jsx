@@ -1,32 +1,24 @@
-import React from 'react'
-import { Link, NavLink } from "react-router-dom";
-import { Fragment,useState,useEffect } from "react";
+import React, { useEffect, useState } from 'react'
 import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
 import ProgressBar from "../../Componentes/progressBar/ProgressBar";
  import CheckedCell from "./Cells/CheckedCell"
 import TaskCell from "./TaskCell"
 import PriorityCell from "./Cells/PriorityCell"
-import overView from "../../data/overView";
 import StatusCell from "./Cells/StatusCell"
-import img1 from "../../assets/worker2.jpg"
            import { TbStatusChange, TbTimeDuration10 } from "react-icons/tb";
             import { TbTimeDuration0 } from "react-icons/tb";
-            import { FaHourglassStart } from "react-icons/fa";
+            import { FaHourglassStart, FaLayerGroup } from "react-icons/fa";
             import { MdArrowDropDown, MdOutlineAssignmentInd } from "react-icons/md";
-            import { CgAssign } from "react-icons/cg";
-            import { TbCalendarDue } from "react-icons/tb";
             import { FcDoughnutChart, FcHighPriority } from "react-icons/fc";
-            import { FcMediumPriority } from "react-icons/fc";
-            import { FcLowPriority } from "react-icons/fc";
             import { MdOutlineLowPriority } from "react-icons/md";
-            import { BiUpArrowAlt, BiDownArrowAlt, BiCheckShield, BiPlus } from "react-icons/bi";
-            import { RiPercentFill } from "react-icons/ri";
+            import {  BiCheckShield, BiPlus } from "react-icons/bi";
             import { GiClassicalKnowledge } from 'react-icons/gi';
             import { IoAddCircle } from 'react-icons/io5';
             import { IoMdArrowDropdown } from "react-icons/io";
             import { BsListTask, BsPersonCircle } from "react-icons/bs";
             import ProfileImage from "../ProfileImage/ProfileImage"
 import AssignTaskForm from '../Forms/AssignTaskForm/AssignTaskForm';
+import BoxHeader from '../boxHeader/BoxHeader';
 
 const Projects = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
@@ -59,6 +51,7 @@ const Projects = () => {
   //     startDate: "2024-02-25",
   //     status: "in progress"
   //   } ] )
+
               const [ active, setActive ] = useState( false )
               const [ checked, setChecked ] = useState()
               const [ selectedType, setSelectedType ] = useState("All")
@@ -162,10 +155,13 @@ const Projects = () => {
                     setIssueTracking(data[0].issueTracking)
                   }
                   AssignedProjects()
-                },[])
-                      console.log(issueTracking)
-                // console.log(projectTasks)
-              const tableData = useReactTable( {
+              }, [] )
+  
+  
+  
+ console.log(issueTracking)
+
+  const tableData = useReactTable( {
                 data: projectTasks,
                 columns,
                 getCoreRowModel:getCoreRowModel() ,
@@ -179,26 +175,18 @@ const Projects = () => {
                           : row
                   ) ))
                 }
-             })
-         const filterTypes=["All open","Closed","Upcoming","Over due","Completed"]     
+  } )
+  
+  const filterTypes = [ "All open", "Closed", "Upcoming", "Over due", "Completed" ]    
+  
+
     return (
            <div className='tableContainer'>
-            <div className="tableHeader">
-            <div className="tableHeader_filter">
-             <label className="tableHeader_filter-selected"  onClick={()=>setfilterActive(true)}>Group By Task List <IoMdArrowDropdown /> {selectedType} <IoMdArrowDropdown />
-</label>
-             {filterActive &&  
-              <ul className="tableHeader_filter-types">
-              {filterTypes.map((item,i)=>(
-              <li key={i} onClick={()=>{setSelectedType(item);setfilterActive(false)}}>{item}</li>
-             ))}
-             </ul>}
-              </div>
-            <div>
-            <span ><GiClassicalKnowledge className="icon"/>Classics</span>
+          
+        <div className="tableHeader">
+          <BoxHeader icon={ <FaLayerGroup /> } header="Group By Task List" filterTypes={ filterTypes } setSelectedType={ setSelectedType } selectedType={ selectedType } />
             <span onClick={()=>setActive(true)}>Add Tasks<IoAddCircle className="icon"/></span>
-            </div>
-            </div>
+         </div>
                      <table>
              <thead>
              { tableData.getHeaderGroups().map( (headerGroup) =>(

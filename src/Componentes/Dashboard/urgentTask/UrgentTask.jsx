@@ -1,17 +1,22 @@
 //  import { useGetTodosQuery } from "../../api/apiSlice";
- import { BiArrowBack, BiCircle, BiLeftArrow } from "react-icons/bi";
+ import { BiArrowBack} from "react-icons/bi";
+ import { useEffect,useState } from "react";
+ import moment from "moment";
+ import { useLocation } from "react-router-dom";
+ import { PiDotsSixVerticalBold } from "react-icons/pi";
+ import BoxHeader from "../../boxHeader/BoxHeader";
+ import { TbUrgent } from "react-icons/tb";
+ import { IoArrowBackCircle } from "react-icons/io5";
+ import { FaTasks } from "react-icons/fa";
 import "./urgentTask.css";
-import { useEffect,useState } from "react";
-import moment from "moment";
-import { useLocation } from "react-router-dom";
-import { PiDotsSixVerticalBold } from "react-icons/pi";
-  const UrgentTask = ({setUrgent}) => {
+ 
+ const UrgentTask = ({setUrgent}) => {
   // const { data: todos, isSuccess } = useGetTodosQuery();
   const [ todo, setTodos ] = useState( [] );
   const [ completed, setCompleted ] = useState(null)
   const {pathname}=useLocation()
   console.log(completed);
-  // const todayTodo =
+  // conbst todayTodo =
   //   isSuccess && todos.filter((item) => item.date === Date().substring(0, 16));
   const todayDate = new Date().toString().substring( 0, 10 )
   console.log( todayDate )
@@ -33,10 +38,11 @@ import { PiDotsSixVerticalBold } from "react-icons/pi";
   return (
    <div className="TodayTodo__view--task">
       <span className="TodayTodo__view--task-header">
-      {pathname ==="/" && <BiArrowBack color="black" onClick={()=>setUrgent(false)} className="icon"/>}
-      {pathname ==="/" ? <h5>Urgent Tasks For Today</h5> : <h3><PiDotsSixVerticalBold  fontSize={20} color="black"/><p>Todays Work Items</p></h3> }
+      {pathname ==="/" && <IoArrowBackCircle color="black" onClick={()=>setUrgent(false)} className="icon"/>}
+      {pathname ==="/" ? <BoxHeader icon={<TbUrgent />} header="Urgent Tasks For Today"  />:  <BoxHeader icon={<FaTasks />} header="Todays Work Items"  /> }
       </span>
-      <ul className=" element-with-scroll">
+      
+      <ul className=" element-with-scroll">                                                           
         {todayTodo?.length > 0 ? (
           todayTodo.map((item) => (
             <li>

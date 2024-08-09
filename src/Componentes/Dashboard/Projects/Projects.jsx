@@ -5,16 +5,12 @@ import { MdOutlineAppRegistration } from "react-icons/md";
  import { GrProjects } from "react-icons/gr"
 import projectTypes from "../../../data/projectTypes";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
+import AddButton from "../../AddButton/AddButton";
+import BoxHeader from "../../boxHeader/BoxHeader";
 const Projects = () => {
    return (
     <div className="projectCatagories">
-  <div className="projectCatagories_header">
-  <span>
-     <PiDotsSixVerticalBold fontSize={20} color="black" /> 
-     <h3>Projects Directories</h3>
-      <VscProject/>
-     </span>
-  </div>
+      <BoxHeader icon={<VscProject />} header="Projects Directories"   />
       <div className="projectCatagories__cards" >
         {projectTypes?.map((item, i) => (
         <div>
@@ -31,7 +27,8 @@ const Projects = () => {
           </span>
           </div>
         ))}
-      </div>
+       </div>
+       <AddButton name="Projects"/>
     </div>
    );
 };

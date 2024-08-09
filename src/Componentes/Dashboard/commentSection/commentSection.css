@@ -16,21 +16,6 @@ padding: 4px;
      padding: 3px;
      gap: 10px
 }
-.CommentSection_header{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-.CommentSection_header .icon{
-    color: black;
-    font-size: 20px;  
-}
-.CommentSection_header h3{
-    font-family: system-ui;
-    font-weight: 500;
-    color: black;
-    font-size: 17px;
- }
   .CommentSection_TeamsComment   .CommentSection_TeamsComment-Usercomments{
     display: flex;
     gap: 10px;

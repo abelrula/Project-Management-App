@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./events.css";
 import { MdEvent } from "react-icons/md";
-import { PiDotsSixVerticalBold } from "react-icons/pi";
-import moment from "moment";
+ import moment from "moment";
 import ProfileImage from "../../ProfileImage/ProfileImage";
+import BoxHeader from "../../boxHeader/BoxHeader";
 const Events = () => {
    const [ events, setEvents ] = useState()
   useEffect( () =>{
@@ -30,7 +30,7 @@ console.log(events)
 
   return (
     <div className="evenetSection">
-            <span> <PiDotsSixVerticalBold fontSize={20} color="black" /> <h3> My Events</h3> <MdEvent/></span>
+      <BoxHeader icon={<MdEvent />} header="My Events"   />
       <div className="evenetSection_events element-with-scroll">
        {events?.map((event,i)=>(
         <div  className="evenetSection_events-event" key={i}>

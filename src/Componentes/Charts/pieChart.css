@@ -1,6 +1,7 @@
  .taskCompletion_graph-doghnutGraph{
   background: white;
   display: flex;
+  width: 305px;
   align-self: center;
   border-radius: 15px;
   padding: 3px 10px;
@@ -11,42 +12,6 @@
   z-index:10
 
 }
-.taskCompletion_graph-doghnutGraph h3 {
-  display: flex;
-    gap: 20px;
-    align-items: center;
-    top: 0px;
-    font-family: system-ui;
-    font-weight: 500;
-    color: black;
-    font-size: 17px;
- }
-.taskCompletion_graph-doghnutGraph h3  span{
-  font-size: 18px;
-  font-weight: 100;
-  color: #776f6f;
-  font-family: monospace
- } 
- .taskCompletion_graph-doghnutGraph .charts {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  position: absolute;
-  top: 35px;
- }
- .charts .chart{
-  background: #545463;
-  padding: 0px 9px;
-  border-radius: 5px;
-  font-size: 13px;
-  color: white;
- }
-
-.chart:hover{
- scale: 1.1; 
-}
-.chart.active{
-  background: #000000;
-}
+ 
 
 

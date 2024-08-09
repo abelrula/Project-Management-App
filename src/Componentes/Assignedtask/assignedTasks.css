@@ -5,8 +5,17 @@
    padding: 5px;
    border:1px solid #bdb8b8;
    border-radius: 10px;
-   width: 400px;
+   width: 350px;
    height: 245px;
+  }
+  .AssignedTask h3{
+       font-size: 15px;
+    font-weight: 100;
+    color: #776f6f;
+    font-family: monospace;
+    display: flex;
+    align-items: end;
+    gap: 3px;
   }
   .AssignedTask span{
    display: flex;
@@ -33,7 +42,7 @@
  }
  .AssignedTask__situation-types{
   display: flex;
-    gap: 40px;
+    gap: 25px;
         align-items: center;
   }
  .AssignedTask__situation-types > li.workProgress{
@@ -101,7 +110,7 @@ width: 40px;
     object-fit: cover;
     object-position: 75% 10%;
  }
- .AssignedTask__situation--description--footer{
+ .footerButton{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -110,24 +119,9 @@ width: 40px;
     width: 100%;
  }
  
- .AssignedTask__situation--description--footer > p{
-  font-size: 1rem;
-  color:#bfb9b1
- }
- .AssignedTask__situation--description--footer > button{
-padding: 5px 15px;
-     background: #e57085;
-    color: white;
-    font-weight: 800;
-    border: none;
-    border-radius: 10px;
- }
- .AssignedTask__situation--description--footer > button:hover{
- background: #2b4168;
-    color: rgb(255, 255, 255);
- }
+ 
 .AssignedTask_Button{
-background: #b3a662;
+background: #bb7d46;
     border: navajowhite;
     padding: 2px;
     border-radius: 10px;
@@ -143,13 +137,10 @@ background: #b3a662;
    font-size: 20px;
     color: black;
 
-}.AssignedTask span .icon:hover{
-   font-size: 22px;
-   color: rgb(138, 11, 11);
-
 }
+
 .AssignedTask_Button:hover{
-scale: 1.1;
+scale: 1.05;
 cursor:pointer
 }
 .AssignedTask_Button .icon{
