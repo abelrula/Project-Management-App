@@ -55,6 +55,27 @@ body::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */
 }
 
+.link{
+display: flex;
+    gap: 5px;
+    text-decoration: none;
+    padding: 4px 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    height: 25px;
+    color: #e5e5e5;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: monospace;
+    font-weight: 100;
+}
+   .link label{
+    
+
+}
  
 /* Styling the scrollbar in Chrome and Safari */
 .element-with-scroll::-webkit-scrollbar {

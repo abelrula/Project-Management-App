@@ -132,63 +132,28 @@ td{
    position: relative;
    display: flex;
    justify-content: space-between;
-   margin-left: -25px;
- }
+   margin-top: 20px;
+   margin-bottom:5px;
+   padding: 0px 15px;
+  }
  .tableHeader h4{
     color: #1717b5;
     font-family: math;
  }
- .tableHeader div{
-    display: flex;
-    gap: 10px;
- }
- .tableHeader div span{
-    background: #dd6e0b;
+  
+ .tableHeader  span{
+   background: #2b4168;
     border-radius: 5px;
-    padding: 2px 5px;
+    padding: 8px 40px;
     color: white;
     font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
  }
  .tableFilter div .icon{
 
  }
- .tableHeader_filter-selected{
-   font-family: none;
-   font-size: 15px;
-   padding: 2px 26px;
-   border-radius: 5px;
-   color: #dd6e0b;
-   display: flex;
-   align-items: center;
-   font-weight: 800;
- }
- .tableHeader_filter-types{
-   display: flex;
-   flex-direction: column;
-   padding: 15px;
-   align-items: start;
-   z-index: 5;
-   position: absolute;
-   top: -14px;
-   left: 175px;
-}
- 
- .tableHeader_filter-types li{
-   list-style: none;
-   cursor: pointer;
-   border: 1px solid #777070;
-   border-radius: 5px;
-   width: 100%;
-   text-align: start;
-   padding: 0 10px;
-   background: white;
-   font-family: math;
-   font-size: 15px;
-   padding: 2px 26px;
- }
- .tableHeader_filter-types li:hover{
-   scale: 1.1;
-   background-color: #777070;
-   color: white;
- }
+
  

@@ -5,12 +5,14 @@
     font-family: system-ui;
     font-weight: 900;
     color:black;
+    
  }
  
 .Dashboard{
     display: flex;
     flex-direction: column;
     gap: 40px;
+ 
  }
 .date{
     font-size: 15px;

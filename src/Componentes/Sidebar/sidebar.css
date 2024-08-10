@@ -9,7 +9,7 @@
     border: 1px solid black;
     position: sticky;
     top:0;
-    width: 240px;
+    width: 220px;
 }
 .side > h1{
     width: 100%;
@@ -20,23 +20,22 @@
    
 }
 .brandIcon{
-           display: flex;
+    display: flex;
     gap: 7px;
     align-items: center;
     border-bottom: 1px solid #5d5f5c;
     margin-top: 10px;
     justify-content: space-between;
-    padding: 20px 3px;
+    padding: 10px 3px;
 }
 .brandIcon .icon{
            color: #ffa600;
     font-size: 23px;
 }
 .brandIcon h1{
-  font-size: 20px;
+  font-size: 15px;
     color: #ffa600;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-     font-size: 18px;
     color: #ffa600;
     font-family: math;
     font-weight: 700;
@@ -44,26 +43,7 @@
     align-items: center;
     gap: 6px;
  }
-.sideWord{
-display: flex;
-    gap: 5px;
-    text-decoration: none;
-    padding: 4px 5px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    width: 100%;
-    position: relative;
-    height: 25px;
-}
-   .sideWord label{
-    color: #e5e5e5;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: monospace;
-    font-weight: 100;
 
-}
 .side >label:hover ,link:hover{
     cursor: pointer;
 }

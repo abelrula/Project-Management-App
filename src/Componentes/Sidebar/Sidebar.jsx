@@ -3,13 +3,11 @@ import  { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { IoIosSettings } from "react-icons/io";
 import { IoHelpCircle, IoReturnDownForwardSharp } from "react-icons/io5";
- import "./sidebar.css";
 import menuLinks from "../../data/menuLinks";
-import { FaBinoculars, FaProjectDiagram, FaRProject } from "react-icons/fa";
-import { MdOutlineArrowCircleDown } from "react-icons/md";
-import { BsArrowDownCircle, BsEggFried } from "react-icons/bs";
-import projectTypes from "../../data/projectTypes";
 import { HiBars3CenterLeft } from "react-icons/hi2";
+import "./sidebar.css";
+import { FaRProject } from "react-icons/fa";
+
 const Sidebar = () => {
   const [ projectTypes, setProjectTypes ] = useState( [] )
   const selectedObj = {
@@ -38,11 +36,11 @@ const Sidebar = () => {
             <NavLink
               style={({ isActive }) => (isActive ? selectedObj : null)}
               to={link.to}
-              className="sideWord"
+              className="link"
               key={i}
             >
               { link.icon }
-              <label>{link.title}</label>
+             {link.title}
               {link.title === "Message" && <span>4</span> }
             </NavLink>
           ))}
@@ -63,7 +61,7 @@ const Sidebar = () => {
           <NavLink 
            to="settings"
             style={({ isActive }) => (isActive ? selectedObj : null)}
-              className="sideWord"
+              className="link"
              >
             <IoIosSettings className="icon" />
               <label>Settings</label>
@@ -72,7 +70,7 @@ const Sidebar = () => {
           <NavLink 
           to="Help"
             style={({ isActive }) => (isActive ? selectedObj : null)}
-              className="sideWord"
+              className="link"
               >
             <IoHelpCircle className="icon" />
               <label>Help</label>

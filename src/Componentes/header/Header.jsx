@@ -1,26 +1,45 @@
 import { useState ,useEffect} from "react";
 import "./header.css";
-import { BiBell } from "react-icons/bi";
+import { BiBell, BiCalendar, BiLogoOkRu, BiTask } from "react-icons/bi";
 import { NavLink, useLocation } from "react-router-dom";
    import img1 from "../../assets/worker2.jpg"
-import { BsPersonFillCheck, BsPersonFillGear } from "react-icons/bs";
-import { IoCloseCircleSharp } from "react-icons/io5";
-import { CiLogout, CiSquarePlus } from "react-icons/ci";
+import { BsBarChartSteps } from "react-icons/bs";
+import { IoCloseCircleSharp, IoDocumentTextOutline } from "react-icons/io5";
+import { CiLocationOn, CiLogout, CiSquarePlus } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
-import { GiClockwork } from "react-icons/gi";
+import { GiClockwork, GiTimeSynchronization } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm";
 import Filter from "../Filter/Filter";
+import { FaGraduationCap } from "react-icons/fa6";
+import { MdDashboard, MdOutlineWorkOutline } from "react-icons/md";
+import { VscIssues } from "react-icons/vsc";
+ 
+const navLinks = [
+  { name: "Dashboard", icon: <MdDashboard />, to: "." },
+  { name:"Tasks", icon:<BiTask />,to:"tasks"},
+  { name: "Documents", icon: <IoDocumentTextOutline />, to: "documents" },
+  { name: "Gant Charts", icon: <BsBarChartSteps />, to: "gantChart" },
+  { name: "Issues", icon: <VscIssues />, to: "issues" },
+  { name: "Timesheets", icon: <GiTimeSynchronization />, to: "timesheets" }
+]
 
 
 const Header = ({ title }) => {
+   
   const date = new Date();
   const { pathname } = useLocation();
   const [ openModal, setOpenModal ] = useState( {
     type: "",
     open:false
   } );
-   const [ projectTypes, setProjectTypes ] = useState( [] )
+  const [ projectTypes, setProjectTypes ] = useState( [] )
+  const selectedObj = {
+    color: "white",
+    background: "#dda12a87",
+    borderRadius:"5px"
+  };
+  
     useEffect( () =>{ 
     async function  AssignedProjects(){
                     const res = await fetch( "http://localhost:3500/project" )
@@ -44,19 +63,21 @@ const Header = ({ title }) => {
           <div className="Overview_header-ProjectName">
              <h1>daniels apartement </h1>
              <span>open details</span>
-          </div>
+            </div>                                  
            <nav className="Overview_header-links" >
-              <NavLink to="." className="link">Dashboard</NavLink>                     
-              <NavLink to="tasks" className="link">Tasks</NavLink>                     
-              <NavLink to="documents" className="link">Documents</NavLink>                     
-              <NavLink to="gantChart" className="link">Gant Charts</NavLink>                     
-              <NavLink to="issues" className="link">Issues</NavLink>                     
-               <NavLink to="timesheets" className="link">Timesheets</NavLink>                     
+              { navLinks.map( ( link, i ) => (
+                <NavLink className="link" style={({isActive})=>isActive ? selectedObj : null} to={link.to}>{link.name} { link.icon}
+                </NavLink>      
+              ))              
+            }              
           </nav>
          </div>
         ) : null }
-       { openModal.type === "search" && openModal.open === true &&<Filter />}
-      <div className="left">
+        
+         
+         {/* onclick open search modal */}
+        { openModal.type === "search" && openModal.open === true && <Filter /> }
+        <div className="left">
       <span className="profile">
         <CiSquarePlus className="icon" onClick={()=>setOpenModal( {
           type: "addTodo",
@@ -73,19 +94,27 @@ const Header = ({ title }) => {
          <div className="notification">
           <IoIosNotificationsOutline    fontSize={25} />
           <span>12</span>
-        </div>
-        </span>
-        <span className="profile">
-        <img
+            </div>
+             <img
             src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
             alt="profile"
             className="profile"
             onClick={() =>{  setOpenModal( { type: "profile", open:true } )}}
           />
-          <p>abel zewdu</p>
         </span>
        </div>
     </div>
+     
+     
+     
+     
+     
+     
+     
+     
+      {/* profile description  modal if profile is clicked */}
+     
+     
       { openModal.type === "profile" && openModal.open === true &&
         ( <div className="modal">
         <div className="profile_description">
@@ -105,7 +134,7 @@ const Header = ({ title }) => {
                 <p>My account : my portal</p>
                </span>
           </div>
-        <div className="profile_description__middle">
+        {/* <div className="profile_description__middle">
             <div className="profile_description__middle-item">
               <label>Bio :</label>
               <p>livng with out pain is not the fact that we are alive</p>
@@ -126,7 +155,22 @@ const Header = ({ title }) => {
               <li>Networking</li>
               </ul>
          </div>
-         </div>
+          </div> */}
+             <div className="userInfo">
+            <p className="userInfo__list"><span><BiLogoOkRu /> Bio</span>The best and most beatiful things in the world cannot be ssen or even touched</p>
+            <p className="userInfo__list"><span><CiLocationOn />Living in</span> <h6 className="">Austin ,Texas</h6></p>
+            <p className="userInfo__list"><span><FaGraduationCap />Went to</span> <h6 className="">the uniceresity of texas</h6></p>
+            <p className="userInfo__list"><span><MdOutlineWorkOutline />Works at</span><h6 className="userInfo__list"> Atlas Mesa Solar</h6></p>
+            <button className="">Message</button>
+        <p className="userInfo__list"><span><BiCalendar /></span>Joined June 17,2024</p>
+        {/* <div className="flex flex-wrap gap-1 mt-4 mx-auto">
+                {
+                  imagesPostedByTheOwner.map((image,i)=>(
+                    <img className="w-36 h-32 rounded-lg object-cover object-center" src={image} key={i} alt="posts" />
+                  ))
+                }
+              </div> */}
+            </div>
          </div>
       </div>)}
     </>

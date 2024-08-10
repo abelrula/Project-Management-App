@@ -1,16 +1,18 @@
 .footerButton > p{
   font-size: 1rem;
-  color:#bfb9b1
+  color:#bfb9b1;
+  
  }
  .footerButton > button{
-padding: 5px 15px;
-     background: #e57085;
+    padding: 5px 15px;
+    background: #2b4168;
     color: white;
-    font-weight: 800;
     border: none;
     border-radius: 10px;
+   cursor:pointer
+
  }
  .footerButton > button:hover{
- background: #2b4168;
+ background: #223555da;
     color: rgb(255, 255, 255);
  }

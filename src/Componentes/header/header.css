@@ -285,19 +285,51 @@ flex-direction: row;}
 }
  .Overview_header-links{
     display: flex;
-    gap: 25px;
+    gap: 10px;
     align-items: end;
-    margin-left: -40px;
 }
-.Overview_header-links :first-child{
-           background: #bdbdbd;
-    border-radius: 9px;
-    padding: 2px 5px;
-}
+
 .Overview_header-links .link{
       text-decoration: none;
     color: #818080;
     font-size: 15px;
     font-family: auto;
     font-weight: 500;  
+}
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 5px 10px;
+}
+
+ .userInfo__bio{
+    text-wrap: balance;
+    color: #534949;
+    font-size: 14px;
+    display: flex;
+}
+.userInfo__bio h4{
+    color: #100e0e;
+}
+.userInfo__userName{
+    color: #100e0e;
+    font-size: 14px;
+}
+.userInfo__userName a{
+
+}
+.userInfo__list{
+display: flex;
+    gap: 20px;
+    color: #534646;
+    font-size: 14px;
+}
+.userInfo__list h6{
+
+}
+.userInfo__list span{
+display: flex;
+gap: 10px;
+align-items: center;
 }
