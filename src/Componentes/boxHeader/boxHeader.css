@@ -6,8 +6,13 @@
 
 }
 .BoxHeader h3{
-    display: flex;
+    font-size: 15px;
+     font-weight: 100;
+    color: #a14c01;
+     font-family: monospace;
+     display:flex;
      align-items: end;
+     gap: 3px;
 }
 .BoxHeader .BoxHeader__filter-types{
     display: flex;
@@ -18,6 +23,7 @@
     position: absolute;
     top: -14px;
     left: 35px;
+    gap: 2px;
 }
  .BoxHeader__filter-selected{
    font-family: none;
@@ -69,13 +75,4 @@
 .BoxHeader .icon{
     color: black;
     font-size: 20px;  
-}
-.BoxHeader h3{
-    font-size: 15px;
-     font-weight: 100;
-    color: #776f6f;
-     font-family: monospace;
-     display:flex;
-     align-items: end;
-     gap: 3px;
 }

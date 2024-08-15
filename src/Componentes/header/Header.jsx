@@ -16,7 +16,7 @@ import { MdDashboard, MdOutlineWorkOutline } from "react-icons/md";
 import { VscIssues } from "react-icons/vsc";
  
 const navLinks = [
-  { name: "Dashboard", icon: <MdDashboard />, to: "." },
+  { name: "Dashboard", icon: <MdDashboard />, to: "."},
   { name:"Tasks", icon:<BiTask />,to:"tasks"},
   { name: "Documents", icon: <IoDocumentTextOutline />, to: "documents" },
   { name: "Gant Charts", icon: <BsBarChartSteps />, to: "gantChart" },
@@ -36,7 +36,7 @@ const Header = ({ title }) => {
   const [ projectTypes, setProjectTypes ] = useState( [] )
   const selectedObj = {
     color: "white",
-    background: "#dda12a87",
+    background: "rgb(221 161 42 / 86%)",
     borderRadius:"5px"
   };
   
@@ -48,7 +48,9 @@ const Header = ({ title }) => {
                    }
                   AssignedProjects()
 
-                },[])
+    }, [] )
+  console.log(pathname.includes("project"));
+  
   return (
     <>
       <div className="header">
@@ -57,8 +59,8 @@ const Header = ({ title }) => {
         <p className="TodayTodo__wavingHand">{title}</p>
              <p className="date">{date.toDateString()}</p>
        </div>
-         ) :<h3> {title}</h3>}
-        {pathname.includes("project") ?(
+         ) :<h3 style={{display:pathname.includes("projects") && "none"}}> {title}</h3>}
+        {pathname.includes("projects") ?(
          <div className="Overview_header">
           <div className="Overview_header-ProjectName">
              <h1>daniels apartement </h1>
@@ -66,7 +68,7 @@ const Header = ({ title }) => {
             </div>                                  
            <nav className="Overview_header-links" >
               { navLinks.map( ( link, i ) => (
-                <NavLink className="link" style={({isActive})=>isActive ? selectedObj : null} to={link.to}>{link.name} { link.icon}
+                <NavLink  end className="link" style={({isActive})=>isActive ? selectedObj : null} to={link.to}>{link.name} { link.icon}
                 </NavLink>      
               ))              
             }              

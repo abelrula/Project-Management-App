@@ -11,20 +11,18 @@
   .AssignedTask h3{
        font-size: 15px;
     font-weight: 100;
-    color: #776f6f;
+    color: #bb7d46;
     font-family: monospace;
     display: flex;
-    align-items: end;
     gap: 3px;
   }
   .AssignedTask span{
    display: flex;
    justify-content: space-between;
    width: 60%;
-   flex-direction: fle;
-   align-self: end;
-   /* padding: 5px; */
-   font-family: system-ui;
+    align-self: end;
+    font-family: system-ui;
+    align-items: end;
    font-weight: 500;
    color: black;
    font-size: 17px;
@@ -128,20 +126,20 @@ background: #bb7d46;
     color: white;
     font-weight: 700;
     font-family: math;
-    font-size: 13px;
+    font-size: 11px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 .AssignedTask span .icon{
    font-size: 20px;
-    color: black;
+    color:#853e00;
 
 }
 
 .AssignedTask_Button:hover{
-scale: 1.05;
-cursor:pointer
+ cursor:pointer;
+ font-size: 10px;
 }
 .AssignedTask_Button .icon{
    font-size:20px

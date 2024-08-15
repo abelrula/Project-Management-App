@@ -27,10 +27,16 @@ import React from 'react'
 import AssignTaskForm from '../Forms/AssignTaskForm/AssignTaskForm';
 import ProfileImage from '../ProfileImage/ProfileImage';
 import { IoMdArrowDropdown } from 'react-icons/io';
+import BoxHeader from '../boxHeader/BoxHeader';
+import { FaLayerGroup } from 'react-icons/fa6';
 
-const Issues = () => {
+const IssuesTable = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
   const [ issueTracking, setIssueTracking ] = useState( [] )
+  const [ selectedType, setSelectedType ] = useState("All")
+  const [ active, setActive ] = useState( false )
+  const [ checked, setChecked ] = useState()
+ const [ filterActive, setfilterActive ] = useState(false)
   
   //   {
   //     issues: "completeing the dashboard",
@@ -59,27 +65,19 @@ const Issues = () => {
   //     startDate: "2024-02-25",
   //     status: "in progress"
   //   } ] )
-              const [ active, setActive ] = useState( false )
-              const [ checked, setChecked ] = useState()
-              const [ selectedType, setSelectedType ] = useState("All")
-              const [ filterActive, setfilterActive ] = useState(false)
+           
               const columns=[
                 {
                   accessorKey:"completed",
                   header:<p><BiCheckShield /></p>,
                   cell:CheckedCell
                 } ,
-                {
+                 {
                   accessorKey:"task",
-                  header:<p>Task <BsListTask /></p>,
+                  header:<p>Issues <BsListTask /></p>,
                   cell:TaskCell
                 },
-                {
-                  accessorKey:"status",
-                  header:<p>Status<TbStatusChange /></p>,
-                  cell: StatusCell 
-                }
-                , { 
+                { 
                   accessorKey:"startDate",
                   header:<p> Start Date <FaHourglassStart /></p>,
                   cell: ( props ) => <p>{ props.getValue() }</p>
@@ -89,10 +87,15 @@ const Issues = () => {
                   cell: ( props ) => <span><ProfileImage name={props.getValue()} /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </span>
                 },
                 {
+                 accessorKey:"status",
+                 header:<p>Status<TbStatusChange /></p>,
+                 cell: StatusCell 
+               }
+                ,{
                   accessorKey:"assignedTo",
                   header:<p>Assigne <MdOutlineAssignmentInd /></p>,
                   cell: ( props ) => <span><ProfileImage name={props.getValue()} /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </span>
-                },
+                }
               ]
               // const columns2=[
               //   {
@@ -153,25 +156,14 @@ const Issues = () => {
                   ) ))
                 }
              })
+  const filterTypes = [ "All open", "Closed", "Upcoming", "Over due", "Completed" ]    
               
     return (
       <div className='tableContainer'>
-            <div className="tableHeader">
-            <div className="tableHeader_filter">
-             <label className="tableHeader_filter-selected"  onClick={()=>setfilterActive(true)}>Group By Task List <IoMdArrowDropdown /> {selectedType} <IoMdArrowDropdown />
-          </label>
-             {filterActive &&  
-              <ul className="tableHeader_filter-types">
-              {filterTypes.map((item,i)=>(
-              <li key={i} onClick={()=>{setSelectedType(item);setfilterActive(false)}}>{item}</li>
-             ))}
-             </ul>}
-              </div>
-            <div>
-            <span ><GiClassicalKnowledge className="icon"/>Classics</span>
-            <span onClick={()=>setActive(true)}>Add Tasks<IoAddCircle className="icon"/></span>
-            </div>
-            </div>
+             <div className="tableHeader">
+           <BoxHeader icon={ <FaLayerGroup /> } header="Group By Issue List" filterTypes={ filterTypes } setSelectedType={ setSelectedType } selectedType={ selectedType } />
+            <button onClick={()=>setActive(true)}>Add Issues<IoAddCircle className="icon"/></button>
+         </div>
                     <table>
            <thead>
              { tableData.getHeaderGroups().map( (headerGroup) =>(
@@ -196,4 +188,4 @@ const Issues = () => {
   )
 }
 
-export default Issues
+export default IssuesTable

@@ -9,7 +9,7 @@ const BoxHeader = ( { icon, header, filterTypes=null ,setSelectedType=null,selec
 
   return (
     <div className="BoxHeader">
-      <h3><PiDotsSixVerticalBold fontSize={ 20 } color="black" />{ header }</h3>
+      <h3><PiDotsSixVerticalBold fontSize={ 20 } color="#bb7d46" />{ header }</h3>
       {icon}
       {filterTypes && <div className="BoxHeader">
             <div className="BoxHeader__filter">

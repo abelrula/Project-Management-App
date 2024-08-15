@@ -1,5 +1,5 @@
 import React from 'react'
-import GantChartComponenet from "../../Charts/GantChartComponenet/GantChartComponenet"
+import GantChartComponenet from "../../../Componentes/Charts/GantChartComponenet/GantChartComponenet"
 const GantChart = () => {
   return (
     <>

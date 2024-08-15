@@ -1,0 +1,5 @@
+export {default as ProjectDashboard } from "./Dashboard/Dashoboard"
+export {default as ProjectDocuments } from "./Documents/Documents"
+export {default as ProjectGantChart } from "./GantChart/GantChart"
+export {default as ProjectIssues } from "./Issues/Issues"
+export {default as ProjectTasks } from "./Tasks/Tasks"

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import LineChart from '../../Charts/LineChart'
-import  { IssuePieChart, TaskPieChart } from '../../Charts/PieChart';
-import TotalHour from '../../Charts/TotalHour'
-import TotalRevenue from '../../Charts/TotalRevenue' 
+import LineChart from '../../../Componentes/Charts/LineChart'
+import  { IssuePieChart, TaskPieChart } from '../../../Componentes/Charts/PieChart';
+import TotalHour from '../../../Componentes/Charts/TotalHour'
+import TotalRevenue from '../../../Componentes/Charts/TotalRevenue' 
 import "./dashboard.css"
 import { useLocation } from "react-router-dom";
  import { CiSquareCheck } from "react-icons/ci";
@@ -13,9 +13,9 @@ import { FaTasks } from "react-icons/fa";
 import { RiPassExpiredLine } from "react-icons/ri";
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { BsListTask } from "react-icons/bs";
-import TotalNumber from '../../Dashboard/TotalTaskstatus/TotalNumber'
-import UrgentTask from '../../Dashboard/urgentTask/UrgentTask';
-import TeamsStatus from '../../Dashboard/Teams Status/TeamsStatus';
+import TotalNumber from '../../../Componentes/Dashboard/TotalTaskstatus/TotalNumber'
+import UrgentTask from '../../../Componentes/Dashboard/urgentTask/UrgentTask';
+import TeamsStatus from '../../../Componentes/Dashboard/Teams Status/TeamsStatus';
 const Dashoboard = () => {
    
   const [ openTitle, setOpenTitle ] = useState( null )

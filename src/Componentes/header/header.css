@@ -292,9 +292,10 @@ flex-direction: row;}
 .Overview_header-links .link{
       text-decoration: none;
     color: #818080;
-    font-size: 15px;
+    font-size: 12px;
     font-family: auto;
-    font-weight: 500;  
+    font-weight: 500;
+     text-wrap: nowrap;  
 }
 .userInfo{
     display: flex;
