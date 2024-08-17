@@ -5,7 +5,7 @@ import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 import BoxHeader from '../boxHeader/BoxHeader';
 defaults.maintainAspectRatioa = false
 defaults.responsive=true
-const TotalRevenue = () => {
+const TotalRevenue = ({dataset}) => {
   
     const data = {
     labels: [
@@ -22,22 +22,7 @@ const TotalRevenue = () => {
       "Dec",
     ],
     
-    datasets: [
-      {
-        label: "$ Total Revenue",
-        data: [3000, 5000, 10000, 1000, 2000],
-        backgroundColor: "#004077",
-        borderRadius: 5,
-        //  borderColor:"beige"
-      },
-      {
-        label: "$ Total Revenue",
-        data: [7000, 5000, 10000, 1000, 8000],
-        backgroundColor: "#cf4077",
-        borderRadius: 5,
-        //  borderColor:"beige"
-      },
-    ],
+    datasets:dataset
   };
   const options = {
       responsive: true,

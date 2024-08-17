@@ -516,7 +516,7 @@
       "projectName": "Abel Apartement",
       "projectTasks": [
         {
-          "mainTask": "completeing the floor",
+          "mainTask": "Managerial control involves monitoring performance and progress. It helps to identify potential errors, omissions and failures and allows managers to ensure that ",
           "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
@@ -612,7 +612,7 @@
           "progressPercent": 45
         },
         {
-          "mainTask": "completeing the floor",
+          "mainTask": "Leading teams involves motivating and influencing employees to perform at their best. It requires effective communication skills to provide instructions and feedback.",
           "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
@@ -666,7 +666,169 @@
           "progressPercent": 45
         },
         {
-          "mainTask": "completeing the floor",
+          "mainTask": " They produce financial, performance and project progress reports. Managers report on incidents, regulation changes and company policy updates and present their reports in management meetings.",
+          "project": "Customer",
+          "startDate": "2024-03-21",
+          "endDate": "2024-03-13",
+          "status": "open",
+          "duration": "125 days",
+          "subtasks": [
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "simon Jorge",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            },
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "Fabio Lucas",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            },
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "simon Jorge",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            }
+          ],
+          "id": 1,
+          "progressPercent": 45
+        },
+        {
+          "mainTask": "Apart from the typical management tasks mentioned above, some roles involve specific tasks. A sales manager's primary task is to increase sales, while a transport manager plans and coordinates transport activities.",
+          "project": "Customer",
+          "startDate": "2024-03-21",
+          "endDate": "2024-03-13",
+          "status": "open",
+          "duration": "125 days",
+          "subtasks": [
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "Tmarcus Brown",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            },
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "Fabio Lucas",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            },
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "simon Jorge",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            }
+          ],
+          "id": 1,
+          "progressPercent": 45
+        },
+        {
+          "mainTask": "Recruitment managers consult with hiring companies and design hiring strategies. They create job vacancy adverts that define the role and its responsibilities and collate applicants' responses.",
+          "project": "Customer",
+          "startDate": "2024-03-21",
+          "endDate": "2024-03-13",
+          "status": "open",
+          "duration": "125 days",
+          "subtasks": [
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "simon Jorge",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            },
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "Fabio Lucas",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            },
+            {
+              "task": "completeing the fromt",
+              "project": "Customer",
+              "assignedTo": "simon Jorge",
+              "jobCatagory": "project manager",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+              "id": 1,
+              "progressPercent": 45
+            }
+          ],
+          "id": 1,
+          "progressPercent": 45
+        },
+        {
+          "mainTask": "Care home managers design activities for residents, and plan menus and staff shift patterns. Their admin tasks include maintaining accurate records of care provided to each resident and replenishing supplies and equipment",
           "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",

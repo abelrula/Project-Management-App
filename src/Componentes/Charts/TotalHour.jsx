@@ -7,7 +7,7 @@ import { Ri24HoursLine } from "react-icons/ri";
 defaults.maintainAspectRatioa=false
 defaults.responsive=true
 
-const TotalHour = () => {
+const TotalHour = ({dataset}) => {
   const [ value, setValue ] = useState( "monthly" )
   const [ selectedType, setSelectedType ] = useState( "All" );
   const [ labels, setLabels ] = useState( [] )
@@ -47,29 +47,7 @@ const TotalHour = () => {
   console.log(labels)
   const data = {
     labels,
-    datasets: [
-      {
-        label: "Total Working Hours",
-        data: [10,7,5,3,4,5,6,7,8,9,10],
-        backgroundColor: "#d19f54",
-        borderRadius: 5,
-        //  borderColor:"beige"
-      },
-      {
-        label: "Total Working Hours",
-        data: [10,7,5,3,4,5,6,7,8,9,10],
-        backgroundColor: "#d02f54",
-        borderRadius: 5,
-        //  borderColor:"beige"
-      },
-      {
-        label: "Total Working Hours",
-        data: [0,7,5,8,4,2,0,7,8,3,10],
-        backgroundColor: "#d19f10",
-        borderRadius: 5,
-        //  borderColor:"beige"
-      },
-    ],
+    datasets:dataset
   };
   const options = {
       responsive: true,

@@ -15,6 +15,7 @@ import Header from '../Componentes/header/Header';
 
 export default ProjectsDetailLayout
             
+
            
             
           
