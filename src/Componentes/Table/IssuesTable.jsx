@@ -18,7 +18,7 @@ import React from 'react'
              import ProgressBar from "../progressBar/ProgressBar";
              import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
             import CheckedCell from "./Cells/CheckedCell"
-            import TaskCell from "./TaskCell"
+            import TaskCell from "./Cells/TaskCell"
             import PriorityCell from "./Cells/PriorityCell"
             import StatusCell from "./Cells/StatusCell"
             import { RiPercentFill } from "react-icons/ri";

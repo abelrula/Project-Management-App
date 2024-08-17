@@ -1,25 +1,9 @@
-       
- import Header from "../../Componentes/header/Header";
- // import ProjectsDescriiption from "../../Componentes/ProjectsDescriiption/ProjectsDescriiption";
-            import "./overview.css"
-             import { Outlet } from 'react-router-dom'
-             
-        
-            const Overview = () => {
-             
-              return (
-                <>
-                 <Header />
-                 <Outlet />
-                </>
-              );
-            }
+import React from 'react'
+
+const Overview = () => {
+  return (
+    <div>Overview</div>
+  )
+}
 
 export default Overview
-            
-           
-            
-          
-   
-            
-             

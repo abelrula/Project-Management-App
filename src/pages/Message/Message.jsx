@@ -1,7 +1,7 @@
 import React from "react";
   import "./message.css";
-import MessageLayout from "../../Componentes/Layouts/MessageLayout";
- const Messages = () => {
+import { MessageLayout } from "../../Layouts";
+  const Messages = () => {
   return (
     <>
        <div>

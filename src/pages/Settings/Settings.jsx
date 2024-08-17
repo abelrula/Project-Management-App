@@ -1,6 +1,6 @@
 import React from 'react'
-import SettingsLayout from '../../Componenets/Layouts/SettingsLayout'
- 
+import { SettingsLayout } from '../../Layouts'
+  
 const Settings = () => {
   return (
     <SettingsLayout />

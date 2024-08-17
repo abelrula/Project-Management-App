@@ -10,13 +10,14 @@ import { BiCheckShield } from "react-icons/bi";
 import { BsListTask } from "react-icons/bs";
 import ProgressBar from "../../Componentes/progressBar/ProgressBar";
  import CheckedCell from "./Cells/CheckedCell"
-import TaskCell from "./TaskCell"
+import TaskCell from "./Cells/TaskCell"
 import PriorityCell from "./Cells/PriorityCell"
 import StatusCell from "./Cells/StatusCell"
 import ProfileImage from "../ProfileImage/ProfileImage"
 import AssignTaskForm from '../Forms/AssignTaskForm/AssignTaskForm';
 import BoxHeader from '../boxHeader/BoxHeader';
 import { IoAddCircle } from 'react-icons/io5';
+ import "./style.css"
 
 const TaskTable = () => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
@@ -24,7 +25,7 @@ const TaskTable = () => {
   const [ active, setActive ] = useState( false )
   const [ checked, setChecked ] = useState()
   const [ selectedType, setSelectedType ] = useState("All")
-  const [ filterActive, setfilterActive ] = useState(false)
+  const [ filterActive, setfilterActive ] = useState( false )
   
 
               const columns=[
@@ -121,6 +122,7 @@ const TaskTable = () => {
   
 
     return (
+      <>
       <div className='tableContainer'>
         <div className="tableHeader">
           <BoxHeader icon={ <FaLayerGroup /> } header="Group By Task List" filterTypes={ filterTypes } setSelectedType={ setSelectedType } selectedType={ selectedType } />
@@ -137,16 +139,19 @@ const TaskTable = () => {
                      </thead>
                       <tbody>
                       {
-                     tableData.getRowModel().rows.map( row => <tr key={ row.id }>
+              tableData.getRowModel().rows.map( row => <tr onClick={ ()=>setOpenModal(true)} key={ row.id }>
                      { row.getVisibleCells().map( cell => <td key={ cell.id }>
                      {flexRender(cell.column.columnDef.cell,cell.getContext())}
                           </td>)}
                         </tr>)
                       }
                     </tbody>
-                    </table>
-                {active &&  <AssignTaskForm  setActive={setActive}/> }
-      </div>
+          </table>
+                 {active &&  <AssignTaskForm  setActive={setActive}/> }
+        </div>
+        
+       
+      </>
   )
 }
 

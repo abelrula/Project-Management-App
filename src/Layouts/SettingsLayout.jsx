@@ -4,8 +4,8 @@ import { Outlet } from 'react-router-dom'
 
 import { GrFormPrevious } from "react-icons/gr";
 
- import person1 from "../../assets/worker2.jpg"
- import settingsLinks from "../../data/settingsLinks"
+ import person1 from "../assets/worker2.jpg"
+ import settingsLinks from "../data/settingsLinks"
 import { NavLink } from 'react-router-dom';
 
 const SettingsLayout = () => {

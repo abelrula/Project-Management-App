@@ -37,8 +37,8 @@ const menuLinks = [
   },
  
   {
-    title: "Report",
-    to: "report",
+    title: "OverView",
+    to: "overview",
     icon: <BsActivity className="icon" fill="#ffa909" />,
   },
   {

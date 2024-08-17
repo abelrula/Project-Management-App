@@ -1,23 +1,18 @@
  import { BrowserRouter, Route, Routes } from "react-router-dom"
-  import { GantChart, Home, Overview, Report, Schedules, VideoChat } from "./pages";
+ import { MainLayout, MessageLayout, ProjectsDetailLayout, SettingsLayout } from "./Layouts";
+  import { GantChart, Home, Overview, Schedules, Settings, VideoChat } from "./pages";
+  import MessagesConvoversation from "./Componentes/messages/MessagesConvoversation/MessagesConvoversation";
+  import MessageListheader from "./Componentes/messages/MessageListheader/MessageListheader";
   import './App.css'
-import MessageLayout from "./Componentes/Layouts/MessageLayout";
-import Layout from "./Componentes/Layouts/Layout";
-import SettingsLayout from "./Componentes/Layouts/SettingsLayout";
-import Setting from "./Componentes/Setting/Setting";
-import MessagesConvoversation from "./Componentes/messages/MessagesConvoversation/MessagesConvoversation";
-import MessageListheader from "./Componentes/messages/MessageListheader/MessageListheader";
- import ProjectsDetailLayout from "./Layouts/ProjectsDetailLayout";
-import { ProjectDashboard, ProjectDocuments, ProjectGantChart, ProjectIssues, ProjectTasks } from "./pages/ProjectDetail";
+ 
 
 
 // import ProjectsDescriiption from "./Componentes/ProjectsDescriiption/ProjectsDescriiption"
 const App=() =>{
- 
-  return (
+   return (
          <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={<MainLayout />}>
               <Route index element={ <Home /> } />
               <Route path="schedule" element={<Schedules />} />
               <Route path="projects/:id" element={<ProjectsDetailLayout />} >
@@ -28,7 +23,7 @@ const App=() =>{
                       <Route path="documents" element={<ProjectDocuments />} />
                        {/* <Route path="timesheets" element={<Timesheets />} /> */}
               </Route>
-              <Route path="report" element={<Report />} />
+              <Route path="overview" element={<Overview />} />
               <Route path="team" element={<GantChart />} />
               <Route path="message" element={<MessageLayout />}>
                   <Route index element={<MessageListheader />} />
@@ -36,7 +31,7 @@ const App=() =>{
               </Route>
               <Route path="videoChat" element={<VideoChat />} />
               <Route path="settings" element={ <SettingsLayout /> } >
-                <Route path=":id" element={ <Setting /> } />
+                <Route path=":id" element={ <Settings /> } />
               </Route>
               </Route>
           </Routes>    

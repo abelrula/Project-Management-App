@@ -15,7 +15,6 @@ const InfoCard = ({ title, setOpenModalType,buttonTitle, amount,setOpenModal }) 
           <CountUp start={ 0 } duration={ 4.75 } end={ amount } />
            
         </div>
-        <div className="Add">
           <button
            className="Add"
             onClick={ () =>
@@ -25,7 +24,6 @@ const InfoCard = ({ title, setOpenModalType,buttonTitle, amount,setOpenModal }) 
             }}
           >{ buttonTitle }</button>
         </div>
-      </div>
     </div>
   );
 };

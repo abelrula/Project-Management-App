@@ -61,7 +61,7 @@ import AddButton from "../AddButton/AddButton"
       <span>
         <h3>{ title } </h3>
         {pathname === "/report" ?
-          <IoCloseCircleOutline className="icon" onClick={ () => setActive( false ) } /> 
+          <IoCloseCircleOutline  className="icon" onClick={ () => setActive( false ) } /> 
           : <CiLock className="icon" />
         } { pathname !== "/report"  && <button className="AssignedTask_Button" onClick={()=>setUrgent(true)}>see urgent <AiFillRightCircle className="icon" /></button>}
       </span>
