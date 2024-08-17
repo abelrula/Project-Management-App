@@ -7,7 +7,7 @@ import { Ri24HoursLine } from "react-icons/ri";
 defaults.maintainAspectRatioa=false
 defaults.responsive=true
 
-const TotalHour = ({dataset}) => {
+const TotalHour = ({dataset }) => {
   const [ value, setValue ] = useState( "monthly" )
   const [ selectedType, setSelectedType ] = useState( "All" );
   const [ labels, setLabels ] = useState( [] )

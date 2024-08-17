@@ -6,11 +6,13 @@
   border-radius: 15px;
   padding: 3px 10px;
   flex-direction: column;
-  border: 1px solid #bdb8b8;
-  gap: 10px;
+   gap: 10px;
   position: relative;
   z-index:10
 
+}
+.bar{
+  width: 390px;
 }
  
 

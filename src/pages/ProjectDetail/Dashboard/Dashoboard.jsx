@@ -16,7 +16,24 @@ import { BsListTask } from "react-icons/bs";
 import TotalNumber from '../../../Componentes/Dashboard/TotalTaskstatus/TotalNumber'
 import UrgentTask from '../../../Componentes/Dashboard/urgentTask/UrgentTask';
 import TeamsStatus from '../../../Componentes/Dashboard/Teams Status/TeamsStatus';
-const Dashoboard = () => {
+const taskRevenudata =[{
+        label: "$ Total Revenue",
+        data: [3000, 5000, 10000, 1000, 2000],
+        backgroundColor: "#004077",
+        borderRadius: 5,
+        //  borderColor:"beige"
+}]
+const taskHourdata =[
+      {        label: "Total Working Hours",
+        data: [0,7,5,8,4,2,0,7,8,3,10],
+        backgroundColor: "#d19f10",
+        borderRadius: 5,
+        //  borderColor:"beige"
+      }
+  ]
+  
+const Dashoboard = () =>
+{
    
   const [ openTitle, setOpenTitle ] = useState( null )
   const [open,setOpen]=useState(false)
@@ -87,8 +104,8 @@ const Dashoboard = () => {
      ) )}
      </div>
      <div className="Dashboard_graphs">
-      <TotalHour />
-      <TotalRevenue />
+      <TotalHour dataset={taskHourdata} />
+      <TotalRevenue dataset={taskRevenudata}  />
       <IssuePieChart />
       <IssuePieChart />
       <TeamsStatus />
