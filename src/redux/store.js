@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import { persistStore, persistReducer } from "redux-persist";
- import modalReducer from "./slices/toggleandModal";
- import converationSReducer from "./slices/conversation";
+ import modalReducer from "./slices/modalSlice";
+//  import conversationReducer from "./slices/conversation";
  
 const store = configureStore({
   reducer: {
-    ToggleandModal:modalReducer,
-    converation: converationSReducer,
+     modal:modalReducer,
+   //  conversation: conversationReducer,
    },
 });
 
