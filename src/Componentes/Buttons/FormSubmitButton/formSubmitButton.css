@@ -1,0 +1,34 @@
+.submitButton {
+     position: relative;
+    background-color: #04AA6D;
+    border: none;
+     color: #FFFFFF;
+    padding: 20px;
+     text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
+
+.submitButton:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.submitButton:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}

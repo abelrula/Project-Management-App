@@ -1,0 +1,58 @@
+.footerButton > p{
+  font-size: 1rem;
+  color:#bfb9b1;
+  
+ }
+ .footerButton > button{
+    padding: 5px 15px;
+    background: #2b4168;
+    color: white;
+    border: none;
+    border-radius: 10px;
+   cursor:pointer
+
+ }
+ .footerButton > button:hover{
+ background: #223555da;
+    color: rgb(255, 255, 255);
+ }
+ /* .footerButton {
+        display: inline-block;
+    border-radius: 4px;
+    background-color: #a16907;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+} */
+
+.footerButton span {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    transition: 0.5s;
+    font-size: 13px;
+    padding: 3px 10px;
+    width: auto;
+     color: white;
+}
+
+.footerButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: -5px;
+    right: 5px;
+    transition: 0.5s;
+    font-size: 23px;
+}
+
+.footerButton:hover span {
+  padding-right: 15px;
+}
+
+.footerButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
