@@ -4,13 +4,18 @@ import { FaVideo } from "react-icons/fa6";
 import { IoIosCall } from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { IoMdNotifications } from "react-icons/io";
-import profile from "../../assets/worker3.jpg";
-import profile2 from "../../assets/worker2.jpg";
-import profile3 from "../../assets/worker1.jpg";
-import profile4 from "../../assets/worker4.jpg";
 import { BsToggle2Off } from "react-icons/bs";
 import "./memeberInfo.css";
-const MemeberInfo = ({ setShowInfo }) => {
+import { closeModal } from "../../redux/slices/modalSlice";
+import { useDispatch } from "react-redux";
+
+const images = [ "https://images.unsplash.com/photo-1525648934681-a85708fc999a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1610645011111-fe0dac6e70bc?q=80&w=1370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1723896816111-f9915f3665da?q=80&w=1458&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" ]
+
+const profile = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+const MemeberInfo = () =>
+{
+ 
+ const dispatch=useDispatch()
   return (
     <div className="contactInfo">
       <div className="contactInfo-header">
@@ -18,7 +23,7 @@ const MemeberInfo = ({ setShowInfo }) => {
         <IoCloseSharp
           fontSize={20}
           color="black"
-          onClick={() => setShowInfo(false)}
+          onClick={() =>dispatch(closeModal())}
           className="infoIcon"
         />
       </div>
@@ -53,9 +58,11 @@ const MemeberInfo = ({ setShowInfo }) => {
           <MdKeyboardDoubleArrowRight className="infoIcon" />
         </div>
         <div className="contactInfo_mediaLinks-files">
-          <img src={profile2} alt="files" />
-          <img src={profile3} alt="files" />
-          <img src={profile4} alt="files" />
+          { images.map( ( img, i ) => (
+            <img src={ img } key={ i } alt="files" /> 
+          ))
+          }
+         
         </div>
       </div>
       <div className="contactInfo_mute">

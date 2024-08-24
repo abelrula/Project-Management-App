@@ -46,12 +46,12 @@ const ProjectStatus = () =>
       {
         label: "Projects Status",
         data: [
-          { x: ["2024-01-01", "2024-02-08"], y: "Management", status: "0" },
-          { x: ["2024-01-01", "2024-02-08"], y: "Operations", status: "1" },
-          { x: ["2024-01-21", "2024-04-10"], y: "Marketing", status: "2" },
-          { x: ["2024-02-01", "2024-04-15"], y: "Colection", status: "3" },
-          { x: ["2024-02-01", "2024-04-25"], y: "Spying", status: "4" },
-          { x: ["2024-01-11", "2024-10-30"], y: "Collection", status: "5" },
+          { x: ["2024-08-08", "2024-09-08"], y: "Management", status: "0" },
+          { x: ["2024-08-08", "2024-09-08"], y: "Operations", status: "1" },
+          { x: ["2024-08-21", "2024-04-10"], y: "Marketing", status: "2" },
+          { x: ["2024-06-08", "2024-08-15"], y: "Colection", status: "3" },
+          { x: ["2024-06-08", "2024-08-25"], y: "Spying", status: "4" },
+          { x: ["2024-08-11", "2024-09-30"], y: "Collection", status: "5" },
         ],
         backgroundColor: (ctx) => {
           return colorsData[ctx.raw.status];
@@ -65,7 +65,7 @@ const ProjectStatus = () =>
   const todayLine = [
     {
       id: "todayLine",
-      afterDatasetsDraw(chart, args, pluginOptions) {
+      afterDatasetsDraw(chart) {
         const {
           ctx,
           data,
@@ -74,7 +74,7 @@ const ProjectStatus = () =>
         } = chart;
         ctx.save();
         ctx.beginPath();
-        ctx.lineWidth = 3;
+        ctx.lineWidth = 2;
         ctx.strokeStyle = "rgba(102, 26, 104, 1)";
         ctx.setLineDash([6, 6]);
         ctx.moveTo(x.getPixelForValue(new Date()), top);
@@ -126,7 +126,7 @@ const ProjectStatus = () =>
         time: {
           // unit: "day",
           displayFormats: {
-            day: "d",
+            month: "m",
           },
         },
         min: startDate,
@@ -171,7 +171,7 @@ const ProjectStatus = () =>
      <div className="projectsStatusBar">
             {/* <h1>Projects Status</h1> */}
             <div>
-              <h5>Project-Duaration</h5>
+              <h5>Projects-Duaration</h5>
               <input
                 type="date"
                 value={filter}

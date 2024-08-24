@@ -247,17 +247,17 @@ export const menuLinks = [
     to: "schedule",
     icon: <FaRegCalendarAlt className="icon" fill="#ffa909" />,
   },
-  {
-    title: "Gant Chart",
-    to: "team",
-    icon: <HiUserGroup className="icon" fill="#ffa909" />,
-  },
+  // {
+  //   title: "Gant Chart",
+  //   to: "team",
+  //   icon: <HiUserGroup className="icon" fill="#ffa909" />,
+  // },
  
-  {
-    title: "OverView",
-    to: "overview",
-    icon: <BsActivity className="icon" fill="#ffa909" />,
-  },
+  // {
+  //   title: "OverView",
+  //   to: "overview",
+  //   icon: <BsActivity className="icon" fill="#ffa909" />,
+  // },
   {
     title: "Message",
     to: "message",

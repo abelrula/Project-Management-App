@@ -1,35 +1,28 @@
 .Form{
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    color: #0b0c0c;
-     box-shadow: 0px 0px 12px 0px black;
-    background: #ffffff;
-    grid-area: form;
-    padding: 15px;
-    gap: 15px;
-    width: 610px;
-    flex-direction:4;
-    right: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
- }
- .Form-header{
    display: flex;
-    align-items: center;
-    /* gap: 20px; */
-    justify-content: space-between;
-    width: 90%;
+   flex-direction: column;
+   place-items: center;
+   color: #0b0c0c;
+    box-shadow: 0px 0px 12px 0px black;
+   background: #ffffff;
+   grid-area: form;
+   padding: 15px;
+   gap: 15px;
+   width: 580px;
+   flex-direction:4;
+   right: 0;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   z-index: 9999;
  }
- .Form-header .icon{
-font-size: 35px;
+ .Form header{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 100%;
  }
- .Form-header .icon:hover{
-   scale: 1.1;
-   cursor: pointer;
- }
-.Form-header h2{
+.Form header h6{
          font-family: sans-serif;
     font-size: larger;
      font-weight: 500;
@@ -59,38 +52,37 @@ font-size: 35px;
     padding: 10px;
 }
 .employeContainer_members span{
-     background: #d7a645;
-    height: 23px;
-    width: 300px;
+    background: #ffffff;
+    height: auto;
+    width: 250px;
     border-radius: 10px;
-     color: #ffffff;
+    color: #000000;
+    font-size: 12px;
+    border: 1px solid #7d7b7b;
+    font-family: monospace;
+    min-height: 30px;
 }
 .employeContainer_members{
-    display: flex;
+      display: flex;
     flex-direction: column;
-    gap: 5px;
-    position: absolute;
-        left: 280px;
+     position: absolute;
+    left: 260px;
     z-index: 20000;
     background: white;
     padding: 5px;
     top: 0px;
 }
 .employeContainer_members-employe{
-  width: 300px;
+  width: 250px;
     height: 25px;
     align-items: center;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
     cursor: pointer;
-  background: #d7a645;
+    background: #d7a645;
     height: 100%;
     padding: 5px;
- }
- .employeContainer .icon, .project .icon{
-   font-size: 13px;
-    color: #bdabab;
  }
 .employeContainer_members-employe:hover{
    scale: 1.1;
@@ -101,7 +93,8 @@ font-size: 35px;
     align-items: center;
    }
    .employeContainer_members-employe div h4{
-     color:black
+     color:black;
+         font-size: 9px;
    }
  .employeContainer_members-employe div img{
     width: 30px;
@@ -126,43 +119,53 @@ font-size: 35px;
     padding: 10px;
  }
  .Form label{
-    font-family: math;
-    font-size: 14px;
+  font-family: monospace;
+    font-size: 12px;
     font-weight: 200;
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
- }
- .project_types span{
-   background: #d7a645;
-    height: 23px;
-    width: 300px;
+    color: #0a0a09;
+    text-transform: capitalize;
+    font-weight: 800;
+}
+  .project_types span{
+ background: #ffffff;
+    height: auto;
+    width: 250px;
     border-radius: 10px;
-     color: #ffffff;
- }
+    color: #000000;
+    font-size: 12px;
+    border: 1px solid #7d7b7b;
+    font-family: monospace;
+    min-height: 30px;
+  }
   
  
  .project_types{
-   display: flex;
+     display: flex;
     flex-direction: column;
-    gap: 5px;
     position: absolute;
-        left: 280px;
-    z-index: 19999;
-    background: white;
+    left: 260px;
+     background: white;
     padding: 5px;
     top: 0px;
-  }
+   }
  .project_types-type{
-    width: 300px;
-    height: 25px;
+    
+        width: 250px;
+    padding: 10px;
     align-items: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     border-radius: 10px;
+    border: 1px solid #7d7b7b;
+    gap: 20px;
  }
  .project_types-type h4{
-color: black; 
+    color: black;
+    font-size: 11px;
+    font-family: monospace;
 }
  .project_types-type:hover{
  scale: 1.1; 
@@ -182,8 +185,17 @@ color: black;
        justify-content: space-around;
     width: 100%;
     border-top: 1px solid #d3cfcf;
+    flex-direction: column;
 
  }
+ .Form__textarea p{
+    font-family: math;
+    font-weight: 100;
+    font-size: 10px;
+    color: rgb(0, 0, 0) !important;
+    font:bold
+
+}
  .Form__textArea textarea{
        margin-top: 10px;
     border-radius: 20px;
@@ -193,10 +205,17 @@ color: black;
     padding: 15px;
  }
  .Form__AttachDocuments{
-     display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin-left: -100px;
+    display: flex;
+    align-self: self-start;
+    gap: 20px;
+ }
+ .Form__AttachDocuments button{
+    background: #13855b;
+    border: none;
+    color: white;
+    padding: 4px 15px;
+    font-size: 11px;
+    border-radius: 12px;
  }
  .Form__AttachDocuments input{
         border: 1px solid #b7b7b7;
@@ -269,50 +288,54 @@ width: 100%;
 }
  
 .Form__button{
-          background: rgb(2 141 1);
+        background: rgb(0 0 0);
     color: rgb(254 231 231);
-     display: flex;
+    border-radius: 7px;
+    display: flex;
     gap: 10px;
+    height: 45px;
+    width: 200px;
     place-content: center;
     align-items: center;
-     padding: 2px 10px;
-     border-radius: 5px;
-     padding: 5px 25px;
-     border: none;
-     font-size: 13px;
 }
 .Form__button:hover{
    background:rgb(9, 55, 85);
    color:rgb(255, 245, 245);
 }
-.Form__type{
+.Form__priorities{
      display: flex;
      gap:10px;
+     align-self: self-start;
 }
- 
-.Form__type-low:hover{
-     background-color: #fff572;
+
+.Form__priorites-priority-low:hover{
+     background-color: rgb(157 146 0);
      color: white;
 }
-.Form__type-medium:hover{
-     background-color: #708aff;
+.Form__priorites-priority-medium:hover{
+     background-color: #0021b6;
      color: white;
 }
-.Form__type-high:hover{
+.Form__priorites-priority-high:hover{
        background-color: #ff0000;
         color: white
 }
- 
- .Form__type-all{ 
-        background: #fcfcfc;
-    height: 30px;
-    width: 85px;
-    display: flex;
+ .Form__priorites{
+display: flex;
+    gap: 20px;
+    align-self: self-start;
+ }
+ .Form__priorites-priority{ 
+   background: white;
+     display: flex;
     place-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid;
-    margin-top: 20px;
+     padding: 5px 30px;
+    font-size: 13px;
+    font-family: math;
+        border: 1px solid #bf9c9c;
 }
  
  .Form__tags{
@@ -327,4 +350,3 @@ width: 100%;
       width: 35px;
     height: 35px;
  }
- 

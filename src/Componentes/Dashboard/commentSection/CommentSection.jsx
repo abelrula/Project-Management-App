@@ -1,9 +1,13 @@
 import React from "react";
 import "./commentSection.css";
  import { LiaComments } from "react-icons/lia";
- import AddButton from "../../AddButton/AddButton";
+ import AddButton from "../../Buttons/AddButton/AddButton";
 import BoxHeader from "../../boxHeader/BoxHeader";
+import { useDispatch } from "react-redux";
 const CommentSection = () => {
+  const dispatch = useDispatch()
+   const Onclick = () => dispatch( openModal( { modalType: "", toggled: true } ) )
+   
   return (
     <div className="CommentSection">
       <BoxHeader icon={<LiaComments />} header="New Comments"   />
@@ -40,7 +44,7 @@ const CommentSection = () => {
         </div>
        
       </div>
-                <AddButton name="Comment" />
+                <AddButton name="Comment" onClick={Onclick} />
     </div>
   );
 };

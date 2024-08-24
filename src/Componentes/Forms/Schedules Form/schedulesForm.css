@@ -1,21 +1,20 @@
 .SchedualForm{
-       display: flex;
-    flex-direction: column;
-    place-items: center;
-    color: rgb(11, 12, 12);
-    height: 670px;
-    border-radius: 20px;
-    border: 1px solid rgb(85, 82, 82);
-    font-weight: 800;
+      display: flex;
+   flex-direction: column;
+   place-items: center;
+   color: #0b0c0c;
     box-shadow: 0px 0px 12px 0px black;
-    background: #ffffffad;
-    grid-area: form;
-    padding: 15px;
-     padding: 15px;
-    width: 499px;
-    overflow: hidden;
-    flex: 1;
-    gap:15px
+   background: #ffffff;
+   grid-area: form;
+   padding: 15px;
+   gap: 15px;
+   width: 530px;
+   flex-direction:4;
+   right: 0;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   z-index: 9999;
 }
 .SchedualForm_header{
         display: flex;
@@ -41,13 +40,16 @@
     border: 1px solid rgb(63, 60, 60);
 
 }
+.SchedualForm label{
+        color: #353030;
+    font-size: 14px;
+}
 .SchedualForm div h2{
 font-size: 15px;
     }
 .SchedualForm > div{
     display: flex;
-    align-items: center;
-          width: 100%;
+           width: 100%;
         border-bottom: 1px solid #e7dfdf;
     padding: 10px;
     justify-content:space-between
@@ -145,17 +147,14 @@ font-size: 15px;
 .SchedualForm__date div{
    display: flex;
     width: 100%;
-    flex-direction: column;
-        gap: 10px;
-    justify-content: center;
-}.SchedualForm__date div label{
+         gap: 10px;
+    justify-content: space-between;
+}
+.SchedualForm__date div label{
      display: flex;
     align-items: center;
-    width: 100%;
     gap: 10px;
-    color: #9b9a9a;
-    font-weight: 100;
- }
+  }
  .SchedualForm__date div input{
   width: 200px;
   cursor: pointer;

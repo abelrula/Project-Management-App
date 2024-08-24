@@ -167,9 +167,9 @@
     width: 260px;
 }
     .profile_description_right span p{
-        font-family: emoji;
-        font-size: 15px;
-        color: #585d5b;
+         font-family: math;
+    font-size: 15px;
+    color: #181818;
         font-weight: 100;
 }
 .profile_description_right span :first-child{
@@ -283,10 +283,11 @@ flex-direction: row;}
      text-wrap: nowrap;  
 }
 .userInfo{
-    display: flex;
+       display: flex;
     flex-direction: column;
     align-items: start;
     padding: 5px 10px;
+    gap: 10px;
 }
 
  .userInfo__bio{
@@ -306,16 +307,32 @@ flex-direction: row;}
 
 }
 .userInfo__list{
-display: flex;
+    display: flex;
     gap: 20px;
     color: #534646;
+    text-wrap: pretty;
     font-size: 14px;
+    text-align: start;
+    align-items: baseline;
+    font-family: monospace;
 }
-.userInfo__list h6{
-
-}
+ 
 .userInfo__list span{
-display: flex;
-gap: 10px;
-align-items: center;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    color: black;
+}
+.userInfo-Message__button{
+      background: #0a69ad;
+    border: navajowhite;
+    padding: 4px 15px;
+    border-radius: 2px;
+    color: white;
+    align-self: end;
+    cursor: pointer;
+}
+.userInfo-Message__button:hover{
+      background: #04375c;
+
 }

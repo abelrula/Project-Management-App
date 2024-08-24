@@ -4,8 +4,14 @@ import { MdEvent } from "react-icons/md";
  import moment from "moment";
 import ProfileImage from "../../ProfileImage/ProfileImage";
 import BoxHeader from "../../boxHeader/BoxHeader";
+import { useDispatch } from "react-redux";
 const Events = () => {
-   const [ events, setEvents ] = useState()
+   
+  const dispatch=useDispatch()
+  const [ events, setEvents ] = useState()
+  
+  const Onclick = () => dispatch( openModal( { modalType: "", toggled: true } ) )
+  
   useEffect( () =>{
     const fetchEvents = async () =>{
       const res = await fetch( "http://localhost:3500/events" )

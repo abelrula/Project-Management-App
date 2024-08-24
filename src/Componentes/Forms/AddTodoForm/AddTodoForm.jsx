@@ -1,115 +1,82 @@
 import React, { useState ,useEffect} from "react";
- import "./addTodoForm.css";
 import { HiCalendar } from "react-icons/hi";
 import { IoCloseCircleOutline } from "react-icons/io5";
- import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import ReactQuill from 'react-quill';
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
-import projectTypes from "../../../data/projectTypes";
-const AddTodoForm = ({setOpenModal}) => {
-  const date = new Date();
-     const [startDate, setStartDate] = useState(date);
+ import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
+import { useDispatch } from "react-redux";
+import { closeModal } from "../../../redux/slices/modalSlice";
+import { projectTypes, statusData } from "../../../lib/data";
+import { CiSquarePlus } from "react-icons/ci";
+import { IoIosClose } from "react-icons/io";
+import "./addTodoForm.css";
+import 'react-quill/dist/quill.snow.css';
+
+const members = "http://localhost:3500/members";
+
+const AddTodoForm = ({type}) => {
+   
+   const date = new Date();
+   const [startDate, setStartDate] = useState(date);
    const [endDate, setEndate] = useState(date);
-  const [description, setDescription] = useState("");
-  const [selectedProject,setSelectedProject]=useState(null)
-  const [selectedEmployee,setSelectedEmployee]=useState(null)
-  const [openProject,  setOpenProject]=useState(false)
-  const [openEmployee,setOpenEmployee]=useState(false)
- const [jobCatagory,setJobCatagory]=useState(null)
-  const [ selected, setSelected ] = useState( null );
-  const [attachedDocuments,setAttachedDocuments]=useState(null)
+    const [selectedProject,setSelectedProject]=useState(null)
+    const [description, setDescription] = useState("");
+    const [openProject,  setOpenProject]=useState(false)
+   const [ selected, setSelected ] = useState( null );
+   const [selectedFormType,setSelectedFormType]=useState("Buisness")
+   const [addSubTasksNum,setAddSubTasksNum]=useState(0)
+   const [attachedDocuments,setAttachedDocuments]=useState(null)
+   const dispatch=useDispatch()
+    
+   const [ subTasks, setSubTasks ] = useState( [{
+       task: "",
+       startDate: "",
+       endDate: "",
+       priority:""
+      }
+    ])
   
-   const members = "http://localhost:3500/members";
-  const [ value, setValue ] = useState( '' );
-  const [ member, setMember ] = useState( [] );
-  useEffect(() => {
-    async function fetchMembers() {
-      const data = await fetch(members);
-      const res = await data.json();
-      setMember(res);
-    }
-    fetchMembers();
-  }, []);
    function handleSubmit(e) {
     e.preventDefault();
   }
- const data=[
-            {
-              status:"low",
-            classname:"Form__type-low",
-            background:"#ddd461",
-            },
-             {
-               status:"medium",
-            classname:"Form__type-medium",
-            background:"#708aff",
-            },
-             {
-               status:"high",
-            classname:"Form__type-high",
-            background:"#ff0000",
-            },
-  ]
-   console.log(selectedProject)
-   console.log(selectedProject)
+ 
+  const formType = [ "Buisness", "Personal" ]
+  
   return (
     <>
-      <form className="Form" onSubmit={ handleSubmit }>
+       <div className="modal">
+      <form className="Form element-with-scroll" onSubmit={ handleSubmit }>
         <header>
-           <h6>Assign New Task          
-         </h6>
-           <IoCloseCircleOutline className="icon" onClick={ () =>setOpenModal({type:"",open:false})} /> 
+           <h6>Add New Task          
+            </h6>
+            <span >
+              { formType.map( ( type, i ) => (
+                <button
+                  onClick={()=>setSelectedFormType(type)}
+                  key={ i }
+                  style={ {background: selectedFormType === type  && "#2d55af",
+                color:selectedFormType === type && "white" }} >{type}</button>
+              ))
+            }<IoCloseCircleOutline className="icon" onClick={()=> dispatch(closeModal()) } /> 
+            </span>
        </header>
-         <div className="employeContainer">
-            <label>select which Employee you want to assign 
-            { !openEmployee && <FaArrowDown className="icon"
-              onClick={ () =>
-              {
-                setOpenEmployee( true );
-                setOpenProject( false )
-              } } /> }
-            { openEmployee && <FaArrowUp className="icon"
-              onClick={ () => setOpenEmployee( false ) } /> }
-            </label>
-          <div className="employeContainer_members"> 
-           <span
-           onClick={ () => setOpenEmployee((prev)=>!prev)}
-           >{ selectedEmployee !== null  ? `${selectedEmployee} :--    ${jobCatagory}`  : "---------------"}</span> 
-          { openEmployee && member.map((employee,i)=>(
-           <div
-             key={ i } 
-              onClick={ () =>{
-                setSelectedEmployee( employee.name );
-                setOpenEmployee( false );
-                setJobCatagory(employee.jobCatagory)
-              } }
-              className="employeContainer_members-employe"
-           >
-              <div>
-                <img src={ employee.profile } alt="profile" />
-            <h4>
-              {employee.name}
-            </h4>
-            </div>
-            <p>{employee.jobCatagory}</p>
-            </div>
-        ) ) }
-         </div>
-        </div>
-        <div className="project">
-            <label>select In which project you want to assign 
-            {!openProject &&<FaArrowDown className="icon" onClick={ () => {setOpenProject(true); setOpenEmployee(false)}} />}
-            {openProject &&<FaArrowUp className="icon" onClick={ () => setOpenProject(false)} />}
-            </label>
-          <div className="project_types"> 
+        {/* select a project which you want to add task on  */}
+          {
+      selectedFormType=="Buisness" && <div className="project">
+            <label>select on a project you want to add  the task
+              { !openProject && <FaArrowDown className="icon" onClick={ () =>  setOpenProject( true )  } />}
+              {openProject &&<FaArrowUp className="icon" onClick={ () => setOpenProject(false)} />}
+              </label>
+              
+        {/*available Projects*/}
+            <div className="project_types"> 
            <span 
            onClick={ () => setOpenProject((prev)=>!prev)}
-           >{ selectedProject !== null  ? selectedProject  : "---------------"}</span> 
+           >{ selectedProject !== null  ? selectedProject  : "selected project none"}</span> 
           { openProject && projectTypes.map((item,i)=>(
            <div
              key={ i } 
-              onClick={ () => { setSelectedProject( item.title ); setOpenProject(false)
-}}
+            onClick={ () => { setSelectedProject( item.title ); setOpenProject(false)}}
              style={ { background: `${ item.color }` } }
              className="project_types-type"
            >
@@ -119,47 +86,81 @@ const AddTodoForm = ({setOpenModal}) => {
            {item.icon} 
          </div>
         ) ) }
-         </div>
+            </div>
+           </div>}
+       {/* main taskdecription usinf react quill text editor */}
+          <div className="Form__textArea">
+          <label>Add Main Task Discription</label>
+           <ReactQuill theme="snow" value={description} onChange={setDescription} />
+          </div>
+       
+       {/* subtasks inputs */}
+          <div className="Form__Subtasks">
+            <label>Add Subtaks <CiSquarePlus fontSize={ 23 } onClick={()=>setAddSubTasksNum((prev)=>prev + 1 )} /></label>
+            {/* adding subtasks based on user clicking  the plus button */ }
+            { Array.from( { length: addSubTasksNum } ).map( ( i ) => (
+              <div className="Form__Subtasks__inputs">
+                <IoIosClose className="Form__Subtasks__inputs-closeIcon" onClick={()=>setAddSubTasksNum(prev=>prev-1)} />
+              <div >
+                <label htmlFor="">task { addSubTasksNum }<textarea></textarea></label>
+              <label htmlFor="">start on<input type="date" /></label>
+              <label htmlFor="">end date<input type="date" /></label>
+              </div>
+              <div className="Form__Subtasks__priorites">
+                <label htmlFor="">status</label> 
+                { statusData.map( ( item, i ) => (
+                <span
+                   onClick={()=>setSelected(item.status)}
+                   className={`Form__Subtasks__priorites-priority ${ item.status }` }
+                   key={i}
+                   style={ {
+                    background: selected ===item.status && item.background,
+                      color:selected ==item.status && "white" }} 
+                    >
+                  {item.status}
+            </span>
+       ))}
         </div>
-        <div className="Form__textArea">
-          <label>Add Task Discription</label>
-          {/* <textarea
-            type="text"
-            id="description"
-            value={description}
-             onChange={(e) => setDescription(e.target.value)}
-            placeholder=""
-          /> */}
-           <ReactQuill theme="snow" value={value} onChange={setValue} />
-        </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* attachung documnet inputs */}
           <div className="Form__AttachDocuments">
           <label>Attach Documents</label>
+          <button className="seeMoreButton"><span>Upload File</span></button>
           <input
             type="file"
             id="documents"
             value={attachedDocuments}
-             onChange={(e) => setAttachedDocuments(e.target.value)}
-            placeholder=""
+            onChange={ ( e ) => setAttachedDocuments( e.target.value ) }
+            style={{display:"none"}}
           />
-        </div>
-        <div className="Form__type">
+
+          </div>
+          
+          {/* task priorities */}
+        <div className="Form__priorities">
           <label>Select The Priority</label>
-        { data.map( ( item, i ) => (
-          <div
+          <div className="Form__priorites">
+            { statusData.map( ( item, i ) => (
+          <span
            onClick={()=>setSelected(item.status)}
-            className={`Form__type-all ${ item.classname }` }
+            className={`Form__priorites-priority ${ item.status }` }
             key={i}
             style={ {
               background: selected ===item.status && item.background,
-              color:selected ==item.status && "white" }} >
+                color:selected ==item.status && "white" }} 
+              >
              {item.status}
-       </div>
+       </span>
        ))}
         </div>
-        <div className="Form__date">
-          {/* <Calendar value={value} onChange={onChange} /> */}
-          <div>
-         
+        </div>
+        
+          {/* task completion date */}
+          <div className="Form__date">
+           <div>
             <label>
                <HiCalendar className="calanderIcon" />
               task need to start</label>
@@ -170,14 +171,14 @@ const AddTodoForm = ({setOpenModal}) => {
            <HiCalendar className="calanderIcon" />
               to be submitted date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
           </div>
-        </div>
+          </div>
         
-        <button type="submit" className="Form__button">
-          <p>Assign Task</p>
-        </button>
-      </form>
+          {/* submit form */ }
+        <FormSubmitButton buttonName="Assign Task"/>
+        </form>
+        </div>
      </>
   );
-};
+}
 
 export default AddTodoForm;

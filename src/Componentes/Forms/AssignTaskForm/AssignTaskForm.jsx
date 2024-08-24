@@ -1,11 +1,19 @@
-import React, { useState ,useEffect} from "react";
- import "./assignTaskForm.css";
+import React, { useState } from "react";
 import { HiCalendar } from "react-icons/hi";
-   import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
-import projectTypes from "../../../data/projectTypes";
-import { IoCloseCircleSharp } from "react-icons/io5";
-const AssignTaskForm = ({setActive}) => {
+import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+ import { IoCloseCircleOutline } from "react-icons/io5";
+import ReactQuill from 'react-quill';
+import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
+import { useDispatch } from "react-redux";
+import { closeModal } from "../../../redux/slices/modalSlice";
+import { projectTypes, statusData } from "../../../lib/data";
+import 'react-quill/dist/quill.snow.css';
+import "./assignTaskForm.css";
+
+  
+const AssignTaskForm = () => {
   const date = new Date();
+  const dispatch =useDispatch()
   const [startDate, setStartDate] = useState(date);
   const [endDate, setEndate] = useState(date);
   const [description, setDescription] = useState("");
@@ -18,15 +26,12 @@ const AssignTaskForm = ({setActive}) => {
   const [attachedDocuments,setAttachedDocuments]=useState(null)
   
    const members = "http://localhost:3500/members";
+  const [ value, setValue ] = useState( '' );
+   const [ selected, setSelected ] = useState( null );
   const [member, setMember] = useState([]);
-  useEffect(() => {
-    async function fetchMembers() {
-      const data = await fetch(members);
-      const res = await data.json();
-      setMember(res);
-    }
-    fetchMembers();
-  }, []);
+  
+  // fetching memeber from json
+  
    
   function handleSubmit(e) {
     e.preventDefault();
@@ -49,39 +54,21 @@ const AssignTaskForm = ({setActive}) => {
        progressPercent:""
       })
     })
-    setActive(false)
-  }
- const data=[
-            {
-              status:"low",
-            classname:"Form__type-low",
-            background:"#ddd461",
-            },
-             {
-               status:"medium",
-            classname:"Form__type-medium",
-            background:"#708aff",
-            },
-             {
-               status:"high",
-            classname:"Form__type-high",
-            background:"#ff0000",
-            },
-  ]
+   }
+
   return (
     <div className="modal">
-      <form className="Form" onSubmit={ handleSubmit }>
-        <div  className="Form-header">
-          <h2>Assign New Task</h2>
-          <IoCloseCircleSharp fontSize={ 27 } className="icon" onClick={ () => setActive( false ) } />
-        </div>
+  <form className="Form" onSubmit={ handleSubmit }>
+        <header>
+           <h6>Assign New Task          
+         </h6>
+           <IoCloseCircleOutline className="icon" onClick={()=> dispatch(closeModal()) } /> 
+       </header>
          <div className="employeContainer">
-          <label>select which Employee you want to assign
-          <span
-           onClick={ () => setOpenEmployee((prev)=>!prev)}
-           >{ selectedEmployee !== null  ? `${selectedEmployee} :--    ${jobCatagory}`  : "---------------"}</span> 
+            <label>Select Employee you want to assign 
             { !openEmployee && <FaArrowDown className="icon"
-              onClick={ () =>{
+              onClick={ () =>
+              {
                 setOpenEmployee( true );
                 setOpenProject( false )
               } } /> }
@@ -89,7 +76,9 @@ const AssignTaskForm = ({setActive}) => {
               onClick={ () => setOpenEmployee( false ) } /> }
             </label>
           <div className="employeContainer_members"> 
-           
+           <span
+           onClick={ () => setOpenEmployee((prev)=>!prev)}
+           >{ selectedEmployee !== null  ? `${selectedEmployee}: ${jobCatagory}`  : "selected employee none"}</span> 
           { openEmployee && member.map((employee,i)=>(
            <div
              key={ i } 
@@ -109,17 +98,17 @@ const AssignTaskForm = ({setActive}) => {
             <p>{employee.jobCatagory}</p>
             </div>
         ) ) }
-         </div>
+          </div>
         </div>
         <div className="project">
-            <label>select In which project you want to assign 
+            <label>select a project you want to assign 
             {!openProject &&<FaArrowDown className="icon" onClick={ () => {setOpenProject(true); setOpenEmployee(false)}} />}
             {openProject &&<FaArrowUp className="icon" onClick={ () => setOpenProject(false)} />}
             </label>
           <div className="project_types"> 
            <span 
            onClick={ () => setOpenProject((prev)=>!prev)}
-           >{ selectedProject !== null  ? selectedProject  : "---------------"}</span> 
+           >{ selectedProject !== null  ? selectedProject  : "selected project none"}</span> 
           { openProject && projectTypes.map((item,i)=>(
            <div
              key={ i } 
@@ -138,44 +127,40 @@ const AssignTaskForm = ({setActive}) => {
         </div>
         <div className="Form__textArea">
           <label>Add Task Discription</label>
-          <textarea
-            type="text"
-            id="description"
-            value={description}
-             onChange={(e) => setDescription(e.target.value)}
-            placeholder=""
-          />
+           <ReactQuill theme="snow" value={value} onChange={setDescription} />
         </div>
           <div className="Form__AttachDocuments">
           <label>Attach Documents</label>
-
+          <button className="seeMoreButton"><span>Upload File</span></button>
           <input
             type="file"
             id="documents"
             value={attachedDocuments}
-             onChange={(e) => setAttachedDocuments(e.target.value)}
-            placeholder=""
+            onChange={ ( e ) => setAttachedDocuments( e.target.value ) }
+            style={{display:"none"}}
           />
+
         </div>
-        <div className="Form__type">
+        <div className="Form__priorities">
           <label>Select The Priority</label>
-        { data.map( ( item, i ) => (
-          <div
-           onClick={()=>setPriority(item.status)}
-            className={`Form__type-all ${ item.classname }` }
+          <div className="Form__priorites">
+            { statusData.map( ( item, i ) => (
+          <span
+           onClick={()=>setSelected(item.status)}
+            className={ `Form__priorites-priority ${ item.status }` }
             key={i}
             style={ {
-              background: priority ===item.status && item.background,
-              color:priority ==item.status && "white" }} >
+              background: selected ===item.status && item.background,
+                color:selected ==item.status && "white" }} 
+              >
              {item.status}
-       </div>
+       </span>
        ))}
         </div>
+        </div>
         <div className="Form__date">
-          {/* <Calendar value={value} onChange={onChange} /> */}
-          <div>
-         
-            <label>
+           <div>
+             <label>
                <HiCalendar className="calanderIcon" />
               task need to start</label>
             <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
@@ -186,10 +171,7 @@ const AssignTaskForm = ({setActive}) => {
               to be submitted date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
           </div>
         </div>
-        
-        <button type="submit" className="Form__button">
-          Assign Task
-        </button>
+        <FormSubmitButton buttonName="Assign Task"/>
       </form>
      </div>
   );

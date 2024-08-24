@@ -16,7 +16,7 @@
     display: flex;
     gap: 3px;
   }
-  .AssignedTask span{
+  .AssignedTask__header{
    display: flex;
    justify-content: space-between;
    width: 60%;
@@ -27,7 +27,7 @@
    color: black;
    font-size: 17px;
   }
-  .AssignedTask span input :hover{
+  .AssignedTask__header input :hover{
    scale: 1.1;
   }
  .AssignedTask__situation{
@@ -108,42 +108,46 @@ width: 40px;
     object-fit: cover;
     object-position: 75% 10%;
  }
- .footerButton{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: fit-content;
-    align-items: center;
-    width: 100%;
- }
+
  
  
-.AssignedTask_Button{
-background: #bb7d46;
-    border: navajowhite;
-    padding: 2px;
-    border-radius: 10px;
-    color: white;
-    font-weight: 700;
-    font-family: math;
-    font-size: 11px;
+.seeMorebutton {
+        display: inline-block;
+    border-radius: 4px;
+    background-color: #a16907;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.seeMorebutton span {
+    cursor: pointer;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    position: relative;
+    transition: 0.5s;
+    font-size: 13px;
+    padding: 3px 10px;
+    width: auto;
+     color: white;
 }
-.AssignedTask span .icon{
-   font-size: 20px;
-    color:#853e00;
 
+.seeMorebutton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: -7px;
+    right: 5px;
+    transition: 0.5s;
+    font-size: 23px;
 }
 
-.AssignedTask_Button:hover{
- cursor:pointer;
- font-size: 10px;
+.seeMorebutton:hover span {
+  padding-right: 15px;
 }
-.AssignedTask_Button .icon{
-   font-size:20px
-}
-.AssignedTask_Button .icon:hover{
-   
+
+.seeMorebutton:hover span:after {
+  opacity: 1;
+  right: 0;
 }

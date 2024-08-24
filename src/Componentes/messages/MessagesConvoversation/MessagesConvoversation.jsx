@@ -1,39 +1,38 @@
 import React, { Fragment, memo, useEffect, useState } from "react";
-import "./messagesConversion.css";
+import { useDispatch, useSelector } from "react-redux";
 import { FaVideo } from "react-icons/fa6";
 import { IoIosCall } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import MemeberInfo from "../../memeberInfo/MemeberInfo";
 import { GrAttachment } from "react-icons/gr";
 import { BsEmojiSmile } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
-import { sideOpenClose } from "../../../redux/slices/toggleandModal";
-const MessagesConvoversation = memo(() => {
+import "./messagesConversion.css";
+import { openModal } from "../../../redux/slices/modalSlice";
+
+ const MessagesConvoversation = memo(() => {
+  
   const [messages, setMessages] = useState([]);
-  const [showInfo, setShowInfo] = useState(false);
   const { id } = useParams();
   const dispatch = useDispatch();
-  const showModal=useSelector(state=>state.ToggleandModal.toggle)
+   const { modalType, toggled } = useSelector( state => state.modal )
+   
   useEffect(() => {
     async function fetchMessages() {
       const res = await fetch("http://localhost:3500/conversations/" + id);
-      console.log(res);
-      const data = await res.json();
+       const data = await res.json();
       setMessages(data);
-      console.log(data);
-    }
+     }
     fetchMessages();
   }, [ id ] );
   
-  console.log(messages);
-  console.log(showModal);
+ 
   return (
     <div className="messageConvo">
       <div className="MessagesConvoversation">
         <div className="MessagesConvoversation__header">
           <div
             className="MessagesConvoversation__header__sender"
-            onClick={()=>dispatch(sideOpenClose())}
+            onClick={()=>dispatch(openModal({modalType:"memberInfo",toggled:true}))}
           >
             <img src={messages?.profile} alt="profile" />
             <div className="MessagesConvoversation__header__sender-stat">
@@ -83,7 +82,7 @@ const MessagesConvoversation = memo(() => {
           <button>send</button>
         </div>
       </div>
-      {showModal && <MemeberInfo setShowInfo={setShowInfo} />}
+      {modalType === "memberInfo" && toggled===true && <MemeberInfo/>}
     </div>
   );
 });

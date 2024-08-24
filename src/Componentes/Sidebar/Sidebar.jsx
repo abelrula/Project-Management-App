@@ -3,10 +3,10 @@ import  { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { IoIosSettings } from "react-icons/io";
 import { IoHelpCircle, IoReturnDownForwardSharp } from "react-icons/io5";
-import menuLinks from "../../data/menuLinks";
 import { HiBars3CenterLeft } from "react-icons/hi2";
 import "./sidebar.css";
 import { FaRProject } from "react-icons/fa";
+import { menuLinks } from "../../lib/data";
 
 const Sidebar = () => {
   const [ projectTypes, setProjectTypes ] = useState( [] )
