@@ -1,0 +1,82 @@
+.notification__container{
+     display: flex;
+    flex-direction: column;
+    place-items: center;
+    color: #0b0c0c;
+    background: #e5e5e503;
+    grid-area: form;
+    padding: 5px;
+     width: 342px;
+    flex-direction: 4;
+    right: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow-y: scroll;
+}
+
+.notification__container header{
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+}
+.notification__cards__container{
+display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+.notification__container header h6{
+    font-size: 15px;
+    color: black;
+    font-weight: 100;
+    font-family: system-ui; 
+}
+.notification__card{
+    height: auto;
+    background: #ffffff;
+    padding: 5px;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #efeeee;
+    min-height: 95px;
+ }
+
+.notification__card p{
+       font-size: 12px;
+    color: #858282;
+    text-align: center;
+    font-family: sans-serif;
+    width: 75%;
+}
+.notification__card .closeIcon{
+position: absolute;
+right: 0;
+top: 0;
+cursor: pointer;
+font-size: 15px;
+}
+.notification__card .closeIcon:hover{
+
+font-size: 17px;}
+.notification__card img{
+      width: 100px;
+    height: auto;
+    object-position: 15% 10%;
+    object-fit: cover;
+    max-height: 70px;
+}
+.notification__card span{
+    color: #181616;
+        font-size: 40px;
+        display: flex;
+}
