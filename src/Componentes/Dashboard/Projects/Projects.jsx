@@ -1,14 +1,19 @@
  import "./project.css";
 import { MdOutlineAppRegistration } from "react-icons/md";
- import { BiArrowFromLeft, BiArrowFromRight } from "react-icons/bi";
  import { VscProject } from "react-icons/vsc";
- import { GrProjects } from "react-icons/gr"
-import projectTypes from "../../../data/projectTypes";
-import { PiDotsSixVerticalBold } from "react-icons/pi";
-import AddButton from "../../AddButton/AddButton";
-import BoxHeader from "../../boxHeader/BoxHeader";
+  import BoxHeader from "../../boxHeader/BoxHeader";
+import AddButton from "../../Buttons/AddButton/AddButton";
+import { projectTypes } from "../../../lib/data";
+import AddProjectForm from "../../Forms/AddProjectForm/AddProjectForm"
+import { openModal } from "../../../redux/slices/modalSlice";
+import { useDispatch, useSelector } from "react-redux";
 const Projects = () => {
-   return (
+  const {modalType,toggled}=useSelector(state=>state.modal)
+  const dispatch = useDispatch()
+const onClick = () => dispatch( openModal( { modalType: "AddProject", toggled: true } ) )
+
+  return (
+    <>
     <div className="projectCatagories">
       <BoxHeader icon={<VscProject />} header="Projects Directories"   />
       <div className="projectCatagories__cards" >
@@ -28,8 +33,10 @@ const Projects = () => {
           </div>
         ))}
        </div>
-       <AddButton name="Projects"/>
+       <AddButton Onclick={onClick} name="Projects"/>
     </div>
+    { modalType === "AddProject" && toggled === true && <AddProjectForm />}
+    </>
    );
 };
 

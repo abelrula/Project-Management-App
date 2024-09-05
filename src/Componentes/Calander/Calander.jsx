@@ -6,14 +6,21 @@ import withDragAndDrop, { withDragAndDropProps } from "react-big-calendar/lib/ad
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import { Calendar as BigCalander, momentLocalizer } from "react-big-calendar";
  import SchedulesForm from '../Forms/Schedules Form/SchedulesForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { openModal } from '../../redux/slices/modalSlice';
+import AddButton from '../Buttons/AddButton/AddButton';
  
  const DndCalendar=withDragAndDrop(BigCalander)
 
  const Calander = (props) => {
-        const localizer = momentLocalizer( moment );
+  const {modalType,toggled} = useSelector( state => state.modal )
+   const dispatch = useDispatch()
+   const localizer = momentLocalizer( moment );
         const [ events, setEvents ] = useState()
-        const [ active, setActive ] = useState(false)
-        useEffect( () =>{
+      
+   // fetching events from json-servor
+   useEffect( () =>
+   {
           const fetchEvents = async () =>{
             const res = await fetch( "http://localhost:3500/events" )
             if ( !res.ok )  console.log( "error occured" )
@@ -69,7 +76,10 @@ import { Calendar as BigCalander, momentLocalizer } from "react-big-calendar";
           return null;
       }
     },
-  };
+   };
+   
+   const Onclick = () => dispatch( openModal( { modalType: "AddEvents", toggled: true } ) )
+   
   // console.log( moment( "2024-02-13T11:00:00" ).toDate() );
   // const onChangeEventsTime=useCallback((start,end,appointementId) => {
   //   setEvents(( event ) =>event?.data?.appointements?.id === appointementId ? {
@@ -80,8 +90,7 @@ import { Calendar as BigCalander, momentLocalizer } from "react-big-calendar";
   // console.log(events)
   return (
     <div className='scheduals'>
-      { !active && <button className='scheduals_AddButton'
-        onClick={ () => setActive( true ) }>Add New Scheduals</button> }
+      { modalType === "" && toggled === false && <AddButton Onclick={ Onclick } name="Add New Scheduals" /> }
       <div className='scheduals_schedualsList'>
       <DndCalendar
         defaultView="week"
@@ -109,7 +118,8 @@ import { Calendar as BigCalander, momentLocalizer } from "react-big-calendar";
         //    onChangeEventsTime( start, end, appointementId )
         // } }
       />
-     {active && <SchedulesForm setActive={setActive} />}
+     { 
+     modalType === "AddEvents" && toggled === true && <SchedulesForm />}
     </div>
     </div>
   );

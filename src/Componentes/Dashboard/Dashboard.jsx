@@ -1,18 +1,11 @@
-import  { Fragment, useEffect, useRef, useState } from "react";
-import { useGetTodosQuery } from "../../api/apiSlice";
-import "./dashboard.css";
-import UrgentTask from "./urgentTask/UrgentTask";
+import  {  useState } from "react";
+ import UrgentTask from "./urgentTask/UrgentTask";
 import TeamMembers from "./teamMembers/TeamMembers";
 import CommentSection from "./commentSection/CommentSection";
-// import AssignedTask from "../Assignedtask/AssignedTask";
 import Calendar from "react-calendar";
-import "../../../node_modules/react-calendar/src/Calendar.css";
-  import { IoChevronBack } from "react-icons/io5";
-import overView from "../../data/overView";
 import AssignedTask from "../Assignedtask/AssignedTask";
- import { useLocation } from "react-router-dom";
-import { IssuePieChart, TaskPieChart } from "../Charts/PieChart";
-import { CiSquareCheck } from "react-icons/ci";
+import { useLocation } from "react-router-dom";
+import { IssuePieChart } from "../Charts/PieChart";
 import { AiOutlineIssuesClose } from "react-icons/ai";
 import { GoIssueOpened } from "react-icons/go";
 import { GiLevelEndFlag } from "react-icons/gi";
@@ -25,75 +18,25 @@ import Events from "./Events/Events";
 import TotalNumber from "./TotalTaskstatus/TotalNumber";
 import Projects from "./Projects/Projects";
 import TodoForm from "../Forms/TodoForm/TodoForm";
+import "../../../node_modules/react-calendar/src/Calendar.css";
+import "./dashboard.css";
+import { TotalAccompishedNumber } from "../../lib/data";
 
 const Dashboard = () => {
   // const {  isLoading } = useGetTodosQuery();
     const [active,setActive]=useState(false)
-const [open,setOpen]=useState(false)
+   const [open,setOpen]=useState(false)
   const [ openTitle, setOpenTitle ] = useState( null )
   const [ urgent, setUrgent ] = useState( false )
-  const location=useLocation()
-  const date = new Date();
-  const icons=["BsListTask","MdOutlineTaskAlt","FaTasks","RiPassExpiredLine","GoIssueOpened","AiOutlineIssuesClose","GiLevelEndFlag","GiLevelEndFlag"]
-  console.log(urgent)
-  const data = [
-    {
-      title: "Open Tasks",
-      value:17,
-      color:"green",
-      icon:<BsListTask className="icon"/>
-    },
-     {
-      title: "Closed Tasks",
-      value:45,
-      color:"red",
-      icon:<MdOutlineTaskAlt  className="icon"/>
-    },
-     
-     {
-      title: "Total Tasks",
-      value:12,
-      color:"black",
-      icon:<FaTasks  className="icon"/>
-    },
-    {
-      title: "OverDue Tasks",
-      value:30,
-      color:"blue",
-      icon:<RiPassExpiredLine  className="icon"/>
-    },
-    {
-      title: "Opened Issue",
-      value:0,
-      color:"black",
-      icon:<GoIssueOpened  className="icon"/>
-    }
-    ,
-     {
-      title: "Closed Issue",
-      value:12,
-      color:"black",
-      icon:<AiOutlineIssuesClose  className="icon"/>
-    },
-     {
-      title: "Open Phase",
-      value:7,
-      color:"black",
-      icon:<GiLevelEndFlag className="icon"/>
-    }
-    ,
-     {
-      title: "Close Phase",
-      value:12,
-      color:"black",
-      icon:<GiLevelEndFlag className="icon"/>
-    }
-  ] 
+     const date = new Date();
+   console.log(urgent)
+
+ 
   return (
     <>
       <div className="Dashboard">
       <div className="Dashboard_TaskCompletion-totalTaskCount">
-      {data.map( ( item, i ) => (
+      {TotalAccompishedNumber.map( ( item, i ) => (
         <TotalNumber
               key={ i }
               title={ item.title }

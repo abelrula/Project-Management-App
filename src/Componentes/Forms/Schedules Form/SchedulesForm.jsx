@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import { AiFillPlusCircle } from "react-icons/ai";
- import { nanoid } from "@reduxjs/toolkit";
-import { IoCloseCircleSharp } from "react-icons/io5";
+ import { IoCloseCircleSharp } from "react-icons/io5";
 import { HiCalendar } from "react-icons/hi";
-import "./schedulesForm.css";
 import { GiLevelTwo } from "react-icons/gi";
-import Calendar from "react-calendar";
-import moment from "moment";
-const SchedulesForm = ({setActive}) => {
+import { closeModal } from "../../../redux/slices/modalSlice";
+import { useDispatch } from "react-redux";
+import "./schedulesForm.css";
+import 'react-quill/dist/quill.snow.css';
+import ReactQuill from "react-quill";
+import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
+
+
+const SchedulesForm = () => {
    const date = new Date();
+  const dispatch = useDispatch()
    const [startTime, setStartTime] = useState("");
    const [endTime, setEndTime] = useState("");
    const [description, setDescription] = useState("");
    const [schedualType, setSchedualType] = useState(false);
    const [tagColor, setTagColor] = useState(""); 
    const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
-  //  console.log(moment(schedualTime).toDate())
+  
+   // post method for schedual form
   function handleSubmit ( e )
   {
     e.preventDefault();
@@ -38,21 +44,15 @@ const SchedulesForm = ({setActive}) => {
 
   return (
     <>
-      <form className="SchedualForm" onSubmit={ handleSubmit }>
+      <div className="modal">
+        <form className="SchedualForm" onSubmit={ handleSubmit }>
         <div className="SchedualForm_header">
         <h2>Add New Scheduals</h2>
-        <IoCloseCircleSharp fontSize={27}  className="icon" onClick={()=>setActive(false)}/>
+        <IoCloseCircleSharp fontSize={27}  className="icon" onClick={() => dispatch(closeModal())}/>
         </div>
-        <div>
-          <label>Add Events</label>
-          <textarea
-            type="text"
-            id="description"
-            value={description}
-            className="SchedualForm__textarea"
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder=""
-          />
+       <div className="Form__textArea">
+          <label>Add Scheduels desc</label>
+           <ReactQuill theme="snow" value={description} onChange={setDescription} />
         </div>
         <div className="SchedualForm__date">
           {/* <Calendar value={value} onChange={onChange} /> */}
@@ -113,15 +113,10 @@ const SchedulesForm = ({setActive}) => {
           ))}
         </div>
         </div>
-        <button type="submit" className="SchedualForm__button">
-          <p>Add To Do List</p>
-          <div>
-            <AiFillPlusCircle />
-          </div>
-        </button>
+        <FormSubmitButton buttonName="Add To Scheduals"/>
       </form>
-      {/* <Outlet /> */}
-    </>
+      </div>
+     </>
   );
 };
 

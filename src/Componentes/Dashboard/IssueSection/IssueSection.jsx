@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import "./issueSection.css";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import AddButton from "../../AddButton/AddButton";
+import AddButton from "../../Buttons/AddButton/AddButton";
 import BoxHeader from "../../boxHeader/BoxHeader";
-const IssueSection = ({title}) => {
-  
+import { useDispatch } from "react-redux";
+import "./issueSection.css";
+import { filterTypes } from "../../../lib/data"
+import { openModal } from "../../../redux/slices/modalSlice";
+
+const IssueSection = ( { title } ) =>
+{
+  const dispatch=useDispatch()
   const [ selectedType, setSelectedType ] = useState( "All" );
-console.log(selectedType);
+  console.log(selectedType);
+  const Onclick = () => dispatch( openModal( { modalType: "", toggled: true } ) ) 
 
-  const filterTypes=["All open","Closed","Upcoming","Over due","Completed"]     
-
+ 
   return (
     <div className="issueSection">
       <BoxHeader icon={<MdKeyboardArrowRight />} header={title } filterTypes={filterTypes} setSelectedType={setSelectedType} selectedType={selectedType} />
@@ -45,7 +50,7 @@ console.log(selectedType);
           </span>
         </div>
       </div>
-                <AddButton name="Issue" />
+                <AddButton name="Issue" Onclick={Onclick} />
     </div>
   );
 };

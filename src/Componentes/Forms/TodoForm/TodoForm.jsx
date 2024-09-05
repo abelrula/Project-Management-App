@@ -4,11 +4,16 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { HiCalendar } from "react-icons/hi";
 import { nanoid } from "@reduxjs/toolkit";
 import "./todoForm.css";
- import moment from "moment";
+import moment from "moment";
+ import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; 
+import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 const TodoForm = ({setActive}) => {
   const date = new Date();
+  const dispatch = useDispatch()
    const [startDate, setStartDate] = useState("");
    const [description, setDescription] = useState("");
+  const [ value, setValue ] = useState( '' );
   const [todos,setTodos]=useState([])
  const [selected, setSelected] = useState(null);
   const [tagColor, setTagColor] = useState(""); 
@@ -56,21 +61,14 @@ const TodoForm = ({setActive}) => {
   return (
     <>
       <form className="TodoForm" onSubmit={ handleSubmit }>
-        <div className="TodoForm_header">
-        <h2>Add New Todo</h2>
-        <IoCloseCircleSharp fontSize={27}  className="icon" onClick={()=>setActive(false)}/>
-        </div>
-        <div>
-          <h2>Add Todos</h2>
-          <textarea
-            type="text"
-            id="description"
-            value={description}
-            className="TodoForm__textarea"
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder=""
-          />
-        </div>
+         <div  className="Form-header">
+          <h2>Add New Task</h2>
+          <IoCloseCircleSharp fontSize={ 27 } onClick={ () => dispatch( closeModal() ) } />
+         </div>
+         <div>
+          <label>Add Todos</label>
+                     <ReactQuill theme="snow" value={value} onChange={setValue} />
+         </div>
         <div className="TodoForm__type">
           <div
             onClick={() => {
@@ -104,7 +102,7 @@ const TodoForm = ({setActive}) => {
             <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
         </div>
         <div className="TodoForm__tags">
-          <h3>Select Tag :</h3>
+          <label>Select Tag :</label>
           <div>
           { colors.map( ( color ) => (
             <div className="TodoForm__tag">
@@ -120,9 +118,7 @@ const TodoForm = ({setActive}) => {
           ))}
         </div>
         </div>
-        <button type="submit" className="TodoForm__button">
-             <AiFillPlusCircle className="icon" />
-         </button>
+        <FormSubmitButton buttonName="Assign Task" />
       </form>
       {/* <Outlet /> */}
     </>

@@ -2,19 +2,24 @@ import  { useState,useEffect } from "react";
 import { MdDonutLarge, MdUpdate } from "react-icons/md";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import {AiFillRightCircle } from "react-icons/ai";
-import { CiLock } from "react-icons/ci";
+ import { CiLock } from "react-icons/ci";
 import img1 from "../../assets/worker1.jpg"
 import ProfileImage from "../ProfileImage/ProfileImage";
 import { useLocation } from "react-router-dom";
 import "./assignedTasks.css";
+import AddButton from "../Buttons/AddButton/AddButton";
+import { useDispatch, useSelector } from "react-redux";
+import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm";
+import { openModal } from "../../redux/slices/modalSlice";
+ 
 
 
-import AddButton from "../AddButton/AddButton"
    const AssignedTask = ({title,setUrgent,footer,setActive}) => {
    const [todoStatus, setTodoStatus] = useState("Upcoming");
-   const [todos,setTodos]=useState([])
-     const {pathname} = useLocation()
+     const [ todos, setTodos ] = useState( [] )
+     const {modalType,toggled}=useSelector(state=>state.modal)
+     const { pathname } = useLocation()
+     const dispatch =useDispatch()
      let filterdData="completed"
    useEffect( () =>
    {
@@ -54,16 +59,18 @@ import AddButton from "../AddButton/AddButton"
           completed:e.target.checked,
       } )
     })
-  }
+     }
+    
+     const Onclick = () => dispatch( openModal( { modalType: "AddTask", toggled: true } ) )
   // console.log(workProgress);
   return (
     <><div className="AssignedTask">
-      <span>
+      <span className="AssignedTask__header">
         <h3>{ title } </h3>
         {pathname === "/report" ?
           <IoCloseCircleOutline  className="icon" onClick={ () => setActive( false ) } /> 
           : <CiLock className="icon" />
-        } { pathname !== "/report"  && <button className="AssignedTask_Button" onClick={()=>setUrgent(true)}>see urgent <AiFillRightCircle className="icon" /></button>}
+        } { pathname !== "/report"  && <button className="seeMorebutton"  onClick={()=>setUrgent(true)}> <span>see urgent</span> </button>}
       </span>
       <div className="AssignedTask__situation">
           <div className="AssignedTask__situation-types">
@@ -92,10 +99,11 @@ import AddButton from "../AddButton/AddButton"
                   </span>
                   </div>
                   ))}
-               <AddButton name={footer} />
+               <AddButton Onclick={Onclick} name={footer} />
            </div>
       </div>
     </div>
+      {modalType==="AddTask" && toggled=== true && <AddTodoForm /> }
     </>
   );
 };

@@ -1,22 +1,42 @@
-import React, { useState ,useEffect} from "react";
- import "./addProjectForm.css";
+import React, { useEffect, useState } from "react";
 import { HiCalendar } from "react-icons/hi";
- import { AiFillPlusCircle } from "react-icons/ai";
+import { AiFillPlusCircle } from "react-icons/ai";
 import { IoCloseCircleSharp } from "react-icons/io5";
-//  import Calendar from "react-calendar";
 import moment from "moment";
-const AddProjectForm = ( {setOpenModal} ) =>
-{
-  const date = new Date();
-  const [ startDate, setStartDate ] = useState( "" );
+import { closeModal } from "../../../redux/slices/modalSlice";
+import { useDispatch } from "react-redux";
+import "./addProjectForm.css";
+import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+
+const AddProjectForm = ( ) =>{
+  
+  const dispatch=useDispatch()
+   const [ startDate, setStartDate ] = useState( "" );
   const [ endDate, setEndate ] = useState( "" );
+  const [jobCatagory,setJobCatagory]=useState("")
+  const [selectedEmployee,setSelectedEmployee]=useState("")
   const [ description, setDescription ] = useState( "" );
+  const [openEmployee,setOpenEmployee]=useState(false)
   const [ selected, setSelected ] = useState( null );
   const [ tagColor, setTagColor ] = useState( "" );
   const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
-  console.log( moment( startDate ).toDate() );
-  console.log( moment( endDate ).toDate() );
-  function handleSubmit ( e )
+    const [members, setMembers] = useState([]);
+  
+  // fetching memeber from json
+  useEffect( () =>
+  {
+    async function fetchMembers  ( e )
+  {
+    const res = await fetch( "http://localhost:3500/members" )
+    const data = await res.json()
+      setMembers( data )
+   console.log(members);
+      
+    }
+    fetchMembers()
+ },[])
+   function handleSubmit ( e )
   {
     e.preventDefault();
   
@@ -28,11 +48,11 @@ const AddProjectForm = ( {setOpenModal} ) =>
         <div className="addProject_header">
           <h1>Add Projects</h1>
           <IoCloseCircleSharp fontSize={ 27 } className="icon"
-          onClick={ () => setOpenModal( false ) }
+          onClick={ () => dispatch(closeModal()) }
           />
         </div>
-        <div>
-          <label>Add title</label>
+        <div className="project__name">
+          <label>Add Project name</label>
           <input
             type="text"
             id="description"
@@ -41,13 +61,53 @@ const AddProjectForm = ( {setOpenModal} ) =>
             onChange={ ( e ) => setDescription( e.target.value ) }
             placeholder=""
           />
-        </div>
-        <div className="addProject_date">
-          {/* <Calendar value={value} onChange={onChange} /> */ }
-          <div>
-         
-            <label>  <HiCalendar className="calanderIcon" />start date</label> <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
           </div>
+          <div className="addproject__memberAdding">
+            <label>Select Employee you want to assign 
+            { !openEmployee && <FaArrowDown className="icon"
+              onClick={ () =>
+              {
+                setOpenEmployee( true )
+              } } /> }
+            { openEmployee && <FaArrowUp className="icon"
+              onClick={ () => setOpenEmployee( false ) } /> }
+            </label>
+            <div className="employeContainer_members"> 
+           <span
+           onClick={ () => setOpenEmployee((prev)=>!prev)}
+           >{ selectedEmployee !== null  ? `${selectedEmployee}: ${jobCatagory}`  : "selected employee none"}</span> 
+          { openEmployee && members.map((employee,i)=>(
+           <div
+             key={ i } 
+              onClick={ () =>{
+                setSelectedEmployee( employee.name );
+                setOpenEmployee( false );
+                setJobCatagory(employee.jobCatagory)
+              } }
+              className="employeContainer_members-employe"
+           >
+              <div>
+                <img src={ employee.profile } alt="profile" />
+            <h4>
+              {employee.name}
+             </h4>
+            </div>
+            <p>{employee.jobCatagory}</p>
+            </div>
+        ) ) }
+          </div>
+          </div>
+        <div className="addProject_date">
+             <div>
+              <label>  <HiCalendar className="calanderIcon" />start date
+              </label>
+              <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
+            </div>
+             <div>
+              <label>  <HiCalendar className="calanderIcon" />end date
+              </label>
+              <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
+            </div>
         </div>
         <div className="addProject__tags">
           <label>Select Tag :</label>
@@ -66,16 +126,10 @@ const AddProjectForm = ( {setOpenModal} ) =>
             ) ) }
           </div>
         </div>
-        <button type="submit" className="addProject__button">
-          <p>Add Project</p>
-          <div>
-            <AiFillPlusCircle />
-          </div>
-        </button>
+           <FormSubmitButton buttonName="Add Project" />
         </form>
         </div>
-      {/* <Outlet /> */ }
-    </>
+     </>
   )
 } 
 
