@@ -7,14 +7,15 @@
    background: #ffffff;
    grid-area: form;
    padding: 15px;
-   gap: 15px;
-   width: 670px;
+   gap: 30px;
+   width: 580px;
    flex-direction:4;
    right: 0;
    position: absolute;
    top: 0;
    bottom: 0;
    z-index: 9999;
+   overflow-y: scroll;
  }
  .Form header{
    display: flex;
@@ -22,6 +23,17 @@
    align-items: center;
    width: 100%;
  }
+ .Form header span {
+       display: flex;
+    gap: 35px;
+ }
+ .Form header span button{
+     padding: 10px 20px;
+    border-radius: 10px;
+    color: black;
+    border: navajowhite;
+    font-weight: bold;
+  }
 .Form header h6{
          font-family: sans-serif;
     font-size: larger;
@@ -46,32 +58,33 @@
      gap: 5px;
     align-items: start;
     align-self: baseline;
-    border-top: 1px solid #d3cfcf;
+    border: 1px solid #d3cfcf;
     width: 100%;
     margin-top: 30px;
     padding: 10px;
 }
 .employeContainer_members span{
-    background: #d7a645;
+     background: #ffffff;
     height: 23px;
-    width: 300px;
+    width: 250px;
     border-radius: 10px;
-     color: #ffffff;
-         font-size: 13px;
+    color: #000000;
+    font-size: 12px;
+    border: 1px solid #7d7b7b;
+    font-family: monospace;
 }
 .employeContainer_members{
-    display: flex;
+      display: flex;
     flex-direction: column;
-    gap: 5px;
-    position: absolute;
-        left: 330px;
+     position: absolute;
+    left: 220px;
     z-index: 20000;
     background: white;
     padding: 5px;
-    top: 10px;
+    top: 0px;
 }
 .employeContainer_members-employe{
-  width: 300px;
+  width: 250px;
     height: 25px;
     align-items: center;
     display: flex;
@@ -92,7 +105,7 @@
    }
    .employeContainer_members-employe div h4{
      color:black;
-         font-size: 10px;
+         font-size: 9px;
    }
  .employeContainer_members-employe div img{
     width: 30px;
@@ -112,46 +125,52 @@
      gap: 5px;
     align-items: start;
     align-self: baseline;
-    border-top: 1px solid #d3cfcf;
+    border: 1px solid #d3cfcf;
     width: 100%;
     padding: 10px;
+    margin-top: 20px;
  }
  .Form label{
-    font-family: math;
-    font-size: 14px;
+   font-family: monospace;
+    font-size: 12px;
     font-weight: 200;
     display: flex;
-    gap: 10px;
-    align-items: center
- }
- .project_types span{
-  background: #d7a645;
+    gap: 5px;
+    align-items: center;
+    color: #0a0a09;
+    text-transform: capitalize;
+    font-weight: 800;
+}
+  .project_types span{
+ background: #ffffff;
     height: 23px;
-    width: 300px;
+    width: 250px;
     border-radius: 10px;
-     color: #ffffff;
-         font-size: 13px;
- }
+    color: #000000;
+    border: 1px solid #7d7b7b;
+    font-size: 13px;
+  }
   
  
  .project_types{
-   display: flex;
+     display: flex;
     flex-direction: column;
-    gap: 5px;
     position: absolute;
-        left: 330px;
-    z-index: 19999;
-    background: white;
+    left: 220px;
+     background: white;
     padding: 5px;
-    top: 10px;
-  }
+    top: 0px;
+   }
  .project_types-type{
-    width: 300px;
-    height: 25px;
+    
+        width: 250px;
+    padding: 10px;
     align-items: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     border-radius: 10px;
+    border: 1px solid #7d7b7b;
+    gap: 20px;
  }
  .project_types-type h4{
     color: black;
@@ -175,30 +194,43 @@
     align-items: baseline;
        justify-content: space-around;
     width: 100%;
-    border-top: 1px solid #d3cfcf;
+    border: 1px solid #d3cfcf;
+    flex-direction: column;
 
  }
- .Form__textarea p{
-    font-family: math;
-    font-weight: 100;
-    font-size: 10px;
-    color: rgb(0, 0, 0) !important;
-    font:bold
+ .Form__Subtasks{
+position: relative;
+   display: flex;
+align-self: self-start;
+    gap: 5px;
+flex-direction: column;
 
+ }
+ .Form__Subtasks label span {
+    position: absolute;
+    right: 20px;
+    background: black;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ .Form__Subtasks label span:hover {
+    background: rgb(31, 30, 30);
+ 
 }
- .Form__textArea textarea{
-       margin-top: 10px;
-    border-radius: 20px;
-    width: 450px;
-    height: 100px;
-    font-size: 1.1rem;
-    padding: 15px;
- }
  .Form__AttachDocuments{
-     display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin-left: -100px;
+    display: flex;
+    align-self: self-start;
+    gap: 20px;
+ }
+ .Form__AttachDocuments button{
+    background: #13855b;
+    border: none;
+    color: white;
+    padding: 4px 15px;
+    font-size: 11px;
+    border-radius: 12px;
  }
  .Form__AttachDocuments input{
         border: 1px solid #b7b7b7;
@@ -214,7 +246,7 @@
     align-items: baseline;
        justify-content: space-around;
     width: 100%;
-    border-top: 1px solid #d3cfcf;
+    border: 1px solid #d3cfcf;
    }
 .Form__date{
       gap: 10px;
@@ -222,7 +254,7 @@
     flex-direction: row;
 width: 100%;
     justify-content: space-evenly;
-    border-top: 1px solid #d3cfcf;
+    border: 1px solid #d3cfcf;
     padding: 10px;
    }
 .Form__date div {
@@ -285,34 +317,39 @@ width: 100%;
    background:rgb(9, 55, 85);
    color:rgb(255, 245, 245);
 }
-.Form__type{
+.Form__priorities{
      display: flex;
      gap:10px;
 }
- 
-.Form__type-low:hover{
-     background-color: #fff572;
+
+.Form__priorites-priority .low:hover{
+     background-color: rgb(157 146 0);
      color: white;
 }
-.Form__type-medium:hover{
-     background-color: #708aff;
+.Form__priorites-priority-medium:hover{
+     background-color: #0021b6;
      color: white;
 }
-.Form__type-high:hover{
+.Form__priorites-priority-high:hover{
        background-color: #ff0000;
         color: white
 }
- 
- .Form__type-all{ 
-        background: #fcfcfc;
-    height: 30px;
-    width: 85px;
-    display: flex;
+ .Form__priorites{
+display: flex;
+    gap: 20px;
+    align-self: self-start;
+ }
+ .Form__priorites-priority{ 
+   background: white;
+     display: flex;
     place-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid;
-    margin-top: 20px;
+     padding: 5px 30px;
+    font-size: 13px;
+    font-family: math;
+        border: 1px solid #bf9c9c;
 }
  
  .Form__tags{

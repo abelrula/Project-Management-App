@@ -1,0 +1,60 @@
+ .Form__Subtasks__inputs{
+ display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+     border-radius: 10px;
+    border: 1px solid rgb(185 155 10 / 61%);
+    padding: 10px 0px; 
+}
+ .Form__Subtasks__inputs:hover{
+    background-color: #dde0df;
+  }
+.Form__Subtasks__inputs-closeIcon{
+   position: absolute;
+   top: 0;
+   right: 0;
+   cursor: pointer;
+ }
+ .Form__Subtasks__inputs-closeIcon:hover{
+background-color: #000000; 
+color: wheat;
+border-radius: 50%;
+}
+ .Form__Subtasks__inputs label{
+color: #5b6561 !important;
+ }
+ .Form__Subtasks__inputs div{
+    display: flex;
+    gap: 10px;
+ }
+ .Form__Subtasks__inputs textarea{
+border-radius: 5px;
+border: #cbc6c6 1px solid;
+ }
+ .Form__Subtasks__inputs input[type="date"]{
+border-radius: 5px;
+border: #cbc6c6 1px solid;
+
+ }
+ .Form__Subtasks__priorites{
+
+ }
+ .Form__Subtasks__priorites-priority{
+   background: white;
+     display: flex;
+    place-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid;
+     padding: 2px 10px;
+    font-size: 13px;
+    font-family: math;
+        border: 1px solid #cfcfcf;
+  }
+ .Form__Subtasks__input select{
+background-color: aqua !important;
+ }
+ .Form__Subtasks__input option{
+
+ }
