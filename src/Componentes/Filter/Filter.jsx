@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./filter.css"
-const Filter = () => {
+const Filter = ({description}) => {
   const [search, setSearch] = useState("");
   const [firstSixMatching, setFirstSixMatching] = useState([]);
 
@@ -12,7 +12,7 @@ const Filter = () => {
     <div className="search-container">
       <input
         type="text"
-        placeholder="Search..."
+        placeholder={description}
         value={search}
         onChange={handleChange}
       />

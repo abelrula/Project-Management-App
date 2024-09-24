@@ -1,0 +1,87 @@
+.timeSheet__Form{
+      display: flex;
+   flex-direction: column;
+   place-items: center;
+   color: #0b0c0c;
+    box-shadow: 0px 0px 12px 0px black;
+   background: #f0f0f0 !important;
+   grid-area: form;
+   padding: 15px;
+   gap: 15px;
+   width: 530px;
+   flex-direction:4;
+   right: 0;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   z-index: 9999;
+}
+.timeSheet__Form-filter{
+    display: flex;
+     width: 100%;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 10px;
+     background: white;
+    height: 40px;
+}
+.timeSheet__Form-filter select{
+    height:inherit;
+    border-radius: 10px;   
+     border: 1px solid #e3e3e3;
+}
+.timeSheet__Form-filter select option{
+
+}
+.timeSheet__Form header{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+}
+.timeSheet__Form header h6{
+    margin-left: 10px;
+     border-radius: 10px;
+    color: #045373;
+    font-weight: bolder;
+    font-size: 17px;
+}
+.timeSheet__Form__Project{
+display: flex;
+flex-direction: column;
+align-items: start;
+justify-content: space-between;
+gap: 10px;
+width: 100%;
+margin-top: 15px;
+}
+.timeSheet__Form__Project-timer{
+display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #ede4e4;
+    border-left: 1px solid #ede4e4;
+    border-radius: 5px;
+    padding: 0px 10px;
+
+}
+.timeSheet__Form__Project-timer p {
+flex-direction: column;
+    display: flex;
+    align-items: start;
+    color: black;
+    text-align: start;
+}
+.timeSheet__Form__Project-timer p  span {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-family: monospace;
+    gap: 10px;
+}
+.timeSheet__Form__Project-timer h6{
+    font-size: 12px;
+    margin-left: 30px;
+    font-family: system-ui;
+    color: #9f9f9f;
+}

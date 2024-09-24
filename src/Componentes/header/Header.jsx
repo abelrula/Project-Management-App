@@ -2,16 +2,17 @@ import { useState ,useEffect} from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import {  CiSquarePlus } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
-import { GiClockwork, GiTimeSynchronization } from "react-icons/gi";
+import { GiClockwork } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm";
-import Filter from "../Filter/Filter";
-import { useDispatch, useSelector } from "react-redux";
+ import { useDispatch, useSelector } from "react-redux";
 import {  openModal } from "../../redux/slices/modalSlice";
 import ProfileModal from "../Modals/ProfileModal/ProfileModal";
 import { ProjectDetailNavLinks } from "../../lib/data";
 import "./header.css";
-import Notifications from "../Notifications/Notifications";
+ import Timesheet from "../Forms/Timesheets/Timesheet";
+import Notifications from "../Modals/Notifications/Notifications";
+import AddProjectForm from "../Forms/AddProjectForm/AddProjectForm";
  
 
 
@@ -40,6 +41,7 @@ const Header = ({ title }) => {
 
     }, [] )
    
+
   return (
     <>
       <div className="header">
@@ -56,7 +58,7 @@ const Header = ({ title }) => {
           <div className="Overview_header-ProjectName">
              <h1>daniels apartement </h1>
              <span>open details</span>
-            </div>                                  
+            </div> 
            <nav className="Overview_header-links" >
               { ProjectDetailNavLinks.map( ( link, i ) => (
                 <NavLink  end className="link" style={({isActive})=>isActive ? selectedObj : null} to={link.to}>{link.name} { link.icon}
@@ -67,22 +69,20 @@ const Header = ({ title }) => {
          </div>
         ) : null }
         
-         {/* onclick on search icon  open search modal */}
-        { modalType === "search" && toggled === true && <Filter /> }
-        <div className="left">
+         <div className="left">
 
          {/* onclick open Add Task Form */}
 
       <span className="profile">
         <CiSquarePlus className="icon" onClick={()=> dispatch(openModal({modalType:"AddTask",toggled:true})) } />
             { modalType === "AddTask" && toggled === true && <AddTodoForm /> }
-            
         <CiSearch className="icon" onClick={() => dispatch(openModal({modalType:"search",toggled:true})) }/>
-        <GiClockwork className="icon"/>
+         <GiClockwork className="icon" onClick={()=> dispatch(openModal({modalType:"timesheet",toggled:true})) } />
          <div className="notification" onClick={() => dispatch(openModal({modalType:"notifications",toggled:true})) }>
           <IoIosNotificationsOutline    fontSize={25} />
-          <span>12</span>
+            <span>12</span>
             </div>
+            <h3 onClick={()=> dispatch(openModal({modalType:"AddProject",toggled:true})) }>Add Project</h3>
              <img
              src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D"
             alt="profile"
@@ -100,8 +100,14 @@ const Header = ({ title }) => {
       { modalType === "profile" && toggled === true &&
           <ProfileModal />
       }
+       { modalType === "timesheet" && toggled === true &&
+          <Timesheet  />
+      }
        { modalType === "notifications" && toggled === true &&
           <Notifications />
+      }
+      { modalType === "AddProject" && toggled === true &&
+          <AddProjectForm />
       }
     </>
   );

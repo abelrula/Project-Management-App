@@ -1,7 +1,7 @@
 import { toast, ToastContainer } from "react-toastify";
 import Dashboard from "../../Componentes/Dashboard/Dashboard";
 import Header from "../../Componentes/header/Header";
-import { notifications, Notificaton } from "../../Componentes/Notifications/Notifications";
+import { notifications, Notificaton } from "../../Componentes/Modals/Notifications/Notifications";
  import "./home.css"
  
 
