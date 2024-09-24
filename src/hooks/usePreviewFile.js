@@ -4,7 +4,7 @@ const usePreviewFile = (files) => {
    
     
     
-    if ( files.length > 0 ){
+    if ( files && files.length > 0 ){
        
         // create Array of files for iteration
         const arrayOfFiles = Array.from( files )

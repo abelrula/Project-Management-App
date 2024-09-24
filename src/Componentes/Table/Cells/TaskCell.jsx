@@ -1,6 +1,5 @@
      import { useState,useEffect } from "react";
 import DetailofProjects from "../../DetailofProjects/DetailofProjects";
- import { GrNext } from "react-icons/gr";
   
 const TaskCell = ( { getValue, row, column, table } ) =>
 
@@ -23,7 +22,7 @@ const TaskCell = ( { getValue, row, column, table } ) =>
                   onBlur={onBlur}
                   value={ value }
                     onChange={ ( e ) => setValue( e.target.value ) } />
-                  <button onClick={()=>setOpenModal(true)}>open<GrNext />
+                  <button onClick={()=>setOpenModal(true)}> <span>Open</span>
 
 </button>
                 </div>

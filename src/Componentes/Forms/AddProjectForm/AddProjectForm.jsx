@@ -90,7 +90,7 @@ const AddProjectForm = ( ) =>{
                 <img src={ employee.profile } alt="profile" />
             <h4>
               {employee.name}
-             </h4>
+            </h4>
             </div>
             <p>{employee.jobCatagory}</p>
             </div>

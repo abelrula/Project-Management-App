@@ -247,17 +247,17 @@ export const menuLinks = [
     to: "schedule",
     icon: <FaRegCalendarAlt className="icon" fill="#ffa909" />,
   },
-  {
-    title: "Gant Chart",
-    to: "team",
-    icon: <HiUserGroup className="icon" fill="#ffa909" />,
-  },
+  // {
+  //   title: "Gant Chart",
+  //   to: "team",
+  //   icon: <HiUserGroup className="icon" fill="#ffa909" />,
+  // },
  
-  {
-    title: "OverView",
-    to: "overview",
-    icon: <BsActivity className="icon" fill="#ffa909" />,
-  },
+  // {
+  //   title: "OverView",
+  //   to: "overview",
+  //   icon: <BsActivity className="icon" fill="#ffa909" />,
+  // },
   {
     title: "Message",
     to: "message",
@@ -317,16 +317,16 @@ export const ProjectDetailNavLinks = [
 ]
 export const statusData = [
             {
-              status:"low",
-            background:"rgb(103 95 0)",
+             status:"low",
+             background:"#675f00",
             },
              {
                status:"medium",
-            classname:"Form__type-medium",
-            background:"rgb(5 49 243)",
+             classname:"Form__type-medium",
+             background:"#0531f3",
             },
              {
-               status:"high",
+            status:"high",
             background:"#ff0000",
             },
 ]

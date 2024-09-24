@@ -4,10 +4,10 @@ import "./schedules.css"
 
 const Schedules = () => {
   return (
-    <div>
+    <>
       <Header title="Schedual" />
       <Calander />
-    </div>
+    </>
     
   )
 }
