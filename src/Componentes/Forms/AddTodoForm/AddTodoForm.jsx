@@ -1,4 +1,5 @@
-import React, { useState ,useEffect, useRef, useCallback} from "react";
+ import React, { useState ,useEffect, useRef, useCallback} from "react";
+ 
 import { HiCalendar } from "react-icons/hi";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import ReactQuill from 'react-quill';
@@ -11,15 +12,15 @@ import { CiSquarePlus } from "react-icons/ci";
 import { IoIosClose } from "react-icons/io";
 import "./addTodoForm.css";
 import 'react-quill/dist/quill.snow.css';
-import PreviewFile from "../../PreviewFile/PreviewFile";
+ import PreviewFile from "../../PreviewFile/PreviewFile";
 import usePreviewFile from "../../../hooks/usePreviewFile";
 import SubTask from "../../SubTask/SubTask";
-
+ 
 const members = "http://localhost:3500/members";
 
 const AddTodoForm = ({type}) => {
    
-  const [attachedDocuments,setAttachedDocuments]=useState(null)
+   const [attachedDocuments,setAttachedDocuments]=useState(null)
   const [previewFileUrl,fileNames] =  usePreviewFile( attachedDocuments )
    const fileUpload=useRef()
 
@@ -72,12 +73,13 @@ const AddTodoForm = ({type}) => {
      
   
   function handleSubmit ( e ){
-    e.preventDefault();
+   
+     e.preventDefault();
   }
  
   const formType = [ "Buisness", "Personal" ]
-   
-  return (
+ 
+   return (
     <>
        <div className="modal">
       <form className="Form element-with-scroll" onSubmit={ handleSubmit }>
@@ -97,7 +99,7 @@ const AddTodoForm = ({type}) => {
        </header>
         {/* select a project which you want to add task on  */}
           {
-          selectedFormType=="Buisness" && <div className="project">
+           selectedFormType=="Buisness" && <div className="project">
             <label>select on a project you want to add  the task
               { !openProject && <FaArrowDown className="icon" onClick={ () =>  setOpenProject( true )  } />}
                {openProject &&<FaArrowUp className="icon" onClick={ () => setOpenProject(false)} />}
@@ -112,6 +114,7 @@ const AddTodoForm = ({type}) => {
             <div
              key={ i } 
              onClick={ () => { setSelectedProject( item.title ); setOpenProject(false)}}
+ 
              style={ { background: `${ item.color }` } }
              className="project_types-type"
            >
@@ -131,7 +134,7 @@ const AddTodoForm = ({type}) => {
        
        {/* subtasks inputs */}
           <div className="Form__Subtasks">
-            <label onClick={()=>addSubTask(newSubtask)} >Add Subtaks
+             <label onClick={()=>addSubTask(newSubtask)} >Add Subtaks
               <CiSquarePlus
                 fontSize={ 23 }
                 />
@@ -140,13 +143,14 @@ const AddTodoForm = ({type}) => {
             {/* adding subtasks based on user clicking  the plus button */ }
             {subTasks?.map( ( subTask,i ) => (
               <SubTask key={ i }   deleteSubTask={deleteSubTask} subTask={subTask} updateSubTask={updateSubTask}  />
+ 
             ))}
           </div>
           
           {/* attachung documnet inputs */}
           <div className="Form__AttachDocuments">
           <label>Attach Documents</label>
-            <button onClick={ ()=>fileUpload.current.click()} className="seeMoreButton"><span>Upload File</span></button>
+             <button onClick={ ()=>fileUpload.current.click()} className="seeMoreButton"><span>Upload File</span></button>
           <input
               type="file"
               id="documents"
@@ -160,6 +164,7 @@ const AddTodoForm = ({type}) => {
           
           {/* task priorities */}
            <div className="Form__priorities">
+ 
           <label>Select The Priority</label>
           <div className="Form__priorites">
             { statusData.map( ( item, i ) => (
@@ -175,9 +180,9 @@ const AddTodoForm = ({type}) => {
        </span>
        ))}
         </div>
-           </div>
-        
-          {/* task completion date */}
+            </div>
+ 
+           {/* task completion date */}
           <div className="Form__date">
            <div>
             <label>

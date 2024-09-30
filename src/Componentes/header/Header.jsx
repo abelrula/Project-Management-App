@@ -5,14 +5,16 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { GiClockwork } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm";
- import { useDispatch, useSelector } from "react-redux";
-import {  openModal } from "../../redux/slices/modalSlice";
+   import Filter from "../Filter/Filter";
+import { useDispatch, useSelector } from "react-redux";
+ import {  openModal } from "../../redux/slices/modalSlice";
 import ProfileModal from "../Modals/ProfileModal/ProfileModal";
 import { ProjectDetailNavLinks } from "../../lib/data";
 import "./header.css";
- import Timesheet from "../Forms/Timesheets/Timesheet";
+  import Timesheet from "../Forms/Timesheets/Timesheet";
 import Notifications from "../Modals/Notifications/Notifications";
 import AddProjectForm from "../Forms/AddProjectForm/AddProjectForm";
+ 
  
 
 
@@ -41,7 +43,7 @@ const Header = ({ title }) => {
 
     }, [] )
    
-
+ 
   return (
     <>
       <div className="header">
@@ -69,7 +71,7 @@ const Header = ({ title }) => {
          </div>
         ) : null }
         
-         <div className="left">
+          <div className="left">
 
          {/* onclick open Add Task Form */}
 
@@ -78,6 +80,7 @@ const Header = ({ title }) => {
             { modalType === "AddTask" && toggled === true && <AddTodoForm /> }
         <CiSearch className="icon" onClick={() => dispatch(openModal({modalType:"search",toggled:true})) }/>
          <GiClockwork className="icon" onClick={()=> dispatch(openModal({modalType:"timesheet",toggled:true})) } />
+ 
          <div className="notification" onClick={() => dispatch(openModal({modalType:"notifications",toggled:true})) }>
           <IoIosNotificationsOutline    fontSize={25} />
             <span>12</span>
@@ -100,7 +103,7 @@ const Header = ({ title }) => {
       { modalType === "profile" && toggled === true &&
           <ProfileModal />
       }
-       { modalType === "timesheet" && toggled === true &&
+        { modalType === "timesheet" && toggled === true &&
           <Timesheet  />
       }
        { modalType === "notifications" && toggled === true &&
@@ -109,6 +112,7 @@ const Header = ({ title }) => {
       { modalType === "AddProject" && toggled === true &&
           <AddProjectForm />
       }
+ 
     </>
   );
 };

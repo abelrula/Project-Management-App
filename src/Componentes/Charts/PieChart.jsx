@@ -6,7 +6,8 @@ import { useLocation } from 'react-router-dom';
 import BoxHeader from '../boxHeader/BoxHeader';
 import { FaTasks } from "react-icons/fa";
 defaults.maintainAspectRatioa=false
-defaults.responsive=true
+defaults.responsive = true
+
 export const TaskPieChart = () => {
       
   const {pathname}=useLocation()
@@ -41,7 +42,39 @@ export const TaskPieChart = () => {
   )
 }
 
-
+export const OverviewTaskPieChart = ({projectTitle}) => {
+      
+  const {pathname}=useLocation()
+   const  data= {
+          labels: ["Total Task", "Total Task Done", "OverDue","Not Started"],
+          datasets: [   
+            {
+              data: [30, 5, 25,200],
+              backgroundColor: [
+                "#d5d52a",
+                "#26d988",
+               "rgb(159, 159, 227)",
+                "rgb(59, 159, 227)",
+              ],
+            },
+          ],
+        }
+        const  options= {
+       responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                }
+            }
+      
+    return (
+        <div className="taskCompletion_graph-doghnutGraph"  style={{height: pathname === "/" ?"600px": "600px"}} >
+        <BoxHeader icon={ <FaTasks /> } header={`${projectTitle}  Task Status`}   />
+            <Pie data={data} options={options}  />
+          </div>
+  )  
+}
 export const IssuePieChart = () =>{
   
   const {pathname}=useLocation()

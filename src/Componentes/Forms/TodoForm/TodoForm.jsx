@@ -63,8 +63,8 @@ const TodoForm = ({setActive}) => {
       <form className="TodoForm" onSubmit={ handleSubmit }>
          <div  className="Form-header">
           <h2>Add New Task</h2>
-          <IoCloseCircleSharp fontSize={ 27 } onClick={ () => dispatch( closeModal() ) } />
-         </div>
+           <IoCloseCircleSharp fontSize={ 27 } onClick={ () => dispatch( closeModal() ) } />
+           </div>
          <div>
           <label>Add Todos</label>
                      <ReactQuill theme="snow" value={value} onChange={setValue} />

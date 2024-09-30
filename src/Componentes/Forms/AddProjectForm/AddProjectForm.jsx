@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { HiCalendar } from "react-icons/hi";
+ import React, { useEffect, useState } from "react";
+  import { HiCalendar } from "react-icons/hi";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import moment from "moment";
@@ -7,7 +7,8 @@ import { closeModal } from "../../../redux/slices/modalSlice";
 import { useDispatch } from "react-redux";
 import "./addProjectForm.css";
 import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
-import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+ import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+ 
 
 const AddProjectForm = ( ) =>{
   
@@ -21,7 +22,7 @@ const AddProjectForm = ( ) =>{
   const [ selected, setSelected ] = useState( null );
   const [ tagColor, setTagColor ] = useState( "" );
   const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
-    const [members, setMembers] = useState([]);
+     const [members, setMembers] = useState([]);
   
   // fetching memeber from json
   useEffect( () =>
@@ -36,6 +37,7 @@ const AddProjectForm = ( ) =>{
     }
     fetchMembers()
  },[])
+ 
    function handleSubmit ( e )
   {
     e.preventDefault();
@@ -61,7 +63,7 @@ const AddProjectForm = ( ) =>{
             onChange={ ( e ) => setDescription( e.target.value ) }
             placeholder=""
           />
-          </div>
+           </div>
           <div className="addproject__memberAdding">
             <label>Select Employee you want to assign 
             { !openEmployee && <FaArrowDown className="icon"
@@ -97,7 +99,8 @@ const AddProjectForm = ( ) =>{
         ) ) }
           </div>
           </div>
-        <div className="addProject_date">
+         </div>
+         <div className="addProject_date">
              <div>
               <label>  <HiCalendar className="calanderIcon" />start date
               </label>

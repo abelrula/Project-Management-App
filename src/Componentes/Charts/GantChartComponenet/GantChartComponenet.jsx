@@ -274,6 +274,19 @@ const GantChartComponenet = () => {
         ctx.restore();
       },
     },
+    // {
+    //   id: "Avatar",
+    //   afterDatasetsDraw ( chart, args, pluginOptions )
+    //   {
+    //     const { ctx, data } = chart;
+    //     data.datasets[ 0 ].data.forEach( ( dataPoint, i ) =>
+    //     {
+    //       const chartImage = new Image()
+    //       chartImage.src = { dataPoint.avatar }
+    //       ctx.drawImage( chartImage, 50, 50 )
+    //     } )
+    //   }
+    // },
     {
       id: "weekend",
       beforeDatasetsDraw(chart, args, pluginOptions) {
@@ -356,9 +369,9 @@ const GantChartComponenet = () => {
               day: "numeric",
             });
             return [
-              <img className="avatar" src={ctx[0].raw.avatar}  />,
               ctx[0].raw.name,
-              ctx[0].raw.y,
+               ctx[0].raw.y,
+               ctx[0].raw.avatar,
               `Task Deadline:- ${formatteStartDate} - ${formattedEndDate}`,
             ];
           },

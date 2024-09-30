@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+ import React, { useRef, useState } from "react";
 import { HiCalendar } from "react-icons/hi";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
  import { IoCloseCircleOutline } from "react-icons/io5";
@@ -7,15 +7,16 @@ import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 import { useDispatch } from "react-redux";
 import { closeModal } from "../../../redux/slices/modalSlice";
 import { projectTypes, statusData } from "../../../lib/data";
-import { useEffect } from "react";
+ import { useEffect } from "react";
 import usePreviewFile from "../../../hooks/usePreviewFile";
 import PreviewFile from "../../PreviewFile/PreviewFile";
+ 
 import 'react-quill/dist/quill.snow.css';
 import "./assignTaskForm.css";
 
   
 const AssignTaskForm = () => {
- 
+  
   
   // targeting Documents inputs to open onclick purpose
   const docRef=useRef()
@@ -26,6 +27,7 @@ const AssignTaskForm = () => {
   //hook returning selected files as Obj-Url and names of selected attachedDocuments 
   const [previewFileUrl,fileNames] =  usePreviewFile( attachedDocuments )
   
+ 
   const [selectedProject,setSelectedProject]=useState("")
   const date = new Date();
   const [selectedEmployee,setSelectedEmployee]=useState("")
@@ -41,7 +43,7 @@ const AssignTaskForm = () => {
   
   
   
-  
+   
   // console.log(previewFile);
   
   // fetching memeber from json
@@ -66,6 +68,7 @@ const AssignTaskForm = () => {
   return (
     <div className="modal">
      <form className="Form" onSubmit={(e)=>e.preventDefault()} >
+ 
         <header>
            <h6>Assign New Task          
          </h6>
@@ -86,7 +89,8 @@ const AssignTaskForm = () => {
            <span
            onClick={ () => setOpenEmployee((prev)=>!prev)}
            >{ selectedEmployee !== null  ? `${selectedEmployee}: ${jobCatagory}`  : "selected employee none"}</span> 
-          { openEmployee && members.map((employee,i)=>(
+           { openEmployee && members.map((employee,i)=>(
+ 
            <div
              key={ i } 
               onClick={ () =>{
@@ -134,7 +138,7 @@ const AssignTaskForm = () => {
         </div>
         <div className="Form__textArea">
           <label>Add Task Discription</label>
-           <ReactQuill theme="snow" value={description} onChange={setDescription} />
+            <ReactQuill theme="snow" value={description} onChange={setDescription} />
         </div>
         <div className="Form__AttachDocuments">
           <label htmlFor="documents">Attach Documents</label>
@@ -149,6 +153,7 @@ const AssignTaskForm = () => {
           />
           {/*previewing selected files  */}
            <PreviewFile fileNames={fileNames} />
+ 
         </div>
         <div className="Form__priorities">
           <label>Select The Priority</label>
