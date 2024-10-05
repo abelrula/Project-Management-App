@@ -1,16 +1,16 @@
 import React from 'react'
 import "./notifications.css"
 import { IoCloseCircleOutline } from 'react-icons/io5'
-import { closeModal } from '../../redux/slices/modalSlice'
-import { useDispatch, useSelector } from 'react-redux'
+ import { useDispatch, useSelector } from 'react-redux'
 import { FaTasks } from 'react-icons/fa'
 import { AiOutlineIssuesClose } from 'react-icons/ai'
 import { SiMinutemailer } from 'react-icons/si'
 import { MdMarkEmailRead } from 'react-icons/md'
 import { GrAchievement, GrSchedulePlay } from 'react-icons/gr'
 import { IoIosClose } from 'react-icons/io'
-import AchievementImg from"../../assets/387_generated.jpg"
+// import AchievementImg from"../../assets/387_generated.jpg"
 import "react-toastify/dist/ReactToastify.css";
+import { closeModal } from '../../../redux/slices/modalSlice'
  const Uniqueimage="https://media.licdn.com/dms/image/C5612AQECossAr3-pIQ/article-cover_image-shrink_600_2000/0/1520214404865?e=2147483647&v=beta&t=78Wx-QyI5KAQ4cbMZwxZ04bCBEl0W-e_Q1T6qX5sAQI"
 export const notifications = [
     {
