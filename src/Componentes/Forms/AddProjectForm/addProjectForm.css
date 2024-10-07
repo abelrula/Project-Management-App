@@ -26,13 +26,19 @@ height: 100vh;
      padding: 25px;
     width: 600px;
     gap: 35px;
+    font-size: 10px;
 }
+.addProject_header{
+font-size:10px
+}
+
 .addProject h1{
     font-family: monospace;
     font-weight: 500;
     font-size: 25px;
    margin-left: 25px;
    }
+
    .addProject label{
           color: #212020;
     font-size: large;
@@ -109,7 +115,69 @@ height: 100vh;
    color:rgb(255, 245, 245);
 }
  
- 
+.addproject__memberAdding{
+  position: relative;
+}
+ .employeContainer_members__selected{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: auto;
+    overflow-y: scroll;
+    max-height: 140px;
+    padding: 10px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+ .employeContainer_members__selected-employee{
+      width: 250px;
+    height: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ffffff;
+    height: 30px;
+    padding: 5px;
+    align-items: center;
+    width: 215px;
+    border: 1px solid black;
+    gap: 10px;
+ }
+ .employeContainer_members__selected-employee .closeIcon{
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: -15px;
+  color:black
+   }
+  
+ .employeContainer_members__selected-employee p{
+color: #000000;
+    font-family: monospace;
+    text-align: start;
+    font-size: 10px;
+ }
+ .employeContainer_members__selected-employee div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+ }
+ .employeContainer_members__selected-employee  div img{
+     width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    object-fit: cover;
+    object-position: 75% 10%;
+ }
+ .employeContainer_members__selected-employee div h4{
+    font-size: 10px;
+ color: black;
+ }
 .addProject_date{
      gap:10px; 
      margin-top:20px;

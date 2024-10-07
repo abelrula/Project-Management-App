@@ -99,6 +99,22 @@ display: flex;
     gap: 5px;
     margin-top: 20px;
 }
+.navigationLinks button{
+    margin: auto;
+    width: 50%;
+    cursor: pointer;
+    background: white;
+    border: navajowhite;
+    /* outline: none; */
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: #4b4b4b;
+    color: #afafaf;
+}
+.navigationLinks button:hover{
+ background: #2e2e2e;
+    color: #ffffff;
+}
 .navigationLinks .projects .icon{
 }
 .navigationLinks .projects h5{

@@ -7,8 +7,12 @@ import { HiBars3CenterLeft } from "react-icons/hi2";
 import "./sidebar.css";
 import { FaRProject } from "react-icons/fa";
 import { menuLinks } from "../../lib/data";
+import { openModal } from "../../redux/slices/modalSlice";
+import { useDispatch } from "react-redux";
 
 const Sidebar = () => {
+  
+  const dispatch=useDispatch()
   const [ projectTypes, setProjectTypes ] = useState( [] )
   const selectedObj = {
     color: "black",
@@ -22,7 +26,9 @@ const Sidebar = () => {
                     setProjectTypes(data)
                    }
                   AssignedProjects()
-                },[])
+   }, [] )
+  console.log(projectTypes);
+  
   return (
     <div className="side">
       <div className="brandIcon">
@@ -51,12 +57,15 @@ const Sidebar = () => {
             projectTypes.map( ( project, i ) => (
               <NavLink className="label"
                 style={ ( { isActive } ) => ( isActive ? selectedObj : null ) }
-                to={ `projects/${project.projectName.split("").filter(i=> i !== " ").join("")}` }>
+                // to={ `projects/${project.projectName.split("").filter(i=> i !== " ").join("")}` }
+              to={ `projects/${project.id}` }
+              >
                 { project.projectName }
               </NavLink>
             ))
           }
         </div>
+        <button onClick={()=> dispatch(openModal({modalType:"AddProject",toggled:true})) } >Add Project</button>
         <div className="navigationTBottomLinks">
           <NavLink 
            to="settings"

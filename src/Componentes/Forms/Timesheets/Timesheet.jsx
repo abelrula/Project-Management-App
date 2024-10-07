@@ -29,7 +29,8 @@ const Timesheet = () => {
     
     return (
       <>
-        <form className="timeSheet__Form" onSubmit={(e)=>e.preventDefault()} >
+        <div className="modal">
+           <form className="timeSheet__Form" onSubmit={(e)=>e.preventDefault()} >
             <header>
              <h6>My running timer</h6>
              <IoCloseCircleOutline className="icon" onClick={()=> dispatch(closeModal()) } /> 
@@ -75,6 +76,7 @@ const Timesheet = () => {
                </div>
 
         </form>
+       </div>
       </>
   )
 }

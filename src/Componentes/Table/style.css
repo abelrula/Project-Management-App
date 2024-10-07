@@ -166,11 +166,11 @@ text-wrap: nowrap;
     
     
  }
- .taskInputCell:hover.taskInputCell > button{
+ .taskInputCell:hover.taskInputCell > a{
   display: flex;
     align-items: center; 
    }
-     .taskInputCell button {
+     .taskInputCell a {
       display: none;
     position: absolute;
     right: 0;
@@ -183,7 +183,7 @@ text-wrap: nowrap;
     cursor: pointer;
 }
 
- .taskInputCell button span {
+ .taskInputCell a span {
     cursor: pointer;
     display: flex;
     position: relative;
@@ -194,7 +194,7 @@ text-wrap: nowrap;
      color: white;
 }
 
- .taskInputCell button span:after {
+ .taskInputCell a span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -204,11 +204,11 @@ text-wrap: nowrap;
     font-size: 23px;
 }
 
- .taskInputCell button:hover span {
+ .taskInputCell a:hover span {
   padding-right: 15px;
 }
 
- .taskInputCell button:hover span:after {
+ .taskInputCell a:hover span:after {
   opacity: 1;
   right: 0;
 }

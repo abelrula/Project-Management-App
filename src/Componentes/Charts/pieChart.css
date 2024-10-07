@@ -1,13 +1,8 @@
  .taskCompletion_graph-doghnutGraph{
-  background: white;
-  display: flex;
-  width: 305px;
-  align-self: center;
-  border-radius: 15px;
-  padding: 3px 10px;
+   display: flex;
+   padding: 3px 10px;
   flex-direction: column;
-   gap: 10px;
-  position: relative;
+   position: relative;
   z-index:10
 
 }

@@ -3,16 +3,8 @@ import  {  useState } from "react";
 import TeamMembers from "./teamMembers/TeamMembers";
 import CommentSection from "./commentSection/CommentSection";
 import Calendar from "react-calendar";
-import AssignedTask from "../Assignedtask/AssignedTask";
-import { useLocation } from "react-router-dom";
+import AssignedTask from "./Assignedtask/AssignedTask";
 import { IssuePieChart } from "../Charts/PieChart";
-import { AiOutlineIssuesClose } from "react-icons/ai";
-import { GoIssueOpened } from "react-icons/go";
-import { GiLevelEndFlag } from "react-icons/gi";
-import { FaTasks } from "react-icons/fa";
-import { RiPassExpiredLine } from "react-icons/ri";
-import { MdOutlineTaskAlt } from "react-icons/md";
-import { BsListTask } from "react-icons/bs";
 import IssueSection from "./IssueSection/IssueSection";
 import Events from "./Events/Events";
 import TotalNumber from "./TotalTaskstatus/TotalNumber";
@@ -52,9 +44,10 @@ const Dashboard = () => {
          <Calendar value={date} />
           { urgent ?
             <UrgentTask setUrgent={ setUrgent } /> :
-            <AssignedTask setUrgent={ setUrgent } 
-              setActive={ setActive }
-              title="My tasks" footer="Add To Do" />
+          <AssignedTask
+            setUrgent={ setUrgent } 
+            setActive={ setActive }
+            title="My tasks" />
           }
             <IssuePieChart/>
             <CommentSection />

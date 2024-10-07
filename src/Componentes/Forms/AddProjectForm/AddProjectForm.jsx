@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { HiCalendar } from "react-icons/hi";
-import { AiFillPlusCircle } from "react-icons/ai";
-import { IoCloseCircleSharp } from "react-icons/io5";
-import moment from "moment";
-import { closeModal } from "../../../redux/slices/modalSlice";
+ import { IoCloseCircleOutline, IoCloseOutline } from "react-icons/io5";
+ import { closeModal } from "../../../redux/slices/modalSlice";
 import { useDispatch } from "react-redux";
 import "./addProjectForm.css";
 import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+  
+const colors = [ "#ff6161", "#39a8f7", "#5e9197ab", "#cd895f91", "#930cc29e", "#cdb15fc4", "yellow" ];
 
 const AddProjectForm = ( ) =>{
   
   const dispatch=useDispatch()
    const [ startDate, setStartDate ] = useState( "" );
-  const [ endDate, setEndate ] = useState( "" );
-  const [jobCatagory,setJobCatagory]=useState("")
-  const [selectedEmployee,setSelectedEmployee]=useState("")
-  const [ description, setDescription ] = useState( "" );
-  const [openEmployee,setOpenEmployee]=useState(false)
-  const [ selected, setSelected ] = useState( null );
-  const [ tagColor, setTagColor ] = useState( "" );
-  const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
-    const [members, setMembers] = useState([]);
-  
+   const [ endDate, setEndate ] = useState( "" );
+   const [ description, setDescription ] = useState( "" );
+   const [openEmployee,setOpenEmployee]=useState(false)
+   const [ tagColor, setTagColor ] = useState( "" );
+   const [members, setMembers] = useState([]);
+  const [ selectedCandidate, setSelectedCandidate ] = useState( [] )
+   console.log(selectedCandidate);
+ 
+   // delete selected candidate
+  const deleteSelectedCandidates = (id) =>{
+    const candidates=selectedCandidate.filter((candidate)=>candidate.id !== id)
+   setSelectedCandidate(candidates)
+ }
   // fetching memeber from json
   useEffect( () =>
   {
@@ -31,26 +34,28 @@ const AddProjectForm = ( ) =>{
     const res = await fetch( "http://localhost:3500/members" )
     const data = await res.json()
       setMembers( data )
-   console.log(members);
-      
+       
     }
     fetchMembers()
- },[])
+  }, [] )
+   
    function handleSubmit ( e )
   {
     e.preventDefault();
   
   }
+
+
   return (
     <>
       <div className="modal">
-      <form className="addProject" onSubmit={ handleSubmit }>
-        <div className="addProject_header">
-          <h1>Add Projects</h1>
-          <IoCloseCircleSharp fontSize={ 27 } className="icon"
+      <form className="Form" onSubmit={ handleSubmit }>
+        <header>
+          <h6>Add Projects</h6>
+          <IoCloseCircleOutline fontSize={ 27 } className="icon"
           onClick={ () => dispatch(closeModal()) }
           />
-        </div>
+        </header>
         <div className="project__name">
           <label>Add Project name</label>
           <input
@@ -62,7 +67,7 @@ const AddProjectForm = ( ) =>{
             placeholder=""
           />
           </div>
-          <div className="addproject__memberAdding">
+           <div className="addproject__memberAdding">
             <label>Select Employee you want to assign 
             { !openEmployee && <FaArrowDown className="icon"
               onClick={ () =>
@@ -72,18 +77,43 @@ const AddProjectForm = ( ) =>{
             { openEmployee && <FaArrowUp className="icon"
               onClick={ () => setOpenEmployee( false ) } /> }
             </label>
+            
+            {/* selected Candidates */ }
+           { selectedCandidate.length > 0 &&  <span
+              className="employeContainer_members__selected element-with-scroll">
+                { selectedCandidate?.map( ( candidate, i ) => (
+                 <div
+                  key={ i } 
+                  className="employeContainer_members__selected-employee"
+                  >
+                 <div>
+                 <img src={ candidate.profile } alt="profile" />
+                  <h4>
+                    {candidate.name}
+                </h4>
+                  </div>
+                    <p>{ candidate.jobCatagory.substring(0,15) }...</p>
+                    <IoCloseOutline
+                      className="closeIcon"
+                      // onClick={ () => deleteSelectedCandidates( candidate.id ) }
+                    />
+          </div>
+               ))}
+                
+             </span> }
+          
+              {/* employee list to be selected to add in to the projects             */ }
             <div className="employeContainer_members"> 
-           <span
-           onClick={ () => setOpenEmployee((prev)=>!prev)}
-           >{ selectedEmployee !== null  ? `${selectedEmployee}: ${jobCatagory}`  : "selected employee none"}</span> 
-          { openEmployee && members.map((employee,i)=>(
-           <div
+              { openEmployee && members.map( ( employee, i ) => (
+         <div
              key={ i } 
               onClick={ () =>{
-                setSelectedEmployee( employee.name );
                 setOpenEmployee( false );
-                setJobCatagory(employee.jobCatagory)
-              } }
+                setSelectedCandidate( (prev)=>[ ...prev, {
+                       ...employee,
+                       selected: true,
+                } ] )
+                                    } }
               className="employeContainer_members-employe"
            >
               <div>
@@ -91,13 +121,14 @@ const AddProjectForm = ( ) =>{
             <h4>
               {employee.name}
             </h4>
-            </div>
+              </div>
             <p>{employee.jobCatagory}</p>
+         </div>
+              ) ) } 
             </div>
-        ) ) }
+            
           </div>
-          </div>
-        <div className="addProject_date">
+          <div className="addProject_date">
              <div>
               <label>  <HiCalendar className="calanderIcon" />start date
               </label>

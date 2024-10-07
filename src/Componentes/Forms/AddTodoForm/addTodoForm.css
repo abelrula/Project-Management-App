@@ -7,8 +7,9 @@
    background: #ffffff;
    grid-area: form;
    padding: 15px;
-   gap: 30px;
-   width: 580px;
+justify-content: space-evenly;  
+align-items:start;
+ width: 580px;
    flex-direction:4;
    right: 0;
    position: absolute;
@@ -16,13 +17,14 @@
    bottom: 0;
    z-index: 9999;
    overflow-y: scroll;
+   overflow-x: hidden;
  }
  .Form header{
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   width: 100%;
- }
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: -25px; }
  .Form header span {
        display: flex;
     gap: 35px;
@@ -39,8 +41,7 @@
     font-size: larger;
      font-weight: 500;
     margin-left: 10px;
-    width: 100%;
-    border-radius: 10px;
+     border-radius: 10px;
     color: #045373;
     font-weight: bolder;
     font-size: 17px;
@@ -125,8 +126,7 @@
      gap: 5px;
     align-items: start;
     align-self: baseline;
-    border: 1px solid #d3cfcf;
-    width: 100%;
+     width: 100%;
     padding: 10px;
     margin-top: 20px;
  }
@@ -194,17 +194,22 @@
     align-items: baseline;
        justify-content: space-around;
     width: 100%;
-    border: 1px solid #d3cfcf;
-    flex-direction: column;
+     flex-direction: column;
 
  }
  .Form__Subtasks{
-position: relative;
-   display: flex;
-align-self: self-start;
+display: flex;
+    align-self: self-start;
     gap: 5px;
-flex-direction: column;
+    flex-direction: column;
+   
 
+ }
+ .Form__Subtasks div{
+    overflow-y: scroll;
+     max-height: 200px;
+    height: auto;
+    overflow-x: hidden;
  }
  .Form__Subtasks label span {
     position: absolute;
@@ -254,8 +259,7 @@ flex-direction: column;
     flex-direction: row;
 width: 100%;
     justify-content: space-evenly;
-    border: 1px solid #d3cfcf;
-    padding: 10px;
+     padding: 10px;
    }
 .Form__date div {
     display: flex;

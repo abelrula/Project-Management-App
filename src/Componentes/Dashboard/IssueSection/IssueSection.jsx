@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import AddButton from "../../Buttons/AddButton/AddButton";
 import BoxHeader from "../../boxHeader/BoxHeader";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./issueSection.css";
 import { filterTypes } from "../../../lib/data"
 import { openModal } from "../../../redux/slices/modalSlice";
+import AssignTaskForm from "../../Forms/AssignTaskForm/AssignTaskForm";
 
 const IssueSection = ( { title } ) =>
 {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch()
+  const {modalType,toggled}=useSelector(state=>state.modal)
   const [ selectedType, setSelectedType ] = useState( "All" );
   console.log(selectedType);
-  const Onclick = () => dispatch( openModal( { modalType: "", toggled: true } ) ) 
-
+  const Onclick =  () => dispatch( openModal( { modalType: "AssignTaskForm", toggled: true } ) ) 
  
   return (
-    <div className="issueSection">
+    <>
+     <div className="issueSection">
       <BoxHeader icon={<MdKeyboardArrowRight />} header={title } filterTypes={filterTypes} setSelectedType={setSelectedType} selectedType={selectedType} />
       <div className="issueSection__issues">
         <div className="issueSection__issues-projectIssue">
@@ -50,8 +52,15 @@ const IssueSection = ( { title } ) =>
           </span>
         </div>
       </div>
-                <AddButton name="Issue" Onclick={Onclick} />
+      <AddButton
+          name="Issue"
+          Onclick={ Onclick }
+        />
     </div>
+    { modalType === "AssignTaskForm" && toggled === true &&
+          <AssignTaskForm />
+      }
+    </>
   );
 };
 

@@ -14,6 +14,7 @@ import 'react-quill/dist/quill.snow.css';
 import PreviewFile from "../../PreviewFile/PreviewFile";
 import usePreviewFile from "../../../hooks/usePreviewFile";
 import SubTask from "../../SubTask/SubTask";
+import { randomeIdStringGenerator } from "../../../utility/randomeIdStringGenerator";
 
 const members = "http://localhost:3500/members";
 
@@ -31,22 +32,14 @@ const AddTodoForm = ({type}) => {
    const [openProject,  setOpenProject]=useState(false)
    const [ selected, setSelected ] = useState( null );
    const [selectedFormType,setSelectedFormType]=useState("Buisness")
-   const [ addSubTasksNum, setAddSubTasksNum ] = useState( 0 )
+  const [ idResult, setIdResult ] = useState( "[EZ]-[sofDev]-" )
+  const [subTasks,setSubTasks]=useState([])
+  
    const dispatch=useDispatch()
-   const [subTasks,setSubTasks]=useState([])
    
-  const randomeIdStringGenerator = ( length ) =>
-  {    
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    
-    let result="ea1";
-    for ( let i = 0; i < length; i++ ){
-      result += chars.charAt( Math.floor( Math.random() * chars.length ) )    
-    }
-    return result;
-  }
+ 
   const newSubtask = {
-    id:randomeIdStringGenerator(5),
+    id:randomeIdStringGenerator(5,idResult),
     task: "",
     endDate: "",
     startDate: "",
@@ -74,6 +67,7 @@ const AddTodoForm = ({type}) => {
   function handleSubmit ( e ){
     e.preventDefault();
   }
+ console.log(subTasks);
  
   const formType = [ "Buisness", "Personal" ]
    
@@ -108,17 +102,21 @@ const AddTodoForm = ({type}) => {
              <span 
               onClick={ () => setOpenProject((prev)=>!prev)}
              >{ selectedProject !== null  ? selectedProject : "selected project none"}</span> 
-            { openProject && projectTypes.map((item,i)=>(
+            { openProject && projectTypes.map((project,i)=>(
             <div
              key={ i } 
-             onClick={ () => { setSelectedProject( item.title ); setOpenProject(false)}}
-             style={ { background: `${ item.color }` } }
-             className="project_types-type"
+                onClick={ () =>{
+                  setSelectedProject( project.title );
+                  setOpenProject( false );
+                  setIdResult( `${ project.id }ETZ-` );
+                } }
+                style={ { background: `${ project.color }` } }
+                className="project_types-type"
            >
             <h4>
-              {item.title}
+              {project.title}
             </h4>
-           {item.icon} 
+           {project.icon} 
            </div>
         ) ) }
             </div>
@@ -130,17 +128,18 @@ const AddTodoForm = ({type}) => {
           </div>
        
        {/* subtasks inputs */}
-          <div className="Form__Subtasks">
+          <div className="Form__Subtasks ">
             <label onClick={()=>addSubTask(newSubtask)} >Add Subtaks
               <CiSquarePlus
                 fontSize={ 23 }
                 />
              {/* { subTasks?.length > 0 && <span onClick={()=>setSubTasks([])}>clear all</span>} */}
             </label>
+            <div className="element-with-scroll">
             {/* adding subtasks based on user clicking  the plus button */ }
             {subTasks?.map( ( subTask,i ) => (
               <SubTask key={ i }   deleteSubTask={deleteSubTask} subTask={subTask} updateSubTask={updateSubTask}  />
-            ))}
+            ))}</div>
           </div>
           
           {/* attachung documnet inputs */}
