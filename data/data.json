@@ -247,56 +247,109 @@
     {
       "name": "simon Jorge",
       "profile": "https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D",
-      "jobCatagory": "project manager",
-      "progress": "80"
+      "jobCatagory": "Manager",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     },
     {
       "name": "Tmarcus Brown",
       "profile": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGJsYWNrJTIwbWFsZXN8ZW58MHx8MHx8fDA%3D",
       "jobCatagory": "UX Designer",
-      "progress": "40"
+      "progress": "40",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     },
     {
       "name": "Fabio Lucas",
       "profile": "https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D",
       "jobCatagory": "Technical support specialist",
-      "progress": "70"
+      "progress": "70",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     },
     {
       "name": "Christina Ryoji",
       "profile": "https://images.unsplash.com/photo-1573496527892-904f897eb744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D",
       "jobCatagory": "Sales engineer.",
-      "progress": "25"
+      "progress": "25",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     },
     {
       "name": "Ashely jhonson",
       "profile": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D",
       "jobCatagory": "Database administrator",
-      "progress": "50"
+      "progress": "50",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     },
     {
       "name": "Tmarcus Brown",
       "profile": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGJsYWNrJTIwbWFsZXN8ZW58MHx8MHx8fDA%3D",
       "jobCatagory": "UX Designer",
-      "progress": "40"
+      "progress": "40",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     },
     {
       "name": "Fabio Lucas",
       "profile": "https://images.unsplash.com/photo-1631306006348-f9ed42b1e19a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHdvcmslMjBwcm9mZXNpb25hbHN8ZW58MHx8MHx8fDA%3D",
       "jobCatagory": "Technical support specialist",
-      "progress": "70"
+      "progress": "70",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     },
     {
       "name": "Christina Ryoji",
       "profile": "https://images.unsplash.com/photo-1573496527892-904f897eb744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D",
       "jobCatagory": "Sales engineer.",
-      "progress": "25"
+      "progress": "25",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     },
     {
       "name": "Ashely jhonson",
       "profile": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D",
       "jobCatagory": "Database administrator",
-      "progress": "50"
+      "progress": "50",
+      "userId":"342",
+      "bio":"The best and most beatiful things in the world cannot be ssen or even touched",
+      "graduated":"Gonder University",
+      "worksAt":"Atlas Mesa Solar",
+      "phone":"+251-9-09-54-45-26",
+      "joinedIn":"June 17,2024"
     }
   ],
   "conversations": [
@@ -509,377 +562,361 @@
       "end": "2024-04-17T08:46",
       "type": "buisnes",
       "id": 9
+    },
+    {
+      "title": "",
+      "start": "",
+      "end": "",
+      "type": false,
+      "id": 12
+    },
+    {
+      "title": "",
+      "start": "",
+      "end": "",
+      "type": false,
+      "id": 13
+    },
+    {
+      "title": "",
+      "start": "",
+      "end": "",
+      "type": false,
+      "id": 14
     }
   ],
   "project": [
     {
+      "id":"[EZ]-[AbeApa]",
       "projectName": "Abel Apartement",
       "projectTasks": [
         {
           "mainTask": "Managerial control involves monitoring performance and progress. It helps to identify potential errors, omissions and failures and allows managers to ensure that ",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
-          "status": "open",
+              "status": "in progress",
+            "id":"[EZ]-[AbeApa]-7fgdq",
+              "assignedTo": ["simon Jorge","Fabio Lucas","Tmarcus Brown","Tmarcus Brow","Ashely jhonson"],
+              "priority": "High",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the floor completeing the floorcompleteing the floorcompleteing the floorcompleteing the floor",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "in progress",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+              "id":"[EZ]-[AbeApa]-7fgdq-aBgfh",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Fabio Lucas",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "finished",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+            "id":"[EZ]-[AbeApa]-7fgdq-aB5fh",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Tmarcus Brown",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "not started",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+            "id":"[EZ]-[AbeApa]-7fgdq-6Bgfh",
               "progressPercent": 45
             },
             {
               "task": "completeing the floor completeing the floorcompleteing the floorcompleteing the floorcompleteing the floor",
-              "project": "Customer",
               "assignedTo": "Ashely jhonson",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "in progress",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+            "id":"[EZ]-[AbeApa]-7fgdq-a0gfh",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Fabio Lucas",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "finished",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+            "id":"[EZ]-[AbeApa]-7fgdq-A5gfh",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Ashely jhonson",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "not started",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+            "id":"[EZ]-[AbeApa]-7fgdq-MBgfh",
               "progressPercent": 45
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         },
         {
           "mainTask": "Leading teams involves motivating and influencing employees to perform at their best. It requires effective communication skills to provide instructions and feedback.",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
+           "assignedTo": ["simon Jorge","Fabio Lucas","Tmarcus Brown","Tmarcus Brow","Ashely jhonson"],
+              "priority": "High",
+            "id":"[EZ]-[AbeApa]-7fgBq",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Tmarcus Brown",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+            "id":"[EZ]-[AbeApa]-7fgBq-svr32",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Fabio Lucas",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+            "id":"[EZ]-[AbeApa]-7fgBq-svb32",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+            "id":"[EZ]-[AbeApa]-7fgBq-Lvr32",
               "progressPercent": 45
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         },
         {
           "mainTask": " They produce financial, performance and project progress reports. Managers report on incidents, regulation changes and company policy updates and present their reports in management meetings.",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
+          "id":"[EZ]-[AbeApa]-7fgdu",
           "status": "open",
+          "assignedTo": ["simon Jorge","Fabio Lucas","Tmarcus Brown","Tmarcus Brow","Ashely jhonson"],
+              "priority": "High",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdu-dfs3a",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Fabio Lucas",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdu-dfQ3a",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdu-dNs3a",
               "progressPercent": 45
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         },
         {
           "mainTask": "Apart from the typical management tasks mentioned above, some roles involve specific tasks. A sales manager's primary task is to increase sales, while a transport manager plans and coordinates transport activities.",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
+          "id":"[EZ]-[AbeApa]-7fgdE",
           "status": "open",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Tmarcus Brown",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdE-bfgc2",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Fabio Lucas",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdE-bIgc2",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdE-Efgc2",
               "progressPercent": 45
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         },
         {
           "mainTask": "Recruitment managers consult with hiring companies and design hiring strategies. They create job vacancy adverts that define the role and its responsibilities and collate applicants' responses.",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
+          "id":"[EZ]-[AbeApa]-7fgdW",
+           "assignedTo": ["simon Jorge","Fabio Lucas","Tmarcus Brown","Tmarcus Brow","Ashely jhonson"],
+              "priority": "High",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdW-hbfd2",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Fabio Lucas",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdW-obfd2",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[AbeApa]-7fgdW-hbXd2",
               "progressPercent": 45
             }
           ],
-          "id": 1,
           "progressPercent": 45
         },
         {
           "mainTask": "Care home managers design activities for residents, and plan menus and staff shift patterns. Their admin tasks include maintaining accurate records of care provided to each resident and replenishing supplies and equipment",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
+          "id":"[EZ]-[AbeApa]-7fgdV",
+          "assignedTo": ["simon Jorge","Fabio Lucas","Tmarcus Brown","Tmarcus Brow","Ashely jhonson"],
+              "priority": "High",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+           "id":"[EZ]-[AbeApa]-7fgdV-bf33f",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "Fabio Lucas",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+             "id":"[EZ]-[AbeApa]-7fgdV-bf3Pf",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+             "id":"[EZ]-[AbeApa]-7fgdV-bY3Pf",
               "progressPercent": 45
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         }
       ],
       "issueTracking": [
@@ -922,82 +959,74 @@
       ]
     },
     {
+      "id":"[EZ]-[sofDev]",
       "projectName": "Software Developement",
       "projectTasks": [
         {
-          "mainTask": "completeing the UI-UX",
-          "project": "Customer",
+            "mainTask": "completeing the UI-UX",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
+           "id":"[EZ]-[sofDev]-mst32",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+             "id":"[EZ]-[sofDev]-mst32-325fd",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+             "id":"[EZ]-[sofDev]-mst32-g25fd",
               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+             "id":"[EZ]-[sofDev]-mst32-o25fd",
               "progressPercent": 45
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         },
         {
           "mainTask": "completeing the Front-End",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
+             "id":"[EZ]-[sofDev]-msu32-325fd",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+             "id":"[EZ]-[sofDev]-msu32-32Pfd",
               "progressPercent": 45
             },
             {
@@ -1009,7 +1038,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "high",
-              "id": 2,
+             "id":"[EZ]-[sofDev]-msu32-p25fd",
               "status": "in progress",
               "duration": "45 days",
               "progressPercent": 95
@@ -1023,7 +1052,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "medium",
-              "id": 3,
+             "id":"[EZ]-[sofDev]-msu32-R25fd",
               "status": "not started",
               "duration": "0 days",
               "progressPercent": 10
@@ -1037,7 +1066,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "low",
-              "id": 3,
+             "id":"[EZ]-[sofDev]-msu32-RU5fd",
               "status": "not started",
               "duration": "0",
               "progressPercent": 0
@@ -1051,7 +1080,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "medium",
-              "id": 4,
+             "id":"[EZ]-[sofDev]-msu32-RK5fd",
               "status": "finished",
               "duration": "95 days",
               "progressPercent": 100
@@ -1068,32 +1097,29 @@
               "status": "in progress",
               "duration": "",
               "progressPercent": 30,
-              "id": 5
+             "id":"[EZ]-[sofDev]-msu32-A25fd"
             }
           ],
-          "id": 1,
           "progressPercent": 45
         },
         {
           "mainTask": "completeing the Back-End",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
+          "id":"[EZ]-[sofDev]-msP32-A25fd",
           "duration": "125 days",
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[sofDev]-msP32-Ap5fd",
               "progressPercent": 45
             },
             {
@@ -1105,7 +1131,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "high",
-              "id": 2,
+          "id":"[EZ]-[sofDev]-msP32-AL5fd",
               "status": "in progress",
               "duration": "45 days",
               "progressPercent": 95
@@ -1119,7 +1145,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "medium",
-              "id": 3,
+          "id":"[EZ]-[sofDev]-msP32-A2Qfd",
               "status": "not started",
               "duration": "0 days",
               "progressPercent": 10
@@ -1133,7 +1159,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "low",
-              "id": 3,
+          "id":"[EZ]-[sofDev]-msP32-A75fd",
               "status": "not started",
               "duration": "0",
               "progressPercent": 0
@@ -1147,7 +1173,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "medium",
-              "id": 4,
+          "id":"[EZ]-[sofDev]-msP32-AI5fd",
               "status": "finished",
               "duration": "95 days",
               "progressPercent": 100
@@ -1164,11 +1190,10 @@
               "status": "in progress",
               "duration": "",
               "progressPercent": 30,
-              "id": 5
+          "id":"[EZ]-[sofDev]-msP32-A251d"
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         }
       ],
       "issueTracking": [
@@ -1211,65 +1236,59 @@
       ]
     },
     {
+      "id":"[EZ]-[Cons]",
       "projectName": "Construction",
       "projectTasks": [
         {
+          "id":"[EZ]-[Cons]-nmr12",
           "mainTask": "completeing the Colon",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
           "duration": "125 days",
           "subtasks": [
             {
+              "id":"[EZ]-[Cons]-nmr12-mr4f2",
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
-              "progressPercent": 45
+               "progressPercent": 45
+            },
+            {
+              "id":"[EZ]-[Cons]-nmr12-frmr2",
+              "task": "completeing the fromt",
+              "assignedTo": "simon Jorge",
+              "document": "C:\\fakepath\\20230720_113124.jpg",
+              "startDate": "2024-03-21",
+              "endDate": "2024-03-13",
+              "status": "open",
+              "duration": "125 days",
+              "priority": "low",
+               "progressPercent": 45
             },
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
-              "progressPercent": 45
-            },
-            {
-              "task": "completeing the fromt",
-              "project": "Customer",
-              "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
-              "document": "C:\\fakepath\\20230720_113124.jpg",
-              "startDate": "2024-03-21",
-              "endDate": "2024-03-13",
-              "status": "open",
-              "duration": "125 days",
-              "priority": "low",
-              "id": 1,
+              "id":"[EZ]-[Cons]-nmr12-btmi2",
               "progressPercent": 45
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         },
         {
-          "mainTask": "completeing the Front-End",
-          "project": "Customer",
+          "id":"[EZ]-[Cons]-dfs34",
+           "mainTask": "completeing the Front-End",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
@@ -1277,17 +1296,15 @@
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
-              "progressPercent": 45
+              "id":"[EZ]-[Cons]-dfs34-fwsd3",
+                "progressPercent": 45
             },
             {
               "task": "completeing the dashboard",
@@ -1298,8 +1315,8 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "high",
-              "id": 2,
-              "status": "in progress",
+              "id":"[EZ]-[Cons]-dfs34-uwsd3",
+               "status": "in progress",
               "duration": "45 days",
               "progressPercent": 95
             },
@@ -1312,7 +1329,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "medium",
-              "id": 3,
+              "id":"[EZ]-[Cons]-dfs34-ewsd3",
               "status": "not started",
               "duration": "0 days",
               "progressPercent": 10
@@ -1326,7 +1343,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "low",
-              "id": 3,
+              "id":"[EZ]-[Cons]-dfs34-fosd3",
               "status": "not started",
               "duration": "0",
               "progressPercent": 0
@@ -1340,7 +1357,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "medium",
-              "id": 4,
+              "id":"[EZ]-[Cons]-dfs34-fwsd2",
               "status": "finished",
               "duration": "95 days",
               "progressPercent": 100
@@ -1357,15 +1374,14 @@
               "status": "in progress",
               "duration": "",
               "progressPercent": 30,
-              "id": 5
+              "id":"[EZ]-[Cons]-dfs34-fwyd3"
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         },
         {
+          "id":"[EZ]-[Cons]-efs24",
           "mainTask": "completeing the Back-End",
-          "project": "Customer",
           "startDate": "2024-03-21",
           "endDate": "2024-03-13",
           "status": "open",
@@ -1373,16 +1389,14 @@
           "subtasks": [
             {
               "task": "completeing the fromt",
-              "project": "Customer",
               "assignedTo": "simon Jorge",
-              "jobCatagory": "project manager",
               "document": "C:\\fakepath\\20230720_113124.jpg",
               "startDate": "2024-03-21",
               "endDate": "2024-03-13",
               "status": "open",
               "duration": "125 days",
               "priority": "low",
-              "id": 1,
+          "id":"[EZ]-[Cons]-efs24-45ef3",
               "progressPercent": 45
             },
             {
@@ -1394,7 +1408,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "high",
-              "id": 2,
+          "id":"[EZ]-[Cons]-efs24-5sef3",
               "status": "in progress",
               "duration": "45 days",
               "progressPercent": 95
@@ -1408,7 +1422,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "medium",
-              "id": 3,
+          "id":"[EZ]-[Cons]-efs24-h5ef3",
               "status": "not started",
               "duration": "0 days",
               "progressPercent": 10
@@ -1422,7 +1436,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "low",
-              "id": 3,
+          "id":"[EZ]-[Cons]-efs24-4kef3",
               "status": "not started",
               "duration": "0",
               "progressPercent": 0
@@ -1436,7 +1450,7 @@
               "startDate": "2024-02-25",
               "endDate": "2024-03-13",
               "priority": "medium",
-              "id": 4,
+          "id":"[EZ]-[Cons]-efs24-Q5ef3",
               "status": "finished",
               "duration": "95 days",
               "progressPercent": 100
@@ -1453,11 +1467,10 @@
               "status": "in progress",
               "duration": "",
               "progressPercent": 30,
-              "id": 5
+              "id":"[EZ]-[Cons]-efs24-45eO3"
             }
           ],
-          "id": 1,
-          "progressPercent": 45
+           "progressPercent": 45
         }
       ],
       "issueTracking": [
