@@ -1,36 +1,21 @@
      import { useState,useEffect } from "react";
 import DetailofProjects from "../../DetailofProjects/DetailofProjects";
+import { NavLink } from "react-router-dom";
   
-const TaskCell = ( { getValue, row, column, table } ) =>
-
-  {
-              const initilaValue = getValue()
-              const [value,setValue]=useState(initilaValue)
+const TaskCell = ( {row} ) =>{
+                
               
-              const onBlur=()=>{
-                table.options.meta?.updateData(row.index,column.id,value)
-                                  }
-          const [openModal,setOpenModal] =useState( false )
-              useEffect( () =>{
-              setValue(initilaValue)
-              },[initilaValue])
-              return (
-                <>
-                 <div className="taskInputCell"> 
-                  <input
-                  type="text"
-                  onBlur={onBlur}
-                  value={ value }
-                    onChange={ ( e ) => setValue( e.target.value ) } />
-                  <button onClick={()=>setOpenModal(true)}> <span>Open</span>
-
-</button>
+  return (
+          <>
+           <div className="taskInputCell"> 
+            <div >
+                  { row.original.mainTask.slice(0,50) }...
+                     </div>
+                 <NavLink to={`details/${row.original.id}`}>
+                      <span>Open</span>
+                     </NavLink >
                 </div>
-                  { openModal && 
-                    <div className="modal"> <DetailofProjects  setOpenModal={ setOpenModal }  /></div>
-                 }
                 </>
-
               )
 }
 export default TaskCell

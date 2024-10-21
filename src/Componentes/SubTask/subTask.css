@@ -16,6 +16,10 @@
    right: 0;
    cursor: pointer;
  }
+ .Form__Subtasks__inputs div span{
+display: flex;
+flex-direction: column;
+ }
  .Form__Subtasks__inputs-closeIcon:hover{
 background-color: #000000; 
 color: wheat;

@@ -5,44 +5,56 @@ import { IoCloseOutline } from 'react-icons/io5'
 import { FaTasks } from 'react-icons/fa'
 import { IndivudualTaskLayout } from '../../Layouts'
 import "./detailofProjects.css"
+import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom'
 
 
 const DetailofProjects = ({setOpenModal}) => {
   
     const [ projects, setProjects ] = useState( [] )
-   
-     useEffect(() => {
+  const { id } = useParams()
+  const projectID = id.slice( 0, 13 )
+  console.log(projectID);
+const project=projects?.projectTasks?.find(project => project.id === id)
+    
+  useEffect( () =>{
       const   fetchApi = async () =>
          {
           
          try {
-           const data = await fetch( "http://localhost:3500/project" )
-             const res = await data.json()
-             setProjects(res) 
+           const data = await fetch( `http://localhost:3500/project/${ projectID }` )
+           const res = await data.json()
+           setProjects( res ) 
+           
          } catch (error) {
             
          }   
      }
      fetchApi()
-    }, [])
-    console.log(projects);
-  console.log( projects[0]?.projectTasks)
-    return (
-        <div className='projectDetail'>
-        <IoCloseOutline onClick={()=>setOpenModal(false)} color={"black"} fontSize={30} style={{position:"fixed",right:'30px',top:"10px" }}/>
-
-            <section className="projectDetail__side element-with-scroll">
-                <header className="projectDetail__side-header">
-                    Basics of tasks a...
-               </header>
-                { projects[ 0 ]?.projectTasks?.map( ( project, i ) => (
-                <div className='projectDetail__side-projects'>
-                    <div><h6>EZ1-T19</h6><span>{ project.status }</span></div>
-                    <p>{ project.mainTask.substring(0,60) }</p>
-                    <h4>Abel zewdu</h4>
-                </div> ) ) }
-           </section>
-            <section className="projectDetail__sections">
+     }, [] )
+    console.log(project);
+     console.log();
+    
+     return (
+        // <div className="modal">
+        //     <div className='projectDetail'>
+        //         <NavLink
+        //         to="..">
+        //             <IoCloseOutline
+        //             color={ "black" } fontSize={ 30 }
+        //             style={ { position: "fixed", right: '30px', top: "10px" } } />
+        //         </NavLink>
+        //     <section className="projectDetail__side element-with-scroll">
+        //         <header className="projectDetail__side-header">
+        //             Basics of tasks a...
+        //        </header>
+        //         { projects[ 0 ]?.projectTasks?.map( ( project, i ) => (
+        //         <NavLink to={project.id} className='projectDetail__side-projects'>
+        //             <div><h6>EZ1-T19</h6><span>{ project.status }</span></div>
+        //             <p>{ project.mainTask.substring(0,60) }</p>
+        //             <h4>Abel zewdu</h4>
+        //         </NavLink> ) ) }
+        //    </section>
+            <section className="projectDetail__sections element-with-scroll">
                 <header>
                     <h6><FaTasks />Task <span>EZ1-T19</span></h6>
                     <h2>{ projects[ 0 ]?.projectTasks[0]?.mainTask }</h2>
@@ -64,12 +76,10 @@ const DetailofProjects = ({setOpenModal}) => {
                             <li>Work hours <span>{ projects[ 0 ]?.projectTasks[0].progressPercent}</span></li>
                         </ul>
                  </div>
-                <IndivudualTaskLayout />
-            </section>
-
-                      
-
-        </div>
+            <Outlet context={[project]} />
+                 </section> 
+        // </div>
+        // </div>
   )
 }
 

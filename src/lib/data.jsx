@@ -36,6 +36,7 @@ import PriorityCell from "../Componentes/Table/Cells/PriorityCell"
 import { AiOutlineIssuesClose } from "react-icons/ai";
 import { GoIssueOpened } from "react-icons/go";
 import { GiLevelEndFlag, GiTimeSynchronization } from "react-icons/gi";
+import AssignedToCell from "../Componentes/Table/Cells/AssignedToCell";
  
 
 export const projectTypes = [
@@ -427,12 +428,12 @@ export const TaskcolumnDef = [
                 {
                   accessorKey:"task",
                   header:<p>Task <BsListTask color="#3e5b5e" /></p>,
-                  cell:TaskCell
+                  cell:({cell,row})=><TaskCell row={row} />
                 },
                 {
                   accessorKey:"assignedTo",
                   header:<p>assigned To <MdOutlineAssignmentInd color="#3e5b5e" /></p>,
-                  cell: ( props ) => <span><ProfileImage name={props.getValue()} /> { props.getValue() === "" ?  "Not Assigned" : props.getValue()} </span>
+                  cell: AssignedToCell
                 },
                 // {
                 //   accessorKey:"project",

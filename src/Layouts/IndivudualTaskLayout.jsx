@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useOutletContext, useParams } from 'react-router-dom';
 
 const IndivudualTaskLayout = () => {
     const selectedObj = {
@@ -8,7 +8,9 @@ const IndivudualTaskLayout = () => {
     borderRadius:"5px"
     };
     const navLinks = [ "comments", "subtasks", "logHours", "documents", "issues" ]
-     
+    const { id:projectId } = useParams()
+    console.log( projectId );
+    
     return (
           <div className="projectDetail__routes">
                     <nav>
@@ -17,7 +19,7 @@ const IndivudualTaskLayout = () => {
                             ))}
                     </nav>
                     <div className="projectDetail__routes-outlet">
-                        <Outlet />
+                        <Outlet context={[projectId]} />
                     </div>
                 </div>        
   )

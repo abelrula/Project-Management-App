@@ -9,25 +9,15 @@ import { openModal } from '../../redux/slices/modalSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import AddIssueForm from '../Forms/AddIssueForm/AddIssueForm';
 
-const IssuesTable = () => {
+const IssuesTable = ({data}) => {
   const [ projectTasks, setProjectTasks ] = useState( [] )
-  const [ issueTracking, setIssueTracking ] = useState( [] )
   const [ selectedType, setSelectedType ] = useState( "All" )
   const dispatch = useDispatch()
   const { modalType, toggled } = useSelector( state => state.modal )
   console.log( modalType, toggled )
-     
-              useEffect( () =>{ 
-                   async function  AssignedProjects(){
-                    const res = await fetch( "http://localhost:3500/project" )
-                    const data = await res.json()
-                    setProjectTasks(data[0].projectTasks[0].subtasks)
-                    setIssueTracking(data[0].issueTracking)
-                  }
-                  AssignedProjects()
-                },[])
+ 
               const tableData = useReactTable( {
-                data: issueTracking,
+                data: data,
                 columns:IssuecolumnsDef,
                 getCoreRowModel:getCoreRowModel() ,
                 meta: {

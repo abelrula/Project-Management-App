@@ -98,18 +98,17 @@ display: flex;
   background-color: #080807;
 }
 .modal{
-
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
     position: fixed;
-    background: #352e2ec7;
+    background: #000000c7;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-height: 100vh;
+    height: 100vh;
 /* transition: all 1 ease-in-out; */
 transition: ease-in-out linear 1s ;
 }

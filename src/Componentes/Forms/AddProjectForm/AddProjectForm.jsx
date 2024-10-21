@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import "./addProjectForm.css";
 import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+import ReactQuill from "react-quill";
   
 const colors = [ "#ff6161", "#39a8f7", "#5e9197ab", "#cd895f91", "#930cc29e", "#cdb15fc4", "yellow" ];
 
@@ -56,17 +57,10 @@ const AddProjectForm = ( ) =>{
           onClick={ () => dispatch(closeModal()) }
           />
         </header>
-        <div className="project__name">
+          <div className="Form__textArea">
           <label>Add Project name</label>
-          <input
-            type="text"
-            id="description"
-            value={ description }
-            className="addProject__textarea"
-            onChange={ ( e ) => setDescription( e.target.value ) }
-            placeholder=""
-          />
-          </div>
+           <ReactQuill theme="snow" value={description} onChange={setDescription} />
+        </div>
            <div className="addproject__memberAdding">
             <label>Select Employee you want to assign 
             { !openEmployee && <FaArrowDown className="icon"

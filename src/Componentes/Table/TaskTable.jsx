@@ -8,16 +8,16 @@ import { IoAddCircle } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from '../../redux/slices/modalSlice';
 import { filterTypes, TaskcolumnDef } from '../../lib/data';
+import { Outlet } from 'react-router-dom';
     
 
                
-const TaskTable = () => {
+const TaskTable = ({data}) => {
   
   const { modalType, toggled } = useSelector( state => state.modal )
   const dispatch=useDispatch()
   const [ projectTasks, setProjectTasks ] = useState( [] )
-  const [ projectTasks1, setProjectTasks1 ] = useState( [] )
-  const [ selectedType, setSelectedType ] = useState( "All" )
+   const [ selectedType, setSelectedType ] = useState( "All" )
   const [issueTracking,setIssueTracking]= useState([])
  
   // fetching a Data from json-server
@@ -25,15 +25,13 @@ const TaskTable = () => {
                    async function  AssignedProjects(){
                     const res = await fetch( "http://localhost:3500/project" )
                     const data = await res.json()
-                    setProjectTasks(data[0].projectTasks[0].subtasks)
-                    setProjectTasks1(data)
-                    console.log(projectTasks1)
-                    setIssueTracking(data[0].issueTracking)
+                    setProjectTasks(data[0].projectTasks)
+                      setIssueTracking(data[0].issueTracking)
                   }
                   AssignedProjects()
               }, [] )
   
-  
+   
   
   // configuring Tanstack table
   
@@ -85,7 +83,8 @@ const TaskTable = () => {
                       }
                     </tbody>
           </table>
-                 {modalType === "AssignTask" && toggled === true &&  <AssignTaskForm /> }
+          { modalType === "AssignTask" && toggled === true && <AssignTaskForm /> }
+          <Outlet/>
         </div>
         
        

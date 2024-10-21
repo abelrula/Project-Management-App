@@ -1,0 +1,153 @@
+ .AssignedTask{
+   background: white;
+   display: flex;
+   flex-direction: column;
+   padding: 5px;
+   border:1px solid #bdb8b8;
+   border-radius: 10px;
+   width: 350px;
+   height: 245px;
+  }
+  .AssignedTask h3{
+       font-size: 15px;
+    font-weight: 100;
+    color: #bb7d46;
+    font-family: monospace;
+    display: flex;
+    gap: 3px;
+  }
+  .AssignedTask__header{
+   display: flex;
+   justify-content: space-between;
+   width: 60%;
+    align-self: end;
+    font-family: system-ui;
+    align-items: end;
+   font-weight: 500;
+   color: black;
+   font-size: 17px;
+  }
+  .AssignedTask__header input :hover{
+   scale: 1.1;
+  }
+ .AssignedTask__situation{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 25px;
+    overflow-y: hidden;
+    flex: 1;
+ }
+ .AssignedTask__situation-types{
+  display: flex;
+    gap: 25px;
+        align-items: center;
+  }
+ .AssignedTask__situation-types > li.workProgress{
+    border-bottom: 3px solid #d7a66f;
+    padding: 3px 14px;
+ }
+ .AssignedTask__situation--description{
+  width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;overflow-y: scroll;
+    justify-content: space-between;
+ }
+ .AssignedTask__situation-types > li {
+  display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 5px 0px;
+    cursor:pointer
+ }
+ .AssignedTask__situation-types > li  > label{
+   color: #767171;
+   cursor: pointer;
+   font-size: 14px
+ }
+ .AssignedTask__situation--description--list {
+   display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #f6ecec;
+    border-right: none;
+    border-left: none;
+    padding: 5px;
+}
+.AssignedTask__situation--description--list .icon{
+   color:#d7a66f;
+   font-size:large
+}
+.AssignedTask__situation--description--list > span {
+  display: flex;
+   align-items: center;
+  width: 100%;
+  align-self: auto
+}
+ .AssignedTask__situation--description--list > span > p{
+   font-size: 13px;
+   width: 100%;
+   color: #546a7c;
+   text-align: left;
+   margin-left: 15px;
+ }
+ .AssignedTask__situation--description--list > span > input:hover{
+  scale: 1.1;
+  cursor: pointer;
+}
+ .AssignedTask__situation--description--list:nth-child(1){
+  font-size: 0.7rem;
+ }
+ .AssignedTask__situation--description--list > img{
+width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+    object-fit: cover;
+    object-position: 75% 10%;
+ }
+
+ 
+ 
+.seeMorebutton {
+        display: inline-block;
+    border-radius: 4px;
+    background-color: #a16907;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.seeMorebutton span {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    transition: 0.5s;
+    font-size: 13px;
+    padding: 3px 10px;
+    width: auto;
+     color: white;
+}
+
+.seeMorebutton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: -7px;
+    right: 5px;
+    transition: 0.5s;
+    font-size: 23px;
+}
+
+.seeMorebutton:hover span {
+  padding-right: 15px;
+}
+
+.seeMorebutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}

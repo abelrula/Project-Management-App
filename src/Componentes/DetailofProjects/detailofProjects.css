@@ -21,7 +21,7 @@ display: flex;
     text-align: start;
     margin-top: 15px;
 }
-.projectDetail__side-projects{
+.projectDetail__side a{
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -29,6 +29,7 @@ display: flex;
     padding: 10px;
     background: #ffffff;
     border-radius: 10px;
+    text-decoration: none;
 }
 .projectDetail__side-projects div {
     display: flex;
@@ -57,7 +58,10 @@ background: #2c6913;
 }
 .projectDetail__sections{
     flex: 3;
-    padding:5px;}
+    padding:5px;
+overflow-y: scroll;
+ 
+height:100vh;}
 .projectDetail__sections header{
     margin-top: 25px;
     display: flex;
@@ -126,8 +130,7 @@ text-align: start;
  }
 .projectDetail__routes{
  background-color: #000000;
-    height: 100%;
-}
+ }
 .projectDetail__routes nav{
     background-color: #000000;
     display: flex;
@@ -141,4 +144,5 @@ text-align: start;
 .projectDetail__routes-outlet{
     background-color: #c7c7c7;
     height: 100%;
+    padding: 5px;
 }

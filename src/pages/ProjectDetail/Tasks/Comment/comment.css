@@ -1,0 +1,49 @@
+.CommentSection_TeamsComment{
+    display: flex;
+    flex-direction: column;
+
+}
+.CommentSection_TeamsComment-onTask{
+    background: white;
+    display: flex;
+ padding: 10px;
+    border: 1px solid #bdb8b8;
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+    gap: 10px;
+    overflow: hidden;
+    align-items:center;
+}
+.CommentSection_TeamsComment-onTask   span{
+        display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #9d9d9d;
+    height: fit-content;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+  }
+.CommentSection_TeamsComment-onTask span img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.CommentSection_TeamsComment-onTask  span   h6{
+       font-size: 12px;
+    color: #156993;
+    font-family: math;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+.CommentSection_TeamsComment-onTask       p {
+      margin-bottom: 5px;
+    font-size: 12px;
+    color: #1a170e;
+    font-family: math;
+    font-weight: 100;
+    text-transform: capitalize;
+    text-wrap: pretty;
+}
