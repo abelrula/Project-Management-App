@@ -31,10 +31,11 @@
     width: 70px;
     transition: all ease-in-out 1s;
     border: 1px solid #baa7a7;
+    cursor: pointer;
     }
     .TeamDirectory__members__member:hover {
     z-index: 11000;
-scale: 1.2;
+scale: 1.1;
 
 } 
  .TeamDirectory__members__member > img{
