@@ -3,13 +3,18 @@ import "./commentSection.css";
  import { LiaComments } from "react-icons/lia";
  import AddButton from "../../Buttons/AddButton/AddButton";
 import BoxHeader from "../../boxHeader/BoxHeader";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+ import { openModal } from "../../../redux/slices/modalSlice";
+ import AddCommentForm from "../../Forms/AddCommentForm/AddCommentForm";
 const CommentSection = () => {
   const dispatch = useDispatch()
-   const Onclick = () => dispatch( openModal( { modalType: "", toggled: true } ) )
+  const {modalType,toggled}=useSelector(state=>state.modal)
+     const Onclick = () => dispatch( openModal( { modalType: "addCommentForm", toggled: true } ) )
+
    
   return (
-    <div className="CommentSection">
+    <>
+      <div className="CommentSection">
       <BoxHeader icon={<LiaComments />} header="New Comments"   />
       <div className="CommentSection_TeamsComment">
         <div className="CommentSection_TeamsComment-Usercomments">
@@ -44,8 +49,12 @@ const CommentSection = () => {
         </div>
        
       </div>
-                <AddButton name="Comment" onClick={Onclick} />
-    </div>
+                <AddButton name="Comment" Onclick={Onclick} />
+      </div>
+      { modalType === "addCommentForm" && toggled === true &&
+          <AddCommentForm />
+      }
+    </>
   );
 };
 

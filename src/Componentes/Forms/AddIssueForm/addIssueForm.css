@@ -134,13 +134,16 @@ display: flex;
   
  
  .project_types{
-     display: flex;
+   display: flex;
     flex-direction: column;
     position: absolute;
     left: 220px;
-     background: white;
+    background: white;
     padding: 5px;
     top: 0px;
+    z-index: 999;
+    width: 60%;
+    height: max-content;
    }
  .project_types-type{
     
