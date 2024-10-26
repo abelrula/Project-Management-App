@@ -15,6 +15,9 @@ import PreviewFile from "../../PreviewFile/PreviewFile";
 import usePreviewFile from "../../../hooks/usePreviewFile";
 import SubTask from "../../SubTask/SubTask";
 import { randomeIdStringGenerator } from "../../../utility/randomeIdStringGenerator";
+import Priority from "../../Form_small_componenets/priority/Priority";
+import AttachDocs from "../../Form_small_componenets/attach_docs/AttachDocs";
+import DateRange from "../../Form_small_componenets/completion_date/DateRange";
 
 const members = "http://localhost:3500/members";
 
@@ -22,8 +25,7 @@ const AddTodoForm = ({type}) => {
    
   const [attachedDocuments,setAttachedDocuments]=useState(null)
   const [previewFileUrl,fileNames] =  usePreviewFile( attachedDocuments )
-   const fileUpload=useRef()
-
+ 
    const date = new Date();
    const [startDate, setStartDate] = useState(date);
    const [endDate, setEndate] = useState(date);
@@ -34,6 +36,7 @@ const AddTodoForm = ({type}) => {
    const [selectedFormType,setSelectedFormType]=useState("Buisness")
   const [ idResult, setIdResult ] = useState( "[EZ]-[sofDev]-" )
   const [subTasks,setSubTasks]=useState([])
+  const [ priority, setPriority ] = useState( "" );
   
    const dispatch=useDispatch()
    
@@ -121,7 +124,8 @@ const AddTodoForm = ({type}) => {
         ) ) }
             </div>
            </div>}
-       {/* main taskdecription usinf react quill text editor */}
+     
+          {/* main taskdecription usinf react quill text editor */ }
           <div className="Form__textArea">
           <label>Add Main Task Discription</label>
            <ReactQuill theme="snow" value={description} onChange={setDescription} />
@@ -143,53 +147,19 @@ const AddTodoForm = ({type}) => {
           </div>
           
           {/* attachung documnet inputs */}
-          <div className="Form__AttachDocuments">
-          <label>Attach Documents</label>
-            <button onClick={ ()=>fileUpload.current.click()} className="seeMoreButton"><span>Upload File</span></button>
-          <input
-              type="file"
-              id="documents"
-              ref={fileUpload}
-             onChange={ ( e ) => setAttachedDocuments( e.target?.files ) }
-              style={ { display: "none" } }
-              multiple
-          />
-          { fileNames && <PreviewFile  fileNames={fileNames} setAttachedDocuments={setAttachedDocuments}/>}
+               <div className="Form__AttachDocuments">
+            <AttachDocs setAttachedDocuments={ setAttachedDocuments } />
+            { fileNames &&
+              <PreviewFile fileNames={ fileNames } setAttachedDocuments={ setAttachedDocuments } /> }
           </div>
-          
+
           {/* task priorities */}
-           <div className="Form__priorities">
-          <label>Select The Priority</label>
-          <div className="Form__priorites">
-            { statusData.map( ( item, i ) => (
-          <span
-           onClick={()=>setSelected(item.status)}
-            className={`Form__priorites-priority ${ item.status }` }
-            key={i}
-            style={ {
-              background: selected ===item.status && item.background,
-                color:selected ==item.status && "white" }} 
-              >
-             {item.status}
-       </span>
-       ))}
-        </div>
-           </div>
+                 <Priority setPriority={setPriority} priority={priority} />
+
         
           {/* task completion date */}
-          <div className="Form__date">
-           <div>
-            <label>
-               <HiCalendar className="calanderIcon" />
-              task need to start</label>
-            <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
-          </div>
-          <div>
-            <label>
-           <HiCalendar className="calanderIcon" />
-              to be submitted date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
-          </div>
-          </div>
+          <DateRange setEndate={ setEndate } setStartDate={ setStartDate } />
+        
         
           {/* submit form */ }
         <FormSubmitButton buttonName="Assign Task"/>

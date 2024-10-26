@@ -1,25 +1,23 @@
 import React, { useState } from "react";
-import { AiFillPlusCircle } from "react-icons/ai";
  import { IoCloseCircleSharp } from "react-icons/io5";
-import { HiCalendar } from "react-icons/hi";
-import { GiLevelTwo } from "react-icons/gi";
 import { closeModal } from "../../../redux/slices/modalSlice";
 import { useDispatch } from "react-redux";
 import "./schedulesForm.css";
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from "react-quill";
 import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
-
+import ColorTags from "../../Form_small_componenets/Color_tags/ColorTags";
+import DateRange from "../../Form_small_componenets/completion_date/DateRange";
+ 
 
 const SchedulesForm = () => {
    const date = new Date();
   const dispatch = useDispatch()
-   const [startTime, setStartTime] = useState("");
-   const [endTime, setEndTime] = useState("");
+     const [startDate, setStartDate] = useState(date);
+   const [endDate, setEndate] = useState(date);
    const [description, setDescription] = useState("");
    const [schedualType, setSchedualType] = useState(false);
    const [tagColor, setTagColor] = useState(""); 
-   const colors = [ "#ff6161", "#39a8f7","#5e9197ab","#cd895f91","#930cc29e","#cdb15fc4","yellow" ];
   
    // post method for schedual form
   function handleSubmit ( e )
@@ -45,32 +43,24 @@ const SchedulesForm = () => {
   return (
     <>
       <div className="modal">
-        <form className="SchedualForm" onSubmit={ handleSubmit }>
-        <div className="SchedualForm_header">
-        <h2>Add New Scheduals</h2>
+        <form className="Form" onSubmit={ handleSubmit }>
+        <header  >
+        <h6>Add New Scheduals</h6>
         <IoCloseCircleSharp fontSize={27}  className="icon" onClick={() => dispatch(closeModal())}/>
-        </div>
-       <div className="Form__textArea">
-          <label>Add Scheduels desc</label>
+        </header>
+       
+       {/* schedule decription using react quill text editor */}
+          <div className="Form__textArea">
+          <label>Add Scheduals desc</label>
            <ReactQuill theme="snow" value={description} onChange={setDescription} />
-        </div>
-        <div className="SchedualForm__date">
-          {/* <Calendar value={value} onChange={onChange} /> */}
-          <div>
-            <label>
-              <HiCalendar className="calanderIcon" />Start Time
-            </label>
-            <input type="datetime-local" onChange={ ( e ) => setStartTime( e.target.value ) } />
-           </div>
-           <GiLevelTwo size={20} />
-             <div>
-            <label>
-              <HiCalendar className="calanderIcon" />End Time
-            </label>
-            <input type="datetime-local" onChange={ ( e ) => setEndTime( e.target.value ) } />
           </div>
-        </div>
-         <div className="TodoForm__type">
+         
+      
+       {/* scheduale  date */}
+          <DateRange dateType="datetime-local" setEndate={ setEndate } setStartDate={ setStartDate } />
+         
+        {/* types of schedual for myself or work */}
+          <div className="TodoForm__type">
           <div
             onClick={() => {
               setSchedualType("personal");
@@ -95,24 +85,11 @@ const SchedulesForm = () => {
           >
             Buisness
           </div>
-        </div>
-        <div className="SchedualForm__tags">
-          <label>Select Tag :</label>
-          <div>
-          { colors.map( ( color ) => (
-            <div className="SchedualForm__tag">
-              <div
-                className="tag"
-                onClick={() => setTagColor(color)}
-                style={{
-                  background: `${color}`,
-                  border: tagColor === color ? "2px solid black" : "none",
-                }}
-              ></div>
-            </div>
-          ))}
-        </div>
-        </div>
+          </div>
+          
+         {/* select tag color */ }
+          <ColorTags tagColor={tagColor} setTagColor={ setTagColor } />
+          
         <FormSubmitButton buttonName="Add To Scheduals"/>
       </form>
       </div>

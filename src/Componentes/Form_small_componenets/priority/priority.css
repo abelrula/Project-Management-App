@@ -1,0 +1,36 @@
+.Form__priorities{
+     display: flex;
+     gap:10px;
+     align-self: self-start;
+}
+
+.Form__priorites-priority-low:hover{
+     background-color: rgb(157 146 0);
+     color: white;
+}
+.Form__priorites-priority-medium:hover{
+     background-color: #0021b6;
+     color: white;
+}
+.Form__priorites-priority-high:hover{
+       background-color: #ff0000;
+        color: white
+}
+ .Form__priorites{
+display: flex;
+    gap: 20px;
+    align-self: self-start;
+ }
+ .Form__priorites-priority{ 
+   background: white;
+     display: flex;
+    place-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid;
+     padding: 5px 30px;
+    font-size: 13px;
+    font-family: math;
+        border: 1px solid #bf9c9c;
+}
+ 

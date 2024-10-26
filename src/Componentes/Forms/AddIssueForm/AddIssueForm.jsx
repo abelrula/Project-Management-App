@@ -9,6 +9,8 @@ import { closeModal } from "../../../redux/slices/modalSlice";
 import { projectTypes, statusData } from "../../../lib/data";
 
 import "./addIssueForm.css"
+import Priority from "../../Form_small_componenets/priority/Priority";
+import DateRange from "../../Form_small_componenets/completion_date/DateRange";
 const AddIssueForm = () => {
 
     const date = new Date();
@@ -18,6 +20,7 @@ const AddIssueForm = () => {
     const [openProject,  setOpenProject]=useState(false)
    const [ selected, setSelected ] = useState( null );
    const [attachedDocuments,setAttachedDocuments]=useState(null)
+  const [ priority, setPriority ] = useState( "" );
    const dispatch=useDispatch()
  
 
@@ -66,46 +69,14 @@ const AddIssueForm = () => {
           </div>
        
           {/* attachung documnet inputs */}
-          <div className="Form__AttachDocuments">
-          <label>Attach Documents</label>
-          <button className="seeMoreButton"><span>Upload File</span></button>
-          <input
-            type="file"
-            id="documents"
-            value={attachedDocuments}
-            onChange={ ( e ) => setAttachedDocuments( e.target.value ) }
-            style={{display:"none"}}
-          />
-
-          </div>
+         <AttachDocs attachedDocuments={attachedDocuments} setAttachedDocuments={setAttachedDocuments} />
           
           {/* Issue priorities */}
-        <div className="Form__priorities">
-          <label>Select The Priority</label>
-          <div className="Form__priorites">
-            { statusData.map( ( item, i ) => (
-          <span
-           onClick={()=>setSelected(item.status)}
-            className={`Form__priorites-priority ${ item.status }` }
-            key={i}
-            style={ {
-              background: selected ===item.status && item.background,
-                color:selected ==item.status && "white" }} 
-              >
-             {item.status}
-       </span>
-       ))}
-        </div>
-        </div>
+                 <Priority setPriority={setPriority} priority={priority} />
         
           {/* Issue completion date */}
-          <div className="Form__date">
-             <label>
-              <HiCalendar className="calanderIcon" />
-                            to be submitted date
-                        </label>
-                        <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
-                     </div>
+                    <DateRange setEndate={ setEndate } setStartDate={setStartDate} />
+
          
           {/* submit form */ }
         <FormSubmitButton buttonName="Assign Task"/>

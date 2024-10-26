@@ -1,0 +1,21 @@
+.Form__date{
+      gap: 10px;
+     display: flex;
+    flex-direction: row;
+width: 100%;
+    justify-content: space-evenly;
+     padding: 10px;
+   }
+.Form__date div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+.Form__date div  input{
+       width: 220px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 5px;
+    background: aliceblue;
+    border: 1px solid #c5c5c5;
+}

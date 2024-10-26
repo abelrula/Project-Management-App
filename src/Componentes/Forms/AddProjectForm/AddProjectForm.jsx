@@ -7,6 +7,8 @@ import "./addProjectForm.css";
 import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 import ReactQuill from "react-quill";
+import DateRange from "../../Form_small_componenets/completion_date/DateRange";
+import ColorTags from "../../Form_small_componenets/Color_tags/ColorTags";
   
 const colors = [ "#ff6161", "#39a8f7", "#5e9197ab", "#cd895f91", "#930cc29e", "#cdb15fc4", "yellow" ];
 
@@ -57,12 +59,15 @@ const AddProjectForm = ( ) =>{
           onClick={ () => dispatch(closeModal()) }
           />
         </header>
+       
+          {/* main project decription using react quill text editor */ }
           <div className="Form__textArea">
           <label>Add Project name</label>
            <ReactQuill theme="snow" value={description} onChange={setDescription} />
-        </div>
+          </div>
+          
            <div className="addproject__memberAdding">
-            <label>Select Employee you want to assign 
+            <label>Select candidates you want to include 
             { !openEmployee && <FaArrowDown className="icon"
               onClick={ () =>
               {
@@ -122,35 +127,13 @@ const AddProjectForm = ( ) =>{
             </div>
             
           </div>
-          <div className="addProject_date">
-             <div>
-              <label>  <HiCalendar className="calanderIcon" />start date
-              </label>
-              <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
-            </div>
-             <div>
-              <label>  <HiCalendar className="calanderIcon" />end date
-              </label>
-              <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
-            </div>
-        </div>
-        <div className="addProject__tags">
-          <label>Select Tag :</label>
-          <div>
-            { colors.map( ( color ) => (
-              <div className="addProject__tag">
-                <div
-                  className="tag"
-                  onClick={ () => setTagColor( color ) }
-                  style={ {
-                    background: `${ color }`,
-                    border: tagColor === color ? "2px solid black" : "none",
-                  } }
-                ></div>
-              </div>
-            ) ) }
-          </div>
-        </div>
+         
+          {/* project completion date */ }
+          <DateRange setEndate={ setEndate } setStartDate={ setStartDate } />
+       
+          {/* select tag color */ }
+          <ColorTags tagColor={tagColor} setTagColor={ setTagColor } />
+
            <FormSubmitButton buttonName="Add Project" />
         </form>
         </div>

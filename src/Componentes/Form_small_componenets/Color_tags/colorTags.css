@@ -1,0 +1,17 @@
+ .Form__tags{
+    margin-top: 20px;
+    gap: 10px;
+ }
+ .Form__tags  div{
+        display: flex;
+    gap: 15px;
+   }
+   
+ .Form__tag:hover{
+   border:#fcfcfc solid 2px 
+   }
+   
+ .tag{
+      width: 35px;
+    height: 35px;
+ }

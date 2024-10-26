@@ -1,0 +1,26 @@
+ .Form__AttachDocuments{
+    display: flex;
+    align-self: self-start;
+    align-items: center;
+    gap: 10px;
+ }
+ .Form__AttachDocuments button{
+    background: #13855b;
+    border: none;
+    color: white;
+    padding: 4px 15px;
+    font-size: 11px;
+    border-radius: 12px;
+    min-width: fit-content;
+    height: 30px;
+ }
+ .Form__AttachDocuments input{
+        border: 1px solid #b7b7b7;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 10px;
+    font-family: cursive;
+    font-size: 15px;
+    background: white;
+ }
+ 

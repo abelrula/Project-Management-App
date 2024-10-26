@@ -12,14 +12,15 @@ import usePreviewFile from "../../../hooks/usePreviewFile";
 import PreviewFile from "../../PreviewFile/PreviewFile";
 import 'react-quill/dist/quill.snow.css';
 import "./assignTaskForm.css";
+import Priority from "../../Form_small_componenets/priority/Priority";
+import AttachDocs from "../../Form_small_componenets/attach_docs/AttachDocs";
+import DateRange from "../../Form_small_componenets/completion_date/DateRange";
 
   
 const AssignTaskForm = () => {
  
   
-  // targeting Documents inputs to open onclick purpose
-  const docRef=useRef()
-  const dispatch = useDispatch()
+   const dispatch = useDispatch()
 
   const [ attachedDocuments, setAttachedDocuments ] = useState( [] )
   
@@ -38,8 +39,7 @@ const AssignTaskForm = () => {
   const [ endDate, setEndate ] = useState( date );
   const [ startDate, setStartDate ] = useState( date );
   const [ selected, setSelected ] = useState( undefined );
-  
-  
+   
   
   
   // console.log(previewFile);
@@ -132,54 +132,27 @@ const AssignTaskForm = () => {
         ) ) }
          </div>
         </div>
+     
+       {/* main taskdecription usinf react quill text editor */}
         <div className="Form__textArea">
           <label>Add Task Discription</label>
            <ReactQuill theme="snow" value={description} onChange={setDescription} />
         </div>
-        <div className="Form__AttachDocuments">
-          <label htmlFor="documents">Attach Documents</label>
-          <button className="seeMoreButton" onClick={()=>docRef.current.click()}  ><span>Upload File</span></button>
-          <input
-            type="file"
-            id="documents"
-            ref={docRef}
-            onChange={(e) =>setAttachedDocuments( e.target?.files)  }
-            style={ { display: "none" } }
-            multiple
-          />
-          {/*previewing selected files  */}
-           <PreviewFile fileNames={fileNames} />
-        </div>
-        <div className="Form__priorities">
-          <label>Select The Priority</label>
-          <div className="Form__priorites">
-            { statusData.map( ( item, i ) => (
-          <span
-           onClick={()=>setSelected(item.status)}
-            className={ `Form__priorites-priority ${ item.status }` }
-            key={i}
-            style={ {
-              background: selected ===item.status && item.background,
-                color:selected ==item.status && "white" }} 
-              >
-             {item.status}
-       </span>
-       ))}
-        </div>
-        </div>
-        <div className="Form__date">
-           <div>
-             <label>
-               <HiCalendar className="calanderIcon" />
-              task need to start</label>
-            <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } />
+      
+        {/* attachung documnet inputs */ }
+          <div className="Form__AttachDocuments">
+            <AttachDocs setAttachedDocuments={ setAttachedDocuments } />
+            { fileNames &&
+              <PreviewFile fileNames={ fileNames } setAttachedDocuments={ setAttachedDocuments } /> }
           </div>
-          <div>
-            <label>
-           <HiCalendar className="calanderIcon" />
-              to be submitted date</label>  <input type="date" onChange={ ( e ) => setEndate( e.targt.value ) } />
-          </div>
-        </div>
+        
+        {/* task priorities */ }
+        <Priority setPriority={ setPriority } priority={ priority } />
+
+       {/* assigned task completion date */}
+          <DateRange setEndate={ setEndate } setStartDate={ setStartDate } />
+        
+
         <FormSubmitButton buttonName="Assign Task"/>
       </form>
      </div>

@@ -16,30 +16,9 @@
    bottom: 0;
    z-index: 9999;
 }
-.SchedualForm_header{
-        display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border-bottom: #afafaf solid 1px;
-    align-items: center;
-}
-.SchedualForm_header h2{
-      font-family: cursive;
-    font-size: larger;
-    /* border: solid; */
-    font-weight: 500;
-   margin-left: 10px;
-}
-.SchedualForm_header .icon:hover{
-  cursor: pointer;
-  scale: 1.1; 
-}
-  .SchedualForm > input{
-    border-radius: 20px;
-    text-align:center;
-    border: 1px solid rgb(63, 60, 60);
-
-}
+ 
+ 
+   
 .SchedualForm label{
         color: #353030;
     font-size: 14px;
@@ -79,56 +58,24 @@ font-size: 15px;
     margin-left: 10px;
     text-transform: uppercase;
     text-align: start;
-}.SchedualForm__input{
-    margin-top: 10px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid rgb(63, 60, 60);
-    font-size: 1.1rem;
-    width: 200px;
-    height: 40px;
-}
-
-.SchedualForm__textarea {
-      margin-top: 10px;
-    border-radius: 20px;
-    width: 230px;
-    height: 70px;
-    font-size: 1.1rem;
-    padding: 15px;
-}
+} 
  
-.SchedualForm__button{
-    margin-top:30px;
-       background: rgb(0 0 0);
-    color: rgb(254 231 231);
-    border-radius: 7px;
-    display: flex;
-    gap: 10px;
-    height: 45px;
-    width: 200px;
-    place-content: center;
-    align-items: center;
-}
-.SchedualForm__button:hover{
-   background:rgb(9, 55, 85);
-   color:rgb(255, 245, 245);
-}
-.SchedualForm__type{
+ 
+.TodoForm__type{
      display: flex;
      gap:10px;
 }
  
-.SchedualForm__type--personal:hover{
+.TodoForm__type--personal:hover{
      background-color: #183de2;
      color: white;
 }
-.SchedualForm__type--buisness:hover{
+.TodoForm__type--buisness:hover{
      background-color: red;
      color: white;
 }
  
- .SchedualForm__type--all{ 
+ .TodoForm__type--all{ 
     background: #fcfcfc;
     height: 30px;
     width: 140px;
@@ -139,42 +86,5 @@ font-size: 15px;
     border: 1px solid;
     margin-top: 20px;
 }
-.SchedualForm__date{
-     gap:10px; 
-     margin-top:20px;
-     display:flex; 
-}
-.SchedualForm__date div{
-   display: flex;
-    width: 100%;
-         gap: 10px;
-    justify-content: space-between;
-}
-.SchedualForm__date div label{
-     display: flex;
-    align-items: center;
-    gap: 10px;
-  }
- .SchedualForm__date div input{
-  width: 200px;
-  cursor: pointer;
- }
-   
- .SchedualForm__tags{
-    margin-top: 20px;
-    gap: 10px;
-  }
-
-   .SchedualForm__tags div{
-        display: flex;
-     gap: 15px;
-   }
-   
- .tag{
-      width: 35px;
-    height: 35px;
-     border-radius: 50%;
- }
- .tag:hover{
-  scale: 1.1;
- }
+ 
+ 
