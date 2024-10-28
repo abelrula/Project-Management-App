@@ -1,32 +1,29 @@
 import  { useState,useEffect } from "react";
 // import FilterTodo from "../FilterTodo";
 import { NavLink } from "react-router-dom";
-import { IoIosSettings } from "react-icons/io";
+import { IoIosPersonAdd, IoIosSettings } from "react-icons/io";
 import { IoHelpCircle, IoReturnDownForwardSharp } from "react-icons/io5";
 import { HiBars3CenterLeft } from "react-icons/hi2";
 import "./sidebar.css";
-import { FaRProject } from "react-icons/fa";
+import { FaRProject, FaTelegramPlane } from "react-icons/fa";
 import { menuLinks } from "../../lib/data";
 import { openModal } from "../../redux/slices/modalSlice";
 import { useDispatch } from "react-redux";
+import { MdLibraryAdd } from "react-icons/md";
+import useFetchData from "../../hooks/useFetchData";
 
-const Sidebar = () => {
-  
-  const dispatch=useDispatch()
-  const [ projectTypes, setProjectTypes ] = useState( [] )
-  const selectedObj = {
+   const selectedObj = {
     color: "black",
     background: "#dda12a87",
     borderRadius:"5px"
-  };
-   useEffect( () =>{ 
-                   async function  AssignedProjects(){
-                    const res = await fetch( "http://localhost:3500/project" )
-                    const data = await res.json()
-                    setProjectTypes(data)
-                   }
-                  AssignedProjects()
-   }, [] )
+};
+  
+const Sidebar = () => {
+  
+  const dispatch = useDispatch()
+  const { data: projectTypes } =useFetchData("http://localhost:3500/project")
+
+ 
   console.log(projectTypes);
   
   return (
@@ -65,7 +62,12 @@ const Sidebar = () => {
             ))
           }
         </div>
-        <button onClick={()=> dispatch(openModal({modalType:"AddProject",toggled:true})) } >Add Project</button>
+      
+        <button onClick={ () => dispatch( openModal( { modalType: "AddProject", toggled: true } ) ) } >Add Project
+          <MdLibraryAdd className="icon" />
+        </button>
+          <button onClick={ () => dispatch( openModal( { modalType: "InviteMember", toggled: true } ) ) } ><IoIosPersonAdd className="icon"/>Invite member <FaTelegramPlane className="icon" /></button>
+       
         <div className="navigationTBottomLinks">
           <NavLink 
            to="settings"

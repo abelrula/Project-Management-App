@@ -101,19 +101,23 @@ display: flex;
 }
 .navigationLinks button{
     margin: auto;
-    width: 50%;
+    width: 60%;
     cursor: pointer;
     background: white;
     border: navajowhite;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     /* outline: none; */
     padding: 5px 10px;
     border-radius: 10px;
-    background: #4b4b4b;
-    color: #afafaf;
+    background: #2e2e2e;
+    color: #ffffff;
+    font-size: 10px;
 }
 .navigationLinks button:hover{
- background: #2e2e2e;
-    color: #ffffff;
+  background: #4b4b4b;
+    color: #afafaf;
 }
 .navigationLinks .projects .icon{
 }

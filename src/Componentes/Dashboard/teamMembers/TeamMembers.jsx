@@ -6,6 +6,7 @@ import { PiDotsSixVerticalBold } from "react-icons/pi";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../../redux/slices/modalSlice";
 import ProfileModal from "../../Modals/ProfileModal/ProfileModal";
+import AddMemberForm from "../../Forms/AddMemberForm/AddMemberForm";
 const TeamMembers = () => {
   const dispatch = useDispatch()
   const members = "http://localhost:3500/members";
@@ -42,6 +43,8 @@ const TeamMembers = () => {
      { modalType === "memberProfile" && toggled === true &&
           <ProfileModal />
       }
+    { modalType === "InviteMember" && toggled === true && <AddMemberForm />}
+
     </>
     
   );

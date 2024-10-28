@@ -1,11 +1,16 @@
 import React, { useState } from "react";
  import "./addMemberForm.css";
 import { IoCloseCircleSharp } from "react-icons/io5";
+import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
+import { closeModal } from "../../../redux/slices/modalSlice";
+import { useDispatch } from "react-redux";
 const AddMemberForm = ( {setOpenModal} ) =>
 {
   const [ username, setUsername ] = useState( "" );
   const [ email, setEmail ] = useState( "" );
-   function handleSubmit ( e )
+  const dispatch=useDispatch()
+
+  function handleSubmit ( e )
   {
     e.preventDefault();
   
@@ -17,22 +22,11 @@ const AddMemberForm = ( {setOpenModal} ) =>
         <div className="addMember_header">
           <h1>Add Member</h1>
           <IoCloseCircleSharp fontSize={ 27 } className="icon"
-          onClick={ () => setOpenModal( false ) }
+          onClick={ () => dispatch(closeModal()) }
           />
         </div>
-        <div>
-          <label>Employee Username :-</label>
-          <input
-            type="text"
-            id="username"
-            value={ username }
-            className="addMember__textarea"
-            onChange={ ( e ) => setUsername( e.target.value ) }
-            placeholder="abelRula"
-          />
-          </div>
           <div>
-          <label>Employee Email :-</label>
+          <label>Email:-</label>
           <input
             type="text"
             id="email"
@@ -42,15 +36,7 @@ const AddMemberForm = ( {setOpenModal} ) =>
             placeholder="Someone@gmail.com"
           />
         </div>
-        {/* <div className="addMember_date"> */}
-          {/* <Calendar value={value} onChange={onChange} /> */ }
-          {/* <div>
-            <label>  <HiCalendar className="calanderIcon" />start date :</label> <input type="date" onChange={ ( e ) => setStartDate( e.target.value ) } /> 
-          </div> */}
-        {/* </div> */}
-        <button type="submit" className="addMember__button">
-          <p>Send Invitaion</p>
-        </button>
+        <FormSubmitButton buttonName="Send Invitaion"/>
         </form>
         </div>
       {/* <Outlet /> */ }
