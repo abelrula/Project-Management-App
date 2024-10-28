@@ -43,24 +43,11 @@ const AddIssueForm = () => {
              </label>
               
         {/*available Projects*/}
-            <div className="project_types"> 
-           <span 
-           onClick={ () => setOpenProject((prev)=>!prev)}
-           >{ selectedProject !== null  ? selectedProject  : "selected project none"}</span> 
-          { openProject && projectTypes.map((item,i)=>(
-           <div
-             key={ i } 
-            onClick={ () => { setSelectedProject( item.title ); setOpenProject(false)}}
-             style={ { background: `${ item.color }` } }
-             className="project_types-type"
-           >
-           <h4>
-              {item.title}
-            </h4>
-           {item.icon} 
-         </div>
-        ) ) }
-            </div>
+        <DropdownProject
+          openProject={ openProject }
+          setOpenProject={ setOpenProject }
+           setSelectedProject={ setSelectedProject }
+          selectedProject={ selectedProject } />
            </div>
        {/* main taskdecription usinf react quill text editor */}
           <div className="Form__textArea">

@@ -15,6 +15,7 @@ import "./assignTaskForm.css";
 import Priority from "../../Form_small_componenets/priority/Priority";
 import AttachDocs from "../../Form_small_componenets/attach_docs/AttachDocs";
 import DateRange from "../../Form_small_componenets/completion_date/DateRange";
+import { DropdownMembers, DropdownProject } from "../../Form_small_componenets/dropdown_lists/Dropdown";
 
   
 const AssignTaskForm = () => {
@@ -34,34 +35,11 @@ const AssignTaskForm = () => {
   const [openEmployee,setOpenEmployee]=useState(false)
   const [jobCatagory,setJobCatagory]=useState("")
   const [description, setDescription] = useState("");
-  const [members, setMembers] = useState([]);
-  const [ priority, setPriority ] = useState( "" );
+   const [ priority, setPriority ] = useState( "" );
   const [ endDate, setEndate ] = useState( date );
   const [ startDate, setStartDate ] = useState( date );
   const [ selected, setSelected ] = useState( undefined );
    
-  
-  
-  // console.log(previewFile);
-  
-  // fetching memeber from json
-  useEffect( () =>
-  {
-    async function fetchMembers  ( e )
-  {
-    const res = await fetch( "http://localhost:3500/members" )
-    const data = await res.json()
-      setMembers( data )
-   console.log(members);
-      
-    }
-    fetchMembers()
- },[])
-  //  console.log(members);
-   
-   
-  
-    
   
   return (
     <div className="modal">
@@ -71,67 +49,21 @@ const AssignTaskForm = () => {
          </h6>
            <IoCloseCircleOutline className="icon" onClick={()=> dispatch(closeModal()) } /> 
        </header>
-         <div className="employeContainer">
-            <label>Select Employee you want to assign 
-            { !openEmployee && <FaArrowDown className="icon"
-              onClick={ () =>
-              {
-                setOpenEmployee( true );
-                setOpenProject( false )
-              } } /> }
-            { openEmployee && <FaArrowUp className="icon"
-              onClick={ () => setOpenEmployee( false ) } /> }
-            </label>
-          <div className="employeContainer_members"> 
-           <span
-           onClick={ () => setOpenEmployee((prev)=>!prev)}
-           >{ selectedEmployee !== null  ? `${selectedEmployee}: ${jobCatagory}`  : "selected employee none"}</span> 
-          { openEmployee && members.map((employee,i)=>(
-           <div
-             key={ i } 
-              onClick={ () =>{
-                setSelectedEmployee( employee.name );
-                setOpenEmployee( false );
-                setJobCatagory(employee.jobCatagory)
-              } }
-              className="employeContainer_members-employe"
-           >
-              <div>
-                <img src={ employee.profile } alt="profile" />
-            <h4>
-              {employee.name}
-            </h4>
-            </div>
-            <p>{employee.jobCatagory}</p>
-            </div>
-        ) ) }
-          </div>
-        </div>
-        <div className="project">
-            <label>select a project you want to assign 
-            {!openProject &&<FaArrowDown className="icon" onClick={ () => {setOpenProject(true); setOpenEmployee(false)}} />}
-            {openProject &&<FaArrowUp className="icon" onClick={ () => setOpenProject(false)} />}
-            </label>
-          <div className="project_types"> 
-           <span 
-           onClick={ () => setOpenProject((prev)=>!prev)}
-           >{ selectedProject !== null  ? selectedProject  : "selected project none"}</span> 
-          { openProject && projectTypes.map((item,i)=>(
-           <div
-             key={ i } 
-              onClick={ () => { setSelectedProject( item.title ); setOpenProject(false)
-}}
-             style={ { background: `${ item.color }` } }
-             className="project_types-type"
-           >
-           <h4>
-              {item.title}
-            </h4>
-           {item.icon} 
-         </div>
-        ) ) }
-         </div>
-        </div>
+        <DropdownMembers
+          setOpenEmployee={ setOpenEmployee }
+          openEmployee={ openEmployee }
+          selectedEmployee={ selectedEmployee }
+          setOpenProject={ setOpenProject }
+          setSelectedEmployee={ setSelectedEmployee }
+          setJobCatagory={ setJobCatagory }
+          jobCatagory={ jobCatagory }
+            />
+        <DropdownProject
+          openProject={ openProject }
+          setOpenProject={ setOpenProject }
+          setOpenEmployee={ setOpenEmployee }
+          setSelectedProject={ setSelectedProject }
+          selectedProject={ selectedProject } />
      
        {/* main taskdecription usinf react quill text editor */}
         <div className="Form__textArea">

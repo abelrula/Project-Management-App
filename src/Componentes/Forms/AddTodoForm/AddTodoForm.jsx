@@ -6,10 +6,8 @@ import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
  import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 import { useDispatch } from "react-redux";
 import { closeModal } from "../../../redux/slices/modalSlice";
-import { projectTypes, statusData } from "../../../lib/data";
-import { CiSquarePlus } from "react-icons/ci";
-import { IoIosClose } from "react-icons/io";
-import "./addTodoForm.css";
+ import { CiSquarePlus } from "react-icons/ci";
+ import "./addTodoForm.css";
 import 'react-quill/dist/quill.snow.css';
 import PreviewFile from "../../PreviewFile/PreviewFile";
 import usePreviewFile from "../../../hooks/usePreviewFile";
@@ -18,6 +16,7 @@ import { randomeIdStringGenerator } from "../../../utility/randomeIdStringGenera
 import Priority from "../../Form_small_componenets/priority/Priority";
 import AttachDocs from "../../Form_small_componenets/attach_docs/AttachDocs";
 import DateRange from "../../Form_small_componenets/completion_date/DateRange";
+import { DropdownProject } from "../../Form_small_componenets/dropdown_lists/Dropdown";
 
 const members = "http://localhost:3500/members";
 
@@ -95,35 +94,13 @@ const AddTodoForm = ({type}) => {
         {/* select a project which you want to add task on  */}
           {
           selectedFormType=="Buisness" && <div className="project">
-            <label>select on a project you want to add  the task
-              { !openProject && <FaArrowDown className="icon" onClick={ () =>  setOpenProject( true )  } />}
-               {openProject &&<FaArrowUp className="icon" onClick={ () => setOpenProject(false)} />}
-              </label>
-              
           {/*available Projects*/}
-            <div className="project_types"> 
-             <span 
-              onClick={ () => setOpenProject((prev)=>!prev)}
-             >{ selectedProject !== null  ? selectedProject : "selected project none"}</span> 
-            { openProject && projectTypes.map((project,i)=>(
-            <div
-             key={ i } 
-                onClick={ () =>{
-                  setSelectedProject( project.title );
-                  setOpenProject( false );
-                  setIdResult( `${ project.id }ETZ-` );
-                } }
-                style={ { background: `${ project.color }` } }
-                className="project_types-type"
-           >
-            <h4>
-              {project.title}
-            </h4>
-           {project.icon} 
-           </div>
-        ) ) }
-            </div>
-           </div>}
+                 <DropdownProject
+          openProject={ openProject }
+          setOpenProject={ setOpenProject }
+           setSelectedProject={ setSelectedProject }
+          selectedProject={ selectedProject } />
+            </div>}
      
           {/* main taskdecription usinf react quill text editor */ }
           <div className="Form__textArea">
