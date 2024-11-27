@@ -3,8 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import IssuesTable from '../../../../Componentes/Table/IssuesTable';
 
 const Issues = () => {
-  const [ projectId ] = useOutletContext()
-  const [ issueTracking, setIssueTracking ] = useState( [] )
+   const [ issueTracking, setIssueTracking ] = useState( [] )
      
               useEffect( () =>{ 
                    async function  AssignedProjects(){
@@ -16,8 +15,7 @@ const Issues = () => {
               }, [] )
   
   console.log(issueTracking);
-  console.log(projectId);
-  return (
+   return (
     <div style={{}}>
        <IssuesTable data={ issueTracking } />
    </div>

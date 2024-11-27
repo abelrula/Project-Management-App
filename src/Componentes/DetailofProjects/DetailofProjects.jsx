@@ -8,13 +8,16 @@ import "./detailofProjects.css"
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom'
 
 
-const DetailofProjects = ({setOpenModal}) => {
+const DetailofProjects = () => {
   
-    const [ projects, setProjects ] = useState( [] )
+    const [ project, setProject ] = useState( [])
+    const [ mainTasks, setMainTasks ] = useState( [] )
   const { id } = useParams()
   const projectID = id.slice( 0, 13 )
   console.log(projectID);
-const project=projects?.projectTasks?.find(project => project.id === id)
+  console.log(id);
+const userSelectedMainTask=mainTasks?.find(project => project.id === id)
+    console.log(userSelectedMainTask);
     
   useEffect( () =>{
       const   fetchApi = async () =>
@@ -23,7 +26,8 @@ const project=projects?.projectTasks?.find(project => project.id === id)
          try {
            const data = await fetch( `http://localhost:3500/project/${ projectID }` )
            const res = await data.json()
-           setProjects( res ) 
+           setProject( res ) 
+           setMainTasks( res.projectTasks ) 
            
          } catch (error) {
             
@@ -32,8 +36,7 @@ const project=projects?.projectTasks?.find(project => project.id === id)
      fetchApi()
      }, [] )
     console.log(project);
-     console.log();
-    
+      
      return (
         // <div className="modal">
         //     <div className='projectDetail'>
@@ -56,27 +59,27 @@ const project=projects?.projectTasks?.find(project => project.id === id)
         //    </section>
             <section className="projectDetail__sections element-with-scroll">
                 <header>
-                    <h6><FaTasks />Task <span>EZ1-T19</span></h6>
-                    <h2>{ projects[ 0 ]?.projectTasks[0]?.mainTask }</h2>
+                    <h6><FaTasks />Task <span>{id}</span></h6>
+                    <h2>{ userSelectedMainTask?.mainTask }</h2>
                     <div className="">
                     <h6>Abel zewdu</h6>
-                    <span><PiProjectorScreenDuotone /> Explore { projects[ 0 ]?.projectName }</span>
+                    <span><PiProjectorScreenDuotone /> Explore { project?.projectName }</span>
                     </div>
                 </header>
                 <div className="projectDetail__sections__TaskInformation">
                     <h4>Task Information</h4>
                          <ul>
                             <li>Owner <span><ProfileImage name="Abel Zewdu"/> Abel Zewdu</span></li>
-                            <li>Status <span>{projects[ 0 ]?.projectTasks[0].status }</span></li>
-                            <li>Due Date <span>{projects[ 0 ]?.projectTasks[0].startDate}</span></li>
-                            <li>start Date<span>{projects[ 0 ]?.projectTasks[0].endDate}</span></li>
-                            <li>Priority <span>{projects[ 0 ]?.projectTasks[0].endDate}</span></li>
-                            <li>Duaration <span>{projects[ 0 ]?.projectTasks[0].duration}</span></li>
-                            <li>Completion Percentage <span>{ projects[ 0 ]?.projectTasks[0].progressPercent}</span></li>
-                            <li>Work hours <span>{ projects[ 0 ]?.projectTasks[0].progressPercent}</span></li>
+                            <li>Status <span>{userSelectedMainTask?.status }</span></li> 
+                            <li>Due Date <span>{userSelectedMainTask?.startDate}</span></li>
+                            <li>start Date<span>{userSelectedMainTask?.endDate}</span></li>
+                            <li>Priority <span>{userSelectedMainTask?.endDate}</span></li>
+                            <li>Duaration <span>{userSelectedMainTask?.duration}</span></li>
+                            <li>Completion Percentage <span>{ userSelectedMainTask?.progressPercent}</span></li>
+                            <li>Work hours <span>{ userSelectedMainTask?.progressPercent}</span></li>
                         </ul>
                  </div>
-            <Outlet context={[project]} />
+            <Outlet context={userSelectedMainTask} />
                  </section> 
         // </div>
         // </div>

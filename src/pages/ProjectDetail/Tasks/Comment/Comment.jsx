@@ -4,11 +4,13 @@ import   "./comment.css"
 const Comment = () =>
 {
   
-  const [ projectId ] = useOutletContext()
-  console.log(projectId);
+    const projectContext=useOutletContext()
+   console.log(projectContext);
   
   return (
-    <div className="CommentSection_TeamsComment">
+        <>
+              {/* (
+               <div className="CommentSection_TeamsComment">
        <div className="CommentSection_TeamsComment-onTask">
      <span>
           <img
@@ -75,7 +77,10 @@ const Comment = () =>
       --
             <p> unique comments only, specific hashtags, and mentions.</p>
         </div>
-  </div>
+                  </div>
+        ) */}
+              <p>No Comments</p>
+        </>
   )
 }
 

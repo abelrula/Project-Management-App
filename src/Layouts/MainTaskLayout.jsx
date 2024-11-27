@@ -3,33 +3,30 @@ import { NavLink, Outlet, useLocation, useOutletContext, useParams } from 'react
 import Projects from '../Componentes/Dashboard/Projects/Projects'
 import DetailofProjects from '../Componentes/DetailofProjects/DetailofProjects'
 import { IoCloseOutline } from 'react-icons/io5'
-
-const MainTaskLayout = () => {
-
-  const {id}=useParams()
-  console.log(id);
-  
-   const selectedObj = {
+  const selectedObj = {
     color: "black",
     background: "#dda12a87",
     borderRadius:"5px"
   };
+const MainTaskLayout = () => {
+
   const [ projects, setProjects ] = useState( [] )
-  console.log(id)
-     useEffect(() => {
-      const   fetchApi = async () =>
-         {
+      useEffect(() => {
+      const   fetchApi = async () => {
           
          try {
            const data = await fetch( "http://localhost:3500/project" )
              const res = await data.json()
              setProjects(res) 
          } catch (error) {
+            console.log(err);
             
          }   
      }
      fetchApi()
      }, [] )
+    console.log(projects)
+
   return (
       < >
         {/* { Projects[ 0 ]?.projectTasks?.map( ( project, i ) => (
@@ -58,6 +55,7 @@ const MainTaskLayout = () => {
                   <NavLink
                    style={({ isActive }) => (isActive ? selectedObj : null)}
                     to={ project.id }
+                    key={i}
                     className='projectDetail__side-projects'>
                     <div><h6>EZ1-T19</h6><span>{ project.status }</span></div>
                     <p>{ project.mainTask.substring(0,60) }</p>
