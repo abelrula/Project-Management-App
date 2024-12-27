@@ -1,0 +1,23 @@
+.acheivemntSection{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #bdb8b8;
+    border-radius: 10px;
+    width: 305px;
+    height: 245px;
+    gap: 10px;
+}
+.acheivemntSection__achivements {
+  margin: auto;
+}
+.acheivemntSection__achivements h3 {
+  color: #b19c057a;
+    font-weight: 100;
+    font-family: monospace;
+}
+ 
+
+
+

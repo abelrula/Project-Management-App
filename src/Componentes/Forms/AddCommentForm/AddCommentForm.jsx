@@ -1,47 +1,37 @@
-  import React, { useEffect, useState } from "react";
-import { HiCalendar } from "react-icons/hi";
-import { IoCloseCircleOutline } from "react-icons/io5";
+  import React, { useEffect, useRef, useState } from "react";
+ import { IoCloseCircleOutline } from "react-icons/io5";
 import ReactQuill from 'react-quill';
-import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
- import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
+  import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 import { useDispatch } from "react-redux";
 import { closeModal } from "../../../redux/slices/modalSlice";
-import { projectTypes, statusData } from "../../../lib/data";
-
+ 
 import "./addCommentForm.css"
+import PreviewFile from "../../PreviewFile/PreviewFile";
+import usePreviewFile from "../../../hooks/usePreviewFile";
+import { DropdownMembers, DropdownProject } from "../../Form_small_componenets/dropdown_lists/Dropdown";
 
 const AddCommentForm = () => {
- 
+    
+  const [ attachedDocuments, setAttachedDocuments ] = useState( null )
+  const [previewFileUrl,fileNames] =  usePreviewFile( attachedDocuments )
+   const fileUpload=useRef()
+
  const date = new Date();
     const [endDate, setEndate] = useState(date);
-  const [ selectedProject, setSelectedProject ] = useState( null)
-  const [ allProject, setAllProject ] = useState( [] )
-  const [ mainTasks, setMainTasks ] = useState( [] )
+  const [ selectedProject, setSelectedProject ] = useState( "--")
+   const [ mainTasks, setMainTasks ] = useState( [] )
   const [selectedMainTasks,setSelectedMainTasks]=useState({})
     const [subTasks,setSubTasks]=useState({})
     const [description, setDescription] = useState("");
     const [openProject,  setOpenProject]=useState("")
     const [ selected, setSelected ] = useState( null );
-    const [attachedDocuments,setAttachedDocuments]=useState(null)
-  const dispatch = useDispatch()
+   const dispatch = useDispatch()
  
-  useEffect( () =>{
-    
-    async function fetchAllProject (){
-      const res = await fetch( "http://localhost:3500/project" )
-      const data = await res.json()
-  console.log(data);
-       setAllProject(data)
-    }
-    
-    fetchAllProject()
-    
-  }, [] )
-   
+
   useEffect( () =>{
     
     async function fetchMainTaks (){
-      const res = await fetch( "http://localhost:3500/project?id="+selectedProject?.id )
+      const res = await fetch( "http://localhost:3500/project?projectName="+selectedProject)
       const data = await res.json()
        console.log(data);
        setMainTasks(data[0]?.projectTasks)
@@ -52,14 +42,14 @@ const AddCommentForm = () => {
     
   }, [ selectedProject ] )
   
-   console.log( mainTasks );
-   console.log( selectedProject );
-  
+  console.log(selectedProject);
+  console.log(mainTasks);
+    
    
   return (
     <>
     <div className="modal">
-      <form className="Form element-with-scroll" >
+      <form className="Form__comment element-with-scroll" >
         <header>
             <h6>Add New Comment          
             </h6>
@@ -72,28 +62,11 @@ const AddCommentForm = () => {
             
             
             {/*available Projects to add comment on*/ }
-            <div className="project">
-            <label>select on a project you want to add Comment
-             </label>
-            <div className="project_types"> 
-           <span 
-            onClick={ () => setOpenProject("projects")}
-              >{ selectedProject !== null ? selectedProject.projectName : "selected project none" }
-              </span> 
-          { openProject === "projects" && allProject?.map((project,i)=>(
-           <div
-             key={ i } 
-              onClick={ () => { setSelectedProject( project );   setOpenProject("")}}
-             className="project_types-type"
-           >
-           <h4>
-              {project?.projectName}
-              
-            </h4>
-         </div>
-        ) ) }
-            </div>
-            </div>
+            <DropdownProject
+          openProject={ openProject }
+          setOpenProject={ setOpenProject }
+           setSelectedProject={ setSelectedProject }
+          selectedProject={ selectedProject } />
       
             {/*available mainTasks to add comment on*/}
             { mainTasks && <div className="project">
@@ -102,16 +75,17 @@ const AddCommentForm = () => {
               <div className="project_types">
                 <span
                   onClick={ () => setOpenProject( "mainTasks" ) }
-                >{ mainTasks !== null ? selectedMainTasks?.mainTask.substring(0,60) : "selected project none" }
+                >{ mainTasks !== null ? selectedMainTasks?.mainTask?.substring(0,60) : "selected project none" }
                 </span>
                 { openProject === "mainTasks" && mainTasks?.map( ( project, i ) => (
                   <div
                     key={ i }
                     onClick={ () => { setSelectedMainTasks( project ); setOpenProject( "" ) } }
                     className="project_types-type"
+                    style={{zIndex:openProject === "mainTasks" ?"999" :"100"}}
                   >
                     <h4>
-                      { project?.mainTask.substring(0,40) }
+                      { project?.mainTask?.substring(0,40) }
               
                     </h4>
                   </div>
@@ -126,18 +100,19 @@ const AddCommentForm = () => {
            <ReactQuill theme="snow" value={description} onChange={setDescription} />
           </div>
        
-          {/* attachung documnet inputs */}
+            {/* attachung documnet inputs */}
           <div className="Form__AttachDocuments">
           <label>Attach Documents</label>
-          <button className="seeMoreButton"><span>Upload File</span></button>
+            <button onClick={ ()=>fileUpload.current.click()} className="seeMoreButton"><span>Upload File</span></button>
           <input
-            type="file"
-            id="documents"
-            value={attachedDocuments}
-            onChange={ ( e ) => setAttachedDocuments( e.target.value ) }
-            style={{display:"none"}}
+              type="file"
+              id="documents"
+              ref={fileUpload}
+             onChange={ ( e ) => setAttachedDocuments( e.target?.files ) }
+              style={ { display: "none" } }
+              multiple
           />
-
+          { fileNames && <PreviewFile  fileNames={fileNames} setAttachedDocuments={setAttachedDocuments}/>}
           </div>
          
           {/* submit form */ }

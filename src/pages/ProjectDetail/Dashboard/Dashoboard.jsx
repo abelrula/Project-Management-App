@@ -16,6 +16,7 @@ import { BsListTask } from "react-icons/bs";
 import TotalNumber from '../../../Componentes/Dashboard/TotalTaskstatus/TotalNumber'
 import UrgentTask from '../../../Componentes/Dashboard/urgentTask/UrgentTask';
 import TeamsStatus from '../../../Componentes/Dashboard/Teams Status/TeamsStatus';
+import Achievements from '../../../Componentes/Dashboard/Achievements/Achievements';
 const taskRevenudata =[{
         label: "$ Total Revenue",
         data: [3000, 5000, 10000, 1000, 2000],
@@ -104,12 +105,13 @@ const Dashoboard = () =>
      ) )}
      </div>
      <div className="Dashboard_graphs">
+      <UrgentTask />
+          <TeamsStatus />
+          <Achievements />
       <TotalHour dataset={taskHourdata} />
       <TotalRevenue dataset={taskRevenudata}  />
       <IssuePieChart />
       <IssuePieChart />
-      <TeamsStatus />
-      <UrgentTask />
       </div>
      </div>
   )
