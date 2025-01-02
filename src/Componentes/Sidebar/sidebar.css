@@ -19,6 +19,10 @@
     margin-top:-5px;
    
 }
+.side .toogleIcon{
+display: none;
+}
+
 .brandIcon{
     display: flex;
     gap: 7px;
@@ -86,6 +90,23 @@
 h4{
     color: #ffffff;
 }
+.navigationLinks .link{
+display: flex;
+    gap: 5px;
+    text-decoration: none;
+    padding: 4px 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    height: 25px;
+    color: #e5e5e5;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: monospace;
+    font-weight: 100;
+}
 .navigationTBottomLinks{
 display: flex;
     gap: 15px;
@@ -141,5 +162,84 @@ display: flex;
     background: #141414;
     text-decoration: none;
     text-align: start;
+}
+.closeSidebar{
+    display: none;
+width:70%;
+position:fixed;
+right: 0;
+top: 0;
+left: 0;
+bottom: 0;
+z-index: 999;
+padding-bottom: 80px;
+padding-right: 20px;
+ }
+@media screen and (max-width: 800px) {
+   
+  .side{
+    display: none;
+  } 
+   
+    .side.open{
+        display: flex;
+width:70%;
+position:fixed;
+right: 0;
+top: 0;
+left: 0;
+bottom: 0;
+z-index: 999;
+ padding-bottom: 80px;
+ padding-right: 20px;
+     }
+     .side .toogleIcon{
+display: none;
+}
+.brandIcon{
+    margin-top: 0px;
+ }
+.brandIcon .icon{
+     font-size: 33px;
+}
+.brandIcon h1{
+  font-size: 18px;
+     gap: 8px;
+ }
+.side .toogleIcon{
+display: block;
+align-self: end;
+}
+
+
+.navigationTopLinks{
+        display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+ .side .toogleIcon{
+     align-self: flex-end;
+     display: block;
+    font-size: 20px;
+    cursor: pointer;
+}
+ .navigationLinks  .icon{
+  font-size:19px;
+      color: #ffa600;
+}
+.navigationLinks .link{
+    font-size: 14px;
+    gap: 10px;
+}
+ 
+ 
+.navigationLinks button{
+     width: 40%;
+     font-size: 13px;
+    align-items: start;
+    align-self: baseline;
+}
+
 }
  

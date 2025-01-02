@@ -1,26 +1,34 @@
 import { useState ,useEffect} from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useOutletContext } from "react-router-dom";
 import {  CiSquarePlus } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { GiClockwork } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import AddTodoForm from "../Forms/AddTodoForm/AddTodoForm";
  import { useDispatch, useSelector } from "react-redux";
-import {  openModal } from "../../redux/slices/modalSlice";
+import {  closeModal, openModal } from "../../redux/slices/modalSlice";
 import ProfileModal from "../Modals/ProfileModal/ProfileModal";
 import { ProjectDetailNavLinks } from "../../lib/data";
 import "./header.css";
  import Timesheet from "../Forms/Timesheets/Timesheet";
 import Notifications from "../Modals/Notifications/Notifications";
 import AddProjectForm from "../Forms/AddProjectForm/AddProjectForm";
+import useScreenSize from "../../hooks/useScreenSize";
+import { FaBars } from "react-icons/fa6";
+import Project_header from "../project_header/Project_header";
  
 
 
 
 const Header = ({ title }) => {
-   
+  const { toggleSidebar, setToggleSidebar } =useOutletContext()
+  console.log(toggleSidebar);
+  console.log(setToggleSidebar);
+  
   const { pathname } = useLocation();
   const {modalType,toggled} = useSelector( state => state.modal )
+  const [ screenSize ] = useScreenSize()
+  
   const dispatch = useDispatch()
   
   const date = new Date();
@@ -41,32 +49,33 @@ const Header = ({ title }) => {
 
     }, [] )
    
+  function toogleSidebar(){
+    return modalType === "Navbar" && toggled === false && dispatch( openModal( { modalType: "Navbar", toggled: true } ) )
+      
+  }
 
+ 
   return (
     <>
-      <div className="header">
-       {/* if its in home page render this */}
+    
+    {/* hide header on small device if Navbar is toggled*/}
+          <div className="header">
+      {/* display toogle icon when device is smaller */}
+        <FaBars
+          className="toogleIcon"
+          onClick={ () => { setToggleSidebar( true ); console.log( toggleSidebar); console.log( "clciked" ) } } />
+
+        {/* if its in home page render this */ }
         { pathname === "/" ? (
       <div className="greeting">
         <p className="TodayTodo__wavingHand">{title}</p>
              <p className="date">{date.toDateString()}</p>
        </div>
          ) :<h3 style={{display:pathname.includes("projects") && "none"}}> {title}</h3>}
-        {pathname.includes("projects") ?(
-      // display Navlinks  if the routes or page is in project 
-          <div className="Overview_header">
-          <div className="Overview_header-ProjectName">
-             <h1>daniels apartement </h1>
-             <span>open details</span>
-            </div> 
-           <nav className="Overview_header-links" >
-              { ProjectDetailNavLinks.map( ( link, i ) => (
-                <NavLink  end className="link" style={({isActive})=>isActive ? selectedObj : null} to={link.to}>{link.name} { link.icon}
-                </NavLink>      
-              ))              
-            }              
-          </nav>
-         </div>
+      
+      {/* display Navlinks  if the routes or page is in project  */}
+        { pathname.includes( "projects" ) ? (
+         <Project_header />
         ) : null }
         
          <div className="left">
@@ -76,7 +85,6 @@ const Header = ({ title }) => {
       <span className="profile">
         <CiSquarePlus className="icon" onClick={()=> dispatch(openModal({modalType:"AddTask",toggled:true})) } />
             { modalType === "AddTask" && toggled === true && <AddTodoForm /> }
-        <CiSearch className="icon" onClick={() => dispatch(openModal({modalType:"search",toggled:true})) }/>
          <GiClockwork className="icon" onClick={()=> dispatch(openModal({modalType:"timesheet",toggled:true})) } />
          <div className="notification" onClick={() => dispatch(openModal({modalType:"notifications",toggled:true})) }>
           <IoIosNotificationsOutline    fontSize={25} />
