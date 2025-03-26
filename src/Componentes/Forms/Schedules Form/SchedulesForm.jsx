@@ -8,12 +8,15 @@ import ReactQuill from "react-quill";
 import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 import ColorTags from "../../Form_small_componenets/Color_tags/ColorTags";
 import DateRange from "../../Form_small_componenets/completion_date/DateRange";
+import FormType from "../../Form_small_componenets/form_Type/FormType";
  
+  const formType = [ "Buisness", "Personal" ]
 
 const SchedulesForm = () => {
    const date = new Date();
   const dispatch = useDispatch()
      const [startDate, setStartDate] = useState(date);
+      const [selectedFormType,setSelectedFormType]=useState("Buisness")
    const [endDate, setEndate] = useState(date);
    const [description, setDescription] = useState("");
    const [schedualType, setSchedualType] = useState(false);
@@ -33,7 +36,7 @@ const SchedulesForm = () => {
         type:schedualType
       } )
     } )
-     setEndTime("")
+    setEndTime("")
     setStartTime("")
     setDescription("")
     setTagColor("")
@@ -60,33 +63,8 @@ const SchedulesForm = () => {
           <DateRange dateType="datetime-local" setEndate={ setEndate } setStartDate={ setStartDate } />
          
         {/* types of schedual for myself or work */}
-          <div className="TodoForm__type">
-          <div
-            onClick={() => {
-              setSchedualType("personal");
-            }}
-            className="TodoForm__type--all SchedualForm__type--personal"
-            style={{
-              background: schedualType === "personal" && "#183de2",
-              color: schedualType === "personal" && "white",
-            }}
-          >
-            Personal
-          </div>
-          <div
-            onClick={() => {
-              setSchedualType("buisness");
-            }}
-            className="TodoForm__type--all TodoForm__type--buisness"
-            style={{
-              background: schedualType === "buisness" && "red",
-              color: schedualType === "buisness" && "white",
-            }}
-          >
-            Buisness
-          </div>
-          </div>
-          
+                <FormType  formType={formType} setSelectedFormType={setSelectedFormType} selectedFormType={selectedFormType} />
+           
          {/* select tag color */ }
           <ColorTags tagColor={tagColor} setTagColor={ setTagColor } />
           

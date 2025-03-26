@@ -1,0 +1,11 @@
+.Form_Types{
+   display: flex;
+   gap: 5px;
+ }
+ .Form_Types button{
+     padding: 10px 20px;
+    border-radius: 10px;
+    color: black;
+    border: navajowhite;
+    font-weight: bold;
+  }

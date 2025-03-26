@@ -11,12 +11,13 @@ import { closeModal } from "../../../redux/slices/modalSlice";
 import 'react-quill/dist/quill.snow.css';
 import PreviewFile from "../../PreviewFile/PreviewFile";
 import usePreviewFile from "../../../hooks/usePreviewFile";
-import SubTask from "../../SubTask/SubTask";
+import SubTask from "../../Form_small_componenets/SubTask/SubTask";
 import { randomeIdStringGenerator } from "../../../utility/randomeIdStringGenerator";
 import Priority from "../../Form_small_componenets/priority/Priority";
 import AttachDocs from "../../Form_small_componenets/attach_docs/AttachDocs";
 import DateRange from "../../Form_small_componenets/completion_date/DateRange";
 import { DropdownProject } from "../../Form_small_componenets/dropdown_lists/Dropdown";
+import FormType from "../../Form_small_componenets/form_Type/FormType";
 
 const members = "http://localhost:3500/members";
 
@@ -30,8 +31,6 @@ const AddTodoForm = ({type}) => {
    const [endDate, setEndate] = useState(date);
    const [selectedProject,setSelectedProject]=useState(null)
    const [description, setDescription] = useState("");
-   const [openProject,  setOpenProject]=useState(false)
-   const [ selected, setSelected ] = useState( null );
    const [selectedFormType,setSelectedFormType]=useState("Buisness")
   const [ idResult, setIdResult ] = useState( "[EZ]-[sofDev]-" )
   const [subTasks,setSubTasks]=useState([])
@@ -76,31 +75,23 @@ const AddTodoForm = ({type}) => {
   return (
     <>
        <div className="modal">
-      <form className="Form element-with-scroll" onSubmit={ handleSubmit }>
-        <header>
+             <form className="Form element-with-scroll" onSubmit={ handleSubmit }>
+             <header>
            <h6>Add New Task          
             </h6>
-            <span >
-              { formType.map( ( type, i ) => (
-                <button
-                  onClick={()=>setSelectedFormType(type)}
-                  key={ i }
-                  style={ {background: selectedFormType === type  && "#2d55af",
-                color:selectedFormType === type && "white" }} >{type}</button>
-              ))
-            }<IoCloseCircleOutline className="icon" onClick={()=> dispatch(closeModal()) } /> 
-            </span>
-       </header>
-        {/* select a project which you want to add task on  */}
+          {/* form types is it personal or business */}
+                 <FormType  formType={formType} setSelectedFormType={setSelectedFormType} selectedFormType={selectedFormType} />
+           
+              <IoCloseCircleOutline className="icon" onClick={ () => dispatch( closeModal() ) } /> 
+           </header>
+       
+          {/*available Projects to select*/ }
           {
-          selectedFormType=="Buisness" && <div className="project">
-          {/*available Projects*/}
+          selectedFormType=="Buisness" && 
                  <DropdownProject
-          openProject={ openProject }
-          setOpenProject={ setOpenProject }
            setSelectedProject={ setSelectedProject }
           selectedProject={ selectedProject } />
-            </div>}
+             }
      
           {/* main taskdecription usinf react quill text editor */ }
           <div className="Form__textArea">
@@ -109,26 +100,27 @@ const AddTodoForm = ({type}) => {
           </div>
        
        {/* subtasks inputs */}
-          <div className="Form__Subtasks ">
+          <section className="Form__Subtask">
             <label onClick={()=>addSubTask(newSubtask)} >Add Subtaks
               <CiSquarePlus
                 fontSize={ 23 }
                 />
              {/* { subTasks?.length > 0 && <span onClick={()=>setSubTasks([])}>clear all</span>} */}
             </label>
-            <div className="element-with-scroll">
+            <div className="Form__Subtask-Subtasks element-with-scroll">
             {/* adding subtasks based on user clicking  the plus button */ }
             {subTasks?.map( ( subTask,i ) => (
               <SubTask key={ i }   deleteSubTask={deleteSubTask} subTask={subTask} updateSubTask={updateSubTask}  />
-            ))}</div>
-          </div>
+            ))}
+            </div>
+          </section>
           
-          {/* attachung documnet inputs */}
-               <div className="Form__AttachDocuments">
-            <AttachDocs setAttachedDocuments={ setAttachedDocuments } />
-            { fileNames &&
-              <PreviewFile fileNames={ fileNames } setAttachedDocuments={ setAttachedDocuments } /> }
-          </div>
+          {/*inputs a docs and attach to preview  */}
+               <section className="Form__AttachDocuments">
+                <AttachDocs setAttachedDocuments={ setAttachedDocuments } />
+                {fileNames &&
+                 <PreviewFile fileNames={ fileNames } setAttachedDocuments={ setAttachedDocuments } /> }
+              </section>
 
           {/* task priorities */}
                  <Priority setPriority={setPriority} priority={priority} />
