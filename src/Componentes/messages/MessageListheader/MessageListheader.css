@@ -6,6 +6,7 @@
         text-align:  center ;
         place-content:  center ;
         background: #f7d44d;
+        width: 100%;
      align-items: center;
  }
 .messagepage  h1{
@@ -16,5 +17,10 @@ font-family: monospace;
        object-fit: cover;
      height: 350px;
     width: 520px;
+}
+@media screen and (max-width:800px) {
+ .messagepage img{
+      width: 300px;
+}   
 }
  

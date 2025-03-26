@@ -1,3 +1,31 @@
+  .Form__Subtask{
+display: flex;
+    align-self: self-start;
+    gap: 5px;
+    flex-direction: column;
+   width: 100%;
+
+ }
+ .Form__Subtask-Subtasks{
+    overflow-y: scroll;
+     max-height: 135px;
+    height: auto;
+    overflow-x: hidden;   
+     padding: 0px 5px;
+ }
+ .Form__Subtask label span {
+    position: absolute;
+    right: 20px;
+    background: black;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ .Form__Subtask label span:hover {
+    background: rgb(31, 30, 30);
+ 
+}
  .Form__Subtasks__inputs{
  display: flex;
     flex-direction: column;
@@ -6,6 +34,7 @@
      border-radius: 10px;
     border: 1px solid rgb(185 155 10 / 61%);
     padding: 10px 0px; 
+
 }
  .Form__Subtasks__inputs:hover{
     background-color: #dde0df;
@@ -26,15 +55,19 @@ color: wheat;
 border-radius: 50%;
 }
  .Form__Subtasks__inputs label{
+    font-size: 10px !important;
 color: #5b6561 !important;
  }
  .Form__Subtasks__inputs div{
     display: flex;
     gap: 10px;
+    overflow: hidden;
+    margin-bottom: 5px;
  }
  .Form__Subtasks__inputs textarea{
 border-radius: 5px;
 border: #cbc6c6 1px solid;
+width: 100%;
  }
  .Form__Subtasks__inputs input[type="date"]{
 border-radius: 5px;

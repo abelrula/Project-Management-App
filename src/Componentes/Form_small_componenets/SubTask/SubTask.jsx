@@ -1,7 +1,7 @@
 import React from 'react'
 import "./subTask.css"
 import { IoIosClose } from 'react-icons/io'
-import { statusData } from '../../lib/data'
+import { statusData } from '../../../lib/data'
 
 const SubTask = ({subTask,deleteSubTask,updateSubTask}) => {
  

@@ -43,7 +43,8 @@ const App=() =>{
                 
               <Route path="overview" element={<Overview />} />
               <Route path="team" element={<GantChart />} />
-              <Route path="message" element={<MessageLayout />}>
+        
+              <Route path="message" element={ <MessageLayout /> }>
                   <Route index element={<MessageListheader />} />
               <Route path=":id" element={<MessagesConvoversation />} />
               </Route>  

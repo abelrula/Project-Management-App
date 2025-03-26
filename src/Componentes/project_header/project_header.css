@@ -1,0 +1,62 @@
+.Overview_header{
+       display: flex;
+    gap: 5px;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.Overview_header-ProjectName{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.Overview_header-ProjectName h1{
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.Overview_header-ProjectName span{
+      border-radius: 5px;
+    padding: 0px 20px;
+    font-size: 13px;
+    font-family: auto;
+    border: 1px solid #387a95;
+    color: #387a95;
+    font-weight: 700;
+
+}
+.Overview_header-ProjectName span:hover{
+    scale:1.1;
+    background-color:#387a95 ;
+    color: white;
+
+}
+ .Overview_header-links{
+    display: flex;
+    gap: 10px;
+    align-items: end;
+}
+
+.Overview_header-links .link{
+      text-decoration: none;
+    color: #818080;
+    font-size: 12px;
+    font-family: auto;
+    font-weight: 500;
+     text-wrap: nowrap;  
+     padding: 4px;
+}
+@media screen and (max-width:800px) {
+    .Overview_header{
+       display: flex;
+    gap: 5px;
+    flex-direction: column;
+    margin-top: 5px;
+    background-color: aliceblue;
+}
+ .Overview_header-links{
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+}

@@ -21,17 +21,15 @@ const TeamsStatus = () => {
                 <tr>
                     <th colSpan={3}>
                     </th>
-                    <th className="tasks">Ov...
+                    <th className="tasks">Overall Todo..
                     </th>
-                    <th className="tasks">Tod...
+                    <th className="tasks">Todo
                     </th>
-                    <th className="tasks">All..
+                    <th className="tasks">All Todos
                     </th>
-                    <th className="issue">Ov...
+                    <th className="issue">Overall issue
                     </th>
-                    <th className="issue">Tod...
-                    </th>
-                    <th className="issue">All..
+                    <th className="issue">All issue
                     </th>
                 </tr>
             </thead>

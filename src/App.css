@@ -50,32 +50,14 @@ body{
     flex-direction: column;
     flex: 5;
          gap:10px ;
+         width: 100%;
 }
 body::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */
 }
 
-.link{
-display: flex;
-    gap: 5px;
-    text-decoration: none;
-    padding: 4px 5px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    width: 100%;
-    position: relative;
-    height: 25px;
-    color: #e5e5e5;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: monospace;
-    font-weight: 100;
-}
-   .link label{
-    
 
-}
+  
  
 /* Styling the scrollbar in Chrome and Safari */
 .element-with-scroll::-webkit-scrollbar {
@@ -98,17 +80,17 @@ display: flex;
   background-color: #080807;
 }
 .modal{
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    position: fixed;
-    background: #000000c7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    height: 100vh;
+    right: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    position: fixed !important;
+    background: #000000c7 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 9999 !important;
+    height: 100vh !important;
 /* transition: all 1 ease-in-out; */
 transition: ease-in-out linear 1s ;
 }

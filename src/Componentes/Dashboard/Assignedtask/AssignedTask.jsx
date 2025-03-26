@@ -14,7 +14,7 @@ import { openModal } from "../../../redux/slices/modalSlice";
  
 
 
-   const AssignedTask = ({title,setUrgent,setActive}) => {
+   const AssignedTask = ({title,setUrgent}) => {
    const [todoStatus, setTodoStatus] = useState("Upcoming");
      const [ todos, setTodos ] = useState( [] )
      const {modalType,toggled}=useSelector(state=>state.modal)
@@ -67,10 +67,8 @@ import { openModal } from "../../../redux/slices/modalSlice";
     <><div className="AssignedTask">
       <span className="AssignedTask__header">
         <h3>{ title } </h3>
-        {pathname === "/report" ?
-          <IoCloseCircleOutline  className="icon" onClick={ () => setActive( false ) } /> 
-          : <CiLock className="icon" />
-        } { pathname !== "/report"  && <button className="seeMorebutton"  onClick={()=>setUrgent(true)}> <span>see urgent</span> </button>}
+             <CiLock className="icon" />
+         { pathname !== "/report" && <button className="seeMorebutton" onClick={ () => setUrgent( true ) }> <span>see urgent</span> </button> }
       </span>
       <div className="AssignedTask__situation">
           <div className="AssignedTask__situation-types">
@@ -99,7 +97,7 @@ import { openModal } from "../../../redux/slices/modalSlice";
                   </span>
                   </div>
                   ))}"
-               <AddButton Onclick={Onclick} name="To Do"/>
+               <AddButton Onclick={Onclick} name="Todo"/>
            </div>
       </div>
     </div>

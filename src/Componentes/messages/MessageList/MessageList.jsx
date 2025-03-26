@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./messageList.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useOutletContext } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
+import { FaBars } from "react-icons/fa6";
 const MessageList = () => {
   const [ messages, setMessages ] = useState( [] );
+    const { toggleSidebar, setToggleSidebar } =useOutletContext()
   
   const selectedObj = {
     color: "black",
@@ -19,9 +21,14 @@ const MessageList = () => {
   }, []);
   return (
     <div className="messagelist">
+      <header >
+        <FaBars
+        className="toogleIcon"
+        onClick={ () => { setToggleSidebar( true ); console.log( toggleSidebar ); console.log( "clciked" ) } } />
       <NavLink to="." path="relative" className="messageListHeader">
         Chats
       </NavLink>
+      </header>
       <div className="searchArea">
         <BsSearch />
         <input type="text" placeholder="search  " />
@@ -37,13 +44,11 @@ const MessageList = () => {
           >
             <img src={message.profile} alt="profile" />
             <div className="IndivdualMesssge__info">
-              <div className="IndivdualMesssge__info_top">
-                <p className="IndivdualMesssge__info-name">{message.name}</p>
-                <p className="IndivdualMesssge__info-sentTime"> at 03:23pm</p>
-              </div>
-              <p className="IndivdualMesssge__info-message">
-                hey where have...
+                 <p className="IndivdualMesssge__info-name">{message.name}</p>
+               <p className="IndivdualMesssge__info-message">
+                hey where...
               </p>
+                <p className="IndivdualMesssge__info-sentTime"> at 03:23pm</p>
             </div>
           </NavLink>
         ))}

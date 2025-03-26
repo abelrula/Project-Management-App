@@ -1,14 +1,11 @@
-import React, { useRef, useState } from "react";
-import { HiCalendar } from "react-icons/hi";
-import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
- import { IoCloseCircleOutline } from "react-icons/io5";
+import React, {  useState } from "react";
+   import { IoCloseCircleOutline } from "react-icons/io5";
 import ReactQuill from 'react-quill';
 import FormSubmitButton from "../../Buttons/FormSubmitButton/FormSubmitButton";
 import { useDispatch } from "react-redux";
 import { closeModal } from "../../../redux/slices/modalSlice";
 import { projectTypes, statusData } from "../../../lib/data";
-import { useEffect } from "react";
-import usePreviewFile from "../../../hooks/usePreviewFile";
+ import usePreviewFile from "../../../hooks/usePreviewFile";
 import PreviewFile from "../../PreviewFile/PreviewFile";
 import 'react-quill/dist/quill.snow.css';
 import "./assignTaskForm.css";

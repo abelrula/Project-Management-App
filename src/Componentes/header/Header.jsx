@@ -49,10 +49,7 @@ const Header = ({ title }) => {
 
     }, [] )
    
-  function toogleSidebar(){
-    return modalType === "Navbar" && toggled === false && dispatch( openModal( { modalType: "Navbar", toggled: true } ) )
-      
-  }
+ 
 
  
   return (
@@ -67,7 +64,7 @@ const Header = ({ title }) => {
 
         {/* if its in home page render this */ }
         { pathname === "/" ? (
-      <div className="greeting">
+       <div className="greeting">
         <p className="TodayTodo__wavingHand">{title}</p>
              <p className="date">{date.toDateString()}</p>
        </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaVideo } from "react-icons/fa6";
 import { IoIosCall } from "react-icons/io";
@@ -6,8 +6,8 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { IoMdNotifications } from "react-icons/io";
 import { BsToggle2Off } from "react-icons/bs";
 import "./memeberInfo.css";
-import { closeModal } from "../../redux/slices/modalSlice";
-import { useDispatch } from "react-redux";
+import { closeModal, openModal } from "../../../redux/slices/modalSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const images = [ "https://images.unsplash.com/photo-1525648934681-a85708fc999a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1610645011111-fe0dac6e70bc?q=80&w=1370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1723896816111-f9915f3665da?q=80&w=1458&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" ]
 
@@ -15,11 +15,17 @@ const profile = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&
 const MemeberInfo = () =>
 {
  
+  const {modalType, toggled} = useSelector( state => state.modal )
+  console.log(modalType,toggled);
+  
  const dispatch=useDispatch()
   return (
-    <div className="contactInfo">
+    <>
+     { 
+        modalType === "memberInfo" && toggled === true ?
+           <div className="contactInfo">
       <div className="contactInfo-header">
-        <h1>Conatact info</h1>
+        <h1>Contact info</h1>
         <IoCloseSharp
           fontSize={20}
           color="black"
@@ -55,7 +61,9 @@ const MemeberInfo = () =>
         <div className="contactInfo_mediaLinks-info">
           <h4>Media links & Docs</h4>
           <h6 className="contactInfo_person-name">152</h6>
-          <MdKeyboardDoubleArrowRight className="infoIcon" />
+                <MdKeyboardDoubleArrowRight className="infoIcon"
+            onClick={()=>dispatch(openModal({modalType:"attachedFiles",toggled:true}))}
+                  />
         </div>
         <div className="contactInfo_mediaLinks-files">
           { images.map( ( img, i ) => (
@@ -72,7 +80,31 @@ const MemeberInfo = () =>
         </div>
         <BsToggle2Off fontSize={23} className="infoIcon" />
       </div>
-    </div>
+          </div> :
+           modalType === "attachedFiles" && toggled === true ?
+            
+              <div className="memberInfo">
+                   <div className="contactInfo_mediaLinks">
+        <div className="contactInfo_mediaLinks-info">
+          <h4>Media links & Docs</h4>
+          <h6 className="contactInfo_person-name">152</h6>
+          <MdKeyboardDoubleArrowRight className="infoIcon" />
+        </div>
+        <div className="contactInfo_mediaLinks-files">
+          { images.map( ( img, i ) => (
+            <img src={ img } key={ i } alt="files" /> 
+          ))
+          }
+         
+        </div>
+        </div> 
+           </div> : "null"
+          
+      }
+   
+   
+          
+    </>
   );
 };
 

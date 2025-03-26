@@ -15,12 +15,10 @@ import "./urgentTask.css";
   const [ todo, setTodos ] = useState( [] );
   const [ completed, setCompleted ] = useState(null)
   const {pathname}=useLocation()
-  console.log(completed);
-  // conbst todayTodo =
+   // const todayTodo =
   //   isSuccess && todos.filter((item) => item.date === Date().substring(0, 16));
   const todayDate = new Date().toString().substring( 0, 10 )
-  console.log( todayDate )
-  
+   
  useEffect(() => {
     const fetchTodos = async () => {
       const res = await fetch("http://localhost:3500/todo");
@@ -31,11 +29,9 @@ import "./urgentTask.css";
     };
     fetchTodos();
  }, [] );
-  console.log( todo )
-  
+   
     const todayTodo = todo?.filter(( item ) =>  item.date.substring(0,10) == todayDate  );
-    console.log(todayTodo)
-  return (
+   return (
    <div className="TodayTodo__view--task">
       <span className="TodayTodo__view--task-header">
       {pathname ==="/" && <IoArrowBackCircle color="black" onClick={()=>setUrgent(false)} className="icon"/>}
@@ -59,7 +55,7 @@ import "./urgentTask.css";
             </li>
           ))
         ) : (
-          <h2>You Have Not Any Todos For Today </h2>
+          <h3>You Have Not Any Todos For Today </h3>
         )}
       </ul>
     </div>

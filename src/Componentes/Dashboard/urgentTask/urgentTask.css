@@ -63,11 +63,10 @@ width: 8px;
     background: black;
     border-radius: 20px;
 }
-.TodayTodo__view--task ul h2{
-  margin: auto;
-    font-size: 20px;
-    font-family: system-ui;
-    color: #7b7a78;
+.TodayTodo__view--task ul h3{
+align-self: center;  color: #b19c057a;
+    font-weight: 100;
+    font-family: monospace;
     width: 100%;
     height: 100v;
     position: relative;

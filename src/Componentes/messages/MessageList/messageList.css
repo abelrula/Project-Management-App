@@ -7,8 +7,17 @@
        gap: 15px;
     padding: 10px 3px;
 min-width: 280px;
+z-index: 90;
     border-right: 1px solid #003a63;
 }
+.messagelist header{
+    display:  flex;
+    gap: 10px;
+    align-items: center ;
+}
+.messagelist  header .toogleIcon{
+    display: none;
+ }
 .messagelist h4{
         color: black;
     font-size: 30px;
@@ -24,12 +33,14 @@ min-width: 280px;
     padding: 10px;
     font-weight: 100;
     border: 1px solid rgb(185, 185, 185);
+    width: 100%;
 }
 .searchArea input{
     border: none;
     padding: 5px 15px;
     outline: none;
     font-size: 15px;
+    width: 100%;
 }
 .Allmessages{
     display: flex;
@@ -69,24 +80,20 @@ min-width: 280px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: flex-start;
-}
-.IndivdualMesssge__info_top{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
+ }
 .IndivdualMesssge__info-name{
     font-weight: bolder;
     font-size: larger;
     font-family: monospace;
     color: #000000;
     font-weight: 100;
+    align-self: start;
 
 }
 .IndivdualMesssge__info-sentTime{
     font-size: 11px;
     font-family: cursive;
+    align-self: end;
     color:#14680d;
 }
 .IndivdualMesssge__info-message{
@@ -95,6 +102,56 @@ min-width: 280px;
     font-family: math;
     font-size: 13px;
     color: #5d5f61;
+    align-self: start;
     font-weight: 100;
     top: 5px;
 }
+
+@media screen and (max-width:800px) {
+   .messageListHeader{
+    font-size: 15px;
+   }
+    .messagelist  header .toogleIcon{
+    display: block;
+    
+}
+.messagelist{
+    min-width: 110px;
+}
+.MessagesConvoversation__TypingBox textarea{
+    width: auto;
+}
+   .MessagesConvoversation__list__sender{
+   max-width:min-content;
+   min-width:150px;
+   }
+   .MessagesConvoversation__list__reciever{
+   min-width:150px;
+   max-width:min-content;
+   } 
+    .IndivdualMesssge{
+        gap: 3px;
+    }
+   .IndivdualMesssge img{
+       width: 20px;
+    height: 20px;
+}
+ 
+.IndivdualMesssge__info-name{
+     font-size: 10px;
+
+}
+.IndivdualMesssge__info-sentTime{
+    font-size: 7px;
+    
+}
+.IndivdualMesssge__info-message{
+     left: 7px;
+     font-size: 7px;
+    top: 5px;
+}
+.searchArea input{
+    font-size: 10px;    
+    padding: 5px;
+
+}}

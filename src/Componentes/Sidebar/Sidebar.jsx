@@ -52,7 +52,8 @@ const Sidebar = ({toggleSidebar,setToggleSidebar}) => {
               style={({ isActive }) => (isActive ? selectedObj : null)}
               to={link.to}
               className="link"
-              key={i}
+              key={ i }
+              onClick={()=>setToggleSidebar(false)}
             >
               { link.icon }
              {link.title}
@@ -70,6 +71,7 @@ const Sidebar = ({toggleSidebar,setToggleSidebar}) => {
                 key={i}
                 style={ ( { isActive } ) => ( isActive ? selectedObj : null ) }
                 // to={ `projects/${project.projectName.split("").filter(i=> i !== " ").join("")}` }
+              onClick={()=>setToggleSidebar(false)}
               to={ `projects/${project.id}` }
               >
                 { project.projectName }

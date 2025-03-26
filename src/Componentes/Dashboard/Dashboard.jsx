@@ -9,20 +9,15 @@ import IssueSection from "./IssueSection/IssueSection";
 import Events from "./Events/Events";
 import TotalNumber from "./TotalTaskstatus/TotalNumber";
 import Projects from "./Projects/Projects";
-import TodoForm from "../Forms/TodoForm/TodoForm";
-import "../../../node_modules/react-calendar/src/Calendar.css";
+ import "../../../node_modules/react-calendar/src/Calendar.css";
 import "./dashboard.css";
 import { TotalAccompishedNumber } from "../../lib/data";
 
 const Dashboard = () => {
   // const {  isLoading } = useGetTodosQuery();
-    const [active,setActive]=useState(false)
-   const [open,setOpen]=useState(false)
-  const [ openTitle, setOpenTitle ] = useState( null )
-  const [ urgent, setUrgent ] = useState( false )
+   const [ urgent, setUrgent ] = useState( false )
      const date = new Date();
-   console.log(urgent)
-
+ 
  
   return (
     <>
@@ -34,9 +29,7 @@ const Dashboard = () => {
               title={ item.title }
               value={ item.value }
               icon={ item.icon }
-              setOpenTitle={ setOpenTitle }
-              setOpen={ setOpen }
-              color={item.color} />
+               />
          ) )}
          </div>
          </div>
@@ -46,8 +39,7 @@ const Dashboard = () => {
             <UrgentTask setUrgent={ setUrgent } /> :
           <AssignedTask
             setUrgent={ setUrgent } 
-            setActive={ setActive }
-            title="My tasks" />
+             title="My tasks" />
           }
             <IssuePieChart/>
             <CommentSection />
@@ -58,11 +50,7 @@ const Dashboard = () => {
             <IssueSection title="All Issue" />
       </div>
       
-      { active &&
-       ( <div className="modal">
-        <TodoForm  setActive={setActive}  />
-        </div>)
-      }
+     
     </>
   );
 };

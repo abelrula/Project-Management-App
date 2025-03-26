@@ -1,15 +1,19 @@
  import { Outlet } from 'react-router-dom'
 import Sidebar from '../Componentes/Sidebar/Sidebar';
+import { useState } from 'react';
 
   const MainLayout = () => {
-   return (
+     const [toggleSidebar,setToggleSidebar]=useState(false)
+  
+    return (
     <div className="container">
-      <Sidebar />
+        <Sidebar
+          toggleSidebar={ toggleSidebar }
+          setToggleSidebar={setToggleSidebar} />
       <div className="content">
-        <Outlet />
+        <Outlet context={{toggleSidebar,setToggleSidebar}} />
       </div>
     </div>
   );
 };
-
 export default MainLayout

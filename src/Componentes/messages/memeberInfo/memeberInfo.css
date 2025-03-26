@@ -7,6 +7,7 @@
     background: rgb(255, 255, 255);
     padding: 0px 10px;
     font-weight: 100;
+    z-index: 99;
 }
 .infoIcon{
    cursor: pointer; 
@@ -18,7 +19,7 @@ display: flex;
     border-bottom: 1px solid #f5eeee; 
 }
 .contactInfo-header h1{
-font-size: 24px;
+    font-size: 15px;
      font-weight: 500;
 }
 .contactInfo_person{
@@ -27,8 +28,8 @@ display: flex;
      align-items: center;
 }
 .contactInfo_person img{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 border-radius:50%;
 object-fit: cover;
     cursor: pointer;
@@ -45,6 +46,7 @@ gap:10px;
     font-size: 20px;
      font-family: system-ui;
     cursor: pointer;
+    font-size:12px
 
 }
  .contactInfo_person_contact-phone{
@@ -52,6 +54,7 @@ gap:10px;
     font-family: cursive;
     font-size: 16px;
     font-weight: 200;
+    font-size:12px
 }
 .contactInfo-meet{
     display: flex;
@@ -141,4 +144,14 @@ gap:10px;
     text-align: justify;
     font-weight: 100;
     font-family: ui-rounded;
+}
+@media screen and (max-width:800px) {
+
+.contactInfo{
+    position: fixed;
+        right: 0;
+        top: 0;
+         bottom: 0;
+         justify-content:baseline
+ }
 }

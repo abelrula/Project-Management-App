@@ -1,6 +1,6 @@
 .Form__comment{
      height: 550px;
-    width: 550px;
+    width: 600px;
   display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -48,8 +48,9 @@
     text-transform: capitalize;
     font-weight: 800;
 }
-section{
+.Form__comment section{
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 10px;
 }

@@ -1,5 +1,5 @@
 .memberProfile_description{
-    height: 550px;
+    height: auto;
     width: 500px;
   display: flex;
     flex-direction: column;
@@ -97,9 +97,7 @@
     font-size: 14px;
     font-weight: 700;
  }
-.profile_description__middle{
-
-}
+ 
 .profile_description__middle-item{
     display: flex;
     flex-direction: column;
@@ -171,9 +169,7 @@ flex-direction: row;}
     color: #100e0e;
     font-size: 14px;
 }
-.userInfo__userName a{
-
-}
+ 
 .userInfo__list{
     display: flex;
     gap: 20px;
