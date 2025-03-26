@@ -8,7 +8,8 @@ import { closeModal } from "../../../redux/slices/modalSlice";
 import "./addCommentForm.css"
 import PreviewFile from "../../PreviewFile/PreviewFile";
 import usePreviewFile from "../../../hooks/usePreviewFile";
-import { DropdownMembers, DropdownProject } from "../../Form_small_componenets/dropdown_lists/Dropdown";
+import { DropdownProject, MainTaksDropwDown } from "../../Form_small_componenets/dropdown_lists/Dropdown";
+import AttachDocs from "../../Form_small_componenets/attach_docs/AttachDocs";
 
 const AddCommentForm = () => {
     
@@ -23,8 +24,6 @@ const AddCommentForm = () => {
   const [selectedMainTasks,setSelectedMainTasks]=useState({})
     const [subTasks,setSubTasks]=useState({})
     const [description, setDescription] = useState("");
-    const [openProject,  setOpenProject]=useState("")
-    const [ selected, setSelected ] = useState( null );
    const dispatch = useDispatch()
  
 
@@ -55,43 +54,22 @@ const AddCommentForm = () => {
             </h6>
             <IoCloseCircleOutline className="icon" onClick={()=> dispatch(closeModal()) } />
        </header>
-            {/* select a project which you want to add Comment on  */ }
-        
-        
+            
+          {/* select a project which you want to add Comment on  */ }
           <section>
-            
-            
             {/*available Projects to add comment on*/ }
             <DropdownProject
-          openProject={ openProject }
-          setOpenProject={ setOpenProject }
-           setSelectedProject={ setSelectedProject }
-          selectedProject={ selectedProject } />
-      
+              setSelectedProject={ setSelectedProject }
+              selectedProject={ selectedProject }
+            />
             {/*available mainTasks to add comment on*/}
-            { mainTasks && <div className="project">
-              <label>select mainTasks you want to add Comment
-              </label>
-              <div className="project_types">
-                <span
-                  onClick={ () => setOpenProject( "mainTasks" ) }
-                >{ mainTasks !== null ? selectedMainTasks?.mainTask?.substring(0,60) : "selected project none" }
-                </span>
-                { openProject === "mainTasks" && mainTasks?.map( ( project, i ) => (
-                  <div
-                    key={ i }
-                    onClick={ () => { setSelectedMainTasks( project ); setOpenProject( "" ) } }
-                    className="project_types-type"
-                    style={{zIndex:openProject === "mainTasks" ?"999" :"100"}}
-                  >
-                    <h4>
-                      { project?.mainTask?.substring(0,40) }
-              
-                    </h4>
-                  </div>
-                ) ) }
-              </div>
-            </div> }
+            { mainTasks &&
+              <MainTaksDropwDown
+                setSelectedMainTasks={setSelectedMainTasks}
+                selectedMainTasks={selectedMainTasks}
+                mainTasks={mainTasks}
+           />
+            }
            </section>
 
         {/* add comment using react quill text editor */}
@@ -100,20 +78,13 @@ const AddCommentForm = () => {
            <ReactQuill theme="snow" value={description} onChange={setDescription} />
           </div>
        
-            {/* attachung documnet inputs */}
+          {/*inputs a docs and attach to preview  */}
           <div className="Form__AttachDocuments">
-          <label>Attach Documents</label>
-            <button onClick={ ()=>fileUpload.current.click()} className="seeMoreButton"><span>Upload File</span></button>
-          <input
-              type="file"
-              id="documents"
-              ref={fileUpload}
-             onChange={ ( e ) => setAttachedDocuments( e.target?.files ) }
-              style={ { display: "none" } }
-              multiple
-          />
-          { fileNames && <PreviewFile  fileNames={fileNames} setAttachedDocuments={setAttachedDocuments}/>}
+            <AttachDocs setAttachedDocuments={ setAttachedDocuments } />
+            { fileNames &&
+              <PreviewFile fileNames={ fileNames } setAttachedDocuments={ setAttachedDocuments } /> }
           </div>
+
          
           {/* submit form */ }
         <FormSubmitButton buttonName="Add Comment"/>

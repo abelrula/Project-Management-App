@@ -1,38 +1,33 @@
 import React from 'react'
 import "./dropdown.css"
-import { FaArrowDown, FaArrowUp } from 'react-icons/fa6';
-import useFetchData from '../../../hooks/useFetchData';
+import { IoChevronDownSharp } from 'react-icons/io5';
+  import useFetchData from '../../../hooks/useFetchData';
 import "./dropdown.css"
 
-export const DropdownProject = ({openProject,setOpenProject,setOpenEmployee,setSelectedProject,selectedProject}) => {
+export const DropdownProject = ({setSelectedProject,selectedProject}) => {
  
   const { data: projectTypes } =useFetchData("http://localhost:3500/project")
  console.log(projectTypes);
  
   return (
    <div className="project">
-            <label>select a project you want to assign 
-            {!openProject &&<FaArrowDown className="icon" onClick={ () => {setOpenProject(true); setOpenEmployee(false)}} />}
-            {openProject &&<FaArrowUp className="icon" onClick={ () => setOpenProject(false)} />}
+            <label htmlFor='project'>select a project you want to assign 
             </label>
-          <div className="project_types"> 
-           <span 
-           onClick={ () => setOpenProject((prev)=>!prev)}
-           >{ selectedProject !== null  ? selectedProject  : "selected project none"}</span> 
-          { openProject && projectTypes.map((item,i)=>(
-           <div
-             key={ i } 
-              onClick={ () => { setSelectedProject( item.projectName ); setOpenProject(false)
-}}
+         <select id="project"  value={ selectedProject }
+          onChange={ ( e ) =>{
+                setSelectedProject( e.target.value )
+              } }>
+          { projectTypes.map( ( item, i ) => (
+            <option
+              key={ i }
+              value={ item.projectName }
               className="project_types-type"
-           >
-           <h4>
-              {item.projectName}
-            </h4>
-          </div>
-        ) ) }
+            >
+              { item.projectName }
+            </option>
+            ) ) }
+        </select>
          </div>
-        </div>
   )
 }
 
@@ -45,19 +40,16 @@ console.log(members);
   return(
      <div className="employeContainer">
             <label>Select Employee you want to assign 
-            { !openEmployee && <FaArrowDown className="icon"
-              onClick={ () =>
-              {
-                setOpenEmployee( true );
-                setOpenProject( false )
-              } } /> }
-            { openEmployee && <FaArrowUp className="icon"
-              onClick={ () => setOpenEmployee( false ) } /> }
             </label>
           <div className="employeContainer_members"> 
            <span
-           onClick={ () => setOpenEmployee((prev)=>!prev)}
-           >{ selectedEmployee !== null  ? `${selectedEmployee}: ${jobCatagory}`  : "selected employee none"}</span> 
+            onClick={ () => setOpenEmployee((prev)=>!prev)}
+            >{ selectedEmployee !== null ?
+            `${ selectedEmployee }:--${ jobCatagory.length > 17 ? `${jobCatagory.substring( 0, 17 )}...`:jobCatagory }` :
+            "selected employee none" }
+          <IoChevronDownSharp fontSize={24} className='dropdown_icon' />
+          </span> 
+        
           { openEmployee && members?.map((employee,i)=>(
            <div
              key={ i } 
@@ -82,3 +74,31 @@ console.log(members);
   )
 
 }
+
+// after slecting project realated to that project main tasks will be visible 
+export const MainTaksDropwDown =({setSelectedMainTasks,selectedMainTasks,mainTasks}) =>{
+  
+
+  return (
+       <div className="mainTasks">
+              <label htmlFor='task'>select mainTasks you want to add Comment
+              </label>
+      <select id='task' 
+      value={ selectedMainTasks }
+        onChange={ ( e ) => { setSelectedMainTasks( e.target.value ) } }>
+          {
+            mainTasks?.map( ( project, i ) => (
+                  <option
+                    key={ i }
+                    className="project_types-type"
+                   >
+                       { project?.mainTask.length > 60 ? project?.mainTask?.substring(0,40) :  project?.mainTask  }...
+                    </option>
+            ) )
+          }
+        </select>
+               </div>
+  )
+}
+
+ 
