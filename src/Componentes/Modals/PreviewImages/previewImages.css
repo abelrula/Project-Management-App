@@ -1,0 +1,96 @@
+.preview{
+     width:auto !important;
+     max-width:500px !important;
+     height:auto !important;
+     min-width: 300px;
+     margin:auto !important;
+     background:white !important ;
+     overflow: hidden;
+     padding: 0px 20px;
+    }
+    .preview header{
+    font-size: 15px;
+    height: 30px;
+    font-family: system-ui;
+     width: 100%;
+    text-align: start;
+    color: black;
+    font-weight: bold;    }
+    .preview_images{
+        display:flex !important;
+     flex-wrap:wrap !important;
+     overflow-x: hidden;  max-height:300px !important;
+      overflow-y: scroll;
+     gap: 2px;
+      }
+      .preview_images div{
+        position: relative;
+        padding: 5px;
+      }
+    .preview_images div img{
+         width: 146px !important;
+    height: 150px !important;
+    object-fit: cover !important;
+    border-radius: 5px;
+    object-position: center !important;
+    border: 1px solid rgb(221, 221, 221);
+}
+ .preview_images div .deleteIcon{
+     position: absolute;
+      top: 10px;
+      right: 10px;
+ }
+ .preview_images div .deleteIcon:hover{
+  background-color: rgb(241, 0, 0);
+  border-radius: 5px;
+ }
+        
+          
+          .preview_caption{
+           position: sticky;
+            bottom: 0;
+             width: 100%;
+            background-color:white ;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+           align-items: end;
+           padding: 15px 10px;
+          }
+          .preview_caption label {
+     cursor: pointer;
+    color: rgb(19 127 243);    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+}
+           .preview_caption input{
+             height: 50px;
+             outline: none;
+             border-bottom: 1px solid #717171;
+             border-left: 1px solid #717171;
+             border-right: 1px solid #717171;
+             border-top: none;
+             width: 100%;
+             border-radius:5px
+}
+           .preview_caption .buttons{
+              display: flex;
+              gap: 10px;
+            }
+          .preview_caption button{
+           
+            height: 20px;
+    cursor: pointer;
+    color: rgb(19 127 243);
+    border: none;
+    padding: 3px 5px;
+    font-size: 15px;
+    font-weight: 700;
+          }
+          .preview_caption button:hover{
+          background-color: #e9e9e9;
+          color: rgb(41, 41, 41);
+          border-radius: 5px;
+        }

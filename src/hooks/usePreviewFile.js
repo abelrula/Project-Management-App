@@ -2,13 +2,19 @@
 //  on slection of file show user preview  file of what they selected
 const usePreviewFile = (files) => {
    
+    console.log(files);
     
     
-    if ( files && files.length > 0 ){
+    if ( files){
        
         // create Array of files for iteration
-        const arrayOfFiles = Array.from( files )
+      const arrayOfFiles = Array.from( files )
+      
+    // console.log(arrayOfFiles[0].type.includes("image") );
        
+      // if (arrayOfFiles[0].type === image) {
+        
+      // }
         // map through arrayOfFiles to return the name of the file for for     indentification for user
           var fileNames = arrayOfFiles.map( file => file.name ) 
        

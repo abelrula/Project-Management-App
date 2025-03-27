@@ -10,7 +10,7 @@ const PreviewFile = ({fileNames,setAttachedDocuments}) => {
     <div className="Form__AttachDocuments-selectedFiles element-with-scroll">
       {/* if therse selected files map through them */}
       { fileNames?.map( ( ( fileName ) => (
-        <div className="Form__AttachDocuments-selectedFiles-file">
+        <div className="Form__AttachDocuments-selectedFiles-file" key={fileName}>
           <span>{ `${ fileName.substring( 0, 26 ) }...` }  <GrDocumentPdf className="icon" /></span>
           {/* onClick on close the file icon delete selected files  */}
           <IoMdClose

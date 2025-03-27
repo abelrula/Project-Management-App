@@ -1,17 +1,17 @@
-import React, { Fragment, memo, useEffect, useState } from "react";
+import React, { Fragment, memo, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FaVideo } from "react-icons/fa6";
-import { IoIosCall } from "react-icons/io";
-import { useParams } from "react-router-dom";
-import MemeberInfo from "../../memeberInfo/MemeberInfo";
+  import { useParams } from "react-router-dom";
+import MemeberInfo from "../memeberInfo/MemeberInfo";
 import { GrAttachment } from "react-icons/gr";
-import { BsEmojiSmile } from "react-icons/bs";
-import "./messagesConversion.css";
+ import "./messagesConversion.css";
 import { openModal } from "../../../redux/slices/modalSlice";
-
+ import PreviewImages from "../../Modals/PreviewImages/PreviewImages";
+ 
  const MessagesConvoversation = memo(() => {
   
-  const [messages, setMessages] = useState([]);
+   const [ messages, setMessages ] = useState( [] );
+   const [previewUrl,setPreviewUrl]=useState([])
+    const fileRef=useRef()
   const { id } = useParams();
   const dispatch = useDispatch();
    const { modalType, toggled } = useSelector( state => state.modal )
@@ -24,8 +24,23 @@ import { openModal } from "../../../redux/slices/modalSlice";
      }
     fetchMessages();
   }, [ id ] );
-  
- 
+   
+   const handle_file_ref_click=() =>{
+     fileRef.current.click();
+      
+   }
+  function readAndPreview (e) {
+    const files = e.target.files
+    if (files) {
+             
+      const Arrfiles = Array.from(files).map((img) => URL.createObjectURL(img))
+       setPreviewUrl(Arrfiles)
+    }
+       dispatch( openModal( { modalType: "previewImage", toggled: true } ) )
+
+   }
+   console.log(previewUrl);
+   
   return (
     <div className="messageConvo">
       <div className="MessagesConvoversation">
@@ -42,14 +57,7 @@ import { openModal } from "../../../redux/slices/modalSlice";
               <span className="MessagesConvoversation__header__sender-stat-activeStatus"></span>
             </div>
           </div>
-          <div className="MessagesConvoversation__header__right">
-            <div className="MessagesConvoversation__header__right-audioCall">
-              <IoIosCall fill="black" fontSize={19} className="infoIcon" />
-            </div>
-            <div className="MessagesConvoversation__header__right-videoCall">
-              <FaVideo fill="black" fontSize={19} className="infoIcon" />
-            </div>
-          </div>
+         
         </div>
         <div className="MessagesConvoversation__list element-with-scroll">
           {messages?.message?.map((item, i) => (
@@ -75,14 +83,19 @@ import { openModal } from "../../../redux/slices/modalSlice";
         </div>
         <div className="MessagesConvoversation__TypingBox">
           <div>
-            <GrAttachment fontSize={24} className="infoIcon" />
+            <GrAttachment onClick={handle_file_ref_click} fontSize={24} className="infoIcon" />
+            <input type="file" multiple onChange={ readAndPreview } ref={ fileRef } style={ { display: "none" } } />
+        
             <textarea type="text" placeholder="hy"></textarea>
-            <BsEmojiSmile fontSize={24} className="infoIcon" />
-          </div>
+           </div>
           <button>send</button>
         </div>
       </div>
-      {modalType === "memberInfo" && toggled===true && <MemeberInfo/>}
+      { modalType === "memberInfo" && toggled === true && <MemeberInfo /> }
+         {
+              modalType === "previewImage" && toggled === true &&
+             <PreviewImages previewUrl={previewUrl} />
+      }
     </div>
   );
 });
